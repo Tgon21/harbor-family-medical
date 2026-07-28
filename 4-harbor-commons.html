@@ -326,8 +326,10 @@ footer .fine{padding-top:22px;font-size:13px;color:#8fada2}
 
   .tl{padding:36px 0}
   .tl-row{grid-template-columns:1fr;gap:20px}
-  .tl-item{padding-right:0;display:grid;grid-template-columns:26px 1fr;gap:14px;align-items:start}
-  .tl-item .pip{margin:2px 0 0}
+  .tl-item{padding-right:0;display:grid;grid-template-columns:26px 1fr;gap:6px 14px;align-items:start}
+  .tl-item .pip{margin:2px 0 0;grid-row:1}
+  .tl-item b{grid-column:2}
+  .tl-item span{grid-column:2} /* keep the description out of the 26px pip column */
 
   .svc-list{grid-template-columns:1fr;gap:0}
   .nrow{grid-template-columns:1fr;gap:16px;padding:20px}
