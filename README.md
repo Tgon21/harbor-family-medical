@@ -19,11 +19,11 @@ elements, accessibility decisions, and best-fit audience for each concept — is
 
 ```
 index.html              gallery: comparison table + links to all five
-1-harbor-oak.html       calm & premium, editorial serif, warm neutrals
-2-harbor-bright.html    bright & family-friendly, rounded, bottom tab bar
-3-harbor-connect.html   modern tech-enabled, working slot picker
-4-harbor-commons.html   community neighborhood, photo mosaic, phone-first
-5-harbor-now.html       minimal same-day, live status board
+lunaris-1.html       calm & premium, editorial serif, warm neutrals
+lunaris-2.html    bright & family-friendly, rounded, bottom tab bar
+lunaris-3.html   modern tech-enabled, working slot picker
+lunaris-4.html   community neighborhood, photo mosaic, phone-first
+lunaris-5.html       minimal same-day, live status board
 CONCEPTS.md             full written design spec
 .nojekyll               serve files as-is on GitHub Pages
 ```

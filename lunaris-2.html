@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){var l=null;try{l=localStorage.getItem('lunarisLang')}catch(e){}l=l==='en'?'en':'es';var d=document.documentElement;d.setAttribute('lang',l);d.setAttribute('data-lang',l);})();</script>
+<title>Lunaris Medical Clinic — Concepto 2: Alegría</title>
+<meta name="description" content="Lunaris Medical Clinic cuida a toda la familia en Caguas — exámenes físicos, citas de enfermedad el mismo día, vacunas, cuidado crónico y telemedicina. Reserve en línea en menos de un minuto.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%237c5f9e'/><text x='16' y='23' font-size='18' font-weight='bold' font-family='system-ui' fill='%23e9c47c' text-anchor='middle'>L</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+/* ============================================================
+   CONCEPT 2 — "ALEGRÍA"
+   Bright, welcoming, family-first. Soft sky + sunshine + coral.
+   Pillowy rounded cards, curved section dividers, rounded sans.
+   Signature: horizontal snap carousels + bottom tab bar on mobile.
+   Spanish-first; English via the language toggle.
+   ============================================================ */
+
+:root{
+  --sky:#f4eef8;
+  --sky-2:#e5d9ee;
+  --teal:#7c5f9e;
+  --teal-dk:#5e4680;
+  --sun:#e9c47c;
+  --sun-dk:#8a6420;
+  --coral:#b98d4f;
+  --coral-dk:#8f6a33;
+  --mint:#b9d1ad;
+  --grape:#9b7bb8;
+  --ink:#2c2438;
+  --ink-soft:#5d5470;
+  --white:#fff;
+  --line:#ded1e8;
+  --r:22px;
+  --r-lg:32px;
+  --wrap:1180px;
+  --sans:"Nunito","Avenir Next",ui-rounded,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --display:"Baloo 2","Nunito",ui-rounded,system-ui,sans-serif;
+  --sh:0 10px 28px -14px rgba(44,36,56,.28);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--white);color:var(--ink);font:400 17px/1.68 var(--sans);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--display);font-weight:700;line-height:1.16;letter-spacing:-.01em;margin:0 0 .5em}
+h1{font-weight:800}
+p{margin:0 0 1em}
+a{color:var(--teal-dk);text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+
+.skip{position:absolute;left:-9999px;background:var(--teal-dk);color:#fff;padding:12px 18px;border-radius:12px;z-index:90}
+.skip:focus{left:12px;top:12px}
+:focus-visible{outline:3px solid var(--coral-dk);outline-offset:3px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.eyebrow{
+  display:inline-block;background:var(--sun);color:#4a3410;font-weight:800;
+  font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;
+  padding:7px 16px;border-radius:999px;margin-bottom:18px;
+}
+
+/* ---------- header ---------- */
+
+.hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:2px solid var(--sky-2)}
+.hdr-in{display:flex;align-items:center;gap:22px;min-height:78px}
+.brand{display:flex;align-items:center;gap:12px;margin-right:auto}
+.brand .mk{
+  width:46px;height:46px;border-radius:15px;flex:none;display:grid;place-items:center;
+  background:var(--teal);color:var(--sun);font-weight:800;font-size:22px;
+}
+.brand b{display:block;font-size:18px;line-height:1.15}
+.brand small{color:var(--ink-soft);font-size:12.5px;font-weight:700}
+.dnav{display:flex;gap:8px;list-style:none;margin:0;padding:0}
+.dnav a{
+  display:block;padding:10px 16px;border-radius:999px;font-weight:700;font-size:15px;
+  color:var(--ink-soft);
+}
+.dnav a:hover{background:var(--sky);color:var(--teal-dk)}
+.hdr .btn{flex:none}
+
+.lang-toggle{
+  font-family:inherit;font-size:13.5px;font-weight:800;color:var(--teal-dk);
+  background:var(--sky);border:2px solid var(--sky-2);border-radius:999px;
+  padding:9px 16px;min-height:44px;cursor:pointer;flex:none;
+}
+.lang-toggle:hover{border-color:var(--teal)}
+
+/* ---------- buttons ---------- */
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:inherit;font-weight:800;font-size:16px;padding:15px 26px;min-height:52px;
+  border-radius:999px;border:2px solid var(--teal);background:var(--teal);color:#fff;
+  cursor:pointer;box-shadow:0 6px 0 var(--teal-dk);transition:transform .12s,box-shadow .12s;
+}
+.btn:hover{color:#fff;transform:translateY(2px);box-shadow:0 4px 0 var(--teal-dk)}
+.btn:active{transform:translateY(6px);box-shadow:0 0 0 var(--teal-dk)}
+.btn-coral{background:var(--coral);border-color:var(--coral);box-shadow:0 6px 0 var(--coral-dk)}
+.btn-coral:hover{box-shadow:0 4px 0 var(--coral-dk)}
+.btn-out{background:#fff;color:var(--teal-dk);border-color:var(--teal);box-shadow:0 6px 0 var(--sky-2)}
+.btn-out:hover{color:var(--teal-dk);box-shadow:0 4px 0 var(--sky-2)}
+.btn-sm{padding:11px 20px;min-height:44px;font-size:14.5px;box-shadow:0 4px 0 var(--teal-dk)}
+
+/* ---------- hero with blobs + curved bottom ---------- */
+
+.hero{position:relative;background:linear-gradient(180deg,var(--sky) 0%,#f7fcfd 100%);overflow:hidden;padding:64px 0 0}
+.blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:.55;pointer-events:none}
+.b1{width:340px;height:340px;background:var(--sun);top:-120px;right:-70px;opacity:.4}
+.b2{width:230px;height:230px;background:var(--mint);bottom:60px;left:-90px;opacity:.5}
+.b3{width:130px;height:130px;background:var(--coral);top:130px;right:270px;opacity:.22}
+
+.hero-in{display:grid;grid-template-columns:1.06fr .94fr;gap:52px;align-items:center;position:relative;z-index:2;padding-bottom:70px}
+.hero h1{font-size:clamp(2.15rem,4.7vw,3.5rem)}
+.hero h1 em{font-style:normal;color:var(--teal);position:relative;white-space:nowrap}
+.hero h1 em::after{
+  content:"";position:absolute;left:0;right:0;bottom:4px;height:9px;
+  background:var(--sun);border-radius:6px;z-index:-1;
+}
+/* the marker draws itself under the highlighted phrase once the page settles */
+@media (prefers-reduced-motion:no-preference){
+  .hero h1 em::after{transform:scaleX(0);transform-origin:left;animation:markline .55s .45s cubic-bezier(.2,.7,.2,1) forwards}
+  @keyframes markline{to{transform:scaleX(1)}}
+}
+.hero .lede{font-size:1.16rem;color:var(--ink-soft);max-width:44ch;font-weight:500}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 22px}
+.hero-trust{display:flex;gap:20px;flex-wrap:wrap;font-size:14.5px;font-weight:700;color:var(--ink-soft)}
+.hero-trust span.t{display:flex;align-items:center;gap:7px}
+.tick{width:22px;height:22px;border-radius:50%;background:var(--mint);color:#0d4f36;display:grid;place-items:center;font-size:13px;flex:none}
+
+/* friendly illustrated family photo card */
+.hero-art{position:relative}
+.photo{
+  border-radius:var(--r-lg);overflow:hidden;position:relative;aspect-ratio:4/3.4;
+  background:linear-gradient(150deg,var(--sun) 0%,var(--coral) 48%,var(--grape) 100%);
+  box-shadow:var(--sh);border:5px solid #fff;
+}
+.photo::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.45),transparent 55%);
+}
+.photo .cap{
+  position:absolute;top:12px;left:12px;max-width:56%;color:#fff;font-size:11px;
+  font-weight:700;letter-spacing:.05em;text-transform:uppercase;z-index:2;
+  background:rgba(44,36,56,.5);border-radius:14px;padding:5px 13px;line-height:1.5;
+}
+.badge-float{
+  position:absolute;background:#fff;border-radius:18px;padding:13px 18px;
+  box-shadow:var(--sh);font-weight:800;font-size:14px;display:flex;align-items:center;gap:10px;
+}
+.badge-float small{display:block;font-weight:700;font-size:11.5px;color:var(--ink-soft)}
+.bf-1{bottom:-16px;left:-18px}
+.bf-2{top:22px;right:-20px}
+.bf-num{font-size:22px;color:var(--teal)}
+
+.curve{display:block;width:100%;height:64px}
+
+/* ---------- age bands (unique to this concept) ---------- */
+
+.ages{background:#fff;padding:56px 0 10px}
+.age-row{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.age{
+  border-radius:var(--r);padding:22px 18px;text-align:center;font-weight:800;
+  border:2px solid transparent;
+}
+.age span.ico{display:block;font-size:30px;margin-bottom:8px}
+.age small{display:block;font-weight:700;font-size:12.5px;color:var(--ink-soft);margin-top:5px}
+.a1{background:#f7ecd7;border-color:#e3cc9a}
+.a2{background:#e9f0e3;border-color:#c2d4b6}
+.a3{background:#eee6f6;border-color:#cbb6e0}
+.a4{background:#f5ead9;border-color:#dfc49a}
+.a5{background:#efe6f6;border-color:#cfb9e4}
+
+/* ---------- section shells ---------- */
+
+.sec{padding:74px 0}
+.sec-sky{background:var(--sky);border-radius:var(--r-lg) var(--r-lg) 0 0}
+.sec-head{max-width:56ch;margin-bottom:38px}
+.sec-head h2{font-size:clamp(1.75rem,3.4vw,2.5rem)}
+.sec-head p{color:var(--ink-soft);font-size:1.08rem}
+
+/* ---------- services: pillowy bubble cards / mobile carousel ---------- */
+
+.rail-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.rail-hint{display:none;font-size:13px;font-weight:700;color:var(--ink-soft)}
+.rail{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{
+  background:#fff;border-radius:var(--r-lg);padding:28px;border:2px solid var(--line);
+  box-shadow:var(--sh);
+}
+.svc .ic{
+  width:58px;height:58px;border-radius:19px;display:grid;place-items:center;
+  font-size:27px;margin-bottom:16px;
+}
+.svc h3{font-size:1.22rem}
+.svc p{color:var(--ink-soft);font-size:.98rem;margin-bottom:14px}
+.svc .pill{
+  display:inline-block;background:var(--sky);color:var(--teal-dk);font-weight:800;
+  font-size:12px;padding:5px 12px;border-radius:999px;
+}
+.i-sun{background:#f7ecd7}.i-mint{background:#e9f0e3}.i-sky{background:#eee6f6}
+.i-coral{background:#f5ead9}.i-grape{background:#efe6f6}.i-line{background:var(--sky-2)}
+
+/* ---------- providers: circle photos + fun fact ---------- */
+
+.docs{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.doc{background:#fff;border:2px solid var(--line);border-radius:var(--r-lg);padding:24px 20px;text-align:center;box-shadow:var(--sh)}
+.doc .av{
+  overflow:hidden;
+  width:104px;height:104px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;
+  font-size:30px;font-weight:800;color:#fff;border:5px solid #fff;box-shadow:0 6px 16px -6px rgba(44,36,56,.4);
+}
+.av1{background:linear-gradient(140deg,#7c5f9e,#c9b3de)}
+.av2{background:linear-gradient(140deg,#9b7bb8,#d3c0e8)}
+.av3{background:linear-gradient(140deg,#b98d4f,#e9c47c)}
+.av4{background:linear-gradient(140deg,#8a9b7e,#c2d4b6)}
+.doc .av img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.doc h3{font-size:1.06rem;margin-bottom:.2em}
+.doc .role{font-size:12.5px;font-weight:800;color:var(--teal);text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px}
+.doc .fun{background:var(--sky);border-radius:14px;padding:11px 13px;font-size:13.5px;color:var(--ink-soft);font-weight:600;margin-bottom:14px}
+.doc .langs{font-size:12.5px;font-weight:700;color:var(--ink-soft);margin-bottom:14px}
+
+/* ---------- reviews as speech bubbles ---------- */
+
+.bubbles{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:34px}
+.bub{background:#fff;border:2px solid var(--line);border-radius:var(--r-lg);padding:26px;position:relative;box-shadow:var(--sh)}
+.bub::after{
+  content:"";position:absolute;left:34px;bottom:-15px;width:26px;height:26px;
+  background:#fff;border-right:2px solid var(--line);border-bottom:2px solid var(--line);
+  transform:rotate(52deg) skew(6deg);border-radius:0 0 7px 0;
+}
+.bub .stars{color:#b98d4f;letter-spacing:.1em;margin-bottom:10px}
+.bub p{font-size:1.02rem;font-weight:600}
+.bub .who{display:flex;align-items:center;gap:11px;margin-top:20px}
+.bub .who .av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px;color:#fff;flex:none}
+.bub .who b{display:block;font-size:14px}
+.bub .who small{color:var(--ink-soft);font-size:12.5px;font-weight:700}
+.score{
+  display:flex;align-items:center;gap:18px;background:var(--sun);border-radius:var(--r-lg);
+  padding:22px 28px;font-weight:800;flex-wrap:wrap;
+}
+.score .big{font-size:44px;line-height:1;color:#4a3410}
+.score small{display:block;font-size:13px;font-weight:700;color:#6b4c14}
+
+/* ---------- insurance pills ---------- */
+
+.plans{display:flex;flex-wrap:wrap;gap:11px;margin-bottom:22px;padding:0}
+.plans li{
+  list-style:none;background:#fff;border:2px solid var(--line);border-radius:999px;
+  padding:11px 20px;font-weight:800;font-size:14.5px;
+}
+.note{
+  background:#fff;border:2px dashed var(--line);border-radius:var(--r);
+  padding:20px 22px;font-size:14.5px;color:var(--ink-soft);font-weight:600;
+}
+
+/* ---------- location cards ---------- */
+
+.locs{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.loc{background:#fff;border:2px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh)}
+.loc .map{height:150px;background:
+  repeating-linear-gradient(90deg,#ece2f2 0 34px,#eaf6f8 34px 68px),
+  repeating-linear-gradient(0deg,#ece2f2 0 34px,#eaf6f8 34px 68px);
+  position:relative;border-bottom:2px solid var(--line)}
+.loc .map .pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-70%);font-size:34px}
+.loc .bd{padding:24px}
+.loc h3{font-size:1.2rem;margin-bottom:.15em}
+.loc .kind{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--coral-dk);margin-bottom:14px}
+.loc address{font-style:normal;font-weight:600;margin-bottom:14px}
+.loc dl{font-size:14px;margin:0 0 18px}
+.loc dl div{display:flex;justify-content:space-between;gap:14px;padding:7px 0;border-bottom:1px solid var(--line)}
+.loc dt{color:var(--ink-soft);font-weight:700;margin:0}
+.loc dd{margin:0;font-weight:800}
+
+/* ---------- privacy ---------- */
+
+.privacy{
+  background:#fff;border:2px solid var(--mint);border-left-width:8px;border-radius:var(--r);
+  padding:22px 24px;font-size:14.5px;color:var(--ink-soft);font-weight:600;line-height:1.7;
+}
+.privacy strong{color:var(--ink)}
+
+/* ---------- footer ---------- */
+
+footer{background:var(--teal-dk);color:#c8e6ea;padding:64px 0 30px;border-radius:var(--r-lg) var(--r-lg) 0 0;margin-top:10px}
+footer .c4{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:36px;padding-bottom:34px;border-bottom:2px solid rgba(255,255,255,.16)}
+footer h4{color:var(--sun);font-size:13px;text-transform:uppercase;letter-spacing:.09em;margin-bottom:1.3em}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin-bottom:10px;font-weight:600}
+footer a{color:#e4f4f6}
+footer a:hover{color:#fff;text-decoration:underline}
+footer .fbrand{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+footer .fbrand .mk{width:44px;height:44px;border-radius:14px;background:var(--sun);color:var(--teal-dk);display:grid;place-items:center;font-weight:800;font-size:21px}
+footer .fbrand b{color:#fff;font-size:17px}
+footer .fine{padding-top:22px;font-size:12.5px;color:#8fc0c7}
+
+/* ---------- mobile bottom tab bar (app-like) ---------- */
+
+.tabbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;
+  background:#fff;border-top:2px solid var(--sky-2);
+  padding:8px 6px calc(6px + env(safe-area-inset-bottom));
+  box-shadow:0 -6px 20px rgba(44,36,56,.1);
+}
+.tabbar ul{display:flex;list-style:none;margin:0;padding:0}
+.tabbar li{flex:1}
+.tabbar a{
+  display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 2px;min-height:52px;
+  font-size:10.5px;font-weight:800;color:var(--ink-soft);border-radius:14px;
+}
+.tabbar a i{font-size:20px;font-style:normal;line-height:1}
+.tabbar a.acc{background:var(--coral);color:#fff;margin:0 4px}
+
+/* ============================================================
+   RESPONSIVE — mobile gets carousels + tab bar, not a stack of
+   the desktop grid.
+   ============================================================ */
+
+@media (max-width:1040px){
+  .hero-in{grid-template-columns:1fr;gap:36px}
+  .hero-art{max-width:520px}
+  .rail{grid-template-columns:repeat(2,1fr)}
+  .docs{grid-template-columns:repeat(2,1fr)}
+  .bubbles{grid-template-columns:1fr}
+  .dnav{display:none}
+  footer .c4{grid-template-columns:1fr 1fr}
+}
+
+@media (max-width:760px){
+  body{font-size:16.5px}
+  .wrap{padding:0 18px}
+  .hdr .btn{display:none}
+  .hdr-in{min-height:66px}
+  .lang-toggle{padding:8px 13px;font-size:12.5px}
+  .sec{padding:52px 0}
+  .hero{padding-top:34px}
+  .hero-in{padding-bottom:44px}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .hero-cta .btn{width:100%}
+  .b1,.b3{display:none}
+  .bf-2{display:none}
+  .bf-1{left:auto;right:10px;bottom:-14px}
+
+  /* age bands become a 2-line grid, still scannable */
+  .age-row{grid-template-columns:repeat(3,1fr);gap:10px}
+  .age{padding:16px 10px}
+  .age span.ico{font-size:24px}
+  .age small{display:none}
+
+  /* SERVICES + DOCTORS become swipe rails — the distinct mobile pattern */
+  .rail,.docs{
+    display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+    padding:4px 18px 18px;margin:0 -18px;
+    scrollbar-width:none;
+  }
+  .rail::-webkit-scrollbar,.docs::-webkit-scrollbar{display:none}
+  .rail>*,.docs>*{flex:0 0 82%;scroll-snap-align:center}
+  .docs>*{flex:0 0 68%}
+  .rail-hint{display:block}
+
+  .score{padding:18px 20px}
+  .score .big{font-size:36px}
+  .locs{grid-template-columns:1fr}
+  .tabbar{display:block}
+  footer{padding-bottom:104px}
+  footer .c4{grid-template-columns:1fr;gap:26px}
+}
+
+@media (max-width:420px){
+  .rail>*{flex:0 0 88%}
+  .docs>*{flex:0 0 78%}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+
+/* language: hide only the inactive one */
+html[data-lang="es"] [lang="en"]{display:none!important}
+html[data-lang="en"] [lang="es"]{display:none!important}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main"><span lang="es">Saltar al contenido</span><span lang="en">Skip to main content</span></a>
+
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href="#top">
+      <span class="mk" aria-hidden="true">L</span>
+      <span><b>Lunaris Medical Clinic</b><small><span lang="es">Todas las edades, todas las etapas</span><span lang="en">Every age, every stage</span></small></span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="dnav">
+        <li><a href="#services"><span lang="es">Servicios</span><span lang="en">Services</span></a></li>
+        <li><a href="#doctors"><span lang="es">Nuestros Médicos</span><span lang="en">Our Doctors</span></a></li>
+        <li><a href="#reviews"><span lang="es">Reseñas</span><span lang="en">Reviews</span></a></li>
+        <li><a href="#insurance"><span lang="es">Seguros</span><span lang="en">Insurance</span></a></li>
+        <li><a href="#visit"><span lang="es">Oficinas</span><span lang="en">Locations</span></a></li>
+      </ul>
+    </nav>
+    <button class="lang-toggle" type="button"><span lang="es">English</span><span lang="en">Español</span></button>
+    <a class="btn btn-coral btn-sm" href="#book"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <span class="blob b1" aria-hidden="true"></span>
+    <span class="blob b2" aria-hidden="true"></span>
+    <span class="blob b3" aria-hidden="true"></span>
+    <div class="wrap hero-in">
+      <div>
+        <span class="eyebrow"><span lang="es">Aceptamos familias nuevas</span><span lang="en">Now accepting new families</span></span>
+        <h1 lang="es">La oficina médica a la que sus hijos <em>no les molesta</em> ir.</h1>
+        <h1 lang="en">The doctor's office your kids <em>don't mind</em> going to.</h1>
+        <p class="lede" lang="es">Lunaris Medical Clinic cuida a todos los que viven bajo su
+        techo — bebés, adolescentes, padres y abuelos — en una sola oficina acogedora en
+        Caguas, con citas la misma semana.</p>
+        <p class="lede" lang="en">Lunaris Medical Clinic looks after everyone under your
+        roof — newborns, teenagers, parents, and grandparents — in one friendly Caguas office
+        with same-week appointments.</p>
+        <div class="hero-cta">
+          <a class="btn btn-coral" href="#book"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
+          <a class="btn btn-out" href="tel:+17871234567"><span lang="es">Llamar al (787) 123-4567</span><span lang="en">Call (787) 123-4567</span></a>
+        </div>
+        <div class="hero-trust">
+          <span class="t"><i class="tick" aria-hidden="true">✓</i> <span lang="es">Citas esta semana</span><span lang="en">Same-week openings</span></span>
+          <span class="t"><i class="tick" aria-hidden="true">✓</i> <span lang="es">La mayoría de los seguros</span><span lang="en">Most insurance</span></span>
+          <span class="t"><i class="tick" aria-hidden="true">✓</i> <span lang="es">We speak English</span><span lang="en">Se habla español</span></span>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="photo" role="img" aria-label="Una madre y dos niños riendo con una médica de Lunaris en una sala de examen luminosa">
+          <span class="cap"><span lang="es">Fotografía · Familia + médica, luz cálida</span><span lang="en">Photography · Family + physician, warm daylight</span></span>
+        </div>
+        <div class="badge-float bf-1">
+          <span class="bf-num">4.9</span>
+          <span><span lang="es">Calificación</span><span lang="en">Patient rating</span><small><span lang="es">812 reseñas</span><span lang="en">812 reviews</span></small></span>
+        </div>
+        <div class="badge-float bf-2">
+          <span aria-hidden="true">🗓️</span>
+          <span><span lang="es">Próximo espacio</span><span lang="en">Next opening</span><small><span lang="es">jueves, 9:40 am</span><span lang="en">Thursday, 9:40 am</span></small></span>
+        </div>
+      </div>
+    </div>
+    <svg class="curve" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,64 C360,0 1080,0 1440,64 L1440,64 L0,64 Z" fill="#fff"></path>
+    </svg>
+  </section>
+
+  <!-- AGE BANDS -->
+  <section class="ages" aria-labelledby="ages-h">
+    <div class="wrap">
+      <h2 id="ages-h" class="vh"><span lang="es">A quiénes cuidamos</span><span lang="en">Who we care for</span></h2>
+      <div class="age-row">
+        <div class="age a1"><span class="ico" aria-hidden="true">👶</span><span lang="es">Bebés</span><span lang="en">Babies</span><small><span lang="es">0–2 años</span><span lang="en">0–2 years</span></small></div>
+        <div class="age a2"><span class="ico" aria-hidden="true">🧒</span><span lang="es">Niños</span><span lang="en">Kids</span><small><span lang="es">3–12 años</span><span lang="en">3–12 years</span></small></div>
+        <div class="age a3"><span class="ico" aria-hidden="true">🎒</span><span lang="es">Adolescentes</span><span lang="en">Teens</span><small><span lang="es">13–18 años</span><span lang="en">13–18 years</span></small></div>
+        <div class="age a4"><span class="ico" aria-hidden="true">💼</span><span lang="es">Adultos</span><span lang="en">Adults</span><small><span lang="es">19–64 años</span><span lang="en">19–64 years</span></small></div>
+        <div class="age a5"><span class="ico" aria-hidden="true">🌿</span><span lang="es">Mayores</span><span lang="en">Seniors</span><small><span lang="es">65+ años</span><span lang="en">65+ years</span></small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="sec" id="services">
+    <div class="wrap">
+      <div class="rail-head sec-head" style="max-width:none">
+        <div style="max-width:52ch">
+          <h2><span lang="es">Todo lo que su familia necesita, en un solo lugar</span><span lang="en">Everything your family needs, in one place</span></h2>
+          <p><span lang="es">Un expediente, un equipo, y sin rebotar entre clínicas para el cuidado de rutina.</span><span lang="en">One chart, one team, and no bouncing between clinics for routine care.</span></p>
+        </div>
+        <span class="rail-hint" aria-hidden="true"><span lang="es">Deslice para ver más →</span><span lang="en">Swipe to see all →</span></span>
+      </div>
+      <div class="rail">
+        <article class="svc">
+          <div class="ic i-sun" aria-hidden="true">🩺</div>
+          <h3><span lang="es">Exámenes físicos anuales</span><span lang="en">Annual physicals</span></h3>
+          <p lang="es">Chequeos anuales, formularios escolares y deportivos, y laboratorios
+          aquí mismo. Le entregamos los papeles el mismo día.</p>
+          <p lang="en">Yearly checkups, school and sports forms, and labs drawn right here. We
+          send the paperwork home with you the same day.</p>
+          <span class="pill"><span lang="es">Todas las edades</span><span lang="en">All ages</span></span>
+        </article>
+        <article class="svc">
+          <div class="ic i-coral" aria-hidden="true">🤒</div>
+          <h3><span lang="es">Citas de enfermedad el mismo día</span><span lang="en">Same-day sick visits</span></h3>
+          <p lang="es">Fiebres, infecciones de oído, dolor de garganta, virus estomacales y
+          conjuntivitis. Guardamos espacios cada mañana.</p>
+          <p lang="en">Fevers, ear infections, sore throats, tummy bugs, and pink eye. Morning
+          slots are held open every single day.</p>
+          <span class="pill"><span lang="es">Mismo día</span><span lang="en">Same day</span></span>
+        </article>
+        <article class="svc">
+          <div class="ic i-mint" aria-hidden="true">💚</div>
+          <h3><span lang="es">Cuidado crónico</span><span lang="en">Chronic care</span></h3>
+          <p lang="es">Asma, diabetes, presión arterial y tiroides — con visitas más largas
+          y un plan escrito en lenguaje claro.</p>
+          <p lang="en">Asthma, diabetes, blood pressure, and thyroid — with longer visits and a
+          plan written in plain language.</p>
+          <span class="pill"><span lang="es">Continuo</span><span lang="en">Ongoing</span></span>
+        </article>
+        <article class="svc">
+          <div class="ic i-sky" aria-hidden="true">💉</div>
+          <h3><span lang="es">Vacunas</span><span lang="en">Vaccines</span></h3>
+          <p lang="es">El calendario infantil completo, influenza cada otoño y vacunas de
+          viaje. Siempre le explicamos primero qué y por qué.</p>
+          <p lang="en">The full childhood schedule, flu shots every fall, and travel vaccines.
+          We will always explain what and why first.</p>
+          <span class="pill"><span lang="es">Clínica de influenza sin cita</span><span lang="en">Walk-in flu clinic</span></span>
+        </article>
+        <article class="svc">
+          <div class="ic i-grape" aria-hidden="true">📱</div>
+          <h3><span lang="es">Telemedicina</span><span lang="en">Telehealth</span></h3>
+          <p lang="es">Citas por video para seguimientos, erupciones y repeticiones de
+          receta — desde la mesa de su cocina o la fila de la escuela.</p>
+          <p lang="en">Video visits for follow-ups, rashes, and refills — from your kitchen table
+          or the school pickup line.</p>
+          <span class="pill">Video</span>
+        </article>
+        <article class="svc">
+          <div class="ic i-line" aria-hidden="true">🧪</div>
+          <h3><span lang="es">Seguimiento de laboratorios</span><span lang="en">Lab follow-up</span></h3>
+          <p lang="es">Cada resultado viene con una explicación real de su médico, no un
+          número del portal que usted tenga que buscar en Google.</p>
+          <p lang="en">Every result comes with a real explanation from your doctor, not a portal
+          number you have to Google.</p>
+          <span class="pill"><span lang="es">Incluido</span><span lang="en">Included</span></span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTORS -->
+  <section class="sec sec-sky" id="doctors">
+    <div class="wrap">
+      <div class="rail-head sec-head" style="max-width:none">
+        <div style="max-width:50ch">
+          <h2><span lang="es">Conozca a nuestros médicos</span><span lang="en">Meet our doctors</span></h2>
+          <p><span lang="es">Certificados, y genuinamente felices de ver niños en la sala de espera.</span><span lang="en">Board-certified, and genuinely happy to see kids in the waiting room.</span></p>
+        </div>
+        <span class="rail-hint" aria-hidden="true"><span lang="es">Deslice →</span><span lang="en">Swipe →</span></span>
+      </div>
+      <div class="docs">
+        <article class="doc">
+          <div class="av av1"><img src="photos/morayma.jpg" alt="Dra. Morayma Rivera Nieves"></div>
+          <h3>Dra. Morayma Rivera Nieves</h3>
+          <p class="role"><span lang="es">Medicina primaria</span><span lang="en">Primary Care</span></p>
+          <p class="fun" lang="es">Atención primaria con tiempo de verdad para escuchar.</p>
+          <p class="fun" lang="en">Primary care with real time to listen.</p>
+          <p class="langs">Español · English</p>
+          <a class="btn btn-sm" href="#book"><span lang="es">Reservar</span><span lang="en">Book</span></a>
+        </article>
+        <article class="doc">
+          <div class="av av2"><img src="photos/daisy.jpg" alt="Lcda. Daisy Santiago"></div>
+          <h3>Lcda. Daisy Santiago</h3>
+          <p class="role"><span lang="es">Trabajo social clínico</span><span lang="en">Clinical Social Work</span></p>
+          <p class="fun" lang="es">Apoyo emocional compasivo, a su ritmo y sin juicios.</p>
+          <p class="fun" lang="en">Compassionate emotional support, at your pace.</p>
+          <p class="langs">Español · English</p>
+          <a class="btn btn-sm" href="#book"><span lang="es">Reservar</span><span lang="en">Book</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="sec" id="reviews">
+    <div class="wrap">
+      <div class="sec-head"><h2><span lang="es">Lo que nos cuentan las familias</span><span lang="en">What families tell us</span></h2></div>
+      <div class="score">
+        <span class="big">4.9</span>
+        <span><span lang="es">★★★★★ promedio</span><span lang="en">★★★★★ average</span><small><span lang="es">Entre 812 reseñas verificadas de pacientes</span><span lang="en">Across 812 verified patient reviews</span></small></span>
+        <span style="margin-left:auto;font-size:14px">Google · Healthgrades · Vitals</span>
+      </div>
+      <div class="bubbles">
+        <article class="bub">
+          <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          <p lang="es">"Llamé a las 8 am por la fiebre de mi hijo y nos atendieron antes del
+          mediodía. Nadie me hizo sentir que estaba exagerando."</p>
+          <p lang="en">"I called at 8am about my son's fever and we were seen before lunch. Nobody
+          made me feel like I was overreacting."</p>
+          <div class="who">
+            <span class="av av3" style="width:40px;height:40px;border:0;box-shadow:none" aria-hidden="true">MT</span>
+            <span><b>Marisol T.</b><small><span lang="es">Paciente desde 2016</span><span lang="en">Patient since 2016</span></small></span>
+          </div>
+        </article>
+        <article class="bub">
+          <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          <p lang="es">"Aquí encontraron un problema de tiroides que otros dos médicos
+          pasaron por alto. Sí leen el expediente antes de entrar."</p>
+          <p lang="en">"They caught a thyroid problem two other doctors missed. They actually read the chart before walking in."</p>
+          <div class="who">
+            <span class="av av1" style="width:40px;height:40px;border:0;box-shadow:none" aria-hidden="true">DW</span>
+            <span><b>Daniel W.</b><small><span lang="es">Paciente desde 2019</span><span lang="en">Patient since 2019</span></small></span>
+          </div>
+        </article>
+        <article class="bub">
+          <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          <p lang="es">"El seguimiento por telemedicina me tomó once minutos en el almuerzo
+          en vez de medio día libre del trabajo."</p>
+          <p lang="en">"Telehealth follow-up took eleven minutes on my lunch break instead of half
+          a day off work."</p>
+          <div class="who">
+            <span class="av av2" style="width:40px;height:40px;border:0;box-shadow:none" aria-hidden="true">PR</span>
+            <span><b>Priya R.</b><small><span lang="es">Paciente desde 2021</span><span lang="en">Patient since 2021</span></small></span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSURANCE -->
+  <section class="sec sec-sky" id="insurance">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span lang="es">Seguros que aceptamos</span><span lang="en">Insurance we accept</span></h2>
+        <p><span lang="es">En red con la mayoría de los planes principales, además de Medicare y Medicaid.</span><span lang="en">In-network with most major plans, plus Medicare and Medicaid.</span></p>
+      </div>
+      <ul class="plans">
+        <li>Aetna</li><li>Blue Cross Blue Shield</li><li>Cigna</li><li>Humana</li>
+        <li>Medicare</li><li>Medicaid</li><li>UnitedHealthcare</li><li>Tricare</li>
+      </ul>
+      <p class="note" lang="es">Los planes cambian todo el tiempo. Llámenos con su número de
+      asegurado y verificaremos su cubierta mientras está en la línea — antes de que se
+      siente en una sala de espera. Los precios de pago directo están publicados en
+      recepción y se cotizan por adelantado.</p>
+      <p class="note" lang="en">Plans change all the time. Call us with your member ID and we will
+      check your coverage while you are on the phone — before you ever sit in a waiting
+      room. Self-pay prices are posted at the front desk and quoted up front.</p>
+    </div>
+  </section>
+
+  <!-- LOCATIONS + BOOK -->
+  <section class="sec" id="visit">
+    <div class="wrap">
+      <div class="sec-head"><h2><span lang="es">Dos marcas hermanas, un mismo cuidado</span><span lang="en">Two sister practices, one kind of care</span></h2></div>
+      <div class="locs">
+        <div class="loc">
+          <div class="map" role="img" aria-label="Mapa de Lunaris Medical Clinic en Caguas"><span class="pin" aria-hidden="true">📍</span></div>
+          <div class="bd">
+            <h3>Caguas</h3>
+            <p class="kind"><span lang="es">Clínica principal</span><span lang="en">Main clinic</span></p>
+            <address>Caguas, Puerto Rico</address>
+            <dl lang="es">
+              <div><dt>Lun – Jue</dt><dd>7:30a – 6:00p</dd></div>
+              <div><dt>Viernes</dt><dd>7:30a – 4:00p</dd></div>
+              <div><dt>Sábado</dt><dd>8:00a – 12:00p</dd></div>
+            </dl>
+            <dl lang="en">
+              <div><dt>Mon – Thu</dt><dd>7:30a – 6:00p</dd></div>
+              <div><dt>Friday</dt><dd>7:30a – 4:00p</dd></div>
+              <div><dt>Saturday</dt><dd>8:00a – 12:00p</dd></div>
+            </dl>
+            <a class="btn btn-out btn-sm" href="tel:+17871234567"><span lang="es">Llamar al (787) 123-4567</span><span lang="en">Call (787) 123-4567</span></a>
+          </div>
+        </div>
+        <div class="loc">
+          <div class="map" role="img" aria-label="Metaporphosis Wellness &amp; Counseling"><span class="pin" aria-hidden="true">🦋</span></div>
+          <div class="bd">
+            <h3>Metaporphosis</h3>
+            <p class="kind">Wellness &amp; Counseling · Sanar · Crecer · Transformar</p>
+            <address><span lang="es">Servicios presenciales y virtuales</span><span lang="en">In-person and virtual services</span></address>
+            <dl lang="es">
+              <div><dt>Psicoterapia individual</dt><dd>✓</dd></div>
+              <div><dt>Terapia de pareja y familia</dt><dd>✓</dd></div>
+              <div><dt>Ansiedad, duelo y crecimiento</dt><dd>✓</dd></div>
+            </dl>
+            <dl lang="en">
+              <div><dt>Individual psychotherapy</dt><dd>✓</dd></div>
+              <div><dt>Couples &amp; family therapy</dt><dd>✓</dd></div>
+              <div><dt>Anxiety, grief &amp; growth</dt><dd>✓</dd></div>
+            </dl>
+            <a class="btn btn-out btn-sm" href="tel:+17872488417"><span lang="es">Llamar al (787) 248-8417</span><span lang="en">Call (787) 248-8417</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div id="book" style="margin-top:44px;background:var(--sun);border-radius:var(--r-lg);padding:36px 32px">
+        <h2 style="font-size:clamp(1.6rem,3.2vw,2.3rem);max-width:26ch"><span lang="es">Listos cuando usted lo esté</span><span lang="en">Ready when you are</span></h2>
+        <p style="max-width:48ch;font-weight:600;color:#4a3410" lang="es">Reserve en línea en
+        más o menos un minuto, o llame y hable con una persona de verdad en recepción.</p>
+        <p style="max-width:48ch;font-weight:600;color:#4a3410" lang="en">Book online in about a
+        minute, or call and talk to an actual person at the front desk.</p>
+        <div class="hero-cta" style="margin-bottom:22px">
+          <a class="btn btn-coral" href="#book"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
+          <a class="btn btn-out" href="tel:+17871234567"><span lang="es">Llamar ahora</span><span lang="en">Call Now</span></a>
+        </div>
+        <div class="privacy" lang="es">
+          <strong>Una nota sobre privacidad.</strong> La reserva ocurre dentro de nuestro
+          portal seguro de pacientes que cumple con HIPAA — nunca por un formulario web
+          abierto. Por favor no envíe síntomas, diagnósticos ni números de seguro por
+          correo electrónico. Si esto es una emergencia médica, llame al
+          <strong>911</strong> o acuda a la sala de emergencias más cercana.
+        </div>
+        <div class="privacy" lang="en">
+          <strong>A note on privacy.</strong> Booking happens inside our secure,
+          HIPAA-compliant patient portal — never through an open web form. Please do not
+          email symptoms, diagnoses, or insurance ID numbers. If this is a medical
+          emergency, call <strong>911</strong> or go to the nearest emergency department.
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="c4">
+      <div>
+        <div class="fbrand"><span class="mk" aria-hidden="true">L</span><b>Lunaris Medical Clinic</b></div>
+        <p lang="es">Medicina familiar para todas las edades en Caguas, Puerto Rico.
+        Médicos certificados, citas la misma semana, personal bilingüe.</p>
+        <p lang="en">Family care for every age in Caguas — Lunaris Medical Clinic and its
+        sister practice Metaporphosis. Same-week appointments, bilingual staff.</p>
+      </div>
+      <div>
+        <h4><span lang="es">Cuidado</span><span lang="en">Care</span></h4>
+        <ul>
+          <li><a href="#services"><span lang="es">Exámenes físicos</span><span lang="en">Physicals</span></a></li>
+          <li><a href="#services"><span lang="es">Citas de enfermedad</span><span lang="en">Sick visits</span></a></li>
+          <li><a href="#services"><span lang="es">Vacunas</span><span lang="en">Vaccines</span></a></li>
+          <li><a href="#services"><span lang="es">Telemedicina</span><span lang="en">Telehealth</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span lang="es">La práctica</span><span lang="en">Practice</span></h4>
+        <ul>
+          <li><a href="#doctors"><span lang="es">Nuestros médicos</span><span lang="en">Our doctors</span></a></li>
+          <li><a href="#insurance"><span lang="es">Seguros</span><span lang="en">Insurance</span></a></li>
+          <li><a href="#reviews"><span lang="es">Reseñas</span><span lang="en">Reviews</span></a></li>
+          <li><a href="#book"><span lang="es">Portal de pacientes</span><span lang="en">Patient portal</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span lang="es">Contacto</span><span lang="en">Contact</span></h4>
+        <ul>
+          <li>Caguas <a href="tel:+17871234567">(787) 123-4567</a></li>
+          <li>Metaporphosis <a href="tel:+17872488417">(787) 248-8417</a></li>
+          <li>Fax (787) 123-4568</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine"><span lang="es">Borrador de diseño para Lunaris Medical Clinic. Médicos,
+    reseñas y datos de contacto son ejemplos. · Prácticas de Privacidad · Accesibilidad ·
+    No Discriminación</span><span lang="en">Design draft for Lunaris Medical Clinic. Providers, reviews, and contact
+    details are placeholders. · Privacy Practices · Accessibility · Nondiscrimination</span></p>
+  </div>
+</footer>
+
+<!-- mobile bottom tab bar -->
+<nav class="tabbar" aria-label="Acciones rápidas">
+  <ul>
+    <li><a href="#services"><i aria-hidden="true">🩺</i><span lang="es">Servicios</span><span lang="en">Services</span></a></li>
+    <li><a href="#doctors"><i aria-hidden="true">👩‍⚕️</i><span lang="es">Médicos</span><span lang="en">Doctors</span></a></li>
+    <li><a class="acc" href="#book"><i aria-hidden="true">🗓️</i><span lang="es">Reservar</span><span lang="en">Book</span></a></li>
+    <li><a href="tel:+17871234567"><i aria-hidden="true">📞</i><span lang="es">Llamar</span><span lang="en">Call</span></a></li>
+    <li><a href="#visit"><i aria-hidden="true">📍</i><span lang="es">Visitar</span><span lang="en">Visit</span></a></li>
+  </ul>
+</nav>
+
+<script>
+(function(){
+  var TITLES = {
+    es: 'Lunaris Medical Clinic — Concepto 2: Alegría',
+    en: 'Lunaris Medical Clinic — Concept 2: Alegría'
+  };
+  function setLang(l){
+    var d = document.documentElement;
+    d.setAttribute('lang', l);
+    d.setAttribute('data-lang', l);
+    document.title = TITLES[l];
+    try { localStorage.setItem('lunarisLang', l); } catch(e) {}
+  }
+  document.querySelectorAll('.lang-toggle').forEach(function(b){
+    b.addEventListener('click', function(){
+      setLang(document.documentElement.getAttribute('data-lang') === 'es' ? 'en' : 'es');
+    });
+  });
+  document.title = TITLES[document.documentElement.getAttribute('data-lang')] || TITLES.es;
+})();
+</script>
+
+</body>
+</html>

@@ -27,7 +27,7 @@ dual-language content is marked with `lang` attributes and dynamic JS strings ar
 
 ## 1 · Harbor & Oak
 
-**File:** `1-harbor-oak.html`
+**File:** `lunaris-1.html`
 
 ### Brand personality
 The quiet, expensive-feeling private practice. Unhurried, literate, confident enough not
@@ -119,7 +119,7 @@ interaction density.
 
 ## 2 · Harbor Bright
 
-**File:** `2-harbor-bright.html`
+**File:** `lunaris-2.html`
 
 ### Brand personality
 The practice that makes a four-year-old stop crying in the parking lot. Optimistic, warm,
@@ -214,7 +214,7 @@ of traffic is a parent on a phone with a sick child nearby.
 
 ## 3 · Harbor Connect
 
-**File:** `3-harbor-connect.html`
+**File:** `lunaris-3.html`
 
 ### Brand personality
 The practice that runs on time. Precise, current, quietly technical — the tone of a
@@ -316,7 +316,7 @@ any practice already running a modern patient portal it can hand off to.
 
 ## 4 · Harbor Commons
 
-**File:** `4-harbor-commons.html`
+**File:** `lunaris-4.html`
 
 ### Brand personality
 The practice that has been on the same street for twenty-one years and intends to stay.
@@ -417,7 +417,7 @@ familiarity. Also the right pick for a practice that genuinely prefers phone con
 
 ## 5 · Harbor Now
 
-**File:** `5-harbor-now.html`
+**File:** `lunaris-5.html`
 
 ### Brand personality
 Direct to the point of bluntness. Answers one question — *can I be seen today* — before

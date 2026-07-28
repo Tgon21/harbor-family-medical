@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){var l=null;try{l=localStorage.getItem('lunarisLang')}catch(e){}l=l==='en'?'en':'es';var d=document.documentElement;d.setAttribute('lang',l);d.setAttribute('data-lang',l);})();</script>
+<title>Lunaris Medical Clinic — Concepto 1: Sereno</title>
+<meta name="description" content="Lunaris Medical Clinic es una práctica de medicina familiar certificada en Caguas: exámenes físicos anuales, citas de enfermedad el mismo día, cuidado crónico y telemedicina.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%232c2335'/><text x='16' y='23' font-size='19' font-family='Georgia,serif' fill='%23c9a45c' text-anchor='middle'>L</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&display=swap">
+<style>
+/* ============================================================
+   CONCEPT 1 — "SERENO"
+   Calm, premium, editorial. Warm neutrals, serif display,
+   hairline rules instead of cards, very low density.
+   Signature: no card grid anywhere. Numbered editorial lists.
+   Spanish-first; English via the language toggle.
+   ============================================================ */
+
+:root{
+  --bone:#faf6fa;
+  --bone-2:#f1e9f4;
+  --ink:#2c2335;
+  --ink-soft:#60546f;
+  --rule:#e0d5e7;
+  --brass:#93702f;
+  --oak:#b98d4f;
+  --wrap:1180px;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --display:"Fraunces","Iowan Old Style",Palatino,Georgia,serif;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bone);color:var(--ink);
+  font:400 18px/1.7 var(--serif);
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;line-height:1.14;letter-spacing:-.012em;margin:0 0 .55em}
+h1{font-weight:560;font-variation-settings:"opsz" 100}
+p{margin:0 0 1.15em}
+a{color:var(--ink);text-decoration:none}
+img{max-width:100%}
+
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+.rule{border:0;border-top:1px solid var(--rule);margin:0}
+
+.label{
+  font-family:var(--sans);font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.19em;color:var(--brass);
+  margin:0 0 1.6em;display:block;
+}
+/* chart-sounding ticks — the recurring identity mark, like a depth scale on a nautical chart */
+.label::after{
+  content:"";display:block;margin-top:11px;width:64px;height:8px;
+  background:
+    repeating-linear-gradient(90deg,var(--oak) 0 1px,transparent 1px 8px) 0 0/64px 5px no-repeat,
+    repeating-linear-gradient(90deg,var(--oak) 0 1px,transparent 1px 16px) 0 0/64px 8px no-repeat;
+  opacity:.75;
+}
+
+.skip{position:absolute;left:-9999px;background:var(--ink);color:var(--bone);padding:12px 18px;z-index:80;font-family:var(--sans)}
+.skip:focus{left:12px;top:12px}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+
+/* ---------- header: wordmark centered, nav on a hairline ---------- */
+
+.topline{
+  background:var(--ink);color:#d7cde0;font-family:var(--sans);
+  font-size:12.5px;letter-spacing:.04em;
+}
+.topline .wrap{display:flex;justify-content:space-between;gap:20px;padding:9px 32px;flex-wrap:wrap}
+.topline a{color:#fff;font-weight:600}
+
+.masthead{background:var(--bone);position:relative;z-index:40}
+.mast-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 32px 22px}
+.wordmark{display:flex;flex-direction:column;line-height:1}
+.wordmark .name{font-family:var(--display);font-size:26px;letter-spacing:.01em}
+.wordmark .sub{
+  font-family:var(--sans);font-size:10px;font-weight:600;text-transform:uppercase;
+  letter-spacing:.26em;color:var(--brass);margin-top:8px;
+}
+.mast-actions{display:flex;align-items:center;gap:26px;font-family:var(--sans);font-size:14px}
+.mast-actions .phone{color:var(--ink-soft)}
+.mast-actions .phone strong{color:var(--ink)}
+
+.desknav{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--bone)}
+.desknav ul{
+  display:flex;justify-content:center;gap:46px;list-style:none;margin:0;
+  padding:15px 32px;font-family:var(--sans);font-size:11.5px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.17em;flex-wrap:wrap;
+}
+.desknav a{color:var(--ink-soft);padding:4px 0;border-bottom:1px solid transparent}
+.desknav a:hover{color:var(--ink);border-bottom-color:var(--oak)}
+
+/* editorial text buttons — Menu and language toggle */
+.menu-btn,.lang-toggle{
+  font-family:var(--sans);font-size:12px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.16em;background:none;border:0;
+  border-bottom:1px solid var(--ink);color:var(--ink);padding:8px 2px;cursor:pointer;
+  min-height:44px;
+}
+.menu-btn{display:none}
+.lang-toggle{border-bottom-color:var(--oak);color:var(--brass)}
+.lang-toggle:hover{color:var(--ink)}
+
+/* mobile: full-screen serif overlay */
+.overlay{
+  position:fixed;inset:0;background:var(--bone);z-index:70;
+  display:none;flex-direction:column;padding:26px 32px 40px;overflow-y:auto;
+}
+.overlay[data-open="true"]{display:flex}
+.overlay-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:44px}
+.overlay nav ul{list-style:none;margin:0;padding:0}
+.overlay nav a{
+  display:block;font-family:var(--display);font-size:34px;padding:15px 0;
+  border-bottom:1px solid var(--rule);
+}
+.overlay .ov-foot{margin-top:auto;padding-top:36px;font-family:var(--sans);font-size:14px;color:var(--ink-soft)}
+
+/* ---------- buttons ---------- */
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  font-family:var(--sans);font-size:13.5px;font-weight:600;letter-spacing:.09em;
+  text-transform:uppercase;padding:16px 30px;min-height:48px;
+  background:var(--ink);color:var(--bone);border:1px solid var(--ink);cursor:pointer;
+  border-radius:1px;transition:background .18s,color .18s;
+}
+.btn:hover{background:#3b352d;color:#fff}
+.btn-out{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-out:hover{background:var(--ink);color:var(--bone)}
+.link-more{
+  font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.05em;
+  border-bottom:1px solid var(--oak);padding-bottom:2px;
+}
+
+/* ---------- hero: full-bleed duotone plate + offset bone card ---------- */
+
+.hero{position:relative;background:var(--bone-2)}
+.plate{
+  position:relative;height:min(66vh,560px);min-height:380px;
+  background:
+    linear-gradient(155deg,rgba(44,35,53,.60),rgba(124,95,158,.34)),
+    linear-gradient(30deg,#7c5f9e,#b7a3cc 55%,#e9def0);
+  overflow:hidden;
+}
+.plate::after{
+  content:"";position:absolute;inset:0;background-image:var(--grain);
+  opacity:.14;mix-blend-mode:overlay;pointer-events:none;
+}
+.plate-note{
+  position:absolute;right:22px;bottom:16px;color:#f0e8f5;opacity:.78;
+  font-family:var(--sans);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+}
+.hero-card{
+  background:var(--bone);padding:52px 56px 46px;max-width:620px;
+  margin:-118px 0 0;position:relative;z-index:2;border-top:3px solid var(--ink);
+}
+.hero-card h1{font-size:clamp(2.3rem,4.6vw,3.55rem)}
+.hero-card .lede{font-size:1.14rem;color:var(--ink-soft);max-width:46ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.hero-meta{
+  margin-top:30px;padding-top:22px;border-top:1px solid var(--rule);
+  font-family:var(--sans);font-size:13px;color:var(--ink-soft);
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+}
+.dot{width:6px;height:6px;border-radius:50%;background:#4e7a52;display:inline-block}
+
+/* ---------- editorial two-column with sticky label ---------- */
+
+.section{padding:96px 0}
+.tight{padding:72px 0}
+.cols{display:grid;grid-template-columns:200px 1fr;gap:64px;align-items:start}
+.cols .sticky{position:sticky;top:100px}
+.lead-para{font-size:1.42rem;line-height:1.55;max-width:34ch}
+.body-2{columns:2;column-gap:52px;color:var(--ink-soft);font-size:1.02rem}
+
+/* ---------- services: numbered editorial list, no cards ---------- */
+
+.svc{border-top:1px solid var(--rule)}
+.svc-row{
+  display:grid;grid-template-columns:64px 1.05fr 1.35fr auto;gap:28px;
+  align-items:baseline;padding:30px 8px 30px 0;border-bottom:1px solid var(--rule);
+  transition:padding-left .2s,background .2s;
+}
+.svc-row:hover{background:#f4ecf6;padding-left:14px}
+.svc-num{font-family:var(--serif);font-size:1.05rem;color:var(--oak)}
+.svc-row h3{font-size:1.42rem;margin:0}
+.svc-row p{font-family:var(--sans);font-size:.95rem;color:var(--ink-soft);margin:0;line-height:1.65}
+.svc-row .tag{
+  font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--brass);white-space:nowrap;
+}
+
+/* ---------- providers: alternating portrait + long bio ---------- */
+
+.prov{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:58px 0;border-bottom:1px solid var(--rule)}
+.prov:nth-child(even) .portrait{order:2}
+.portrait{
+  aspect-ratio:4/5;position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#d6c7e2,#a68cc0 60%,#5e4680);
+  display:grid;place-items:center;
+}
+.portrait::after{content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.13;mix-blend-mode:overlay}
+.portrait span{font-family:var(--display);font-size:4.4rem;color:rgba(255,255,255,.82)}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.prov h3{font-size:2rem;margin-bottom:.15em}
+.prov .cred{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--brass);margin-bottom:1.3em}
+.prov p{color:var(--ink-soft);font-size:1.04rem}
+.prov dl{font-family:var(--sans);font-size:13.5px;margin:26px 0 26px;border-top:1px solid var(--rule)}
+.prov dl div{display:flex;gap:16px;padding:9px 0;border-bottom:1px solid var(--rule)}
+.prov dt{width:132px;flex:none;color:var(--ink-soft)}
+.prov dd{margin:0;font-weight:600}
+
+/* ---------- reviews: oversized pull quote ---------- */
+
+.quotes{background:var(--bone-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.pull{max-width:900px;margin:0 auto;text-align:center}
+.pull blockquote{
+  font-family:var(--display);font-style:italic;font-size:clamp(1.6rem,3.4vw,2.5rem);
+  line-height:1.35;margin:0 0 30px;
+}
+.pull cite{font-family:var(--sans);font-style:normal;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.rating{display:flex;justify-content:center;align-items:baseline;gap:12px;margin-bottom:36px;font-family:var(--sans)}
+.rating .num{font-family:var(--display);font-size:2.5rem}
+.rating .stars{color:var(--oak);letter-spacing:.15em;font-size:1.05rem}
+.rating .cnt{font-size:13px;color:var(--ink-soft)}
+.mini-quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:70px;border-top:1px solid var(--rule)}
+.mini-quotes>div{padding:32px 30px;border-right:1px solid var(--rule)}
+.mini-quotes>div:last-child{border-right:0}
+.mini-quotes p{font-size:1rem;font-style:italic;color:var(--ink-soft)}
+.mini-quotes span.who{font-family:var(--sans);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--brass)}
+
+/* ---------- insurance: plain text row ---------- */
+
+.plans{font-size:1.24rem;line-height:2;max-width:60ch}
+.plans b{font-weight:400}
+.plans .sep{color:var(--oak);padding:0 8px}
+
+/* ---------- locations ---------- */
+
+.locs{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule)}
+.loc{padding:44px 48px 44px 0;border-right:1px solid var(--rule)}
+.locs .loc:last-child{padding:44px 0 44px 48px;border-right:0}
+.loc h3{font-size:1.5rem;margin-bottom:.2em}
+.loc .kind{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:1.4em}
+.loc address{font-style:normal;font-size:1.05rem;margin-bottom:1.1em}
+.loc table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:13.5px;margin-bottom:20px}
+.loc td{padding:8px 0;border-bottom:1px solid var(--rule);color:var(--ink-soft)}
+.loc td+td{text-align:right;color:var(--ink);font-weight:600}
+
+.privacy{
+  background:var(--bone-2);border-left:3px solid var(--oak);
+  padding:22px 26px;font-family:var(--sans);font-size:13.5px;
+  color:var(--ink-soft);line-height:1.7;margin-top:40px;
+}
+.privacy strong{color:var(--ink)}
+
+/* ---------- footer ---------- */
+
+footer{background:var(--ink);color:#cfc5da;padding:70px 0 34px;font-family:var(--sans);font-size:14px}
+footer .cols4{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;padding-bottom:44px;border-bottom:1px solid #453a52}
+footer h4{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#948aa3;margin-bottom:1.5em}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin-bottom:11px}
+footer a{color:#e6ddf0}
+footer a:hover{color:#fff;text-decoration:underline}
+footer .fm .name{font-family:var(--display);font-size:22px;color:#fff;display:block;margin-bottom:14px}
+footer .fine{padding-top:26px;color:#948aa3;font-size:12.5px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+
+/* ---------- mobile sticky book bar (appears on scroll) ---------- */
+
+.sticky-book{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;
+  background:var(--bone);border-top:1px solid var(--rule);
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  gap:10px;box-shadow:0 -8px 24px rgba(35,32,28,.09);
+  transform:translateY(105%);transition:transform .26s ease;
+}
+.sticky-book[data-show="true"]{transform:translateY(0)}
+.sticky-book .btn{flex:1;padding:15px 12px;font-size:12.5px}
+
+/* one orchestrated moment: the hero card settles into place */
+@media (prefers-reduced-motion:no-preference){
+  .hero-card{animation:rise .7s .08s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}}
+}
+
+/* ============================================================
+   RESPONSIVE — mobile is a re-layout, not a collapse
+   ============================================================ */
+
+@media (max-width:1000px){
+  .cols{grid-template-columns:1fr;gap:26px}
+  .cols .sticky{position:static}
+  .body-2{columns:1}
+  .prov{grid-template-columns:1fr;gap:30px}
+  .prov:nth-child(even) .portrait{order:0}
+  .portrait{aspect-ratio:3/2}
+  .mini-quotes{grid-template-columns:1fr}
+  .mini-quotes>div{border-right:0;border-bottom:1px solid var(--rule)}
+  .locs{grid-template-columns:1fr}
+  .loc,.locs .loc:last-child{padding:36px 0;border-right:0;border-bottom:1px solid var(--rule)}
+  footer .cols4{grid-template-columns:1fr 1fr;gap:34px}
+}
+
+@media (max-width:760px){
+  body{font-size:17px}
+  .wrap{padding:0 22px}
+  .desknav{display:none}
+  .menu-btn{display:inline-block}
+  .topline .wrap span:first-child{display:none} /* keep the topline to one line on phones */
+  .mast-actions .phone{display:none}
+  .mast-actions>.btn{display:none} /* sticky bar + hero CTA carry Book on phones */
+  .mast-actions{gap:18px}
+  .mast-inner{padding:18px 22px}
+  .wordmark .name{font-size:21px}
+  .wordmark .sub{letter-spacing:.2em}
+  .section{padding:62px 0}
+  .tight{padding:48px 0}
+
+  /* hero: plate shortens, card goes full-width and stops overlapping */
+  .plate{height:230px;min-height:0}
+  .hero-card{margin:0;padding:34px 22px 32px;max-width:none;border-top-width:2px}
+  .hero-card .lede{font-size:1.05rem}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .hero-cta .btn{width:100%}
+
+  /* services: number becomes an inline prefix, 4 cols → stacked block */
+  .svc-row{grid-template-columns:1fr;gap:8px;padding:24px 0}
+  .svc-row:hover{padding-left:0}
+  .svc-num{font-size:.9rem;letter-spacing:.1em}
+  .svc-row h3{font-size:1.3rem}
+  .svc-row .tag{margin-top:4px}
+
+  .lead-para{font-size:1.24rem}
+  .prov h3{font-size:1.65rem}
+  .prov dt{width:112px}
+  .plans{font-size:1.08rem;line-height:1.9}
+  .sticky-book{display:flex}
+  footer .cols4{grid-template-columns:1fr;gap:28px}
+  footer{padding-bottom:96px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .sticky-book{transform:none}
+}
+
+/* ============================================================
+   LANGUAGE — Spanish is the default; the toggle reveals English.
+   Only the inactive language is hidden, so each element keeps
+   its own display value. Rules last so they win the cascade.
+   ============================================================ */
+html[data-lang="es"] [lang="en"]{display:none!important}
+html[data-lang="en"] [lang="es"]{display:none!important}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main"><span lang="es">Saltar al contenido</span><span lang="en">Skip to main content</span></a>
+
+<div class="topline">
+  <div class="wrap">
+    <span><span lang="es">Medicina familiar certificada · Caguas, Puerto Rico</span><span lang="en">Board-certified family medicine · Caguas, Puerto Rico</span></span>
+    <span><span lang="es">Citas esta misma semana · </span><span lang="en">Same-week appointments · </span><a href="tel:+17871234567">(787) 123-4567</a></span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="mast-inner">
+    <a class="wordmark" href="#top">
+      <span class="name">Lunaris Medical Clinic</span>
+      <span class="sub">Caguas · Puerto Rico</span>
+    </a>
+    <div class="mast-actions">
+      <span class="phone">Caguas <strong>(787) 123-4567</strong></span>
+      <a class="btn" href="#book"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
+      <button class="lang-toggle" type="button"><span lang="es">English</span><span lang="en">Español</span></button>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="ovl"><span lang="es">Menú</span><span lang="en">Menu</span></button>
+    </div>
+  </div>
+  <nav class="desknav" aria-label="Principal">
+    <ul>
+      <li><a href="#practice"><span lang="es">La Práctica</span><span lang="en">The Practice</span></a></li>
+      <li><a href="#services"><span lang="es">Servicios</span><span lang="en">Services</span></a></li>
+      <li><a href="#doctors"><span lang="es">Nuestros Médicos</span><span lang="en">Meet Our Doctors</span></a></li>
+      <li><a href="#reviews"><span lang="es">Voces de Pacientes</span><span lang="en">Patient Voices</span></a></li>
+      <li><a href="#insurance"><span lang="es">Seguros</span><span lang="en">Insurance</span></a></li>
+      <li><a href="#visit"><span lang="es">Visítenos</span><span lang="en">Visit Us</span></a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="overlay" id="ovl" data-open="false">
+  <div class="overlay-top">
+    <span class="wordmark"><span class="name">Lunaris</span></span>
+    <button class="menu-btn" id="closeBtn" style="display:inline-block"><span lang="es">Cerrar</span><span lang="en">Close</span></button>
+  </div>
+  <nav aria-label="Móvil">
+    <ul>
+      <li><a href="#practice"><span lang="es">La Práctica</span><span lang="en">The Practice</span></a></li>
+      <li><a href="#services"><span lang="es">Servicios</span><span lang="en">Services</span></a></li>
+      <li><a href="#doctors"><span lang="es">Nuestros Médicos</span><span lang="en">Meet Our Doctors</span></a></li>
+      <li><a href="#reviews"><span lang="es">Voces de Pacientes</span><span lang="en">Patient Voices</span></a></li>
+      <li><a href="#insurance"><span lang="es">Seguros</span><span lang="en">Insurance</span></a></li>
+      <li><a href="#visit"><span lang="es">Visítenos</span><span lang="en">Visit Us</span></a></li>
+    </ul>
+  </nav>
+  <div class="ov-foot">
+    <p style="margin-bottom:14px"><button class="lang-toggle" type="button"><span lang="es">English</span><span lang="en">Español</span></button></p>
+    <p>Caguas <a href="tel:+17871234567"><strong>(787) 123-4567</strong></a><br>
+    Metaporphosis <a href="tel:+17872488417"><strong>(787) 248-8417</strong></a></p>
+    <a class="btn" href="#book" style="width:100%"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="plate" role="img" aria-label="Sala de espera de Lunaris Medical Clinic con luz natural, sillas de lino y recepción de madera">
+      <span class="plate-note"><span lang="es">Fotografía · Interior de la clínica, luz natural</span><span lang="en">Photography · Clinic interior, natural light</span></span>
+    </div>
+    <div class="wrap">
+      <div class="hero-card">
+        <span class="label"><span lang="es">Aceptamos pacientes nuevos</span><span lang="en">Accepting new patients</span></span>
+        <h1 lang="es">Un médico de familia con tiempo para toda la conversación.</h1>
+        <h1 lang="en">A family doctor who has time for the whole conversation.</h1>
+        <p class="lede" lang="es">Medicina primaria y bienestar emocional bajo un mismo techo
+        en Caguas — con citas la misma semana y una recepción que lo conoce por su nombre.</p>
+        <p class="lede" lang="en">Primary care and emotional wellness under one roof in
+        Caguas — with same-week appointments and a front desk that knows your name.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#book"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
+          <a class="btn btn-out" href="tel:+17871234567"><span lang="es">Llamar al (787) 123-4567</span><span lang="en">Call (787) 123-4567</span></a>
+        </div>
+        <p class="hero-meta">
+          <span class="dot" aria-hidden="true"></span>
+          <span lang="es">Citas la misma semana</span><span lang="en">Same-week availability</span>
+          <span aria-hidden="true">·</span>
+          <span lang="es">Aceptamos la mayoría de los seguros</span><span lang="en">Most insurance accepted</span>
+          <span aria-hidden="true">·</span>
+          <span lang="es">Personal bilingüe (español / English)</span><span lang="en">Bilingual staff (English / Español)</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PRACTICE -->
+  <section class="section" id="practice">
+    <div class="wrap cols">
+      <div class="sticky"><span class="label"><span lang="es">01 — La Práctica</span><span lang="en">01 — The Practice</span></span></div>
+      <div>
+        <p class="lead-para" lang="es">Construimos Lunaris sobre una idea sencilla: la
+        continuidad es el tratamiento. Ver al mismo médico durante veinte años vale más
+        que cualquier visita aislada.</p>
+        <p class="lead-para" lang="en">We built Lunaris around a simple idea: continuity is the
+        treatment. Seeing the same doctor for twenty years is worth more than any
+        single visit.</p>
+        <div class="body-2" lang="es">
+          <p>Lunaris Medical Clinic une dos cosas que casi siempre viven separadas: la
+          medicina primaria y el bienestar emocional. Una médica de atención primaria y
+          una trabajadora social clínica licenciada, bajo un mismo techo en Caguas, con
+          paneles limitados para que las citas empiecen a tiempo.</p>
+          <p>Eso significa exámenes físicos anuales sin prisa, citas de enfermedad el
+          mismo día para nuestros propios pacientes, y cuidado crónico — diabetes,
+          presión arterial, tiroides, colesterol — manejado por alguien que recuerda qué
+          intentó usted el año pasado y por qué no funcionó.</p>
+          <p>Y cuando lo que hace falta es apoyo emocional continuo, nuestra hermana
+          <strong>Metaporphosis Wellness &amp; Counseling</strong> ofrece psicoterapia
+          individual, de pareja y familiar — presencial o virtual. Sanar, crecer,
+          transformar.</p>
+          <p><a class="link-more" href="#doctors">Conozca a nuestro equipo</a></p>
+        </div>
+        <div class="body-2" lang="en">
+          <p>Lunaris Medical Clinic brings together two things that almost always live
+          apart: primary care and emotional wellness. A primary care physician and a
+          licensed clinical social worker, under one roof in Caguas, with capped panels
+          so appointments run on time.</p>
+          <p>That means annual physicals that are not rushed, same-day sick visits for
+          our own patients, and chronic care — diabetes, blood pressure, thyroid,
+          cholesterol — managed by someone who remembers what you tried last year and
+          why it did not work.</p>
+          <p>And when what you need is ongoing emotional support, our sister practice
+          <strong>Metaporphosis Wellness &amp; Counseling</strong> offers individual,
+          couples, and family therapy — in person or virtual. Heal, grow, transform.</p>
+          <p><a class="link-more" href="#doctors">Meet our team</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- SERVICES — numbered editorial list -->
+  <section class="section" id="services">
+    <div class="wrap cols">
+      <div class="sticky"><span class="label"><span lang="es">02 — Servicios</span><span lang="en">02 — Services</span></span></div>
+      <div class="svc">
+        <div class="svc-row">
+          <span class="svc-num">i.</span>
+          <h3><span lang="es">Exámenes físicos anuales</span><span lang="en">Annual physicals</span></h3>
+          <p lang="es">Una hora completa. Laboratorios tomados aquí mismo y resultados explicados con usted por teléfono o video en una semana — nunca un mensaje del portal sin explicación.</p>
+          <p lang="en">A full hour. Labs drawn on site, results reviewed with you by phone or video within a week — never a portal message with no explanation.</p>
+          <span class="tag"><span lang="es">Todas las edades</span><span lang="en">All ages</span></span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-num">ii.</span>
+          <h3><span lang="es">Citas de enfermedad el mismo día</span><span lang="en">Same-day sick visits</span></h3>
+          <p lang="es">Espacios reservados cada mañana para pacientes establecidos. Llame antes de las 10 am y casi siempre lo veremos ese mismo día.</p>
+          <p lang="en">Reserved slots held every morning for established patients. Call before 10am and we will almost always see you that day.</p>
+          <span class="tag"><span lang="es">Mismo día</span><span lang="en">Same day</span></span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-num">iii.</span>
+          <h3><span lang="es">Manejo de condiciones crónicas</span><span lang="en">Chronic care management</span></h3>
+          <p lang="es">Diabetes, hipertensión, tiroides, asma, colesterol. Visitas más largas, un plan por escrito y un solo médico siguiendo todo el proceso.</p>
+          <p lang="en">Diabetes, hypertension, thyroid, asthma, cholesterol. Longer visits, a written plan, and one physician following the whole arc.</p>
+          <span class="tag"><span lang="es">Continuo</span><span lang="en">Ongoing</span></span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-num">iv.</span>
+          <h3><span lang="es">Vacunas e inmunizaciones</span><span lang="en">Vaccines &amp; immunizations</span></h3>
+          <p lang="es">Calendario infantil, influenza anual, culebrilla, neumonía, orientación de viaje, Tdap y tétanos. Clínica de influenza sin cita cada octubre.</p>
+          <p lang="en">Childhood schedule, annual flu, shingles, pneumonia, travel counselling, Tdap and tetanus. Walk-in flu clinic each October.</p>
+          <span class="tag"><span lang="es">Sin cita</span><span lang="en">Walk-in</span></span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-num">v.</span>
+          <h3><span lang="es">Telemedicina</span><span lang="en">Telehealth visits</span></h3>
+          <p lang="es">Citas por video para seguimientos, ajustes de medicamentos, erupciones y todo lo que no requiere estetoscopio. Los mismos médicos.</p>
+          <p lang="en">Video appointments for follow-ups, medication adjustments, rashes, and anything that does not need a stethoscope. Same physicians.</p>
+          <span class="tag">Video</span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-num">vi.</span>
+          <h3><span lang="es">Seguimiento de laboratorios e imágenes</span><span lang="en">Lab &amp; imaging follow-up</span></h3>
+          <p lang="es">Cada resultado recibe una explicación humana. Coordinamos referidos a especialistas y perseguimos los informes para que usted no sea el mensajero.</p>
+          <p lang="en">Every result gets a human explanation. We coordinate specialist referrals and chase the reports so you are not the messenger.</p>
+          <span class="tag"><span lang="es">Incluido</span><span lang="en">Included</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- DOCTORS -->
+  <section class="section" id="doctors">
+    <div class="wrap">
+      <span class="label"><span lang="es">03 — Nuestros Médicos</span><span lang="en">03 — Meet Our Doctors</span></span>
+      <div class="prov">
+        <div class="portrait"><img src="photos/morayma.jpg" alt="Dra. Morayma Rivera Nieves"></div>
+        <div>
+          <h3>Dra. Morayma Rivera Nieves</h3>
+          <p class="cred"><span lang="es">Medicina primaria · Certificada</span><span lang="en">Primary Care Physician · Board Certified</span></p>
+          <p lang="es">Médica de atención primaria dedicada al cuidado integral de adultos y familias — prevención, condiciones crónicas y la salud del día a día, con tiempo para escuchar.</p>
+          <p lang="en">Primary care physician devoted to whole-person care for adults and families — prevention, chronic conditions, and everyday health, with time to listen.</p>
+          <dl>
+            <div><dt><span lang="es">Enfoque</span><span lang="en">Focus</span></dt><dd><span lang="es">Medicina primaria integral</span><span lang="en">Whole-person primary care</span></dd></div>
+            <div><dt><span lang="es">Idiomas</span><span lang="en">Languages</span></dt><dd>Español, English</dd></div>
+            <div><dt><span lang="es">Oficina</span><span lang="en">Location</span></dt><dd>Lunaris · Caguas</dd></div>
+          </dl>
+          <a class="link-more" href="#book"><span lang="es">Reservar con la Dra. Rivera Nieves</span><span lang="en">Book with Dr. Rivera Nieves</span></a>
+        </div>
+      </div>
+      <div class="prov">
+        <div class="portrait"><img src="photos/daisy.jpg" alt="Lcda. Daisy Santiago"></div>
+        <div>
+          <h3>Lcda. Daisy Santiago</h3>
+          <p class="cred"><span lang="es">Trabajadora social clínica · Licenciada</span><span lang="en">Clinical Social Worker · Licensed</span></p>
+          <p lang="es">Trabajadora social clínica licenciada. Acompaña a pacientes y familias en salud mental y bienestar emocional, con un enfoque compasivo y sin juicios.</p>
+          <p lang="en">Licensed clinical social worker. Supports patients and families with mental health and emotional wellness, with a compassionate, judgment-free approach.</p>
+          <dl>
+            <div><dt><span lang="es">Enfoque</span><span lang="en">Focus</span></dt><dd><span lang="es">Salud mental y bienestar</span><span lang="en">Mental health &amp; wellness</span></dd></div>
+            <div><dt><span lang="es">Idiomas</span><span lang="en">Languages</span></dt><dd>Español, English</dd></div>
+            <div><dt><span lang="es">Oficina</span><span lang="en">Location</span></dt><dd>Lunaris &amp; Metaporphosis</dd></div>
+          </dl>
+          <a class="link-more" href="#book"><span lang="es">Reservar con la Lcda. Santiago</span><span lang="en">Book with Lcda. Santiago</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section quotes" id="reviews">
+    <div class="wrap">
+      <div class="pull">
+        <div class="rating">
+          <span class="num">4.9</span>
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span class="cnt"><span lang="es">Promedio de 812 reseñas verificadas de pacientes</span><span lang="en">Average of 812 verified patient reviews</span></span>
+        </div>
+        <blockquote lang="es">"Llamé a las ocho de la mañana por la fiebre de mi hijo y nos
+        atendieron antes del mediodía. Nadie me hizo sentir que estaba exagerando."</blockquote>
+        <blockquote lang="en">"I called at eight in the morning about my son's fever and we were
+        seen before lunch. Nobody made me feel like I was overreacting."</blockquote>
+        <cite><span lang="es">Marisol T. · Paciente desde 2016</span><span lang="en">Marisol T. · Patient since 2016</span></cite>
+      </div>
+      <div class="mini-quotes">
+        <div>
+          <p lang="es">"Aquí encontraron un problema de tiroides que otros dos
+          médicos habían pasado por alto. Sí leen el expediente antes de entrar."</p>
+          <p lang="en">"They caught a thyroid problem two other doctors had missed. They actually read the chart before walking in."</p>
+          <span class="who"><span lang="es">Daniel W. · Desde 2019</span><span lang="en">Daniel W. · Since 2019</span></span>
+        </div>
+        <div>
+          <p lang="es">"Un seguimiento por telemedicina me tomó once minutos en mi hora de
+          almuerzo en vez de medio día libre del trabajo."</p>
+          <p lang="en">"A telehealth follow-up took eleven minutes on my lunch break instead of
+          half a day off work."</p>
+          <span class="who"><span lang="es">Priya R. · Desde 2021</span><span lang="en">Priya R. · Since 2021</span></span>
+        </div>
+        <div>
+          <p lang="es">"Mi madre tiene 84 años y nunca hablan por encima de ella conmigo.
+          Eso es más raro de lo que debería ser."</p>
+          <p lang="en">"My mother is 84 and they never talk over her to me. That is rarer than
+          it should be."</p>
+          <span class="who"><span lang="es">Anne-Marie C. · Desde 2009</span><span lang="en">Anne-Marie C. · Since 2009</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSURANCE -->
+  <section class="section tight" id="insurance">
+    <div class="wrap cols">
+      <div class="sticky"><span class="label"><span lang="es">04 — Seguros</span><span lang="en">04 — Insurance</span></span></div>
+      <div>
+        <p class="plans">
+          <b>Aetna</b> <span class="sep">·</span> <b>Blue Cross Blue Shield</b> <span class="sep">·</span> <b>Cigna</b> <span class="sep">·</span> <b>Humana</b> <span class="sep">·</span> <b>Medicare</b> <span class="sep">·</span> <b>Medicaid</b> <span class="sep">·</span> <b>UnitedHealthcare</b> <span class="sep">·</span> <b>Tricare</b>
+        </p>
+        <p style="color:var(--ink-soft);max-width:52ch;font-size:1rem" lang="es">Los planes y
+        las redes cambian constantemente. Llame a recepción con su número de asegurado
+        antes de su primera visita y verificaremos su cubierta mientras está en la línea.
+        Los precios de pago directo están publicados y se cotizan por adelantado — sin
+        facturas sorpresa.</p>
+        <p style="color:var(--ink-soft);max-width:52ch;font-size:1rem" lang="en">Plans and networks
+        change constantly. Call the front desk with your member ID before your first
+        visit and we will verify coverage while you are on the phone. Self-pay pricing
+        is published and quoted up front — no surprise billing.</p>
+        <a class="link-more" href="tel:+17871234567"><span lang="es">Verificar mi cubierta</span><span lang="en">Verify my coverage</span></a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- VISIT / BOOK -->
+  <section class="section" id="visit">
+    <div class="wrap">
+      <span class="label"><span lang="es">05 — Visítenos</span><span lang="en">05 — Visit Us</span></span>
+      <div class="locs">
+        <div class="loc">
+          <h3>Caguas</h3>
+          <p class="kind"><span lang="es">Clínica principal</span><span lang="en">Main clinic</span></p>
+          <address>Caguas, Puerto Rico</address>
+          <table lang="es">
+            <tr><td>Lun – Jue</td><td>7:30 am – 6:00 pm</td></tr>
+            <tr><td>Viernes</td><td>7:30 am – 4:00 pm</td></tr>
+            <tr><td>Sábado</td><td>8:00 am – 12:00 pm</td></tr>
+            <tr><td>Domingo</td><td>Cerrado</td></tr>
+          </table>
+          <table lang="en">
+            <tr><td>Mon – Thu</td><td>7:30 am – 6:00 pm</td></tr>
+            <tr><td>Friday</td><td>7:30 am – 4:00 pm</td></tr>
+            <tr><td>Saturday</td><td>8:00 am – 12:00 pm</td></tr>
+            <tr><td>Sunday</td><td>Closed</td></tr>
+          </table>
+          <p><a class="link-more" href="tel:+17871234567">(787) 123-4567</a></p>
+        </div>
+        <div class="loc">
+          <h3>Metaporphosis</h3>
+          <p class="kind">Wellness &amp; Counseling · Sanar · Crecer · Transformar</p>
+          <address><span lang="es">Servicios presenciales y virtuales</span><span lang="en">In-person and virtual services</span></address>
+          <table lang="es">
+            <tr><td>Psicoterapia individual</td><td>Presencial / virtual</td></tr>
+            <tr><td>Terapia de pareja y familia</td><td>Presencial / virtual</td></tr>
+            <tr><td>Ansiedad y estrés</td><td>Presencial / virtual</td></tr>
+            <tr><td>Duelo y crecimiento personal</td><td>Presencial / virtual</td></tr>
+          </table>
+          <table lang="en">
+            <tr><td>Individual psychotherapy</td><td>In person / virtual</td></tr>
+            <tr><td>Couples &amp; family therapy</td><td>In person / virtual</td></tr>
+            <tr><td>Anxiety &amp; stress</td><td>In person / virtual</td></tr>
+            <tr><td>Grief &amp; personal growth</td><td>In person / virtual</td></tr>
+          </table>
+          <p><a class="link-more" href="tel:+17872488417">(787) 248-8417</a> · <a class="link-more" href="mailto:metaporphosis.wellness@gmail.com">metaporphosis.wellness@gmail.com</a></p>
+        </div>
+      </div>
+
+      <div id="book" style="margin-top:70px">
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);max-width:24ch"><span lang="es">Reserve una cita</span><span lang="en">Book an appointment</span></h2>
+        <p style="color:var(--ink-soft);max-width:52ch" lang="es">Pacientes nuevos y
+        establecidos pueden reservar en línea a través de nuestro portal de pacientes, o
+        llamar a Lunaris o a Metaporphosis y hablar con una persona — no usamos
+        contestadora automática.</p>
+        <p style="color:var(--ink-soft);max-width:52ch" lang="en">New and established patients can
+        book online through our patient portal, or call Lunaris or Metaporphosis and speak to a
+        person — we do not use a phone tree.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#book"><span lang="es">Reservar en el portal de pacientes</span><span lang="en">Book in the patient portal</span></a>
+          <a class="btn btn-out" href="tel:+17871234567"><span lang="es">Llamar ahora</span><span lang="en">Call Now</span></a>
+        </div>
+        <div class="privacy" lang="es">
+          <strong>Su privacidad.</strong> La reserva en línea ocurre dentro de nuestro
+          portal seguro de pacientes, que cumple con HIPAA — no en este sitio web. Por
+          favor no envíe síntomas, diagnósticos ni números de seguro médico por correo
+          electrónico o formulario web. En una emergencia médica llame al
+          <strong>911</strong> o acuda a la sala de emergencias más cercana; los mensajes
+          de este sitio no se monitorean fuera de horario.
+        </div>
+        <div class="privacy" lang="en">
+          <strong>Your privacy.</strong> Online booking runs inside our secure,
+          HIPAA-compliant patient portal — not through this website. Please do not send
+          symptoms, diagnoses, or insurance ID numbers by email or web form. For a
+          medical emergency call <strong>911</strong> or go to the nearest emergency
+          department; website messages are not monitored after hours.
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols4">
+      <div class="fm">
+        <span class="name">Lunaris Medical Clinic</span>
+        <p lang="es">Medicina primaria y bienestar emocional en Caguas, Puerto Rico.
+        Aceptamos pacientes nuevos de todas las edades.</p>
+        <p lang="en">Primary care and emotional wellness in Caguas, Puerto Rico.
+        Accepting new patients of every age.</p>
+      </div>
+      <div>
+        <h4><span lang="es">Cuidado</span><span lang="en">Care</span></h4>
+        <ul>
+          <li><a href="#services"><span lang="es">Exámenes físicos anuales</span><span lang="en">Annual physicals</span></a></li>
+          <li><a href="#services"><span lang="es">Citas el mismo día</span><span lang="en">Same-day sick visits</span></a></li>
+          <li><a href="#services"><span lang="es">Cuidado crónico</span><span lang="en">Chronic care</span></a></li>
+          <li><a href="#services"><span lang="es">Telemedicina</span><span lang="en">Telehealth</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span lang="es">La práctica</span><span lang="en">Practice</span></h4>
+        <ul>
+          <li><a href="#doctors"><span lang="es">Nuestros médicos</span><span lang="en">Meet our doctors</span></a></li>
+          <li><a href="#insurance"><span lang="es">Seguros</span><span lang="en">Insurance</span></a></li>
+          <li><a href="#reviews"><span lang="es">Reseñas de pacientes</span><span lang="en">Patient reviews</span></a></li>
+          <li><a href="#book"><span lang="es">Portal de pacientes</span><span lang="en">Patient portal</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span lang="es">Contacto</span><span lang="en">Contact</span></h4>
+        <ul>
+          <li>Caguas <a href="tel:+17871234567">(787) 123-4567</a></li>
+          <li>Metaporphosis <a href="tel:+17872488417">(787) 248-8417</a></li>
+          <li>Fax (787) 123-4568</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fine">
+      <span lang="es">Borrador de diseño para Lunaris Medical Clinic. Nombres, médicos, reseñas y datos de contacto son ejemplos.</span>
+      <span lang="en">Design draft for Lunaris Medical Clinic. Names, providers, reviews, and contact details are placeholders.</span>
+      <span><span lang="es">Prácticas de Privacidad · Accesibilidad · No Discriminación</span><span lang="en">Privacy Practices · Accessibility · Nondiscrimination</span></span>
+    </div>
+  </div>
+</footer>
+
+<!-- mobile sticky booking bar -->
+<div class="sticky-book" id="stickyBook" data-show="false">
+  <a class="btn btn-out" href="tel:+17871234567"><span lang="es">Llamar</span><span lang="en">Call</span></a>
+  <a class="btn" href="#book"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
+</div>
+
+<script>
+(function(){
+  var ovl = document.getElementById('ovl'),
+      openBtn = document.getElementById('menuBtn'),
+      closeBtn = document.getElementById('closeBtn'),
+      bar = document.getElementById('stickyBook');
+
+  function setMenu(open){
+    ovl.dataset.open = open;
+    openBtn.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open === 'true' ? 'hidden' : '';
+    if (open === 'true') { ovl.querySelector('a').focus(); } else { openBtn.focus(); }
+  }
+  openBtn.addEventListener('click', function(){ setMenu('true'); });
+  closeBtn.addEventListener('click', function(){ setMenu('false'); });
+  ovl.addEventListener('click', function(e){ if (e.target.closest('a')) setMenu('false'); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && ovl.dataset.open === 'true') setMenu('false');
+  });
+
+  // sticky book bar reveals once the hero CTA has scrolled away
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){
+      bar.dataset.show = window.scrollY > 520 ? 'true' : 'false';
+      ticking = false;
+    });
+  }, {passive:true});
+
+  /* ---- language toggle: Spanish default, English on demand ---- */
+  var TITLES = {
+    es: 'Lunaris Medical Clinic — Concepto 1: Sereno',
+    en: 'Lunaris Medical Clinic — Concept 1: Sereno'
+  };
+  function setLang(l){
+    var d = document.documentElement;
+    d.setAttribute('lang', l);
+    d.setAttribute('data-lang', l);
+    document.title = TITLES[l];
+    try { localStorage.setItem('lunarisLang', l); } catch(e) {}
+  }
+  document.querySelectorAll('.lang-toggle').forEach(function(b){
+    b.addEventListener('click', function(){
+      setLang(document.documentElement.getAttribute('data-lang') === 'es' ? 'en' : 'es');
+    });
+  });
+  document.title = TITLES[document.documentElement.getAttribute('data-lang')] || TITLES.es;
+})();
+</script>
+
+</body>
+</html>
