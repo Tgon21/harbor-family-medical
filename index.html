@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lunaris Medical Clinic — 5 Homepage Concepts</title>
-<meta name="description" content="Five homepage design directions for Lunaris Medical Clinic &amp; Metaporphosis Wellness — responsive HTML/CSS/JS drafts.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23111'/><text x='16' y='23' font-size='18' font-weight='bold' font-family='system-ui' fill='%23fff' text-anchor='middle'>5</text></svg>">
+<script>(function(){var l=null;try{l=localStorage.getItem('lunarisLang')}catch(e){}l=l==='en'?'en':'es';var d=document.documentElement;d.setAttribute('lang',l);d.setAttribute('data-lang',l);})();</script>
+<title>Lunaris Medical Clinic — 5 conceptos de página</title>
+<meta name="description" content="Cinco direcciones de diseño para Lunaris Medical Clinic y Metaporphosis Wellness — borradores responsivos en HTML/CSS/JS.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%234a3566'/><text x='16' y='23' font-size='18' font-weight='bold' font-family='system-ui' fill='%23c9a45c' text-anchor='middle'>5</text></svg>">
 <style>
 :root{
-  --bg:#fafaf9;--panel:#fff;--ink:#18181b;--ink-2:#3f3f46;--ink-3:#71717a;
-  --line:#e4e4e7;--acc:#18181b;--r:14px;
+  --bg:#faf8fb;--panel:#fff;--ink:#251d30;--ink-2:#453a55;--ink-3:#75698a;
+  --line:#e6dfec;--acc:#4a3566;--gold:#93702f;--r:14px;
   --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 }
@@ -18,18 +19,25 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 16.5px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
 h1,h2,h3{line-height:1.15;letter-spacing:-.025em;margin:0 0 .5em;font-weight:650}
 p{margin:0 0 1em}
-a{color:var(--ink)}
+a{color:var(--acc)}
 .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
-.skip{position:absolute;left:-9999px;background:var(--ink);color:#fff;padding:11px 16px;border-radius:8px;z-index:50}
+.skip{position:absolute;left:-9999px;background:var(--acc);color:#fff;padding:11px 16px;border-radius:8px;z-index:50}
 .skip:focus{left:12px;top:12px}
-:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-.mono{font-family:var(--mono);font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3)}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--gold)}
 
-header{background:var(--panel);border-bottom:1px solid var(--line);padding:64px 0 56px}
+header{background:var(--panel);border-bottom:1px solid var(--line);padding:56px 0 50px}
+.head-top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap}
 header h1{font-size:clamp(2rem,4.4vw,3.1rem);max-width:26ch}
 header .lede{font-size:1.12rem;color:var(--ink-2);max-width:64ch}
 .facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:28px;font-size:14.5px;color:var(--ink-3)}
 .facts b{color:var(--ink);display:block;font-size:15.5px}
+
+.lang-toggle{
+  font:600 14px/1 var(--sans);color:var(--acc);background:var(--bg);
+  border:1px solid var(--line);border-radius:999px;padding:11px 18px;min-height:44px;cursor:pointer;
+}
+.lang-toggle:hover{border-color:var(--acc)}
 
 .sec{padding:56px 0}
 .sec h2{font-size:clamp(1.4rem,2.6vw,1.9rem)}
@@ -37,7 +45,7 @@ header .lede{font-size:1.12rem;color:var(--ink-2);max-width:64ch}
 .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
 table{border-collapse:collapse;width:100%;min-width:820px;font-size:14.5px}
 th,td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line);vertical-align:top}
-thead th{background:#f4f4f5;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);font-weight:600;white-space:nowrap}
+thead th{background:#f4f0f7;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);font-weight:600;white-space:nowrap}
 tbody tr:last-child td{border-bottom:0}
 td b{font-weight:650}
 
@@ -54,53 +62,64 @@ td b{font-weight:650}
 .card .acts{margin-top:auto;display:flex;gap:10px}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;font-size:14.5px;font-weight:600;
-  padding:11px 18px;min-height:44px;border-radius:9px;border:1px solid var(--ink);
-  background:var(--ink);color:#fff;text-decoration:none;
+  padding:11px 18px;min-height:44px;border-radius:9px;border:1px solid var(--acc);
+  background:var(--acc);color:#fff;text-decoration:none;
 }
-.btn:hover{background:#3f3f46;color:#fff}
-.btn-2{background:var(--panel);color:var(--ink);border-color:var(--line)}
-.btn-2:hover{background:#f4f4f5;color:var(--ink)}
+.btn:hover{background:#5d477c;color:#fff}
 
 .picks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.pick{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--ink);border-radius:var(--r);padding:20px}
+.pick{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:var(--r);padding:20px}
 .pick .mono{display:block;margin-bottom:8px}
 .pick b{display:block;font-size:1.05rem;margin-bottom:6px}
 .pick span{font-size:14px;color:var(--ink-2)}
 
-.note{background:#fffbeb;border:1px solid #fcd34d;border-radius:var(--r);padding:22px 24px;font-size:14.5px;color:#713f12}
-.note strong{color:#422006}
+.note{background:#faf3e3;border:1px solid #dcc389;border-radius:var(--r);padding:22px 24px;font-size:14.5px;color:#5c4a1a}
+.note strong{color:#3d3009}
 .note ul{margin:10px 0 0;padding-left:20px}
 .note li{margin-bottom:6px}
 
 footer{border-top:1px solid var(--line);background:var(--panel);padding:36px 0;font-size:13.5px;color:var(--ink-3)}
 
 @media (max-width:700px){
-  header{padding:44px 0 38px}
+  header{padding:40px 0 34px}
   .sec{padding:42px 0}
   .card .acts{flex-direction:column}
   .btn{width:100%}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* language: hide only the inactive one */
+html[data-lang="es"] [lang="en"]{display:none!important}
+html[data-lang="en"] [lang="es"]{display:none!important}
 </style>
 </head>
 <body>
-<a class="skip" href="#concepts">Skip to the concepts</a>
+<a class="skip" href="#concepts"><span lang="es">Saltar a los conceptos</span><span lang="en">Skip to the concepts</span></a>
 
 <header>
   <div class="wrap">
-    <span class="mono">Design drafts · Lunaris Medical Clinic</span>
-    <h1 style="margin-top:14px">Lunaris Medical Clinic: five homepage directions</h1>
-    <p class="lede">Five genuinely different design directions for Lunaris Medical Clinic
+    <div class="head-top">
+      <span class="mono"><span lang="es">Borradores de diseño · Lunaris Medical Clinic</span><span lang="en">Design drafts · Lunaris Medical Clinic</span></span>
+      <button class="lang-toggle" type="button"><span lang="es">English</span><span lang="en">Español</span></button>
+    </div>
+    <h1 style="margin-top:14px"><span lang="es">Lunaris Medical Clinic: cinco direcciones de diseño</span><span lang="en">Lunaris Medical Clinic: five homepage directions</span></h1>
+    <p class="lede" lang="es">Cinco direcciones de diseño genuinamente distintas para Lunaris
+    Medical Clinic (Caguas, Puerto Rico) y su práctica hermana Metaporphosis Wellness &amp;
+    Counseling — todas en el lavanda, ciruela y dorado de la marca. El mismo contenido en
+    las cinco, para que la única variable sea el diseño. Cada concepto es móvil primero,
+    con un diseño de teléfono propio. Las cinco son <strong>español primero</strong> con un
+    botón de English — la preferencia se guarda entre páginas.</p>
+    <p class="lede" lang="en">Five genuinely different design directions for Lunaris Medical Clinic
     (Caguas, Puerto Rico) and its sister practice Metaporphosis Wellness &amp; Counseling —
-    all in the brand’s lavender, plum, and gold. Same content across all five, so
+    all in the brand's lavender, plum, and gold. Same content across all five, so
     the only variable is the design. Every concept is mobile-first with a distinct
-    phone layout, not a collapsed desktop grid. All five are <strong>Spanish-first</strong>
+    phone layout. All five are <strong>Spanish-first</strong>
     with an English toggle in the header — the choice persists across the demos.</p>
     <div class="facts">
-      <span><b>Lunaris Medical Clinic</b>Primary care + behavioral wellness</span>
-      <span><b>Caguas, Puerto Rico</b>+ Metaporphosis (sister practice)</span>
-      <span><b>2 providers</b>Dra. Rivera Nieves · Lcda. Santiago</span>
-      <span><b>Spanish-first</b>English toggle on every page</span>
+      <span><b>Lunaris Medical Clinic</b><span lang="es">Medicina primaria + bienestar conductual</span><span lang="en">Primary care + behavioral wellness</span></span>
+      <span><b>Caguas, Puerto Rico</b><span lang="es">+ Metaporphosis (práctica hermana)</span><span lang="en">+ Metaporphosis (sister practice)</span></span>
+      <span><b><span lang="es">2 proveedoras</span><span lang="en">2 providers</span></b>Dra. Rivera Nieves · Lcda. Santiago</span>
+      <span><b><span lang="es">Español primero</span><span lang="en">Spanish-first</span></b><span lang="es">Botón de English en cada página</span><span lang="en">English toggle on every page</span></span>
     </div>
   </div>
 </header>
@@ -109,47 +128,47 @@ footer{border-top:1px solid var(--line);background:var(--panel);padding:36px 0;f
 
 <section class="sec">
   <div class="wrap">
-    <h2>Comparison at a glance</h2>
+    <h2><span lang="es">Comparación de un vistazo</span><span lang="en">Comparison at a glance</span></h2>
     <div class="tablewrap">
       <table>
         <thead>
-          <tr><th>Concept</th><th>Tone</th><th>Color direction</th><th>Ideal audience</th><th>Strongest conversion angle</th></tr>
+          <tr><th><span lang="es">Concepto</span><span lang="en">Concept</span></th><th><span lang="es">Tono</span><span lang="en">Tone</span></th><th><span lang="es">Dirección de color</span><span lang="en">Color direction</span></th><th><span lang="es">Audiencia ideal</span><span lang="en">Ideal audience</span></th><th><span lang="es">Ángulo de conversión más fuerte</span><span lang="en">Strongest conversion angle</span></th></tr>
         </thead>
         <tbody>
           <tr>
             <td><b>1. Sereno</b></td>
-            <td>Calm, premium, editorial</td>
-            <td>Lavender-bone, aubergine ink, antique gold</td>
-            <td>Established adults, seniors, concierge-leaning private practice</td>
-            <td>Perceived quality; converts on trust rather than urgency</td>
+            <td><span lang="es">Calmado, premium, editorial</span><span lang="en">Calm, premium, editorial</span></td>
+            <td><span lang="es">Lavanda claro, tinta berenjena, dorado antiguo</span><span lang="en">Lavender-bone, aubergine ink, antique gold</span></td>
+            <td><span lang="es">Adultos establecidos, personas mayores, práctica privada</span><span lang="en">Established adults, seniors, concierge-leaning private practice</span></td>
+            <td><span lang="es">Calidad percibida; convierte por confianza, no por urgencia</span><span lang="en">Perceived quality; converts on trust rather than urgency</span></td>
           </tr>
           <tr>
             <td><b>2. Alegría</b></td>
-            <td>Warm, welcoming, playful</td>
-            <td>Soft lilac, plum, honey gold, sage</td>
-            <td>Parents of young children, growing families</td>
-            <td>Low anxiety + app-like bottom tab bar always showing "Book"</td>
+            <td><span lang="es">Cálido, acogedor, juguetón</span><span lang="en">Warm, welcoming, playful</span></td>
+            <td><span lang="es">Lila suave, ciruela, dorado miel, salvia</span><span lang="en">Soft lilac, plum, honey gold, sage</span></td>
+            <td><span lang="es">Padres de niños pequeños, familias en crecimiento</span><span lang="en">Parents of young children, growing families</span></td>
+            <td><span lang="es">Menos ansiedad + barra inferior tipo app con "Reservar" siempre visible</span><span lang="en">Low anxiety + app-like bottom tab bar always showing "Book"</span></td>
           </tr>
           <tr>
             <td><b>3. Conecta</b></td>
-            <td>Crisp, competent, product-like</td>
-            <td>Near-white, plum ink, one violet signal</td>
-            <td>Busy professionals, telehealth users, tech-comfortable patients</td>
-            <td>The hero <em>is</em> the scheduler — booking starts in the first screen</td>
+            <td><span lang="es">Nítido, competente, tipo producto</span><span lang="en">Crisp, competent, product-like</span></td>
+            <td><span lang="es">Casi blanco, tinta ciruela, una señal violeta</span><span lang="en">Near-white, plum ink, one violet signal</span></td>
+            <td><span lang="es">Profesionales ocupados, usuarios de telemedicina</span><span lang="en">Busy professionals, telehealth users, tech-comfortable patients</span></td>
+            <td><span lang="es">El héroe <em>es</em> el sistema de citas — la reserva empieza en la primera pantalla</span><span lang="en">The hero <em>is</em> the scheduler — booking starts in the first screen</span></td>
           </tr>
           <tr>
             <td><b>4. Comunidad</b></td>
-            <td>Human, local, reassuring</td>
-            <td>Warm cream, deep plum, bronze gold</td>
-            <td>Multi-generational neighborhood families, long-term patients</td>
-            <td>Relationship + phone-first; "call and a person answers"</td>
+            <td><span lang="es">Humano, local, reconfortante</span><span lang="en">Human, local, reassuring</span></td>
+            <td><span lang="es">Crema cálida, ciruela profundo, dorado bronce</span><span lang="en">Warm cream, deep plum, bronze gold</span></td>
+            <td><span lang="es">Familias multigeneracionales del vecindario</span><span lang="en">Multi-generational neighborhood families, long-term patients</span></td>
+            <td><span lang="es">Relación + teléfono primero; "llame y contesta una persona"</span><span lang="en">Relationship + phone-first; "call and a person answers"</span></td>
           </tr>
           <tr>
             <td><b>5. Ahora</b></td>
-            <td>Fast, direct, high-contrast</td>
-            <td>Plum-black, white, signal violet</td>
-            <td>Same-day seekers, mobile searchers in the moment of need</td>
-            <td>Live status board + permanent dual-action bar — highest mobile conversion</td>
+            <td><span lang="es">Rápido, directo, alto contraste</span><span lang="en">Fast, direct, high-contrast</span></td>
+            <td><span lang="es">Negro-ciruela, blanco, violeta señal</span><span lang="en">Plum-black, white, signal violet</span></td>
+            <td><span lang="es">Quien busca cita el mismo día desde el celular</span><span lang="en">Same-day seekers, mobile searchers in the moment of need</span></td>
+            <td><span lang="es">Tablero de estado en vivo + barra de doble acción permanente</span><span lang="en">Live status board + permanent dual-action bar — highest mobile conversion</span></td>
           </tr>
         </tbody>
       </table>
@@ -159,7 +178,7 @@ footer{border-top:1px solid var(--line);background:var(--panel);padding:36px 0;f
 
 <section class="sec" id="concepts">
   <div class="wrap">
-    <h2>The five demos</h2>
+    <h2><span lang="es">Los cinco borradores</span><span lang="en">The five demos</span></h2>
     <div class="grid">
 
       <article class="card">
@@ -169,16 +188,23 @@ footer{border-top:1px solid var(--line);background:var(--panel);padding:36px 0;f
         </div>
         <div class="bd">
           <h3>1 · Sereno</h3>
-          <p class="who">Calm &amp; premium · editorial serif</p>
-          <p>Hairline rules instead of cards. Numbered editorial service list, oversized
-          serif pull quotes, and a great deal of whitespace.</p>
-          <ul>
+          <p class="who"><span lang="es">Calmado y premium · serif editorial</span><span lang="en">Calm &amp; premium · editorial serif</span></p>
+          <p lang="es">Líneas finas en lugar de tarjetas. Lista editorial numerada de
+          servicios, citas grandes en serif y mucho espacio en blanco.</p>
+          <p lang="en">Hairline rules instead of cards. Numbered editorial service list,
+          oversized serif pull quotes, and a great deal of whitespace.</p>
+          <ul lang="es">
+            <li>Menú serif a pantalla completa en móvil</li>
+            <li>Barra de reservar aparece solo al desplazarse</li>
+            <li>Cero cuadrículas de tarjetas</li>
+          </ul>
+          <ul lang="en">
             <li>Full-screen serif overlay menu on mobile</li>
             <li>Sticky book bar appears only after scroll</li>
             <li>Zero card grids anywhere</li>
           </ul>
           <div class="acts">
-            <a class="btn" href="lunaris-1.html">Open demo</a>
+            <a class="btn" href="lunaris-1.html"><span lang="es">Abrir el borrador</span><span lang="en">Open demo</span></a>
           </div>
         </div>
       </article>
@@ -190,16 +216,23 @@ footer{border-top:1px solid var(--line);background:var(--panel);padding:36px 0;f
         </div>
         <div class="bd">
           <h3>2 · Alegría</h3>
-          <p class="who">Bright &amp; family-friendly · rounded sans</p>
-          <p>Pillowy cards, curved section dividers, blob shapes, and an age-band strip
-          from babies to seniors.</p>
-          <ul>
+          <p class="who"><span lang="es">Familiar y acogedor · sans redondeada</span><span lang="en">Bright &amp; family-friendly · rounded sans</span></p>
+          <p lang="es">Tarjetas suaves, divisores curvos, y una franja de edades desde
+          bebés hasta personas mayores.</p>
+          <p lang="en">Pillowy cards, curved section dividers, blob shapes, and an age-band
+          strip from babies to seniors.</p>
+          <ul lang="es">
+            <li>Barra inferior tipo app — Reservar siempre visible</li>
+            <li>Servicios y médicos en carruseles deslizables</li>
+            <li>Reseñas como burbujas de conversación</li>
+          </ul>
+          <ul lang="en">
             <li>Bottom tab bar on mobile — app-like, Book always visible</li>
             <li>Services &amp; doctors become horizontal snap carousels</li>
             <li>Reviews drawn as speech bubbles</li>
           </ul>
           <div class="acts">
-            <a class="btn" href="lunaris-2.html">Open demo</a>
+            <a class="btn" href="lunaris-2.html"><span lang="es">Abrir el borrador</span><span lang="en">Open demo</span></a>
           </div>
         </div>
       </article>
@@ -211,16 +244,23 @@ footer{border-top:1px solid var(--line);background:var(--panel);padding:36px 0;f
         </div>
         <div class="bd">
           <h3>3 · Conecta</h3>
-          <p class="who">Modern tech-enabled · crisp grotesque + mono</p>
-          <p>Product-style UI where the hero is a working scheduler. Tabbed service
+          <p class="who"><span lang="es">Moderno y tecnológico · grotesca + mono</span><span lang="en">Modern tech-enabled · crisp grotesque + mono</span></p>
+          <p lang="es">Interfaz tipo producto donde el héroe es un sistema de citas
+          funcional. Servicios en pestañas, lista de proveedoras con próxima cita.</p>
+          <p lang="en">Product-style UI where the hero is a working scheduler. Tabbed service
           channels, provider roster with next-available chips.</p>
-          <ul>
+          <ul lang="es">
+            <li>Selector de citas funcional (14 días, estado real)</li>
+            <li>Buscador de planes médicos en vivo</li>
+            <li>Abierto/cerrado calculado del horario publicado</li>
+          </ul>
+          <ul lang="en">
             <li>Functional slot picker (14 days, real state)</li>
             <li>Live insurance search filter</li>
             <li>Open/closed computed from posted hours</li>
           </ul>
           <div class="acts">
-            <a class="btn" href="lunaris-3.html">Open demo</a>
+            <a class="btn" href="lunaris-3.html"><span lang="es">Abrir el borrador</span><span lang="en">Open demo</span></a>
           </div>
         </div>
       </article>
@@ -232,16 +272,23 @@ footer{border-top:1px solid var(--line);background:var(--panel);padding:36px 0;f
         </div>
         <div class="bd">
           <h3>4 · Comunidad</h3>
-          <p class="who">Community neighborhood · warm serif, photo-driven</p>
-          <p>Asymmetric photo mosaic hero, a "since 2004" timeline, and a community
+          <p class="who"><span lang="es">Vecindario y comunidad · serif cálida, fotos</span><span lang="en">Community neighborhood · warm serif, photo-driven</span></p>
+          <p lang="es">Mosaico de fotos en el héroe, una línea de tiempo de la práctica y
+          una cartelera comunitaria con notas fijadas.</p>
+          <p lang="en">Asymmetric photo mosaic hero, a practice timeline, and a community
           bulletin board of pinned notes.</p>
-          <ul>
+          <ul lang="es">
+            <li>Llamar es el botón principal; Reservar el secundario</li>
+            <li>Proveedoras como filas de vecinas con fotos</li>
+            <li>El mosaico se vuelve una sola foto en móvil</li>
+          </ul>
+          <ul lang="en">
             <li>Phone-first CTA hierarchy — Call is primary, Book secondary</li>
-            <li>Providers as neighbor rows with years-in-neighborhood</li>
+            <li>Providers as neighbor rows with photos</li>
             <li>Mosaic collapses to one lead photo on mobile</li>
           </ul>
           <div class="acts">
-            <a class="btn" href="lunaris-4.html">Open demo</a>
+            <a class="btn" href="lunaris-4.html"><span lang="es">Abrir el borrador</span><span lang="en">Open demo</span></a>
           </div>
         </div>
       </article>
@@ -253,16 +300,23 @@ footer{border-top:1px solid var(--line);background:var(--panel);padding:36px 0;f
         </div>
         <div class="bd">
           <h3>5 · Ahora</h3>
-          <p class="who">Minimal same-day hybrid · heavy uppercase sans</p>
-          <p>The hero is a live status board: open/closed, slots left today, wait time,
+          <p class="who"><span lang="es">Mismo día, minimalista · sans condensada</span><span lang="en">Minimal same-day hybrid · heavy uppercase sans</span></p>
+          <p lang="es">El héroe es un tablero de estado en vivo: abierto/cerrado, espacios
+          restantes hoy, tiempo de espera. Con una lista honesta de "vaya a emergencias".</p>
+          <p lang="en">The hero is a live status board: open/closed, slots left today, wait time,
           next routine opening. Plus an honest "go to the ER instead" list.</p>
-          <ul>
+          <ul lang="es">
+            <li>El panel de estado va antes del titular en móvil</li>
+            <li>Barra permanente de doble acción — Llamar + Reservar</li>
+            <li>Los espacios expiran con el reloj real</li>
+          </ul>
+          <ul lang="en">
             <li>Status panel jumps <em>above</em> the headline on phones</li>
             <li>Permanent dual-action bar — Call + Book, always</li>
             <li>Slots expire against the real clock</li>
           </ul>
           <div class="acts">
-            <a class="btn" href="lunaris-5.html">Open demo</a>
+            <a class="btn" href="lunaris-5.html"><span lang="es">Abrir el borrador</span><span lang="en">Open demo</span></a>
           </div>
         </div>
       </article>
@@ -273,30 +327,38 @@ footer{border-top:1px solid var(--line);background:var(--panel);padding:36px 0;f
 
 <section class="sec">
   <div class="wrap">
-    <h2>Strongest for…</h2>
+    <h2><span lang="es">El más fuerte para…</span><span lang="en">Strongest for…</span></h2>
     <div class="picks">
       <div class="pick">
-        <span class="mono">Highest trust</span>
+        <span class="mono"><span lang="es">Mayor confianza</span><span lang="en">Highest trust</span></span>
         <b>1 · Sereno</b>
-        <span>Editorial restraint reads as competence. Long-form bios and pull quotes do
+        <span lang="es">La sobriedad editorial se lee como competencia. Las biografías
+        largas y las citas hacen el trabajo de persuasión; nada grita.</span>
+        <span lang="en">Editorial restraint reads as competence. Long-form bios and pull quotes do
         the persuading; nothing shouts.</span>
       </div>
       <div class="pick">
-        <span class="mono">Best mobile conversion</span>
+        <span class="mono"><span lang="es">Mejor conversión móvil</span><span lang="en">Best mobile conversion</span></span>
         <b>5 · Ahora</b>
-        <span>Live availability answers "can I be seen today" before any scrolling, and
+        <span lang="es">La disponibilidad en vivo contesta "¿me pueden ver hoy?" sin
+        desplazarse, y la barra de doble acción nunca sale de pantalla.</span>
+        <span lang="en">Live availability answers "can I be seen today" before any scrolling, and
         the dual-action bar never leaves the screen.</span>
       </div>
       <div class="pick">
-        <span class="mono">Best for families</span>
+        <span class="mono"><span lang="es">Mejor para familias</span><span lang="en">Best for families</span></span>
         <b>2 · Alegría</b>
-        <span>Age bands, friendly tone, and swipe carousels built for one-handed browsing
+        <span lang="es">Franjas de edades, tono amable y carruseles pensados para usarse
+        con una mano mientras se carga a un niño.</span>
+        <span lang="en">Age bands, friendly tone, and swipe carousels built for one-handed browsing
         while holding a child.</span>
       </div>
       <div class="pick">
-        <span class="mono">Best telehealth positioning</span>
+        <span class="mono"><span lang="es">Mejor para telemedicina</span><span lang="en">Best telehealth positioning</span></span>
         <b>3 · Conecta</b>
-        <span>Telehealth is a first-class tab and a toggle in the booking widget, not a
+        <span lang="es">La telemedicina es una pestaña de primera clase y un interruptor en
+        el sistema de citas, no una nota al pie.</span>
+        <span lang="en">Telehealth is a first-class tab and a toggle in the booking widget, not a
         footnote in a services list.</span>
       </div>
     </div>
@@ -305,15 +367,18 @@ footer{border-top:1px solid var(--line);background:var(--panel);padding:36px 0;f
 
 <section class="sec">
   <div class="wrap">
-    <h2>Project planning</h2>
+    <h2><span lang="es">Planificación del proyecto</span><span lang="en">Project planning</span></h2>
     <div class="picks" style="grid-template-columns:minmax(240px,560px)">
       <div class="pick">
-        <span class="mono">Planning document</span>
-        <b>Office tech buildout — cost estimate</b>
-        <span>Draft budget for the 3-workstation office: computers, UniFi networking,
+        <span class="mono"><span lang="es">Documento de planificación</span><span lang="en">Planning document</span></span>
+        <b><span lang="es">Infraestructura de oficina — estimado de costos</span><span lang="en">Office tech buildout — cost estimate</span></b>
+        <span lang="es">Presupuesto preliminar para la oficina de 3 estaciones: computadoras,
+        red UniFi, internet comercial, sistema de teléfono en la nube, Microsoft 365,
+        dominio y la partida del portal médico. Bilingüe (ES/EN).</span>
+        <span lang="en">Draft budget for the 3-workstation office: computers, UniFi networking,
         business internet, cloud phone system, Microsoft 365, domain, and the
-        doctors-portal placeholder.</span>
-        <p style="margin:14px 0 0"><a class="btn" href="https://claude.ai/code/artifact/5a7eff56-3185-48c3-acee-96b0d55729b5">Open the estimate</a></p>
+        doctors-portal placeholder. Bilingual (ES/EN).</span>
+        <p style="margin:14px 0 0"><a class="btn" href="https://claude.ai/code/artifact/5a7eff56-3185-48c3-acee-96b0d55729b5"><span lang="es">Abrir el estimado</span><span lang="en">Open the estimate</span></a></p>
       </div>
     </div>
   </div>
@@ -322,22 +387,36 @@ footer{border-top:1px solid var(--line);background:var(--panel);padding:36px 0;f
 <section class="sec">
   <div class="wrap">
     <div class="note">
-      <strong>Before any of this goes live for Lunaris.</strong>
-      <ul>
+      <strong><span lang="es">Antes de que esto se publique para Lunaris.</span><span lang="en">Before any of this goes live for Lunaris.</span></strong>
+      <ul lang="es">
+        <li>Los nombres, títulos y fotos de las proveedoras vienen del arte de Lunaris.
+        Las reseñas, calificaciones, precios, horarios, disponibilidad y la historia de
+        la práctica son contenido de ejemplo pendiente de confirmación.</li>
+        <li>La lista de planes médicos debe salir de los contratos reales de la práctica —
+        anunciar un plan fuera de red genera querellas de facturación reales.</li>
+        <li>Ningún concepto recopila datos clínicos en la página. La reserva se describe
+        como un pase al portal de pacientes que cumple con HIPAA, con aviso de privacidad
+        visible. Mantener esa arquitectura: un formulario web que envía síntomas por
+        correo no cumple con HIPAA.</li>
+        <li>El selector de citas del concepto 3 y el tablero del concepto 5 usan lógica de
+        demostración — deben conectarse al sistema real de citas/EHR antes de lanzar.</li>
+        <li>La lista de "vaya a emergencias" del concepto 5 es contenido clínico y
+        requiere revisión y aprobación de un clínico licenciado de la práctica.</li>
+      </ul>
+      <ul lang="en">
         <li>Provider names, titles, and photos come from the Lunaris flyer. Reviews,
         ratings, prices, hours, availability figures, and the practice history are
         placeholder content pending confirmation from the practice.</li>
-        <li>Insurance lists create real billing complaints when wrong — they must come
-        from the practice's contracts, not from a template.</li>
-        <li>No concept collects clinical data on the page. Booking is described as
-        handing off to a HIPAA-compliant patient portal, and each demo carries a visible
-        privacy notice. Keep that architecture: a plain web form emailing symptoms is not
+        <li>Insurance lists must come from the practice's actual contracts — advertising
+        an out-of-network plan generates real billing complaints.</li>
+        <li>No concept collects clinical data on the page — every one describes booking as
+        a handoff to a HIPAA-compliant patient portal and carries a visible privacy
+        notice. Keep that architecture: a plain web form that emails symptoms is not
         HIPAA-compliant.</li>
-        <li>The booking widget in Concept 3 and the status board in Concept 5 use
-        deterministic demo logic, not a real scheduling system. Wire them to the practice's
-        actual EHR/scheduler before launch.</li>
-        <li>Photography is represented by duotone placeholders. Real patient or staff
-        photos require signed releases.</li>
+        <li>Concept 3's slot picker and concept 5's status board use demo logic and must
+        be wired to the real scheduler/EHR before launch.</li>
+        <li>Concept 5's "go to the ER instead" triage list is clinical content and needs
+        review and sign-off by a licensed clinician at the practice.</li>
       </ul>
     </div>
   </div>
@@ -347,10 +426,35 @@ footer{border-top:1px solid var(--line);background:var(--panel);padding:36px 0;f
 
 <footer>
   <div class="wrap">
-    Design drafts for Lunaris Medical Clinic &amp; Metaporphosis Wellness &amp; Counseling,
-    Caguas, Puerto Rico. Five responsive HTML/CSS/JS homepage demos — no build step.
+    <span lang="es">Borradores de diseño para Lunaris Medical Clinic y Metaporphosis Wellness &amp;
+    Counseling, Caguas, Puerto Rico. Cinco demostraciones responsivas en HTML/CSS/JS — sin
+    proceso de compilación.</span>
+    <span lang="en">Design drafts for Lunaris Medical Clinic &amp; Metaporphosis Wellness &amp; Counseling,
+    Caguas, Puerto Rico. Five responsive HTML/CSS/JS homepage demos — no build step.</span>
   </div>
 </footer>
+
+<script>
+(function(){
+  var TITLES = {
+    es: 'Lunaris Medical Clinic — 5 conceptos de página',
+    en: 'Lunaris Medical Clinic — 5 Homepage Concepts'
+  };
+  function setLang(l){
+    var d = document.documentElement;
+    d.setAttribute('lang', l);
+    d.setAttribute('data-lang', l);
+    document.title = TITLES[l];
+    try { localStorage.setItem('lunarisLang', l); } catch(e) {}
+  }
+  document.querySelectorAll('.lang-toggle').forEach(function(b){
+    b.addEventListener('click', function(){
+      setLang(document.documentElement.getAttribute('data-lang') === 'es' ? 'en' : 'es');
+    });
+  });
+  document.title = TITLES[document.documentElement.getAttribute('data-lang')] || TITLES.es;
+})();
+</script>
 
 </body>
 </html>
