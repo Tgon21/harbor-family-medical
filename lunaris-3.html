@@ -177,15 +177,7 @@ select,input[type=text]{
 .sec-head h2{font-size:clamp(1.6rem,3vw,2.25rem)}
 .sec-head p{color:var(--ink-2);font-size:1.05rem}
 
-/* tabbed services */
-.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:26px;overflow-x:auto;scrollbar-width:none}
-.tabs::-webkit-scrollbar{display:none}
-.tabs button{
-  font:inherit;font-size:14.5px;font-weight:600;padding:13px 18px;min-height:46px;
-  background:none;border:0;border-bottom:2px solid transparent;color:var(--ink-3);cursor:pointer;white-space:nowrap;
-}
-.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--grn-dk)}
-.tabpanel[hidden]{display:none}
+/* services */
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .svc{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--sh-1)}
 .svc .mono{display:block;margin-bottom:11px}
@@ -193,6 +185,12 @@ select,input[type=text]{
 .svc p{font-size:.94rem;color:var(--ink-2);margin-bottom:14px}
 .svc .meta{display:flex;gap:14px;font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:12px}
 .svc .meta b{color:var(--ink);font-weight:600}
+.svc-ico{width:25px;height:25px;color:var(--grn-dk);display:block;margin-bottom:13px;flex:none}
+.svc-block{margin-top:52px}
+.svc-block .sec-head{display:flex;align-items:center;gap:11px;margin-bottom:8px}
+.svc-block .sec-head h2{margin:0;font-size:clamp(1.4rem,2.6vw,1.85rem)}
+.svc-block .bfly{width:30px;height:28px;flex:none}
+.svc-block .svc-sub{color:var(--ink-2);font-size:1.02rem;margin:0 0 30px;max-width:60ch}
 
 /* provider roster: table-like with next-available chips */
 .roster{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-1)}
@@ -478,89 +476,87 @@ html[data-lang="en"] [lang="es"]{display:none!important}
   <section class="sec" id="services">
     <div class="wrap">
       <div class="sec-head">
-        <h2><span lang="es">Atención, como usted prefiera recibirla</span><span lang="en">Care, however you want to receive it</span></h2>
-        <p><span lang="es">Los mismos médicos en los tres canales — su expediente lo acompaña.</span><span lang="en">The same physicians across all three channels — your chart follows you.</span></p>
-      </div>
-      <div class="tabs" role="tablist" aria-label="Canales de servicio">
-        <button role="tab" id="t1" aria-controls="p1" aria-selected="true"><span lang="es">Visitas presenciales</span><span lang="en">In-person visits</span></button>
-        <button role="tab" id="t2" aria-controls="p2" aria-selected="false"><span lang="es">Telemedicina</span><span lang="en">Telehealth</span></button>
-        <button role="tab" id="t3" aria-controls="p3" aria-selected="false"><span lang="es">Laboratorios y seguimiento</span><span lang="en">Labs &amp; follow-up</span></button>
+        <h2><span lang="es">Nuestros Servicios</span><span lang="en">Our Services</span></h2>
+        <p><span lang="es">Los mismos médicos en persona o por video — su expediente lo acompaña.</span><span lang="en">The same physicians in person or by video — your chart follows you.</span></p>
       </div>
 
-      <div class="tabpanel" id="p1" role="tabpanel" aria-labelledby="t1">
-        <div class="svc-grid">
-          <article class="svc">
-            <span class="mono"><span lang="es">45 min · anual</span><span lang="en">45 min · annual</span></span>
-            <h3><span lang="es">Examen físico anual</span><span lang="en">Annual physical</span></h3>
-            <p lang="es">Examen completo, extracción de sangre aquí mismo, pruebas según la edad, y un plan por escrito.</p>
-            <p lang="en">Full exam, on-site blood draw, age-appropriate screening, and a written plan you leave with.</p>
-            <div class="meta"><span lang="es">Cubierto: <b>mayoría de planes</b></span><span lang="en">Covered: <b>most plans</b></span> <span lang="es">Edades: <b>todas</b></span><span lang="en">Ages <b>all</b></span></div>
-          </article>
-          <article class="svc">
-            <span class="mono"><span lang="es">20 min · mismo día</span><span lang="en">20 min · same day</span></span>
-            <h3><span lang="es">Cita de enfermedad</span><span lang="en">Sick visit</span></h3>
-            <p lang="es">Espacios reservados cada mañana para pacientes establecidos. Pruebas rápidas de estreptococo, influenza y COVID.</p>
-            <p lang="en">Held-open morning slots for established patients. Rapid strep, flu, and COVID testing in office.</p>
-            <div class="meta"><span lang="es">Reserve antes de las <b>10:00 am</b></span><span lang="en">Book by <b>10:00 am</b></span> <span lang="es">Atendido <b>el mismo día</b></span><span lang="en">Seen <b>same day</b></span></div>
-          </article>
-          <article class="svc">
-            <span class="mono"><span lang="es">15 min · sin cita</span><span lang="en">15 min · walk-in</span></span>
-            <h3><span lang="es">Vacunas</span><span lang="en">Vaccines</span></h3>
-            <p lang="es">Calendario infantil, influenza, culebrilla, neumonía, Tdap y orientación de viaje.</p>
-            <p lang="en">Childhood schedule, flu, shingles, pneumonia, Tdap, and travel counselling.</p>
-            <div class="meta"><span lang="es">Sin cita <b>oct–dic</b></span><span lang="en">Walk-in <b>Oct–Dec</b></span> <span lang="es">Cita <b>no requerida</b></span><span lang="en">No appt <b>needed</b></span></div>
-          </article>
+      <div class="svc-grid">
+        <article class="svc">
+          <svg class="svc-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v4.5a5 5 0 0 0 10 0V3" fill="none"/><circle cx="6" cy="3" r="1.1"/><circle cx="16" cy="3" r="1.1"/> <path d="M11 15.5v1.2a4.3 4.3 0 0 0 4.3 4.3h.2" fill="none"/><circle cx="18" cy="17.5" r="2.6" fill="none"/> <path d="M19.4 4.2c1-.9 2.7-.2 2.7 1.1 0 1.1-1.6 2.2-2.7 2.9-1.1-.7-2.7-1.8-2.7-2.9 0-1.3 1.7-2 2.7-1.1z" stroke="none" fill="currentColor"/></svg>
+          <h3><span lang="es">Medicina Primaria</span><span lang="en">Primary Care</span></h3>
+          <p lang="es">Su médico de cabecera para chequeos, enfermedades comunes y seguimiento continuo.</p>
+          <p lang="en">Your home base for check-ups, everyday illnesses, and ongoing follow-up.</p>
+        </article>
+        <article class="svc">
+          <svg class="svc-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6.5" cy="8" r="2.3" fill="none"/><path d="M2.7 19a3.8 3.8 0 0 1 7.6 0" fill="none"/> <circle cx="17.5" cy="8" r="2.3" fill="none"/><path d="M13.7 19a3.8 3.8 0 0 1 7.6 0" fill="none"/> <path d="M12 9.5c1-1.3 3-.4 3 1 0 1.1-1.8 2.4-3 3.2-1.2-.8-3-2.1-3-3.2 0-1.4 2-2.3 3-1z" stroke="none" fill="currentColor"/></svg>
+          <h3><span lang="es">Manejo de Condiciones Crónicas</span><span lang="en">Chronic Condition Management</span></h3>
+          <p lang="es">Control continuo de diabetes, presión, colesterol y más, con un plan a su medida.</p>
+          <p lang="en">Ongoing care for diabetes, blood pressure, cholesterol and more, with a plan built around you.</p>
+        </article>
+        <article class="svc">
+          <svg class="svc-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5S3.3 14.8 3.3 8.9A4.4 4.4 0 0 1 12 6.1a4.4 4.4 0 0 1 8.7 2.8C20.7 14.8 12 20.5 12 20.5z" fill="none"/> <path d="M6.4 11.6h2.2l1.3-2.4 2.1 4.6 1.4-2.2h3.8" fill="none"/></svg>
+          <h3><span lang="es">Evaluaciones Preventivas</span><span lang="en">Preventive Screenings</span></h3>
+          <p lang="es">Exámenes y tamizajes que detectan problemas temprano, cuando son más fáciles de tratar.</p>
+          <p lang="en">Exams and screenings that catch issues early, when they are easiest to treat.</p>
+        </article>
+        <article class="svc">
+          <svg class="svc-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.2c1.8 2.4 1.8 5.7 0 8.1-1.8-2.4-1.8-5.7 0-8.1z" fill="none"/> <path d="M12 12.3C9.5 12.1 6.2 9.9 5.4 7.3 8 6.9 10.9 8.7 12 12.3z" fill="none"/> <path d="M12 12.3C14.5 12.1 17.8 9.9 18.6 7.3 16 6.9 13.1 8.7 12 12.3z" fill="none"/> <path d="M4.4 12.4c2 2.7 5 3.7 7.6 3.7s5.6-1 7.6-3.7" fill="none"/></svg>
+          <h3><span lang="es">Bienestar y Estilo de Vida</span><span lang="en">Wellness &amp; Lifestyle</span></h3>
+          <p lang="es">Orientación en nutrición, sueño, actividad y hábitos para sentirse mejor cada día.</p>
+          <p lang="en">Guidance on nutrition, sleep, activity and habits to help you feel better every day.</p>
+        </article>
+        <article class="svc">
+          <svg class="svc-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.4c1.1-1.5 3.5-1 3.5 .9 0 1.6-2.1 3-3.5 3.9-1.4-.9-3.5-2.3-3.5-3.9 0-1.9 2.4-2.4 3.5-.9z" stroke="none" fill="currentColor"/> <path d="M8.8 13.2 5.9 11.4a1.7 1.7 0 0 0-2.2 2.5L8 18.5a4 4 0 0 0 2.8 1.2H15" fill="none"/> <path d="M15.2 13.2 18.1 11.4a1.7 1.7 0 0 1 2.2 2.5L16 18.5a4 4 0 0 1-1 .8" fill="none"/></svg>
+          <h3><span lang="es">Cuidado Integral y Personalizado</span><span lang="en">Whole-Person, Personalized Care</span></h3>
+          <p lang="es">Atención sin prisa que ve a la persona completa: cuerpo y mente.</p>
+          <p lang="en">Unhurried care that treats the whole person, body and mind.</p>
+        </article>
+      </div>
+
+      <!-- LIST B — Metaporphosis (sister practice) -->
+      <div class="svc-block">
+        <div class="sec-head">
+          <svg class="bfly" viewBox="0 0 48 44" aria-hidden="true"><g fill="#7c5f9e"><ellipse cx="15.5" cy="16" rx="9.5" ry="11.5" transform="rotate(-20 15.5 16)"/><ellipse cx="32.5" cy="16" rx="9.5" ry="11.5" transform="rotate(20 32.5 16)"/><ellipse cx="17.5" cy="31" rx="7" ry="8.5" transform="rotate(22 17.5 31)"/><ellipse cx="30.5" cy="31" rx="7" ry="8.5" transform="rotate(-22 30.5 31)"/></g><ellipse cx="24" cy="23" rx="2" ry="12" fill="#b98d4f"/><path d="M24 12 C22 7 19.5 5 16.5 4.2 M24 12 C26 7 28.5 5 31.5 4.2" fill="none" stroke="#b98d4f" stroke-width="1.5" stroke-linecap="round"/><circle cx="16.5" cy="4.2" r="1.3" fill="#b98d4f"/><circle cx="31.5" cy="4.2" r="1.3" fill="#b98d4f"/></svg>
+          <h2><span lang="es">Servicios de Metaporphosis</span><span lang="en">Metaporphosis Services</span></h2>
         </div>
-      </div>
+        <p class="svc-sub"><span lang="es">Bienestar y consejería — nuestra práctica hermana</span><span lang="en">Wellness &amp; counseling — our sister practice</span></p>
 
-      <div class="tabpanel" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
         <div class="svc-grid">
           <article class="svc">
-            <span class="mono">15 min · video</span>
-            <h3><span lang="es">Visita de seguimiento</span><span lang="en">Follow-up visit</span></h3>
-            <p lang="es">Ajustes de medicamentos, chequeos de presión arterial y preguntas de "¿esto está sanando bien?".</p>
-            <p lang="en">Medication adjustments, blood pressure check-ins, and "is this healing right" questions.</p>
-            <div class="meta"><span lang="es">Conexión mediana <b>&lt;2 min</b></span><span lang="en">Median join <b>&lt;2 min</b></span> <span lang="es">Dispositivo: <b>cualquiera</b></span><span lang="en">Device <b>any</b></span></div>
+            <svg class="svc-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.2" fill="none"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0" fill="none"/></svg>
+            <h3><span lang="es">Psicoterapia Individual</span><span lang="en">Individual Psychotherapy</span></h3>
+            <p lang="es">Espacio confidencial uno a uno para trabajar lo que le pesa, a su ritmo.</p>
+            <p lang="en">A confidential one-on-one space to work through what weighs on you, at your pace.</p>
           </article>
           <article class="svc">
-            <span class="mono">20 min · video</span>
-            <h3><span lang="es">Chequeo de cuidado crónico</span><span lang="en">Chronic care check-in</span></h3>
-            <p lang="es">Revisiones trimestrales de diabetes e hipertensión usando sus lecturas de casa.</p>
-            <p lang="en">Quarterly diabetes and hypertension reviews using readings you take at home.</p>
-            <div class="meta"><span lang="es">Datos de casa <b>sincronizados</b></span><span lang="en">Home data <b>synced</b></span> <span lang="es">Cubierto: <b>mayoría de planes</b></span><span lang="en">Covered <b>most plans</b></span></div>
+            <svg class="svc-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7.5" cy="9" r="2.5" fill="none"/><path d="M3.3 20a4.2 4.2 0 0 1 8.4 0" fill="none"/> <circle cx="16.5" cy="9" r="2.5" fill="none"/><path d="M12.3 20a4.2 4.2 0 0 1 8.4 0" fill="none"/> <path d="M12 4c.9-1.2 3-.5 3 .9 0 1.1-1.7 2.1-3 2.9-1.3-.8-3-1.8-3-2.9 0-1.4 2.1-2.1 3-.9z" stroke="none" fill="currentColor"/></svg>
+            <h3><span lang="es">Terapia de Pareja</span><span lang="en">Couples Therapy</span></h3>
+            <p lang="es">Herramientas para comunicarse mejor, reconectar y sanar la relación juntos.</p>
+            <p lang="en">Tools to communicate better, reconnect, and heal the relationship together.</p>
           </article>
           <article class="svc">
-            <span class="mono">15 min · video</span>
-            <h3><span lang="es">Erupciones y asuntos menores</span><span lang="en">Rashes &amp; minor issues</span></h3>
-            <p lang="es">Envíe una foto antes de la visita y la revisamos con usted en la llamada.</p>
-            <p lang="en">Send a photo ahead of the visit and we will look at it with you on the call.</p>
-            <div class="meta"><span lang="es">Carga de fotos <b>segura</b></span><span lang="en">Photo upload <b>secure</b></span> <span lang="es">Receta <b>electrónica</b></span><span lang="en">Rx <b>e-sent</b></span></div>
-          </article>
-        </div>
-      </div>
-
-      <div class="tabpanel" id="p3" role="tabpanel" aria-labelledby="t3" hidden>
-        <div class="svc-grid">
-          <article class="svc">
-            <span class="mono"><span lang="es">aquí mismo · laboratorio</span><span lang="en">on site · lab</span></span>
-            <h3><span lang="es">Extracciones de sangre</span><span lang="en">Blood draws</span></h3>
-            <p lang="es">Tomadas en nuestra oficina, no en un laboratorio al otro lado de la ciudad. Resultados en 24–72 horas.</p>
-            <p lang="en">Drawn in our office, not a separate lab appointment across town. Results in 24–72 hours.</p>
-            <div class="meta"><span lang="es">Resultados en <b>1–3 días</b></span><span lang="en">Turnaround <b>1–3 days</b></span> <span lang="es">En ayunas: <b>7:30 am</b></span><span lang="en">Fasting <b>7:30 am</b></span></div>
+            <svg class="svc-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6.5" cy="8.5" r="2.2" fill="none"/><path d="M2.8 18a3.7 3.7 0 0 1 7.4 0" fill="none"/> <circle cx="17.5" cy="8.5" r="2.2" fill="none"/><path d="M13.8 18a3.7 3.7 0 0 1 7.4 0" fill="none"/> <circle cx="12" cy="12" r="2" fill="none"/><path d="M8.7 21a3.3 3.3 0 0 1 6.6 0" fill="none"/></svg>
+            <h3><span lang="es">Terapia Familiar</span><span lang="en">Family Therapy</span></h3>
+            <p lang="es">Apoyo para toda la familia: entender roles, resolver conflictos y fortalecer vínculos.</p>
+            <p lang="en">Support for the whole family: understanding roles, easing conflict, and strengthening bonds.</p>
           </article>
           <article class="svc">
-            <span class="mono"><span lang="es">15 min · revisión</span><span lang="en">15 min · review</span></span>
-            <h3><span lang="es">Revisión de resultados</span><span lang="en">Results review</span></h3>
-            <p lang="es">Todo resultado anormal recibe una llamada de su médico. Los normales, un resumen en lenguaje claro.</p>
-            <p lang="en">Every abnormal result gets a call from your physician. Normal ones get a plain-language summary.</p>
-            <div class="meta"><span lang="es">Siempre <b>explicado</b></span><span lang="en">Always <b>explained</b></span> <span lang="es">Por <b>teléfono o video</b></span><span lang="en">By <b>phone or video</b></span></div>
+            <svg class="svc-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.2c1.8 2.4 1.8 5.7 0 8.1-1.8-2.4-1.8-5.7 0-8.1z" fill="none"/> <path d="M12 12.3C9.5 12.1 6.2 9.9 5.4 7.3 8 6.9 10.9 8.7 12 12.3z" fill="none"/> <path d="M12 12.3C14.5 12.1 17.8 9.9 18.6 7.3 16 6.9 13.1 8.7 12 12.3z" fill="none"/> <path d="M4.4 12.4c2 2.7 5 3.7 7.6 3.7s5.6-1 7.6-3.7" fill="none"/></svg>
+            <h3><span lang="es">Manejo de Ansiedad y Estrés</span><span lang="en">Anxiety &amp; Stress Management</span></h3>
+            <p lang="es">Estrategias prácticas para calmar la ansiedad y recuperar el equilibrio.</p>
+            <p lang="en">Practical strategies to ease anxiety and regain your balance.</p>
           </article>
           <article class="svc">
-            <span class="mono"><span lang="es">coordinación</span><span lang="en">coordination</span></span>
-            <h3><span lang="es">Referidos e imágenes</span><span lang="en">Referrals &amp; imaging</span></h3>
-            <p lang="es">Hacemos la orden, perseguimos el informe y le decimos qué dijo. Usted no es el mensajero.</p>
-            <p lang="en">We place the order, chase the report, and tell you what it said. You are not the courier.</p>
-            <div class="meta"><span lang="es">Informe <b>rastreado</b></span><span lang="en">Report <b>tracked</b></span> <span lang="es">Red: <b>Caguas General</b></span><span lang="en">Network <b>Caguas General</b></span></div>
+            <svg class="svc-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5S3.3 14.8 3.3 8.9A4.4 4.4 0 0 1 12 6.1a4.4 4.4 0 0 1 8.7 2.8C20.7 14.8 12 20.5 12 20.5z" fill="none"/></svg>
+            <h3><span lang="es">Duelo y Pérdidas</span><span lang="en">Grief &amp; Loss</span></h3>
+            <p lang="es">Acompañamiento compasivo para atravesar la pérdida sin sentirse solo.</p>
+            <p lang="en">Compassionate support to move through loss without feeling alone.</p>
+          </article>
+          <article class="svc">
+            <svg class="svc-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V6.5" fill="none"/> <path d="M12 12.5c0-3.1 2.1-5.3 5.3-5.3 0 3.1-2.1 5.3-5.3 5.3z" fill="none"/> <path d="M12 16c0-2.7 1.9-4.6 4.6-4.6 0 2.7-1.8 4.6-4.6 4.6z" fill="none"/> <path d="M12 14.2c0-3.1-2.1-5.3-5.3-5.3 0 3.1 2.1 5.3 5.3 5.3z" fill="none"/></svg>
+            <h3><span lang="es">Crecimiento Personal y Espiritual</span><span lang="en">Personal &amp; Spiritual Growth</span></h3>
+            <p lang="es">Un camino para conocerse, sanar y crecer hacia quien quiere ser.</p>
+            <p lang="en">A path to know yourself, heal, and grow into who you want to be.</p>
           </article>
         </div>
       </div>
@@ -850,25 +846,6 @@ html[data-lang="en"] [lang="es"]{display:none!important}
   });
   mnav.addEventListener('click', function(e){
     if (e.target.closest('a')){ mnav.dataset.open = 'false'; burger.setAttribute('aria-expanded','false'); }
-  });
-
-  /* ---- tabs ---- */
-  var tablist = document.querySelector('.tabs');
-  var tabs = Array.prototype.slice.call(tablist.querySelectorAll('[role=tab]'));
-  function selectTab(tab){
-    tabs.forEach(function(x){
-      var on = x === tab;
-      x.setAttribute('aria-selected', on);
-      document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
-    });
-  }
-  tabs.forEach(function(x){ x.addEventListener('click', function(){ selectTab(x); }); });
-  tablist.addEventListener('keydown', function(e){
-    var i = tabs.indexOf(document.activeElement);
-    if (i < 0) return;
-    var n = e.key === 'ArrowRight' ? i+1 : e.key === 'ArrowLeft' ? i-1 : -1;
-    if (n < 0 || n >= tabs.length) return;
-    e.preventDefault(); tabs[n].focus(); selectTab(tabs[n]);
   });
 
   /* ---- booking widget ---- */
