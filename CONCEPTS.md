@@ -8,6 +8,8 @@ foundation so the design is the only variable.
 **Services:** annual physicals · same-day sick visits · chronic care management · vaccines · telehealth · lab follow-up
 **Trust baseline:** 4 board-certified providers · same-week availability · online booking · most insurance accepted · bilingual staff · 4.9 / 812 reviews
 **Required CTAs:** Book Appointment · Call Now · Meet Our Doctors
+**Language:** Spanish-first (`lang="es"`) with a persistent English toggle in every header;
+dual-language content is marked with `lang` attributes and dynamic JS strings are localized
 
 ---
 

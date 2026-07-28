@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Harbor Family Medical — Concept 5: Harbor Now</title>
-<meta name="description" content="Same-day appointments in Bayview. See a board-certified family doctor today — book in three taps or call (555) 214-0880.">
+<script>(function(){var l=null;try{l=localStorage.getItem('harborLang')}catch(e){}l=l==='en'?'en':'es';var d=document.documentElement;d.setAttribute('lang',l);d.setAttribute('data-lang',l);})();</script>
+<title>Harbor Family Medical — Concepto 5: Harbor Now</title>
+<meta name="description" content="Citas el mismo día en Bayview. Vea hoy a un médico de familia certificado — reserve en tres toques o llame al (555) 214-0880.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23111111'/><rect x='6' y='14' width='20' height='4' fill='%23f2560a'/><rect x='14' y='6' width='4' height='20' fill='%23f2560a'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,9 +14,10 @@
 /* ============================================================
    CONCEPT 5 — "HARBOR NOW"
    Minimal same-day / urgent care hybrid. Near-black, white,
-   one signal orange. Huge tight type, thick rules, no soft cards.
-   Signature: the hero is a live status board. Mobile is a
-   thumb-zone action stack with a permanent dual-action bar.
+   one signal orange. Oswald condensed uppercase — a harbor
+   departure board. Signature: the hero is a live status board.
+   Mobile is a thumb-zone action stack with a permanent dual bar.
+   Spanish-first; English via the language toggle.
    ============================================================ */
 
 :root{
@@ -31,7 +33,7 @@
   --ink-3:#6e6e73;
   --wrap:1200px;
   --sans:"Helvetica Neue",Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-  --board:"Oswald","Helvetica Neue",Arial Narrow,sans-serif;
+  --board:"Oswald","Helvetica Neue","Arial Narrow",sans-serif;
   --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
 }
 
@@ -70,7 +72,9 @@ a{color:var(--blk);text-decoration:none}
 .hdr .led[data-closed="true"]{background:var(--sig)}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 
-.menu-t{display:none;background:none;border:2px solid #48484f;color:var(--wht);font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;padding:0 14px;height:44px;cursor:pointer}
+.menu-t,.lang-toggle{display:inline-block;background:none;border:2px solid #48484f;color:var(--wht);font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;padding:0 14px;height:44px;cursor:pointer}
+.menu-t{display:none}
+.lang-toggle:hover{border-color:var(--sig)}
 .msheet{display:none;background:var(--blk-2);border-bottom:3px solid var(--sig)}
 .msheet[data-open="true"]{display:block}
 .msheet ul{list-style:none;margin:0;padding:0}
@@ -94,7 +98,7 @@ a{color:var(--blk);text-decoration:none}
 
 /* ---------- HERO = status board ---------- */
 
-.hero{background:var(--blk);color:var(--wht);padding:0 0 0}
+.hero{background:var(--blk);color:var(--wht);padding:0}
 .board{display:grid;grid-template-columns:1.5fr 1fr;gap:0;border-bottom:3px solid var(--sig)}
 .board-l{padding:56px 0 52px}
 .board-l .wrap{padding-left:24px;padding-right:56px;max-width:calc(var(--wrap) * .6)}
@@ -110,7 +114,7 @@ a{color:var(--blk);text-decoration:none}
 .stat:last-child{border-bottom:0}
 .stat .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8a8a92;display:block;margin-bottom:7px}
 .stat .v{font-family:var(--board);font-size:2.3rem;font-weight:600;letter-spacing:.01em;line-height:1;text-transform:uppercase}
-.stat .v small{font-size:.95rem;font-weight:400;letter-spacing:0;color:#c4c4ca;text-transform:none}
+.stat .v small{font-size:.95rem;font-weight:400;letter-spacing:0;color:#c4c4ca;text-transform:none;font-family:var(--sans)}
 .stat .v.open{color:#2ecc71}
 .stat .v.shut{color:var(--sig)}
 .stat .note{font-size:13.5px;color:#8a8a92;margin:7px 0 0}
@@ -120,6 +124,16 @@ a{color:var(--blk);text-decoration:none}
   border:1px solid var(--line-2);color:var(--wht);
 }
 .slotstrip span.gone{color:#5a5a61;text-decoration:line-through;border-color:#2a2a30}
+
+/* the board populates row by row on load, like a station display updating */
+@media (prefers-reduced-motion:no-preference){
+  .board-r .stat{opacity:0;transform:translateY(10px);animation:statin .5s cubic-bezier(.2,.7,.2,1) forwards}
+  .board-r .stat:nth-child(1){animation-delay:.05s}
+  .board-r .stat:nth-child(2){animation-delay:.15s}
+  .board-r .stat:nth-child(3){animation-delay:.25s}
+  .board-r .stat:nth-child(4){animation-delay:.35s}
+  @keyframes statin{to{opacity:1;transform:none}}
+}
 
 /* ---------- 3-step booking strip ---------- */
 
@@ -177,13 +191,13 @@ a{color:var(--blk);text-decoration:none}
 
 /* on-shift providers: compact strip */
 .shift{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:3px solid var(--sig);border-bottom:1px solid var(--line-2)}
-.shift div{padding:22px 24px;border-right:1px solid var(--line-2)}
-.shift div:last-child{border-right:0}
+.shift>div{padding:22px 24px;border-right:1px solid var(--line-2)}
+.shift>div:last-child{border-right:0}
 .shift .on{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#2ecc71;margin-bottom:11px}
 .shift .on.off{color:#8a8a92}
 .shift .on i{width:7px;height:7px;border-radius:50%;background:currentColor;flex:none}
 .shift b{display:block;font-size:16px;letter-spacing:-.015em;margin-bottom:3px}
-.shift span{font-size:13.5px;color:#9a9aa2;display:block;margin-bottom:12px}
+.shift span.d{font-size:13.5px;color:#9a9aa2;display:block;margin-bottom:12px}
 .shift a{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sig);border-bottom:1px solid var(--sig);padding-bottom:2px}
 
 /* rating: one enormous number */
@@ -201,6 +215,10 @@ a{color:var(--blk);text-decoration:none}
   border-right:1px solid var(--line);
 }
 .plans span:last-child{border-right:0}
+.price-table{width:100%;border-collapse:collapse;font-size:15.5px}
+.price-table td{padding:9px 0;border-bottom:1px solid var(--line)}
+.price-table td+td{text-align:right;font-weight:700}
+.price-table tr:last-child td{border-bottom:0}
 
 /* locations: two big blocks with computed status */
 .locs{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:3px solid var(--blk)}
@@ -234,7 +252,7 @@ footer li{margin-bottom:10px}
 footer a{color:#dcdcdf}
 footer a:hover{color:#fff;text-decoration:underline}
 footer .fb{display:flex;align-items:center;gap:11px;margin-bottom:14px}
-footer .fb b{color:#fff;text-transform:uppercase;font-size:16px}
+footer .fb b{color:#fff;font-family:var(--board);text-transform:uppercase;font-size:16px;letter-spacing:.04em}
 footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
 
 /* ---------- mobile permanent dual-action bar ---------- */
@@ -265,8 +283,8 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
   .row{grid-template-columns:1fr;gap:6px}
   .row .rt{text-align:left}
   .shift{grid-template-columns:1fr 1fr}
-  .shift div:nth-child(2){border-right:0}
-  .shift div:nth-child(-n+2){border-bottom:1px solid var(--line-2)}
+  .shift>div:nth-child(2){border-right:0}
+  .shift>div:nth-child(-n+2){border-bottom:1px solid var(--line-2)}
   .split{grid-template-columns:1fr}
   .split>div{padding:26px 0}
   .split>div+div{border-left:0;border-top:1px solid var(--line);padding:26px 0}
@@ -280,11 +298,12 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
 
 @media (max-width:760px){
   .wrap{padding:0 18px}
-  .menu-t{display:block}
+  .menu-t{display:inline-block}
   .hdr .live{display:none}
   .hdr .btn{display:none} /* the fixed dual bar carries Book on phones */
   .brand b{font-size:13px;white-space:nowrap}
-  .hdr-in{min-height:56px;gap:14px}
+  .hdr-in{min-height:56px;gap:12px}
+  .lang-toggle{padding:0 11px;height:40px}
   .sec{padding:48px 0}
 
   /* ACTION-FIRST: the live panel jumps above the headline on phones */
@@ -302,32 +321,26 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
   .plans{display:grid;grid-template-columns:1fr 1fr;border-bottom:0}
   .plans span{border-right:0;border-bottom:1px solid var(--line);margin:0;padding:13px 0}
   .shift{grid-template-columns:1fr}
-  .shift div{border-right:0;border-bottom:1px solid var(--line-2)}
+  .shift>div{border-right:0;border-bottom:1px solid var(--line-2)}
   .score .big{font-size:4.6rem}
   .dual{display:flex}
   footer{padding-bottom:100px}
   footer .c4{grid-template-columns:1fr;gap:24px}
 }
 
-/* the board populates row by row on load, like a station display updating */
-@media (prefers-reduced-motion:no-preference){
-  .board-r .stat{opacity:0;transform:translateY(10px);animation:statin .5s cubic-bezier(.2,.7,.2,1) forwards}
-  .board-r .stat:nth-child(1){animation-delay:.05s}
-  .board-r .stat:nth-child(2){animation-delay:.15s}
-  .board-r .stat:nth-child(3){animation-delay:.25s}
-  .board-r .stat:nth-child(4){animation-delay:.35s}
-  @keyframes statin{to{opacity:1;transform:none}}
-}
-
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *{transition:none!important;animation:none!important}
 }
+
+/* language: hide only the inactive one */
+html[data-lang="es"] [lang="en"]{display:none!important}
+html[data-lang="en"] [lang="es"]{display:none!important}
 </style>
 </head>
 <body>
 
-<a class="skip" href="#main">Skip to main content</a>
+<a class="skip" href="#main"><span lang="es">Saltar al contenido</span><span lang="en">Skip to main content</span></a>
 
 <header class="hdr">
   <div class="wrap hdr-in">
@@ -335,27 +348,28 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
       <span class="mk" aria-hidden="true"></span>
       <b>Harbor Family Medical</b>
     </a>
-    <nav aria-label="Main">
+    <nav aria-label="Principal">
       <ul class="dnav">
-        <li><a href="#today">Today</a></li>
-        <li><a href="#care">Care</a></li>
-        <li><a href="#team">Doctors</a></li>
-        <li><a href="#insurance">Insurance</a></li>
-        <li><a href="#visit">Visit</a></li>
+        <li><a href="#today"><span lang="es">Hoy</span><span lang="en">Today</span></a></li>
+        <li><a href="#care"><span lang="es">Cuidado</span><span lang="en">Care</span></a></li>
+        <li><a href="#team"><span lang="es">Médicos</span><span lang="en">Doctors</span></a></li>
+        <li><a href="#insurance"><span lang="es">Seguros</span><span lang="en">Insurance</span></a></li>
+        <li><a href="#visit"><span lang="es">Visítenos</span><span lang="en">Visit</span></a></li>
       </ul>
     </nav>
-    <span class="live"><i class="led" id="hdrLed" aria-hidden="true"></i> <span id="hdrStatus">Open now</span></span>
-    <a class="btn btn-sm" href="#book">Book today</a>
-    <button class="menu-t" id="menuT" aria-expanded="false" aria-controls="msheet">Menu</button>
+    <span class="live"><i class="led" id="hdrLed" aria-hidden="true"></i> <span id="hdrStatus"></span></span>
+    <a class="btn btn-sm" href="#book"><span lang="es">Reservar hoy</span><span lang="en">Book today</span></a>
+    <button class="lang-toggle" type="button"><span lang="es">EN</span><span lang="en">ES</span></button>
+    <button class="menu-t" id="menuT" aria-expanded="false" aria-controls="msheet"><span lang="es">Menú</span><span lang="en">Menu</span></button>
   </div>
-  <nav class="msheet" id="msheet" data-open="false" aria-label="Mobile">
+  <nav class="msheet" id="msheet" data-open="false" aria-label="Móvil">
     <ul>
-      <li><a href="#today">Today's availability</a></li>
-      <li><a href="#care">What we treat</a></li>
-      <li><a href="#team">Who's on shift</a></li>
-      <li><a href="#insurance">Insurance</a></li>
-      <li><a href="#visit">Locations &amp; hours</a></li>
-      <li><a href="tel:+15552140880">Call (555) 214-0880</a></li>
+      <li><a href="#today"><span lang="es">Disponibilidad de hoy</span><span lang="en">Today's availability</span></a></li>
+      <li><a href="#care"><span lang="es">Qué tratamos</span><span lang="en">What we treat</span></a></li>
+      <li><a href="#team"><span lang="es">Quién está de turno</span><span lang="en">Who's on shift</span></a></li>
+      <li><a href="#insurance"><span lang="es">Seguros</span><span lang="en">Insurance</span></a></li>
+      <li><a href="#visit"><span lang="es">Oficinas y horarios</span><span lang="en">Locations &amp; hours</span></a></li>
+      <li><a href="tel:+15552140880"><span lang="es">Llamar al (555) 214-0880</span><span lang="en">Call (555) 214-0880</span></a></li>
     </ul>
   </nav>
 </header>
@@ -367,13 +381,16 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
     <div class="board">
       <div class="board-l">
         <div class="wrap">
-          <span class="mono" style="color:var(--sig)">Same-day family medicine · Bayview</span>
-          <h1 style="margin-top:16px">See a doctor <em>today</em>.</h1>
-          <p class="sub">Board-certified family physicians, same-day sick visits, and
+          <span class="mono" style="color:var(--sig)"><span lang="es">Medicina familiar el mismo día · Bayview</span><span lang="en">Same-day family medicine · Bayview</span></span>
+          <h1 style="margin-top:16px" lang="es">Vea a un médico <em>hoy</em>.</h1>
+          <h1 style="margin-top:16px" lang="en">See a doctor <em>today</em>.</h1>
+          <p class="sub" lang="es">Médicos de familia certificados, citas de enfermedad el mismo
+          día, y cuidado de rutina que no tarda tres semanas en agendarse. Tres toques para reservar.</p>
+          <p class="sub" lang="en">Board-certified family physicians, same-day sick visits, and
           routine care that does not take three weeks to schedule. Three taps to book.</p>
           <div class="hero-cta">
-            <a class="btn" href="#book">Book Appointment</a>
-            <a class="btn btn-blk" href="tel:+15552140880">Call Now</a>
+            <a class="btn" href="#book"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
+            <a class="btn btn-blk" href="tel:+15552140880"><span lang="es">Llamar ahora</span><span lang="en">Call Now</span></a>
           </div>
         </div>
       </div>
@@ -381,24 +398,24 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
       <!-- live panel -->
       <div class="board-r" id="today">
         <div class="stat">
-          <span class="k">Bayview clinic</span>
-          <div class="v open" id="statusBig">Open now</div>
-          <p class="note" id="statusNote">Closes 6:00 pm · <span id="clock"></span></p>
+          <span class="k"><span lang="es">Clínica de Bayview</span><span lang="en">Bayview clinic</span></span>
+          <div class="v open" id="statusBig"></div>
+          <p class="note" id="statusNote"></p>
         </div>
         <div class="stat">
-          <span class="k">Same-day slots left today</span>
-          <div class="v" id="slotsLeft">4</div>
+          <span class="k"><span lang="es">Espacios del mismo día restantes hoy</span><span lang="en">Same-day slots left today</span></span>
+          <div class="v" id="slotsLeft">–</div>
           <div class="slotstrip" id="slotStrip"></div>
         </div>
         <div class="stat">
-          <span class="k">Current wait, walk-in</span>
+          <span class="k"><span lang="es">Espera actual, sin cita</span><span lang="en">Current wait, walk-in</span></span>
           <div class="v">18 <small>min</small></div>
-          <p class="note">Booked appointments are seen at their scheduled time.</p>
+          <p class="note"><span lang="es">Las citas reservadas se atienden a su hora programada.</span><span lang="en">Booked appointments are seen at their scheduled time.</span></p>
         </div>
         <div class="stat">
-          <span class="k">Next routine opening</span>
-          <div class="v" style="font-size:1.5rem">Thu 9:40 am</div>
-          <p class="note">Median wait for a non-urgent visit: 2.4 days.</p>
+          <span class="k"><span lang="es">Próxima cita de rutina</span><span lang="en">Next routine opening</span></span>
+          <div class="v" style="font-size:1.5rem"><span lang="es">jue 9:40 am</span><span lang="en">Thu 9:40 am</span></div>
+          <p class="note"><span lang="es">Espera mediana para una visita no urgente: 2.4 días.</span><span lang="en">Median wait for a non-urgent visit: 2.4 days.</span></p>
         </div>
       </div>
     </div>
@@ -407,18 +424,18 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
   <!-- 3 STEPS -->
   <section class="steps" aria-labelledby="steps-h">
     <div class="wrap steps-in">
-      <div class="lbl"><b id="steps-h">Booked in<br>90 seconds</b></div>
+      <div class="lbl"><b id="steps-h"><span lang="es">Reservado en<br>90 segundos</span><span lang="en">Booked in<br>90 seconds</span></b></div>
       <div class="step">
         <span class="n" aria-hidden="true">1</span>
-        <div><b>Pick a reason</b><span>Sick visit, physical, follow-up, or vaccine.</span></div>
+        <div><b><span lang="es">Elija un motivo</span><span lang="en">Pick a reason</span></b><span><span lang="es">Enfermedad, examen físico, seguimiento o vacuna.</span><span lang="en">Sick visit, physical, follow-up, or vaccine.</span></span></div>
       </div>
       <div class="step">
         <span class="n" aria-hidden="true">2</span>
-        <div><b>Pick a time</b><span>Today's remaining slots, or any day this week.</span></div>
+        <div><b><span lang="es">Elija una hora</span><span lang="en">Pick a time</span></b><span><span lang="es">Los espacios restantes de hoy, o cualquier día de esta semana.</span><span lang="en">Today's remaining slots, or any day this week.</span></span></div>
       </div>
       <div class="step">
         <span class="n" aria-hidden="true">3</span>
-        <div><b>Confirm</b><span>Name, phone, insurance. No account required.</span></div>
+        <div><b><span lang="es">Confirme</span><span lang="en">Confirm</span></b><span><span lang="es">Nombre, teléfono, seguro. Sin crear cuenta.</span><span lang="en">Name, phone, insurance. No account required.</span></span></div>
       </div>
     </div>
   </section>
@@ -427,34 +444,62 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
   <section class="sec" id="care">
     <div class="wrap">
       <div class="sec-head">
-        <h2>What we can handle today</h2>
-        <p>If it is on this list, call before 10 am and you will almost certainly be seen
-        the same day.</p>
+        <h2><span lang="es">Lo que podemos atender hoy</span><span lang="en">What we can handle today</span></h2>
+        <p><span lang="es">Si está en esta lista, llame antes de las 10 am y casi seguro lo atendemos el mismo día.</span><span lang="en">If it is on this list, call before 10 am and you will almost certainly be seen the same day.</span></p>
       </div>
       <div class="cloud">
-        <span class="hi">Fever</span><span class="hi">Sore throat &amp; strep</span>
-        <span>Ear infection</span><span>Sinus infection</span><span>Cough</span>
-        <span>Flu &amp; COVID testing</span><span>UTI</span><span>Pink eye</span>
-        <span>Rashes</span><span>Stomach bug</span><span>Minor cuts &amp; stitches</span>
-        <span>Sprains</span><span>Insect bites</span><span>Back pain</span>
-        <span>Medication refills</span><span>Sports physicals</span>
-        <span>Annual physicals</span><span>Blood pressure checks</span>
-        <span>Diabetes follow-up</span><span>Vaccines</span><span>Lab results</span>
+        <span class="hi"><span lang="es">Fiebre</span><span lang="en">Fever</span></span>
+        <span class="hi"><span lang="es">Dolor de garganta y estreptococo</span><span lang="en">Sore throat &amp; strep</span></span>
+        <span><span lang="es">Infección de oído</span><span lang="en">Ear infection</span></span>
+        <span><span lang="es">Sinusitis</span><span lang="en">Sinus infection</span></span>
+        <span><span lang="es">Tos</span><span lang="en">Cough</span></span>
+        <span><span lang="es">Pruebas de influenza y COVID</span><span lang="en">Flu &amp; COVID testing</span></span>
+        <span><span lang="es">Infección de orina</span><span lang="en">UTI</span></span>
+        <span><span lang="es">Conjuntivitis</span><span lang="en">Pink eye</span></span>
+        <span><span lang="es">Erupciones</span><span lang="en">Rashes</span></span>
+        <span><span lang="es">Virus estomacal</span><span lang="en">Stomach bug</span></span>
+        <span><span lang="es">Cortaduras menores y suturas</span><span lang="en">Minor cuts &amp; stitches</span></span>
+        <span><span lang="es">Torceduras</span><span lang="en">Sprains</span></span>
+        <span><span lang="es">Picaduras de insectos</span><span lang="en">Insect bites</span></span>
+        <span><span lang="es">Dolor de espalda</span><span lang="en">Back pain</span></span>
+        <span><span lang="es">Repeticiones de receta</span><span lang="en">Medication refills</span></span>
+        <span><span lang="es">Exámenes deportivos</span><span lang="en">Sports physicals</span></span>
+        <span><span lang="es">Exámenes físicos anuales</span><span lang="en">Annual physicals</span></span>
+        <span><span lang="es">Chequeos de presión</span><span lang="en">Blood pressure checks</span></span>
+        <span><span lang="es">Seguimiento de diabetes</span><span lang="en">Diabetes follow-up</span></span>
+        <span><span lang="es">Vacunas</span><span lang="en">Vaccines</span></span>
+        <span><span lang="es">Resultados de laboratorio</span><span lang="en">Lab results</span></span>
       </div>
 
       <div class="split">
         <div>
-          <h3>Also here for the routine stuff</h3>
-          <p style="color:var(--ink-3)">Harbor is a full family medicine practice, not a
+          <h3><span lang="es">También para lo de rutina</span><span lang="en">Also here for the routine stuff</span></h3>
+          <p style="color:var(--ink-3)" lang="es">Harbor es una práctica completa de medicina
+          familiar, no un dispensario exprés. La capacidad del mismo día existe para que
+          nuestros propios pacientes sean atendidos rápido — pero aquí también puede tener
+          un médico primario normal que conoce su historial, maneja sus condiciones
+          crónicas y atiende a sus hijos.</p>
+          <p style="color:var(--ink-3)" lang="en">Harbor is a full family medicine practice, not a
           walk-in box. Same-day capacity exists so that our own patients can be seen
           quickly — but you can also just have a normal primary care doctor here who
           knows your history, manages your chronic conditions, and sees your kids.</p>
-          <p style="color:var(--ink-3);margin:0">Annual physicals, chronic care, telehealth
+          <p style="color:var(--ink-3);margin:0" lang="es">Exámenes anuales, cuidado crónico,
+          seguimientos por telemedicina y revisión de laboratorios son parte de esto.
+          Reserva la misma semana para todos.</p>
+          <p style="color:var(--ink-3);margin:0" lang="en">Annual physicals, chronic care, telehealth
           follow-ups, and lab review are all part of it. Same-week booking for all of them.</p>
         </div>
         <div>
-          <h3>Go elsewhere for these</h3>
-          <ul class="notus">
+          <h3><span lang="es">Para esto, vaya a otro lugar</span><span lang="en">Go elsewhere for these</span></h3>
+          <ul class="notus" lang="es">
+            <li>Dolor u opresión en el pecho</li>
+            <li>Dificultad para respirar</li>
+            <li>Señales de derrame — cara caída, brazo débil, habla arrastrada</li>
+            <li>Sangrado severo o trauma mayor</li>
+            <li>Golpe en la cabeza con confusión</li>
+            <li>Posible fractura que requiera cirugía</li>
+          </ul>
+          <ul class="notus" lang="en">
             <li>Chest pain or pressure</li>
             <li>Trouble breathing</li>
             <li>Stroke signs — face droop, weak arm, slurred speech</li>
@@ -462,7 +507,11 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
             <li>Head injury with confusion</li>
             <li>Suspected broken bone needing surgery</li>
           </ul>
-          <div class="er">
+          <div class="er" lang="es">
+            <b>Esto es una emergencia.</b> Llame al <b>911</b> o acuda a la sala de
+            emergencias más cercana. No espere una cita y no envíe mensajes por este sitio.
+          </div>
+          <div class="er" lang="en">
             <b>These are emergencies.</b> Call <b>911</b> or go to the nearest emergency
             department. Do not wait for an appointment and do not message this website.
           </div>
@@ -475,39 +524,45 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
   <section class="sec">
     <div class="wrap">
       <div class="sec-head">
-        <h2>Visit types &amp; timing</h2>
-        <p>Plain numbers, so you know what you are booking.</p>
+        <h2><span lang="es">Tipos de visita y tiempos</span><span lang="en">Visit types &amp; timing</span></h2>
+        <p><span lang="es">Números claros, para que sepa qué está reservando.</span><span lang="en">Plain numbers, so you know what you are booking.</span></p>
       </div>
       <div class="rows">
         <div class="row">
-          <h3>Same-day sick visit</h3>
-          <p>Acute illness and injury for established patients. In-office rapid strep, flu, and COVID tests.</p>
-          <div class="rt">20 min<b>Book by 10:00 am</b></div>
+          <h3><span lang="es">Cita de enfermedad el mismo día</span><span lang="en">Same-day sick visit</span></h3>
+          <p lang="es">Enfermedad y lesiones agudas para pacientes establecidos. Pruebas rápidas de estreptococo, influenza y COVID en la oficina.</p>
+          <p lang="en">Acute illness and injury for established patients. In-office rapid strep, flu, and COVID tests.</p>
+          <div class="rt">20 min<b><span lang="es">Reserve antes de las 10:00 am</span><span lang="en">Book by 10:00 am</span></b></div>
         </div>
         <div class="row">
-          <h3>Annual physical</h3>
-          <p>Full exam with labs drawn on site and results reviewed by your physician within a week.</p>
-          <div class="rt">45 min<b>Median wait 2.4 days</b></div>
+          <h3><span lang="es">Examen físico anual</span><span lang="en">Annual physical</span></h3>
+          <p lang="es">Examen completo con laboratorios aquí mismo y resultados revisados por su médico en una semana.</p>
+          <p lang="en">Full exam with labs drawn on site and results reviewed by your physician within a week.</p>
+          <div class="rt">45 min<b><span lang="es">Espera mediana 2.4 días</span><span lang="en">Median wait 2.4 days</span></b></div>
         </div>
         <div class="row">
-          <h3>Chronic care follow-up</h3>
-          <p>Diabetes, blood pressure, thyroid, cholesterol, asthma. In person or by video.</p>
-          <div class="rt">30 min<b>Same week</b></div>
+          <h3><span lang="es">Seguimiento de cuidado crónico</span><span lang="en">Chronic care follow-up</span></h3>
+          <p lang="es">Diabetes, presión arterial, tiroides, colesterol, asma. En persona o por video.</p>
+          <p lang="en">Diabetes, blood pressure, thyroid, cholesterol, asthma. In person or by video.</p>
+          <div class="rt">30 min<b><span lang="es">La misma semana</span><span lang="en">Same week</span></b></div>
         </div>
         <div class="row">
-          <h3>Vaccines &amp; immunizations</h3>
-          <p>Childhood schedule, annual flu, shingles, pneumonia, Tdap, travel.</p>
-          <div class="rt">15 min<b>Walk-in Oct–Dec</b></div>
+          <h3><span lang="es">Vacunas e inmunizaciones</span><span lang="en">Vaccines &amp; immunizations</span></h3>
+          <p lang="es">Calendario infantil, influenza anual, culebrilla, neumonía, Tdap, viaje.</p>
+          <p lang="en">Childhood schedule, annual flu, shingles, pneumonia, Tdap, travel.</p>
+          <div class="rt">15 min<b><span lang="es">Sin cita oct–dic</span><span lang="en">Walk-in Oct–Dec</span></b></div>
         </div>
         <div class="row">
-          <h3>Telehealth visit</h3>
-          <p>Video appointment for follow-ups, refills, rashes, and results. Same physicians.</p>
-          <div class="rt">15 min<b>Often same day</b></div>
+          <h3><span lang="es">Visita por telemedicina</span><span lang="en">Telehealth visit</span></h3>
+          <p lang="es">Cita por video para seguimientos, recetas, erupciones y resultados. Los mismos médicos.</p>
+          <p lang="en">Video appointment for follow-ups, refills, rashes, and results. Same physicians.</p>
+          <div class="rt">15 min<b><span lang="es">A menudo el mismo día</span><span lang="en">Often same day</span></b></div>
         </div>
         <div class="row">
-          <h3>Lab results review</h3>
-          <p>A real explanation of what the numbers mean, and what if anything changes.</p>
-          <div class="rt">15 min<b>Phone or video</b></div>
+          <h3><span lang="es">Revisión de resultados</span><span lang="en">Lab results review</span></h3>
+          <p lang="es">Una explicación real de qué significan los números, y qué cambia — si algo cambia.</p>
+          <p lang="en">A real explanation of what the numbers mean, and what if anything changes.</p>
+          <div class="rt">15 min<b><span lang="es">Teléfono o video</span><span lang="en">Phone or video</span></b></div>
         </div>
       </div>
     </div>
@@ -517,38 +572,37 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
   <section class="sec sec-blk" id="team">
     <div class="wrap">
       <div class="sec-head">
-        <h2 style="color:#fff">Who is on today</h2>
+        <h2 style="color:#fff"><span lang="es">Quién está de turno hoy</span><span lang="en">Who is on today</span></h2>
         <div>
-          <p>All four are board certified. Two are bilingual. You will be told who you are
-          seeing before you arrive.</p>
-          <a class="btn btn-sm" href="#team" style="margin-top:14px;background:transparent;border-color:var(--sig);color:var(--sig)">Meet Our Doctors</a>
+          <p><span lang="es">Los cuatro están certificados. Dos son bilingües. Le diremos a quién verá antes de llegar.</span><span lang="en">All four are board certified. Two are bilingual. You will be told who you are seeing before you arrive.</span></p>
+          <a class="btn btn-sm" href="#team" style="margin-top:14px;background:transparent;border-color:var(--sig);color:var(--sig)"><span lang="es">Conozca a nuestros médicos</span><span lang="en">Meet Our Doctors</span></a>
         </div>
       </div>
     </div>
     <div class="shift">
       <div>
-        <span class="on"><i aria-hidden="true"></i>On shift</span>
+        <span class="on"><i aria-hidden="true"></i><span lang="es">De turno</span><span lang="en">On shift</span></span>
         <b>Marcus Lyle, PA-C</b>
-        <span>Same-day clinic · NCCPA certified · English, Español</span>
-        <a href="#book">Book with Marcus</a>
+        <span class="d"><span lang="es">Clínica del mismo día · Certificado NCCPA · Español, English</span><span lang="en">Same-day clinic · NCCPA certified · English, Español</span></span>
+        <a href="#book"><span lang="es">Reservar con Marcus</span><span lang="en">Book with Marcus</span></a>
       </div>
       <div>
-        <span class="on"><i aria-hidden="true"></i>On shift</span>
-        <b>Dr. Naomi Reyes, MD</b>
-        <span>Family medicine · ABFM certified · English, Español</span>
-        <a href="#book">Book with Dr. Reyes</a>
+        <span class="on"><i aria-hidden="true"></i><span lang="es">De turno</span><span lang="en">On shift</span></span>
+        <b>Dra. Naomi Reyes, MD</b>
+        <span class="d"><span lang="es">Medicina familiar · Certificada ABFM · Español, English</span><span lang="en">Family medicine · ABFM certified · English, Español</span></span>
+        <a href="#book"><span lang="es">Reservar con la Dra. Reyes</span><span lang="en">Book with Dr. Reyes</span></a>
       </div>
       <div>
-        <span class="on off"><i aria-hidden="true"></i>Back Wednesday</span>
+        <span class="on off"><i aria-hidden="true"></i><span lang="es">Regresa el miércoles</span><span lang="en">Back Wednesday</span></span>
         <b>Dr. Samuel Adeyemi, MD</b>
-        <span>Family medicine, geriatrics · ABFM certified · English, Yoruba</span>
-        <a href="#book">Book with Dr. Adeyemi</a>
+        <span class="d"><span lang="es">Medicina familiar, geriatría · Certificado ABFM · English, Yorùbá</span><span lang="en">Family medicine, geriatrics · ABFM certified · English, Yoruba</span></span>
+        <a href="#book"><span lang="es">Reservar con el Dr. Adeyemi</span><span lang="en">Book with Dr. Adeyemi</span></a>
       </div>
       <div>
-        <span class="on off"><i aria-hidden="true"></i>Northgate today</span>
-        <b>Dr. Hana Kwon, DO</b>
-        <span>Family medicine · ABFM certified · English, 한국어</span>
-        <a href="#book">Book with Dr. Kwon</a>
+        <span class="on off"><i aria-hidden="true"></i><span lang="es">Hoy en Northgate</span><span lang="en">Northgate today</span></span>
+        <b>Dra. Hana Kwon, DO</b>
+        <span class="d"><span lang="es">Medicina familiar · Certificada ABFM · English, 한국어</span><span lang="en">Family medicine · ABFM certified · English, 한국어</span></span>
+        <a href="#book"><span lang="es">Reservar con la Dra. Kwon</span><span lang="en">Book with Dr. Kwon</span></a>
       </div>
     </div>
   </section>
@@ -560,14 +614,20 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
         <div>
           <div class="big">4.9</div>
           <div class="st" aria-hidden="true">★★★★★</div>
-          <div class="mono" style="color:var(--ink-3);margin-top:10px">812 verified reviews</div>
+          <div class="mono" style="color:var(--ink-3);margin-top:10px"><span lang="es">812 reseñas verificadas</span><span lang="en">812 verified reviews</span></div>
         </div>
         <div class="qs">
-          <blockquote>"Called at 8am about my son's fever. Seen before lunch. Nobody made
+          <blockquote lang="es">"Llamé a las 8 am por la fiebre de mi hijo. Nos atendieron antes
+          del mediodía. Nadie me hizo sentir que estaba exagerando."<cite>Marisol T. · Paciente desde 2016</cite></blockquote>
+          <blockquote lang="en">"Called at 8am about my son's fever. Seen before lunch. Nobody made
           me feel like I was overreacting."<cite>Marisol T. · Patient since 2016</cite></blockquote>
-          <blockquote>"Dr. Adeyemi caught a thyroid problem two other doctors missed."
+          <blockquote lang="es">"El Dr. Adeyemi encontró un problema de tiroides que otros dos
+          médicos pasaron por alto."<cite>Daniel W. · Paciente desde 2019</cite></blockquote>
+          <blockquote lang="en">"Dr. Adeyemi caught a thyroid problem two other doctors missed."
           <cite>Daniel W. · Patient since 2019</cite></blockquote>
-          <blockquote>"Telehealth follow-up took eleven minutes on my lunch break instead
+          <blockquote lang="es">"El seguimiento por telemedicina me tomó once minutos en el
+          almuerzo en vez de medio día libre del trabajo."<cite>Priya R. · Paciente desde 2021</cite></blockquote>
+          <blockquote lang="en">"Telehealth follow-up took eleven minutes on my lunch break instead
           of half a day off work."<cite>Priya R. · Patient since 2021</cite></blockquote>
         </div>
       </div>
@@ -578,8 +638,8 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
   <section class="sec" id="insurance">
     <div class="wrap">
       <div class="sec-head">
-        <h2>Insurance &amp; cost</h2>
-        <p>We tell you the price before you book. No surprise billing.</p>
+        <h2><span lang="es">Seguros y costos</span><span lang="en">Insurance &amp; cost</span></h2>
+        <p><span lang="es">Le decimos el precio antes de reservar. Sin facturas sorpresa.</span><span lang="en">We tell you the price before you book. No surprise billing.</span></p>
       </div>
       <div class="plans">
         <span>Aetna</span><span>Blue Cross Blue Shield</span><span>Cigna</span>
@@ -588,19 +648,22 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
       </div>
       <div class="split" style="border-top:0;margin-top:0">
         <div>
-          <h3>Self-pay pricing</h3>
-          <table style="width:100%;border-collapse:collapse;font-size:15.5px">
-            <tr><td style="padding:9px 0;border-bottom:1px solid var(--line)">Same-day sick visit</td><td style="text-align:right;font-weight:700;border-bottom:1px solid var(--line)">$135</td></tr>
-            <tr><td style="padding:9px 0;border-bottom:1px solid var(--line)">Annual physical</td><td style="text-align:right;font-weight:700;border-bottom:1px solid var(--line)">$210</td></tr>
-            <tr><td style="padding:9px 0;border-bottom:1px solid var(--line)">Telehealth visit</td><td style="text-align:right;font-weight:700;border-bottom:1px solid var(--line)">$85</td></tr>
-            <tr><td style="padding:9px 0">Rapid strep / flu test</td><td style="text-align:right;font-weight:700">$35</td></tr>
+          <h3><span lang="es">Precios de pago directo</span><span lang="en">Self-pay pricing</span></h3>
+          <table class="price-table">
+            <tr><td><span lang="es">Cita de enfermedad el mismo día</span><span lang="en">Same-day sick visit</span></td><td>$135</td></tr>
+            <tr><td><span lang="es">Examen físico anual</span><span lang="en">Annual physical</span></td><td>$210</td></tr>
+            <tr><td><span lang="es">Visita por telemedicina</span><span lang="en">Telehealth visit</span></td><td>$85</td></tr>
+            <tr><td><span lang="es">Prueba rápida de estreptococo / influenza</span><span lang="en">Rapid strep / flu test</span></td><td>$35</td></tr>
           </table>
         </div>
         <div>
-          <h3>Check your plan</h3>
-          <p style="color:var(--ink-3)">Plan directories are frequently wrong. Call with
+          <h3><span lang="es">Verifique su plan</span><span lang="en">Check your plan</span></h3>
+          <p style="color:var(--ink-3)" lang="es">Los directorios de planes se equivocan con
+          frecuencia. Llame con su número de asegurado y verificamos su cubierta al
+          momento — antes de reservar.</p>
+          <p style="color:var(--ink-3)" lang="en">Plan directories are frequently wrong. Call with
           your member ID and we will verify coverage on the spot — before you book.</p>
-          <a class="btn btn-out btn-sm" href="tel:+15552140880">Call (555) 214-0880</a>
+          <a class="btn btn-out btn-sm" href="tel:+15552140880"><span lang="es">Llamar al (555) 214-0880</span><span lang="en">Call (555) 214-0880</span></a>
         </div>
       </div>
     </div>
@@ -610,62 +673,84 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
   <section class="sec" id="visit" style="border-bottom:0">
     <div class="wrap">
       <div class="sec-head">
-        <h2>Locations &amp; hours</h2>
-        <p>Status updates automatically from the posted hours.</p>
+        <h2><span lang="es">Oficinas y horarios</span><span lang="en">Locations &amp; hours</span></h2>
+        <p><span lang="es">El estado se actualiza automáticamente según el horario publicado.</span><span lang="en">Status updates automatically from the posted hours.</span></p>
       </div>
       <div class="locs">
         <div class="loc">
           <div class="loc-top">
             <div>
               <h3>Bayview</h3>
-              <span class="mono" style="color:var(--ink-3)">Main clinic · same-day capacity</span>
+              <span class="mono" style="color:var(--ink-3)"><span lang="es">Clínica principal · capacidad del mismo día</span><span lang="en">Main clinic · same-day capacity</span></span>
             </div>
-            <span class="badge" id="bayBadge">Open now</span>
+            <span class="badge" id="bayBadge"></span>
           </div>
-          <address>240 Harbor Street, Suite 300<br>Bayview, ST 00000</address>
-          <table>
+          <address>240 Harbor Street, Suite 300<br>Bayview, PR 00000</address>
+          <table lang="es">
+            <tr><td>Lun – Jue</td><td>7:30 am – 6:00 pm</td></tr>
+            <tr><td>Viernes</td><td>7:30 am – 4:00 pm</td></tr>
+            <tr><td>Sábado</td><td>8:00 am – 12:00 pm</td></tr>
+            <tr><td>Domingo</td><td>Cerrado</td></tr>
+          </table>
+          <table lang="en">
             <tr><td>Mon – Thu</td><td>7:30 am – 6:00 pm</td></tr>
             <tr><td>Friday</td><td>7:30 am – 4:00 pm</td></tr>
             <tr><td>Saturday</td><td>8:00 am – 12:00 pm</td></tr>
             <tr><td>Sunday</td><td>Closed</td></tr>
           </table>
           <div class="acts">
-            <a class="btn btn-sm" href="#book">Book here</a>
+            <a class="btn btn-sm" href="#book"><span lang="es">Reservar aquí</span><span lang="en">Book here</span></a>
             <a class="btn btn-out btn-sm" href="tel:+15552140880">(555) 214-0880</a>
-            <a class="btn btn-out btn-sm" href="https://maps.google.com/?q=240+Harbor+Street">Directions</a>
+            <a class="btn btn-out btn-sm" href="https://maps.google.com/?q=240+Harbor+Street"><span lang="es">Cómo llegar</span><span lang="en">Directions</span></a>
           </div>
         </div>
         <div class="loc">
           <div class="loc-top">
             <div>
               <h3>Northgate</h3>
-              <span class="mono" style="color:var(--ink-3)">Satellite · routine visits only</span>
+              <span class="mono" style="color:var(--ink-3)"><span lang="es">Satélite · solo visitas de rutina</span><span lang="en">Satellite · routine visits only</span></span>
             </div>
-            <span class="badge shut" id="ngBadge">Closed now</span>
+            <span class="badge shut" id="ngBadge"></span>
           </div>
-          <address>1170 Northgate Plaza, Unit B<br>Northgate, ST 00000</address>
-          <table>
+          <address>1170 Northgate Plaza, Unit B<br>Northgate, PR 00000</address>
+          <table lang="es">
+            <tr><td>Lun – Vie</td><td>8:00 am – 5:00 pm</td></tr>
+            <tr><td>Sábado</td><td>Cerrado</td></tr>
+            <tr><td>Domingo</td><td>Cerrado</td></tr>
+          </table>
+          <table lang="en">
             <tr><td>Mon – Fri</td><td>8:00 am – 5:00 pm</td></tr>
             <tr><td>Saturday</td><td>Closed</td></tr>
             <tr><td>Sunday</td><td>Closed</td></tr>
           </table>
           <div class="acts">
-            <a class="btn btn-sm" href="#book">Book here</a>
+            <a class="btn btn-sm" href="#book"><span lang="es">Reservar aquí</span><span lang="en">Book here</span></a>
             <a class="btn btn-out btn-sm" href="tel:+15552140895">(555) 214-0895</a>
-            <a class="btn btn-out btn-sm" href="https://maps.google.com/?q=1170+Northgate+Plaza">Directions</a>
+            <a class="btn btn-out btn-sm" href="https://maps.google.com/?q=1170+Northgate+Plaza"><span lang="es">Cómo llegar</span><span lang="en">Directions</span></a>
           </div>
         </div>
       </div>
 
       <div id="book" style="margin-top:44px;max-width:660px">
-        <h2 style="font-size:clamp(1.6rem,3.4vw,2.3rem)">Book now</h2>
-        <p style="color:var(--ink-3)">Same-day slots are released each morning at 7:00 am
+        <h2 style="font-size:clamp(1.6rem,3.4vw,2.3rem)"><span lang="es">Reserve ahora</span><span lang="en">Book now</span></h2>
+        <p style="color:var(--ink-3)" lang="es">Los espacios del mismo día se publican cada mañana
+        a las 7:00 am y se van rápido. Si hoy está lleno, la próxima cita de rutina es el
+        jueves a las 9:40 am.</p>
+        <p style="color:var(--ink-3)" lang="en">Same-day slots are released each morning at 7:00 am
         and go fast. If today is full, the next routine opening is Thursday at 9:40 am.</p>
         <div class="hero-cta" style="margin-bottom:8px">
-          <a class="btn" href="#book">Book Appointment</a>
-          <a class="btn btn-out" href="tel:+15552140880">Call Now</a>
+          <a class="btn" href="#book"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
+          <a class="btn btn-out" href="tel:+15552140880"><span lang="es">Llamar ahora</span><span lang="en">Call Now</span></a>
         </div>
-        <div class="priv">
+        <div class="priv" lang="es">
+          <span class="mono">Privacidad</span>
+          La reserva se completa dentro de nuestro <strong>portal de pacientes que cumple
+          con HIPAA</strong>. No recopilamos nada clínico en este sitio — por favor no
+          envíe síntomas, diagnósticos ni números de seguro por formulario web o correo
+          electrónico. En una emergencia llame al <strong>911</strong>. Este sitio no se
+          monitorea para mensajes urgentes.
+        </div>
+        <div class="priv" lang="en">
           <span class="mono">Privacy</span>
           Booking finishes inside our secure, <strong>HIPAA-compliant patient portal</strong>.
           We collect nothing clinical on this website — please do not send symptoms,
@@ -683,50 +768,80 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
     <div class="c4">
       <div>
         <div class="fb"><span class="brand"><span class="mk" aria-hidden="true"></span></span><b>Harbor Family Medical</b></div>
-        <p>Same-day and routine family medicine. Bayview main clinic, Northgate satellite.
+        <p lang="es">Medicina familiar del mismo día y de rutina. Clínica principal en Bayview,
+        satélite en Northgate. Médicos certificados, la mayoría de los seguros aceptados.</p>
+        <p lang="en">Same-day and routine family medicine. Bayview main clinic, Northgate satellite.
         Board-certified physicians, most insurance accepted.</p>
       </div>
       <div>
-        <h4>Book</h4>
+        <h4><span lang="es">Reservar</span><span lang="en">Book</span></h4>
         <ul>
-          <li><a href="#today">Today's availability</a></li>
-          <li><a href="#book">Book appointment</a></li>
-          <li><a href="tel:+15552140880">Call (555) 214-0880</a></li>
-          <li><a href="#book">Patient portal</a></li>
+          <li><a href="#today"><span lang="es">Disponibilidad de hoy</span><span lang="en">Today's availability</span></a></li>
+          <li><a href="#book"><span lang="es">Reservar cita</span><span lang="en">Book appointment</span></a></li>
+          <li><a href="tel:+15552140880"><span lang="es">Llamar al (555) 214-0880</span><span lang="en">Call (555) 214-0880</span></a></li>
+          <li><a href="#book"><span lang="es">Portal de pacientes</span><span lang="en">Patient portal</span></a></li>
         </ul>
       </div>
       <div>
-        <h4>Care</h4>
+        <h4><span lang="es">Cuidado</span><span lang="en">Care</span></h4>
         <ul>
-          <li><a href="#care">What we treat</a></li>
-          <li><a href="#team">Who's on shift</a></li>
-          <li><a href="#insurance">Insurance &amp; cost</a></li>
-          <li><a href="#visit">Hours</a></li>
+          <li><a href="#care"><span lang="es">Qué tratamos</span><span lang="en">What we treat</span></a></li>
+          <li><a href="#team"><span lang="es">Quién está de turno</span><span lang="en">Who's on shift</span></a></li>
+          <li><a href="#insurance"><span lang="es">Seguros y costos</span><span lang="en">Insurance &amp; cost</span></a></li>
+          <li><a href="#visit"><span lang="es">Horarios</span><span lang="en">Hours</span></a></li>
         </ul>
       </div>
       <div>
-        <h4>Emergency</h4>
+        <h4><span lang="es">Emergencias</span><span lang="en">Emergency</span></h4>
         <ul>
-          <li style="color:var(--sig);font-weight:700">Call 911</li>
-          <li>Bayview General ED<br>1900 Seaway Blvd</li>
-          <li>Poison Control<br>(800) 222-1222</li>
+          <li style="color:var(--sig);font-weight:700"><span lang="es">Llame al 911</span><span lang="en">Call 911</span></li>
+          <li><span lang="es">Sala de emergencias Bayview General</span><span lang="en">Bayview General ED</span><br>1900 Seaway Blvd</li>
+          <li><span lang="es">Control de Envenenamiento</span><span lang="en">Poison Control</span><br>(800) 222-1222</li>
         </ul>
       </div>
     </div>
-    <p class="fine">Concept demo — fictional practice. Providers, availability, pricing,
+    <p class="fine"><span lang="es">Demostración conceptual — práctica ficticia. Médicos,
+    disponibilidad, precios y reseñas son ejemplos. · Aviso de Prácticas de Privacidad ·
+    Accesibilidad · No Discriminación</span><span lang="en">Concept demo — fictional practice. Providers, availability, pricing,
     and reviews are placeholders. · Notice of Privacy Practices · Accessibility ·
-    Nondiscrimination</p>
+    Nondiscrimination</span></p>
   </div>
 </footer>
 
 <div class="dual">
-  <a class="btn btn-blk" href="tel:+15552140880">Call now</a>
-  <a class="btn" href="#book">Book today</a>
+  <a class="btn btn-blk" href="tel:+15552140880"><span lang="es">Llamar ahora</span><span lang="en">Call now</span></a>
+  <a class="btn" href="#book"><span lang="es">Reservar hoy</span><span lang="en">Book today</span></a>
 </div>
 
 <script>
 (function(){
   'use strict';
+
+  /* ---- locale for the live board ---- */
+  var L = {
+    es: {
+      openNow: 'Abierto ahora', closed: 'Cerrado', closedToday: 'Cerrado hoy',
+      opens: function(x){ return 'Abre a las ' + x; },
+      closes: function(x){ return 'Cierra a las ' + x; },
+      closedAt: function(x){ return 'Cerró a las ' + x; },
+      preOpen: 'Los espacios se publican a las 7:00 am — por orden de llegada.',
+      doneDay: 'Hoy ya no hay espacios. Los próximos se publican a las 7:00 am.',
+      goneTitle: 'Ya no se puede reservar hoy',
+      title: 'Harbor Family Medical — Concepto 5: Harbor Now'
+    },
+    en: {
+      openNow: 'Open now', closed: 'Closed', closedToday: 'Closed today',
+      opens: function(x){ return 'Opens ' + x; },
+      closes: function(x){ return 'Closes ' + x; },
+      closedAt: function(x){ return 'Closed at ' + x; },
+      preOpen: 'Slots release at 7:00 am — first come, first served.',
+      doneDay: 'Today is closed out. Next same-day slots release at 7:00 am.',
+      goneTitle: 'No longer bookable today',
+      title: 'Harbor Family Medical — Concept 5: Harbor Now'
+    }
+  };
+  function lang(){ return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'es'; }
+  function t(){ return L[lang()]; }
 
   /* mobile menu */
   var mt = document.getElementById('menuT'), sheet = document.getElementById('msheet');
@@ -734,10 +849,9 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
     var open = sheet.dataset.open !== 'true';
     sheet.dataset.open = open;
     mt.setAttribute('aria-expanded', open);
-    mt.textContent = open ? 'Close' : 'Menu';
   });
   sheet.addEventListener('click', function(e){
-    if (e.target.tagName === 'A'){ sheet.dataset.open = 'false'; mt.setAttribute('aria-expanded','false'); mt.textContent = 'Menu'; }
+    if (e.target.closest('a')){ sheet.dataset.open = 'false'; mt.setAttribute('aria-expanded','false'); }
   });
 
   /* ---- open / closed computed from the posted hours ---- */
@@ -753,10 +867,10 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
   function state(table, now){
     var win = table[now.getDay()];
     var mins = now.getHours()*60 + now.getMinutes();
-    if (!win) return {open:false, msg:'Closed today'};
-    if (mins < win[0]) return {open:false, msg:'Opens ' + fmt(win[0])};
-    if (mins >= win[1]) return {open:false, msg:'Closed at ' + fmt(win[1])};
-    return {open:true, msg:'Closes ' + fmt(win[1])};
+    if (!win) return {open:false, msg:t().closedToday};
+    if (mins < win[0]) return {open:false, msg:t().opens(fmt(win[0]))};
+    if (mins >= win[1]) return {open:false, msg:t().closedAt(fmt(win[1]))};
+    return {open:true, msg:t().closes(fmt(win[1]))};
   }
 
   function paint(){
@@ -764,55 +878,70 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
     var bay = state(BAY, now), ng = state(NG, now);
 
     var big = document.getElementById('statusBig');
-    big.textContent = bay.open ? 'Open now' : 'Closed';
+    big.textContent = bay.open ? t().openNow : t().closed;
     big.className = 'v ' + (bay.open ? 'open' : 'shut');
-    document.getElementById('statusNote').innerHTML = bay.msg + ' · <span id="clock">' +
-      now.toLocaleTimeString([], {hour:'numeric', minute:'2-digit'}) + '</span>';
+    document.getElementById('statusNote').textContent = bay.msg + ' · ' +
+      now.toLocaleTimeString(lang() === 'es' ? 'es-PR' : 'en-US', {hour:'numeric', minute:'2-digit'});
 
     var led = document.getElementById('hdrLed');
     led.dataset.closed = String(!bay.open);
-    document.getElementById('hdrStatus').textContent = bay.open ? 'Open now' : 'Closed';
+    document.getElementById('hdrStatus').textContent = bay.open ? t().openNow : t().closed;
 
     var bb = document.getElementById('bayBadge');
-    bb.textContent = bay.open ? 'Open now' : bay.msg;
+    bb.textContent = bay.open ? t().openNow : bay.msg;
     bb.className = 'badge' + (bay.open ? '' : ' shut');
 
     var nb = document.getElementById('ngBadge');
-    nb.textContent = ng.open ? 'Open now' : ng.msg;
+    nb.textContent = ng.open ? t().openNow : ng.msg;
     nb.className = 'badge' + (ng.open ? '' : ' shut');
   }
 
   /* ---- today's remaining same-day slots, from the clock ---- */
-  (function(){
-    var SLOTS = [8*60+20, 9*60+40, 11*60, 13*60+40, 15*60+20, 16*60+40];
+  var SLOTS = [8*60+20, 9*60+40, 11*60, 13*60+40, 15*60+20, 16*60+40];
+  function paintSlots(){
     var now = new Date(), mins = now.getHours()*60 + now.getMinutes();
     var win = BAY[now.getDay()];
-    var preOpen = !!win && mins < win[0];            // clinic opens later today
-    var doneForDay = !preOpen && !state(BAY, now).open; // after close, or closed all day
+    var preOpen = !!win && mins < win[0];
+    var doneForDay = !preOpen && !state(BAY, now).open;
     var strip = document.getElementById('slotStrip'), left = 0;
+    strip.innerHTML = '';
+    var old = strip.parentNode.querySelector('p.note[data-slot-note]');
+    if (old) old.remove();
     SLOTS.forEach(function(s){
       var el = document.createElement('span');
       el.textContent = fmt(s);
       var gone = doneForDay || (!preOpen && s <= mins + 30);
-      if (gone){ el.className = 'gone'; el.title = 'No longer bookable today'; }
+      if (gone){ el.className = 'gone'; el.title = t().goneTitle; }
       else { left++; }
       strip.appendChild(el);
     });
     if (doneForDay) left = 0;
     document.getElementById('slotsLeft').textContent = left;
-    var noteText = preOpen ? 'Slots release at 7:00 am — first come, first served.'
-                 : left === 0 ? 'Today is closed out. Next same-day slots release at 7:00 am.'
-                 : '';
+    var noteText = preOpen ? t().preOpen : left === 0 ? t().doneDay : '';
     if (noteText){
       var note = document.createElement('p');
       note.className = 'note';
+      note.setAttribute('data-slot-note','');
       note.textContent = noteText;
       strip.parentNode.appendChild(note);
     }
-  })();
+  }
 
-  paint();
-  setInterval(paint, 30000);
+  function paintAll(){ paint(); paintSlots(); document.title = t().title; }
+
+  /* ---- language toggle ---- */
+  document.querySelectorAll('.lang-toggle').forEach(function(b){
+    b.addEventListener('click', function(){
+      var l = lang() === 'es' ? 'en' : 'es';
+      var d = document.documentElement;
+      d.setAttribute('lang', l); d.setAttribute('data-lang', l);
+      try { localStorage.setItem('harborLang', l); } catch(e) {}
+      paintAll();
+    });
+  });
+
+  paintAll();
+  setInterval(paintAll, 30000);
 })();
 </script>
 

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Harbor Family Medical — Concept 1: Harbor &amp; Oak</title>
-<meta name="description" content="Harbor Family Medical is a board-certified family medicine practice in Bayview offering annual physicals, same-day sick visits, chronic care, and telehealth.">
+<script>(function(){var l=null;try{l=localStorage.getItem('harborLang')}catch(e){}l=l==='en'?'en':'es';var d=document.documentElement;d.setAttribute('lang',l);d.setAttribute('data-lang',l);})();</script>
+<title>Harbor Family Medical — Concepto 1: Harbor &amp; Oak</title>
+<meta name="description" content="Harbor Family Medical es una práctica de medicina familiar certificada en Bayview: exámenes físicos anuales, citas de enfermedad el mismo día, cuidado crónico y telemedicina.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2323201c'/><text x='16' y='23' font-size='19' font-family='Georgia,serif' fill='%23fbf8f3' text-anchor='middle'>H</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +16,7 @@
    Calm, premium, editorial. Warm neutrals, serif display,
    hairline rules instead of cards, very low density.
    Signature: no card grid anywhere. Numbered editorial lists.
+   Spanish-first; English via the language toggle.
    ============================================================ */
 
 :root{
@@ -78,7 +80,7 @@ img{max-width:100%}
 .masthead{background:var(--bone);position:relative;z-index:40}
 .mast-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 32px 22px}
 .wordmark{display:flex;flex-direction:column;line-height:1}
-.wordmark .name{font-family:var(--serif);font-size:26px;letter-spacing:.01em}
+.wordmark .name{font-family:var(--display);font-size:26px;letter-spacing:.01em}
 .wordmark .sub{
   font-family:var(--sans);font-size:10px;font-weight:600;text-transform:uppercase;
   letter-spacing:.26em;color:var(--brass);margin-top:8px;
@@ -96,13 +98,16 @@ img{max-width:100%}
 .desknav a{color:var(--ink-soft);padding:4px 0;border-bottom:1px solid transparent}
 .desknav a:hover{color:var(--ink);border-bottom-color:var(--oak)}
 
-/* editorial "Menu" text button — not a hamburger */
-.menu-btn{
-  display:none;font-family:var(--sans);font-size:12px;font-weight:600;
+/* editorial text buttons — Menu and language toggle */
+.menu-btn,.lang-toggle{
+  font-family:var(--sans);font-size:12px;font-weight:600;
   text-transform:uppercase;letter-spacing:.16em;background:none;border:0;
   border-bottom:1px solid var(--ink);color:var(--ink);padding:8px 2px;cursor:pointer;
   min-height:44px;
 }
+.menu-btn{display:none}
+.lang-toggle{border-bottom-color:var(--oak);color:var(--brass)}
+.lang-toggle:hover{color:var(--ink)}
 
 /* mobile: full-screen serif overlay */
 .overlay{
@@ -113,7 +118,7 @@ img{max-width:100%}
 .overlay-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:44px}
 .overlay nav ul{list-style:none;margin:0;padding:0}
 .overlay nav a{
-  display:block;font-family:var(--serif);font-size:34px;padding:15px 0;
+  display:block;font-family:var(--display);font-size:34px;padding:15px 0;
   border-bottom:1px solid var(--rule);
 }
 .overlay .ov-foot{margin-top:auto;padding-top:36px;font-family:var(--sans);font-size:14px;color:var(--ink-soft)}
@@ -203,13 +208,13 @@ img{max-width:100%}
   display:grid;place-items:center;
 }
 .portrait::after{content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.13;mix-blend-mode:overlay}
-.portrait span{font-family:var(--serif);font-size:4.4rem;color:rgba(255,255,255,.82)}
+.portrait span{font-family:var(--display);font-size:4.4rem;color:rgba(255,255,255,.82)}
 .prov h3{font-size:2rem;margin-bottom:.15em}
 .prov .cred{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--brass);margin-bottom:1.3em}
 .prov p{color:var(--ink-soft);font-size:1.04rem}
 .prov dl{font-family:var(--sans);font-size:13.5px;margin:26px 0 26px;border-top:1px solid var(--rule)}
 .prov dl div{display:flex;gap:16px;padding:9px 0;border-bottom:1px solid var(--rule)}
-.prov dt{width:112px;flex:none;color:var(--ink-soft)}
+.prov dt{width:132px;flex:none;color:var(--ink-soft)}
 .prov dd{margin:0;font-weight:600}
 
 /* ---------- reviews: oversized pull quote ---------- */
@@ -222,14 +227,14 @@ img{max-width:100%}
 }
 .pull cite{font-family:var(--sans);font-style:normal;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
 .rating{display:flex;justify-content:center;align-items:baseline;gap:12px;margin-bottom:36px;font-family:var(--sans)}
-.rating .num{font-family:var(--serif);font-size:2.5rem}
+.rating .num{font-family:var(--display);font-size:2.5rem}
 .rating .stars{color:var(--oak);letter-spacing:.15em;font-size:1.05rem}
 .rating .cnt{font-size:13px;color:var(--ink-soft)}
 .mini-quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:70px;border-top:1px solid var(--rule)}
-.mini-quotes div{padding:32px 30px;border-right:1px solid var(--rule)}
-.mini-quotes div:last-child{border-right:0}
+.mini-quotes>div{padding:32px 30px;border-right:1px solid var(--rule)}
+.mini-quotes>div:last-child{border-right:0}
 .mini-quotes p{font-size:1rem;font-style:italic;color:var(--ink-soft)}
-.mini-quotes span{font-family:var(--sans);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--brass)}
+.mini-quotes span.who{font-family:var(--sans);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--brass)}
 
 /* ---------- insurance: plain text row ---------- */
 
@@ -265,7 +270,7 @@ footer ul{list-style:none;margin:0;padding:0}
 footer li{margin-bottom:11px}
 footer a{color:#e6ded2}
 footer a:hover{color:#fff;text-decoration:underline}
-footer .fm .name{font-family:var(--serif);font-size:22px;color:#fff;display:block;margin-bottom:14px}
+footer .fm .name{font-family:var(--display);font-size:22px;color:#fff;display:block;margin-bottom:14px}
 footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 
 /* ---------- mobile sticky book bar (appears on scroll) ---------- */
@@ -280,6 +285,12 @@ footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justif
 .sticky-book[data-show="true"]{transform:translateY(0)}
 .sticky-book .btn{flex:1;padding:15px 12px;font-size:12.5px}
 
+/* one orchestrated moment: the hero card settles into place */
+@media (prefers-reduced-motion:no-preference){
+  .hero-card{animation:rise .7s .08s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}}
+}
+
 /* ============================================================
    RESPONSIVE — mobile is a re-layout, not a collapse
    ============================================================ */
@@ -292,7 +303,7 @@ footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justif
   .prov:nth-child(even) .portrait{order:0}
   .portrait{aspect-ratio:3/2}
   .mini-quotes{grid-template-columns:1fr}
-  .mini-quotes div{border-right:0;border-bottom:1px solid var(--rule)}
+  .mini-quotes>div{border-right:0;border-bottom:1px solid var(--rule)}
   .locs{grid-template-columns:1fr}
   .loc,.locs .loc:last-child{padding:36px 0;border-right:0;border-bottom:1px solid var(--rule)}
   footer .cols4{grid-template-columns:1fr 1fr;gap:34px}
@@ -306,6 +317,7 @@ footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justif
   .topline .wrap span:first-child{display:none} /* keep the topline to one line on phones */
   .mast-actions .phone{display:none}
   .mast-actions>.btn{display:none} /* sticky bar + hero CTA carry Book on phones */
+  .mast-actions{gap:18px}
   .mast-inner{padding:18px 22px}
   .wordmark .name{font-size:21px}
   .wordmark .sub{letter-spacing:.2em}
@@ -328,17 +340,11 @@ footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justif
 
   .lead-para{font-size:1.24rem}
   .prov h3{font-size:1.65rem}
-  .prov dt{width:96px}
+  .prov dt{width:112px}
   .plans{font-size:1.08rem;line-height:1.9}
   .sticky-book{display:flex}
   footer .cols4{grid-template-columns:1fr;gap:28px}
   footer{padding-bottom:96px}
-}
-
-/* one orchestrated moment: the hero card settles into place */
-@media (prefers-reduced-motion:no-preference){
-  .hero-card{animation:rise .7s .08s cubic-bezier(.2,.7,.2,1) both}
-  @keyframes rise{from{opacity:0;transform:translateY(16px)}}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -346,16 +352,24 @@ footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justif
   *{transition:none!important;animation:none!important}
   .sticky-book{transform:none}
 }
+
+/* ============================================================
+   LANGUAGE — Spanish is the default; the toggle reveals English.
+   Only the inactive language is hidden, so each element keeps
+   its own display value. Rules last so they win the cascade.
+   ============================================================ */
+html[data-lang="es"] [lang="en"]{display:none!important}
+html[data-lang="en"] [lang="es"]{display:none!important}
 </style>
 </head>
 <body>
 
-<a class="skip" href="#main">Skip to main content</a>
+<a class="skip" href="#main"><span lang="es">Saltar al contenido</span><span lang="en">Skip to main content</span></a>
 
 <div class="topline">
   <div class="wrap">
-    <span>Board-certified family medicine · Bayview &amp; Northgate</span>
-    <span>Same-week appointments · <a href="tel:+15552140880">(555) 214-0880</a></span>
+    <span><span lang="es">Medicina familiar certificada · Bayview y Northgate</span><span lang="en">Board-certified family medicine · Bayview &amp; Northgate</span></span>
+    <span><span lang="es">Citas esta misma semana · </span><span lang="en">Same-week appointments · </span><a href="tel:+15552140880">(555) 214-0880</a></span>
   </div>
 </div>
 
@@ -363,22 +377,23 @@ footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justif
   <div class="mast-inner">
     <a class="wordmark" href="#top">
       <span class="name">Harbor Family Medical</span>
-      <span class="sub">Established 2004</span>
+      <span class="sub"><span lang="es">Desde 2004</span><span lang="en">Established 2004</span></span>
     </a>
     <div class="mast-actions">
       <span class="phone">Bayview <strong>(555) 214-0880</strong></span>
-      <a class="btn" href="#book">Book Appointment</a>
-      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="ovl">Menu</button>
+      <a class="btn" href="#book"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
+      <button class="lang-toggle" type="button"><span lang="es">English</span><span lang="en">Español</span></button>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="ovl"><span lang="es">Menú</span><span lang="en">Menu</span></button>
     </div>
   </div>
-  <nav class="desknav" aria-label="Main">
+  <nav class="desknav" aria-label="Principal">
     <ul>
-      <li><a href="#practice">The Practice</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#doctors">Meet Our Doctors</a></li>
-      <li><a href="#reviews">Patient Voices</a></li>
-      <li><a href="#insurance">Insurance</a></li>
-      <li><a href="#visit">Visit Us</a></li>
+      <li><a href="#practice"><span lang="es">La Práctica</span><span lang="en">The Practice</span></a></li>
+      <li><a href="#services"><span lang="es">Servicios</span><span lang="en">Services</span></a></li>
+      <li><a href="#doctors"><span lang="es">Nuestros Médicos</span><span lang="en">Meet Our Doctors</span></a></li>
+      <li><a href="#reviews"><span lang="es">Voces de Pacientes</span><span lang="en">Patient Voices</span></a></li>
+      <li><a href="#insurance"><span lang="es">Seguros</span><span lang="en">Insurance</span></a></li>
+      <li><a href="#visit"><span lang="es">Visítenos</span><span lang="en">Visit Us</span></a></li>
     </ul>
   </nav>
 </header>
@@ -386,22 +401,23 @@ footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justif
 <div class="overlay" id="ovl" data-open="false">
   <div class="overlay-top">
     <span class="wordmark"><span class="name">Harbor</span></span>
-    <button class="menu-btn" id="closeBtn" aria-label="Close menu">Close</button>
+    <button class="menu-btn" id="closeBtn" style="display:inline-block"><span lang="es">Cerrar</span><span lang="en">Close</span></button>
   </div>
-  <nav aria-label="Mobile">
+  <nav aria-label="Móvil">
     <ul>
-      <li><a href="#practice">The Practice</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#doctors">Meet Our Doctors</a></li>
-      <li><a href="#reviews">Patient Voices</a></li>
-      <li><a href="#insurance">Insurance</a></li>
-      <li><a href="#visit">Visit Us</a></li>
+      <li><a href="#practice"><span lang="es">La Práctica</span><span lang="en">The Practice</span></a></li>
+      <li><a href="#services"><span lang="es">Servicios</span><span lang="en">Services</span></a></li>
+      <li><a href="#doctors"><span lang="es">Nuestros Médicos</span><span lang="en">Meet Our Doctors</span></a></li>
+      <li><a href="#reviews"><span lang="es">Voces de Pacientes</span><span lang="en">Patient Voices</span></a></li>
+      <li><a href="#insurance"><span lang="es">Seguros</span><span lang="en">Insurance</span></a></li>
+      <li><a href="#visit"><span lang="es">Visítenos</span><span lang="en">Visit Us</span></a></li>
     </ul>
   </nav>
   <div class="ov-foot">
+    <p style="margin-bottom:14px"><button class="lang-toggle" type="button"><span lang="es">English</span><span lang="en">Español</span></button></p>
     <p>Bayview <a href="tel:+15552140880"><strong>(555) 214-0880</strong></a><br>
     Northgate <a href="tel:+15552140895"><strong>(555) 214-0895</strong></a></p>
-    <a class="btn" href="#book" style="width:100%">Book Appointment</a>
+    <a class="btn" href="#book" style="width:100%"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
   </div>
 </div>
 
@@ -409,24 +425,31 @@ footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justif
 
   <!-- HERO -->
   <section class="hero" id="top">
-    <div class="plate" role="img" aria-label="Sunlit waiting room at Harbor Family Medical with linen chairs and a wood reception desk">
-      <span class="plate-note">Photography · Clinic interior, natural light</span>
+    <div class="plate" role="img" aria-label="Sala de espera de Harbor Family Medical con luz natural, sillas de lino y recepción de madera">
+      <span class="plate-note"><span lang="es">Fotografía · Interior de la clínica, luz natural</span><span lang="en">Photography · Clinic interior, natural light</span></span>
     </div>
     <div class="wrap">
       <div class="hero-card">
-        <span class="label">Accepting new patients</span>
-        <h1>A family doctor who has time for the whole conversation.</h1>
-        <p class="lede">Four board-certified physicians in Bayview, caring for families,
+        <span class="label"><span lang="es">Aceptamos pacientes nuevos</span><span lang="en">Accepting new patients</span></span>
+        <h1 lang="es">Un médico de familia con tiempo para toda la conversación.</h1>
+        <h1 lang="en">A family doctor who has time for the whole conversation.</h1>
+        <p class="lede" lang="es">Cuatro médicos certificados en Bayview que cuidan de familias,
+        adultos que trabajan y personas mayores — con citas la misma semana y una recepción
+        que lo conoce por su nombre.</p>
+        <p class="lede" lang="en">Four board-certified physicians in Bayview, caring for families,
         working adults, and seniors — with same-week appointments and a front desk that
         knows your name.</p>
         <div class="hero-cta">
-          <a class="btn" href="#book">Book Appointment</a>
-          <a class="btn btn-out" href="tel:+15552140880">Call (555) 214-0880</a>
+          <a class="btn" href="#book"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
+          <a class="btn btn-out" href="tel:+15552140880"><span lang="es">Llamar al (555) 214-0880</span><span lang="en">Call (555) 214-0880</span></a>
         </div>
         <p class="hero-meta">
-          <span class="dot" aria-hidden="true"></span> Same-week availability
-          <span aria-hidden="true">·</span> Most insurance accepted
-          <span aria-hidden="true">·</span> Bilingual staff (English / Español)
+          <span class="dot" aria-hidden="true"></span>
+          <span lang="es">Citas la misma semana</span><span lang="en">Same-week availability</span>
+          <span aria-hidden="true">·</span>
+          <span lang="es">Aceptamos la mayoría de los seguros</span><span lang="en">Most insurance accepted</span>
+          <span aria-hidden="true">·</span>
+          <span lang="es">Personal bilingüe (español / English)</span><span lang="en">Bilingual staff (English / Español)</span>
         </p>
       </div>
     </div>
@@ -435,12 +458,29 @@ footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justif
   <!-- THE PRACTICE -->
   <section class="section" id="practice">
     <div class="wrap cols">
-      <div class="sticky"><span class="label">01 — The Practice</span></div>
+      <div class="sticky"><span class="label"><span lang="es">01 — La Práctica</span><span lang="en">01 — The Practice</span></span></div>
       <div>
-        <p class="lead-para">We built Harbor around a simple idea: continuity is the
+        <p class="lead-para" lang="es">Construimos Harbor sobre una idea sencilla: la
+        continuidad es el tratamiento. Ver al mismo médico durante veinte años vale más
+        que cualquier visita aislada.</p>
+        <p class="lead-para" lang="en">We built Harbor around a simple idea: continuity is the
         treatment. Seeing the same doctor for twenty years is worth more than any
         single visit.</p>
-        <div class="body-2">
+        <div class="body-2" lang="es">
+          <p>Harbor Family Medical abrió en la calle Harbor en 2004 con una sola médica y
+          un fax compartido. Dos décadas después somos cuatro médicos y un asistente
+          médico en dos oficinas, y seguimos limitando nuestros paneles para que las
+          citas empiecen a tiempo.</p>
+          <p>Eso significa exámenes físicos anuales sin prisa, citas de enfermedad el
+          mismo día para nuestros propios pacientes, y cuidado crónico — diabetes,
+          presión arterial, tiroides, colesterol — manejado por alguien que recuerda qué
+          intentó usted el año pasado y por qué no funcionó.</p>
+          <p>Ofrecemos telemedicina para seguimientos y revisión de laboratorios, porque
+          perder medio día de trabajo para escuchar "sus laboratorios están normales" es
+          perder su tiempo.</p>
+          <p><a class="link-more" href="#doctors">Conozca a nuestros médicos</a></p>
+        </div>
+        <div class="body-2" lang="en">
           <p>Harbor Family Medical opened on Harbor Street in 2004 with one physician
           and a shared fax machine. Two decades later we are four physicians and a
           physician assistant across two offices, and we still cap our panels so
@@ -462,43 +502,49 @@ footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justif
   <!-- SERVICES — numbered editorial list -->
   <section class="section" id="services">
     <div class="wrap cols">
-      <div class="sticky"><span class="label">02 — Services</span></div>
+      <div class="sticky"><span class="label"><span lang="es">02 — Servicios</span><span lang="en">02 — Services</span></span></div>
       <div class="svc">
         <div class="svc-row">
           <span class="svc-num">i.</span>
-          <h3>Annual physicals</h3>
-          <p>A full hour. Labs drawn on site, results reviewed with you by phone or video within a week — never a portal message with no explanation.</p>
-          <span class="tag">All ages</span>
+          <h3><span lang="es">Exámenes físicos anuales</span><span lang="en">Annual physicals</span></h3>
+          <p lang="es">Una hora completa. Laboratorios tomados aquí mismo y resultados explicados con usted por teléfono o video en una semana — nunca un mensaje del portal sin explicación.</p>
+          <p lang="en">A full hour. Labs drawn on site, results reviewed with you by phone or video within a week — never a portal message with no explanation.</p>
+          <span class="tag"><span lang="es">Todas las edades</span><span lang="en">All ages</span></span>
         </div>
         <div class="svc-row">
           <span class="svc-num">ii.</span>
-          <h3>Same-day sick visits</h3>
-          <p>Reserved slots held every morning for established patients. Call before 10am and we will almost always see you that day.</p>
-          <span class="tag">Same day</span>
+          <h3><span lang="es">Citas de enfermedad el mismo día</span><span lang="en">Same-day sick visits</span></h3>
+          <p lang="es">Espacios reservados cada mañana para pacientes establecidos. Llame antes de las 10 am y casi siempre lo veremos ese mismo día.</p>
+          <p lang="en">Reserved slots held every morning for established patients. Call before 10am and we will almost always see you that day.</p>
+          <span class="tag"><span lang="es">Mismo día</span><span lang="en">Same day</span></span>
         </div>
         <div class="svc-row">
           <span class="svc-num">iii.</span>
-          <h3>Chronic care management</h3>
-          <p>Diabetes, hypertension, thyroid, asthma, cholesterol. Longer visits, a written plan, and one physician following the whole arc.</p>
-          <span class="tag">Ongoing</span>
+          <h3><span lang="es">Manejo de condiciones crónicas</span><span lang="en">Chronic care management</span></h3>
+          <p lang="es">Diabetes, hipertensión, tiroides, asma, colesterol. Visitas más largas, un plan por escrito y un solo médico siguiendo todo el proceso.</p>
+          <p lang="en">Diabetes, hypertension, thyroid, asthma, cholesterol. Longer visits, a written plan, and one physician following the whole arc.</p>
+          <span class="tag"><span lang="es">Continuo</span><span lang="en">Ongoing</span></span>
         </div>
         <div class="svc-row">
           <span class="svc-num">iv.</span>
-          <h3>Vaccines &amp; immunizations</h3>
-          <p>Childhood schedule, annual flu, shingles, pneumonia, travel counselling, Tdap and tetanus. Walk-in flu clinic each October.</p>
-          <span class="tag">Walk-in</span>
+          <h3><span lang="es">Vacunas e inmunizaciones</span><span lang="en">Vaccines &amp; immunizations</span></h3>
+          <p lang="es">Calendario infantil, influenza anual, culebrilla, neumonía, orientación de viaje, Tdap y tétanos. Clínica de influenza sin cita cada octubre.</p>
+          <p lang="en">Childhood schedule, annual flu, shingles, pneumonia, travel counselling, Tdap and tetanus. Walk-in flu clinic each October.</p>
+          <span class="tag"><span lang="es">Sin cita</span><span lang="en">Walk-in</span></span>
         </div>
         <div class="svc-row">
           <span class="svc-num">v.</span>
-          <h3>Telehealth visits</h3>
-          <p>Video appointments for follow-ups, medication adjustments, rashes, and anything that does not need a stethoscope. Same physicians.</p>
+          <h3><span lang="es">Telemedicina</span><span lang="en">Telehealth visits</span></h3>
+          <p lang="es">Citas por video para seguimientos, ajustes de medicamentos, erupciones y todo lo que no requiere estetoscopio. Los mismos médicos.</p>
+          <p lang="en">Video appointments for follow-ups, medication adjustments, rashes, and anything that does not need a stethoscope. Same physicians.</p>
           <span class="tag">Video</span>
         </div>
         <div class="svc-row">
           <span class="svc-num">vi.</span>
-          <h3>Lab &amp; imaging follow-up</h3>
-          <p>Every result gets a human explanation. We coordinate specialist referrals and chase the reports so you are not the messenger.</p>
-          <span class="tag">Included</span>
+          <h3><span lang="es">Seguimiento de laboratorios e imágenes</span><span lang="en">Lab &amp; imaging follow-up</span></h3>
+          <p lang="es">Cada resultado recibe una explicación humana. Coordinamos referidos a especialistas y perseguimos los informes para que usted no sea el mensajero.</p>
+          <p lang="en">Every result gets a human explanation. We coordinate specialist referrals and chase the reports so you are not the messenger.</p>
+          <span class="tag"><span lang="es">Incluido</span><span lang="en">Included</span></span>
         </div>
       </div>
     </div>
@@ -509,69 +555,83 @@ footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justif
   <!-- DOCTORS -->
   <section class="section" id="doctors">
     <div class="wrap">
-      <span class="label">03 — Meet Our Doctors</span>
+      <span class="label"><span lang="es">03 — Nuestros Médicos</span><span lang="en">03 — Meet Our Doctors</span></span>
       <div class="prov">
-        <div class="portrait" role="img" aria-label="Portrait of Dr. Naomi Reyes"><span>NR</span></div>
+        <div class="portrait" role="img" aria-label="Retrato de la Dra. Naomi Reyes"><span>NR</span></div>
         <div>
-          <h3>Dr. Naomi Reyes, MD</h3>
-          <p class="cred">Family Medicine · Board Certified · Founding Physician</p>
-          <p>Naomi opened Harbor in 2004 after residency at Bayview General. She sees
+          <h3>Dra. Naomi Reyes, MD</h3>
+          <p class="cred"><span lang="es">Medicina familiar · Certificada · Médica fundadora</span><span lang="en">Family Medicine · Board Certified · Founding Physician</span></p>
+          <p lang="es">Naomi abrió Harbor en 2004 tras su residencia en el Bayview General.
+          Atiende a tres generaciones de algunas familias y considera que ese es
+          exactamente el propósito de la atención primaria. Su enfoque clínico es la
+          diabetes y la salud de la mujer.</p>
+          <p lang="en">Naomi opened Harbor in 2004 after residency at Bayview General. She sees
           three generations of some families and considers that the entire point of
           primary care. Her clinical focus is diabetes and women's health.</p>
           <dl>
-            <div><dt>Experience</dt><dd>21 years</dd></div>
-            <div><dt>Languages</dt><dd>English, Español</dd></div>
-            <div><dt>Location</dt><dd>Bayview</dd></div>
+            <div><dt><span lang="es">Experiencia</span><span lang="en">Experience</span></dt><dd><span lang="es">21 años</span><span lang="en">21 years</span></dd></div>
+            <div><dt><span lang="es">Idiomas</span><span lang="en">Languages</span></dt><dd>Español, English</dd></div>
+            <div><dt><span lang="es">Oficina</span><span lang="en">Location</span></dt><dd>Bayview</dd></div>
           </dl>
-          <a class="link-more" href="#book">Book with Dr. Reyes</a>
+          <a class="link-more" href="#book"><span lang="es">Reservar con la Dra. Reyes</span><span lang="en">Book with Dr. Reyes</span></a>
         </div>
       </div>
       <div class="prov">
-        <div class="portrait" role="img" aria-label="Portrait of Dr. Samuel Adeyemi"><span>SA</span></div>
+        <div class="portrait" role="img" aria-label="Retrato del Dr. Samuel Adeyemi"><span>SA</span></div>
         <div>
           <h3>Dr. Samuel Adeyemi, MD</h3>
-          <p class="cred">Family Medicine · Board Certified · Geriatric Focus</p>
-          <p>Samuel joined in 2011 and carries most of our senior panel. He is the
+          <p class="cred"><span lang="es">Medicina familiar · Certificado · Enfoque geriátrico</span><span lang="en">Family Medicine · Board Certified · Geriatric Focus</span></p>
+          <p lang="es">Samuel se unió en 2011 y lleva la mayor parte de nuestro panel de
+          personas mayores. Es el médico que lee el expediente completo antes de entrar,
+          y con gusto dedica una visita a reducir una lista de medicamentos en lugar de
+          alargarla.</p>
+          <p lang="en">Samuel joined in 2011 and carries most of our senior panel. He is the
           physician who reads the whole chart before walking in, and he will happily
           spend a visit reducing a medication list rather than adding to it.</p>
           <dl>
-            <div><dt>Experience</dt><dd>18 years</dd></div>
-            <div><dt>Languages</dt><dd>English, Yoruba</dd></div>
-            <div><dt>Location</dt><dd>Bayview &amp; Northgate</dd></div>
+            <div><dt><span lang="es">Experiencia</span><span lang="en">Experience</span></dt><dd><span lang="es">18 años</span><span lang="en">18 years</span></dd></div>
+            <div><dt><span lang="es">Idiomas</span><span lang="en">Languages</span></dt><dd>English, Yorùbá</dd></div>
+            <div><dt><span lang="es">Oficina</span><span lang="en">Location</span></dt><dd>Bayview &amp; Northgate</dd></div>
           </dl>
-          <a class="link-more" href="#book">Book with Dr. Adeyemi</a>
+          <a class="link-more" href="#book"><span lang="es">Reservar con el Dr. Adeyemi</span><span lang="en">Book with Dr. Adeyemi</span></a>
         </div>
       </div>
       <div class="prov">
-        <div class="portrait" role="img" aria-label="Portrait of Dr. Hana Kwon"><span>HK</span></div>
+        <div class="portrait" role="img" aria-label="Retrato de la Dra. Hana Kwon"><span>HK</span></div>
         <div>
-          <h3>Dr. Hana Kwon, DO</h3>
-          <p class="cred">Family Medicine · Board Certified · Osteopathic</p>
-          <p>Hana came to Harbor in 2018 from a hospital system and has no intention of
+          <h3>Dra. Hana Kwon, DO</h3>
+          <p class="cred"><span lang="es">Medicina familiar · Certificada · Osteopática</span><span lang="en">Family Medicine · Board Certified · Osteopathic</span></p>
+          <p lang="es">Hana llegó a Harbor en 2018 desde un sistema hospitalario y no tiene
+          intención de volver. Su formación osteopática guía cómo trata el dolor de
+          espalda, cuello y articulaciones — muchas veces sin recetario.</p>
+          <p lang="en">Hana came to Harbor in 2018 from a hospital system and has no intention of
           going back. Osteopathic training informs how she approaches back, neck, and
           joint pain — often without a prescription pad.</p>
           <dl>
-            <div><dt>Experience</dt><dd>11 years</dd></div>
-            <div><dt>Languages</dt><dd>English, 한국어</dd></div>
-            <div><dt>Location</dt><dd>Northgate</dd></div>
+            <div><dt><span lang="es">Experiencia</span><span lang="en">Experience</span></dt><dd><span lang="es">11 años</span><span lang="en">11 years</span></dd></div>
+            <div><dt><span lang="es">Idiomas</span><span lang="en">Languages</span></dt><dd>English, 한국어</dd></div>
+            <div><dt><span lang="es">Oficina</span><span lang="en">Location</span></dt><dd>Northgate</dd></div>
           </dl>
-          <a class="link-more" href="#book">Book with Dr. Kwon</a>
+          <a class="link-more" href="#book"><span lang="es">Reservar con la Dra. Kwon</span><span lang="en">Book with Dr. Kwon</span></a>
         </div>
       </div>
       <div class="prov">
-        <div class="portrait" role="img" aria-label="Portrait of Marcus Lyle, PA-C"><span>ML</span></div>
+        <div class="portrait" role="img" aria-label="Retrato de Marcus Lyle, PA-C"><span>ML</span></div>
         <div>
           <h3>Marcus Lyle, PA-C</h3>
-          <p class="cred">Physician Assistant · Certified · Same-Day Clinic</p>
-          <p>Marcus runs our same-day and Saturday clinic. Sports physicals, stitches,
+          <p class="cred"><span lang="es">Asistente médico · Certificado · Clínica del mismo día</span><span lang="en">Physician Assistant · Certified · Same-Day Clinic</span></p>
+          <p lang="es">Marcus dirige nuestra clínica del mismo día y de los sábados.
+          Exámenes deportivos, suturas, infecciones de oído, y la explicación tranquila
+          de por qué su hijo no necesita antibióticos para esta tos en particular.</p>
+          <p lang="en">Marcus runs our same-day and Saturday clinic. Sports physicals, stitches,
           ear infections, and the calm explanation of why your child does not need
           antibiotics for this particular cough.</p>
           <dl>
-            <div><dt>Experience</dt><dd>9 years</dd></div>
-            <div><dt>Languages</dt><dd>English, Español</dd></div>
-            <div><dt>Location</dt><dd>Bayview</dd></div>
+            <div><dt><span lang="es">Experiencia</span><span lang="en">Experience</span></dt><dd><span lang="es">9 años</span><span lang="en">9 years</span></dd></div>
+            <div><dt><span lang="es">Idiomas</span><span lang="en">Languages</span></dt><dd>Español, English</dd></div>
+            <div><dt><span lang="es">Oficina</span><span lang="en">Location</span></dt><dd>Bayview</dd></div>
           </dl>
-          <a class="link-more" href="#book">Book with Marcus</a>
+          <a class="link-more" href="#book"><span lang="es">Reservar con Marcus</span><span lang="en">Book with Marcus</span></a>
         </div>
       </div>
     </div>
@@ -584,27 +644,35 @@ footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justif
         <div class="rating">
           <span class="num">4.9</span>
           <span class="stars" aria-hidden="true">★★★★★</span>
-          <span class="cnt">Average of 812 verified patient reviews</span>
+          <span class="cnt"><span lang="es">Promedio de 812 reseñas verificadas de pacientes</span><span lang="en">Average of 812 verified patient reviews</span></span>
         </div>
-        <blockquote>"I called at eight in the morning about my son's fever and we were
+        <blockquote lang="es">"Llamé a las ocho de la mañana por la fiebre de mi hijo y nos
+        atendieron antes del mediodía. Nadie me hizo sentir que estaba exagerando."</blockquote>
+        <blockquote lang="en">"I called at eight in the morning about my son's fever and we were
         seen before lunch. Nobody made me feel like I was overreacting."</blockquote>
-        <cite>Marisol T. · Patient since 2016</cite>
+        <cite><span lang="es">Marisol T. · Paciente desde 2016</span><span lang="en">Marisol T. · Patient since 2016</span></cite>
       </div>
       <div class="mini-quotes">
         <div>
-          <p>"Dr. Adeyemi caught a thyroid problem two other doctors had missed. He
+          <p lang="es">"El Dr. Adeyemi encontró un problema de tiroides que otros dos
+          médicos habían pasado por alto. Él sí lee el expediente antes de entrar."</p>
+          <p lang="en">"Dr. Adeyemi caught a thyroid problem two other doctors had missed. He
           actually reads the chart before he walks in."</p>
-          <span>Daniel W. · Since 2019</span>
+          <span class="who"><span lang="es">Daniel W. · Desde 2019</span><span lang="en">Daniel W. · Since 2019</span></span>
         </div>
         <div>
-          <p>"A telehealth follow-up took eleven minutes on my lunch break instead of
+          <p lang="es">"Un seguimiento por telemedicina me tomó once minutos en mi hora de
+          almuerzo en vez de medio día libre del trabajo."</p>
+          <p lang="en">"A telehealth follow-up took eleven minutes on my lunch break instead of
           half a day off work."</p>
-          <span>Priya R. · Since 2021</span>
+          <span class="who"><span lang="es">Priya R. · Desde 2021</span><span lang="en">Priya R. · Since 2021</span></span>
         </div>
         <div>
-          <p>"My mother is 84 and they never talk over her to me. That is rarer than
+          <p lang="es">"Mi madre tiene 84 años y nunca hablan por encima de ella conmigo.
+          Eso es más raro de lo que debería ser."</p>
+          <p lang="en">"My mother is 84 and they never talk over her to me. That is rarer than
           it should be."</p>
-          <span>Anne-Marie C. · Since 2009</span>
+          <span class="who"><span lang="es">Anne-Marie C. · Desde 2009</span><span lang="en">Anne-Marie C. · Since 2009</span></span>
         </div>
       </div>
     </div>
@@ -613,16 +681,21 @@ footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justif
   <!-- INSURANCE -->
   <section class="section tight" id="insurance">
     <div class="wrap cols">
-      <div class="sticky"><span class="label">04 — Insurance</span></div>
+      <div class="sticky"><span class="label"><span lang="es">04 — Seguros</span><span lang="en">04 — Insurance</span></span></div>
       <div>
         <p class="plans">
           <b>Aetna</b> <span class="sep">·</span> <b>Blue Cross Blue Shield</b> <span class="sep">·</span> <b>Cigna</b> <span class="sep">·</span> <b>Humana</b> <span class="sep">·</span> <b>Medicare</b> <span class="sep">·</span> <b>Medicaid</b> <span class="sep">·</span> <b>UnitedHealthcare</b> <span class="sep">·</span> <b>Tricare</b>
         </p>
-        <p style="color:var(--ink-soft);max-width:52ch;font-size:1rem">Plans and networks
+        <p style="color:var(--ink-soft);max-width:52ch;font-size:1rem" lang="es">Los planes y
+        las redes cambian constantemente. Llame a recepción con su número de asegurado
+        antes de su primera visita y verificaremos su cubierta mientras está en la línea.
+        Los precios de pago directo están publicados y se cotizan por adelantado — sin
+        facturas sorpresa.</p>
+        <p style="color:var(--ink-soft);max-width:52ch;font-size:1rem" lang="en">Plans and networks
         change constantly. Call the front desk with your member ID before your first
         visit and we will verify coverage while you are on the phone. Self-pay pricing
         is published and quoted up front — no surprise billing.</p>
-        <a class="link-more" href="tel:+15552140880">Verify my coverage</a>
+        <a class="link-more" href="tel:+15552140880"><span lang="es">Verificar mi cubierta</span><span lang="en">Verify my coverage</span></a>
       </div>
     </div>
   </section>
@@ -632,13 +705,19 @@ footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justif
   <!-- VISIT / BOOK -->
   <section class="section" id="visit">
     <div class="wrap">
-      <span class="label">05 — Visit Us</span>
+      <span class="label"><span lang="es">05 — Visítenos</span><span lang="en">05 — Visit Us</span></span>
       <div class="locs">
         <div class="loc">
           <h3>Bayview</h3>
-          <p class="kind">Main clinic</p>
-          <address>240 Harbor Street, Suite 300<br>Bayview, ST 00000</address>
-          <table>
+          <p class="kind"><span lang="es">Clínica principal</span><span lang="en">Main clinic</span></p>
+          <address>240 Harbor Street, Suite 300<br>Bayview, PR 00000</address>
+          <table lang="es">
+            <tr><td>Lun – Jue</td><td>7:30 am – 6:00 pm</td></tr>
+            <tr><td>Viernes</td><td>7:30 am – 4:00 pm</td></tr>
+            <tr><td>Sábado</td><td>8:00 am – 12:00 pm</td></tr>
+            <tr><td>Domingo</td><td>Cerrado</td></tr>
+          </table>
+          <table lang="en">
             <tr><td>Mon – Thu</td><td>7:30 am – 6:00 pm</td></tr>
             <tr><td>Friday</td><td>7:30 am – 4:00 pm</td></tr>
             <tr><td>Saturday</td><td>8:00 am – 12:00 pm</td></tr>
@@ -648,9 +727,14 @@ footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justif
         </div>
         <div class="loc">
           <h3>Northgate</h3>
-          <p class="kind">Satellite office</p>
-          <address>1170 Northgate Plaza, Unit B<br>Northgate, ST 00000</address>
-          <table>
+          <p class="kind"><span lang="es">Oficina satélite</span><span lang="en">Satellite office</span></p>
+          <address>1170 Northgate Plaza, Unit B<br>Northgate, PR 00000</address>
+          <table lang="es">
+            <tr><td>Lun – Vie</td><td>8:00 am – 5:00 pm</td></tr>
+            <tr><td>Sábado</td><td>Cerrado</td></tr>
+            <tr><td>Domingo</td><td>Cerrado</td></tr>
+          </table>
+          <table lang="en">
             <tr><td>Mon – Fri</td><td>8:00 am – 5:00 pm</td></tr>
             <tr><td>Saturday</td><td>Closed</td></tr>
             <tr><td>Sunday</td><td>Closed</td></tr>
@@ -660,15 +744,27 @@ footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justif
       </div>
 
       <div id="book" style="margin-top:70px">
-        <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);max-width:24ch">Book an appointment</h2>
-        <p style="color:var(--ink-soft);max-width:52ch">New and established patients can
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);max-width:24ch"><span lang="es">Reserve una cita</span><span lang="en">Book an appointment</span></h2>
+        <p style="color:var(--ink-soft);max-width:52ch" lang="es">Pacientes nuevos y
+        establecidos pueden reservar en línea a través de nuestro portal de pacientes, o
+        llamar a cualquiera de las oficinas y hablar con una persona — no usamos
+        contestadora automática.</p>
+        <p style="color:var(--ink-soft);max-width:52ch" lang="en">New and established patients can
         book online through our patient portal, or call either office and speak to a
         person — we do not use a phone tree.</p>
         <div class="hero-cta">
-          <a class="btn" href="#book">Book in the patient portal</a>
-          <a class="btn btn-out" href="tel:+15552140880">Call Now</a>
+          <a class="btn" href="#book"><span lang="es">Reservar en el portal de pacientes</span><span lang="en">Book in the patient portal</span></a>
+          <a class="btn btn-out" href="tel:+15552140880"><span lang="es">Llamar ahora</span><span lang="en">Call Now</span></a>
         </div>
-        <div class="privacy">
+        <div class="privacy" lang="es">
+          <strong>Su privacidad.</strong> La reserva en línea ocurre dentro de nuestro
+          portal seguro de pacientes, que cumple con HIPAA — no en este sitio web. Por
+          favor no envíe síntomas, diagnósticos ni números de seguro médico por correo
+          electrónico o formulario web. En una emergencia médica llame al
+          <strong>911</strong> o acuda a la sala de emergencias más cercana; los mensajes
+          de este sitio no se monitorean fuera de horario.
+        </div>
+        <div class="privacy" lang="en">
           <strong>Your privacy.</strong> Online booking runs inside our secure,
           HIPAA-compliant patient portal — not through this website. Please do not send
           symptoms, diagnoses, or insurance ID numbers by email or web form. For a
@@ -686,29 +782,31 @@ footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justif
     <div class="cols4">
       <div class="fm">
         <span class="name">Harbor Family Medical</span>
-        <p>Board-certified family medicine for Bayview and Northgate since 2004.
+        <p lang="es">Medicina familiar certificada para Bayview y Northgate desde 2004.
+        Aceptamos pacientes nuevos de todas las edades.</p>
+        <p lang="en">Board-certified family medicine for Bayview and Northgate since 2004.
         Accepting new patients of every age.</p>
       </div>
       <div>
-        <h4>Care</h4>
+        <h4><span lang="es">Cuidado</span><span lang="en">Care</span></h4>
         <ul>
-          <li><a href="#services">Annual physicals</a></li>
-          <li><a href="#services">Same-day sick visits</a></li>
-          <li><a href="#services">Chronic care</a></li>
-          <li><a href="#services">Telehealth</a></li>
+          <li><a href="#services"><span lang="es">Exámenes físicos anuales</span><span lang="en">Annual physicals</span></a></li>
+          <li><a href="#services"><span lang="es">Citas el mismo día</span><span lang="en">Same-day sick visits</span></a></li>
+          <li><a href="#services"><span lang="es">Cuidado crónico</span><span lang="en">Chronic care</span></a></li>
+          <li><a href="#services"><span lang="es">Telemedicina</span><span lang="en">Telehealth</span></a></li>
         </ul>
       </div>
       <div>
-        <h4>Practice</h4>
+        <h4><span lang="es">La práctica</span><span lang="en">Practice</span></h4>
         <ul>
-          <li><a href="#doctors">Meet our doctors</a></li>
-          <li><a href="#insurance">Insurance</a></li>
-          <li><a href="#reviews">Patient reviews</a></li>
-          <li><a href="#book">Patient portal</a></li>
+          <li><a href="#doctors"><span lang="es">Nuestros médicos</span><span lang="en">Meet our doctors</span></a></li>
+          <li><a href="#insurance"><span lang="es">Seguros</span><span lang="en">Insurance</span></a></li>
+          <li><a href="#reviews"><span lang="es">Reseñas de pacientes</span><span lang="en">Patient reviews</span></a></li>
+          <li><a href="#book"><span lang="es">Portal de pacientes</span><span lang="en">Patient portal</span></a></li>
         </ul>
       </div>
       <div>
-        <h4>Contact</h4>
+        <h4><span lang="es">Contacto</span><span lang="en">Contact</span></h4>
         <ul>
           <li>Bayview <a href="tel:+15552140880">(555) 214-0880</a></li>
           <li>Northgate <a href="tel:+15552140895">(555) 214-0895</a></li>
@@ -717,16 +815,17 @@ footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justif
       </div>
     </div>
     <div class="fine">
-      <span>Concept demo — fictional practice. Names, providers, reviews, and contact details are placeholders.</span>
-      <span>Privacy Practices · Accessibility · Nondiscrimination</span>
+      <span lang="es">Demostración conceptual — práctica ficticia. Nombres, médicos, reseñas y datos de contacto son ejemplos.</span>
+      <span lang="en">Concept demo — fictional practice. Names, providers, reviews, and contact details are placeholders.</span>
+      <span><span lang="es">Prácticas de Privacidad · Accesibilidad · No Discriminación</span><span lang="en">Privacy Practices · Accessibility · Nondiscrimination</span></span>
     </div>
   </div>
 </footer>
 
 <!-- mobile sticky booking bar -->
 <div class="sticky-book" id="stickyBook" data-show="false">
-  <a class="btn btn-out" href="tel:+15552140880">Call</a>
-  <a class="btn" href="#book">Book Appointment</a>
+  <a class="btn btn-out" href="tel:+15552140880"><span lang="es">Llamar</span><span lang="en">Call</span></a>
+  <a class="btn" href="#book"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
 </div>
 
 <script>
@@ -744,7 +843,7 @@ footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justif
   }
   openBtn.addEventListener('click', function(){ setMenu('true'); });
   closeBtn.addEventListener('click', function(){ setMenu('false'); });
-  ovl.addEventListener('click', function(e){ if (e.target.tagName === 'A') setMenu('false'); });
+  ovl.addEventListener('click', function(e){ if (e.target.closest('a')) setMenu('false'); });
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape' && ovl.dataset.open === 'true') setMenu('false');
   });
@@ -759,6 +858,25 @@ footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justif
       ticking = false;
     });
   }, {passive:true});
+
+  /* ---- language toggle: Spanish default, English on demand ---- */
+  var TITLES = {
+    es: 'Harbor Family Medical — Concepto 1: Harbor & Oak',
+    en: 'Harbor Family Medical — Concept 1: Harbor & Oak'
+  };
+  function setLang(l){
+    var d = document.documentElement;
+    d.setAttribute('lang', l);
+    d.setAttribute('data-lang', l);
+    document.title = TITLES[l];
+    try { localStorage.setItem('harborLang', l); } catch(e) {}
+  }
+  document.querySelectorAll('.lang-toggle').forEach(function(b){
+    b.addEventListener('click', function(){
+      setLang(document.documentElement.getAttribute('data-lang') === 'es' ? 'en' : 'es');
+    });
+  });
+  document.title = TITLES[document.documentElement.getAttribute('data-lang')] || TITLES.es;
 })();
 </script>
 

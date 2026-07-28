@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Harbor Family Medical — Concept 2: Harbor Bright</title>
-<meta name="description" content="Harbor Family Medical cares for every age in Bayview — physicals, same-day sick visits, vaccines, chronic care, and telehealth. Book online in under a minute.">
+<script>(function(){var l=null;try{l=localStorage.getItem('harborLang')}catch(e){}l=l==='en'?'en':'es';var d=document.documentElement;d.setAttribute('lang',l);d.setAttribute('data-lang',l);})();</script>
+<title>Harbor Family Medical — Concepto 2: Harbor Bright</title>
+<meta name="description" content="Harbor Family Medical cuida a toda la familia en Bayview — exámenes físicos, citas de enfermedad el mismo día, vacunas, cuidado crónico y telemedicina. Reserve en línea en menos de un minuto.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%230a7d8c'/><text x='16' y='23' font-size='18' font-weight='bold' font-family='system-ui' fill='%23ffd166' text-anchor='middle'>H</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +16,7 @@
    Bright, welcoming, family-first. Soft sky + sunshine + coral.
    Pillowy rounded cards, curved section dividers, rounded sans.
    Signature: horizontal snap carousels + bottom tab bar on mobile.
+   Spanish-first; English via the language toggle.
    ============================================================ */
 
 :root{
@@ -79,6 +81,13 @@ a{color:var(--teal-dk);text-decoration:none}
 .dnav a:hover{background:var(--sky);color:var(--teal-dk)}
 .hdr .btn{flex:none}
 
+.lang-toggle{
+  font-family:inherit;font-size:13.5px;font-weight:800;color:var(--teal-dk);
+  background:var(--sky);border:2px solid var(--sky-2);border-radius:999px;
+  padding:9px 16px;min-height:44px;cursor:pointer;flex:none;
+}
+.lang-toggle:hover{border-color:var(--teal)}
+
 /* ---------- buttons ---------- */
 
 .btn{
@@ -110,7 +119,7 @@ a{color:var(--teal-dk);text-decoration:none}
   content:"";position:absolute;left:0;right:0;bottom:4px;height:9px;
   background:var(--sun);border-radius:6px;z-index:-1;
 }
-/* the marker draws itself under "don't mind" once the page settles */
+/* the marker draws itself under the highlighted phrase once the page settles */
 @media (prefers-reduced-motion:no-preference){
   .hero h1 em::after{transform:scaleX(0);transform-origin:left;animation:markline .55s .45s cubic-bezier(.2,.7,.2,1) forwards}
   @keyframes markline{to{transform:scaleX(1)}}
@@ -118,7 +127,7 @@ a{color:var(--teal-dk);text-decoration:none}
 .hero .lede{font-size:1.16rem;color:var(--ink-soft);max-width:44ch;font-weight:500}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 22px}
 .hero-trust{display:flex;gap:20px;flex-wrap:wrap;font-size:14.5px;font-weight:700;color:var(--ink-soft)}
-.hero-trust span{display:flex;align-items:center;gap:7px}
+.hero-trust span.t{display:flex;align-items:center;gap:7px}
 .tick{width:22px;height:22px;border-radius:50%;background:var(--mint);color:#0d4f36;display:grid;place-items:center;font-size:13px;flex:none}
 
 /* friendly illustrated family photo card */
@@ -156,7 +165,7 @@ a{color:var(--teal-dk);text-decoration:none}
   border-radius:var(--r);padding:22px 18px;text-align:center;font-weight:800;
   border:2px solid transparent;
 }
-.age span{display:block;font-size:30px;margin-bottom:8px}
+.age span.ico{display:block;font-size:30px;margin-bottom:8px}
 .age small{display:block;font-weight:700;font-size:12.5px;color:var(--ink-soft);margin-top:5px}
 .a1{background:#fff4d6;border-color:#f4d99a}
 .a2{background:#e3f7ec;border-color:#a8dfc3}
@@ -235,7 +244,7 @@ a{color:var(--teal-dk);text-decoration:none}
 
 /* ---------- insurance pills ---------- */
 
-.plans{display:flex;flex-wrap:wrap;gap:11px;margin-bottom:22px}
+.plans{display:flex;flex-wrap:wrap;gap:11px;margin-bottom:22px;padding:0}
 .plans li{
   list-style:none;background:#fff;border:2px solid var(--line);border-radius:999px;
   padding:11px 20px;font-weight:800;font-size:14.5px;
@@ -322,6 +331,7 @@ footer .fine{padding-top:22px;font-size:12.5px;color:#8fc0c7}
   .wrap{padding:0 18px}
   .hdr .btn{display:none}
   .hdr-in{min-height:66px}
+  .lang-toggle{padding:8px 13px;font-size:12.5px}
   .sec{padding:52px 0}
   .hero{padding-top:34px}
   .hero-in{padding-bottom:44px}
@@ -334,7 +344,7 @@ footer .fine{padding-top:22px;font-size:12.5px;color:#8fc0c7}
   /* age bands become a 2-line grid, still scannable */
   .age-row{grid-template-columns:repeat(3,1fr);gap:10px}
   .age{padding:16px 10px}
-  .age span{font-size:24px}
+  .age span.ico{font-size:24px}
   .age small{display:none}
 
   /* SERVICES + DOCTORS become swipe rails — the distinct mobile pattern */
@@ -365,28 +375,33 @@ footer .fine{padding-top:22px;font-size:12.5px;color:#8fc0c7}
   html{scroll-behavior:auto}
   *{transition:none!important;animation:none!important}
 }
+
+/* language: hide only the inactive one */
+html[data-lang="es"] [lang="en"]{display:none!important}
+html[data-lang="en"] [lang="es"]{display:none!important}
 </style>
 </head>
 <body>
 
-<a class="skip" href="#main">Skip to main content</a>
+<a class="skip" href="#main"><span lang="es">Saltar al contenido</span><span lang="en">Skip to main content</span></a>
 
 <header class="hdr">
   <div class="wrap hdr-in">
     <a class="brand" href="#top">
       <span class="mk" aria-hidden="true">H</span>
-      <span><b>Harbor Family Medical</b><small>Every age, every stage</small></span>
+      <span><b>Harbor Family Medical</b><small><span lang="es">Todas las edades, todas las etapas</span><span lang="en">Every age, every stage</span></small></span>
     </a>
-    <nav aria-label="Main">
+    <nav aria-label="Principal">
       <ul class="dnav">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#doctors">Our Doctors</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#insurance">Insurance</a></li>
-        <li><a href="#visit">Locations</a></li>
+        <li><a href="#services"><span lang="es">Servicios</span><span lang="en">Services</span></a></li>
+        <li><a href="#doctors"><span lang="es">Nuestros Médicos</span><span lang="en">Our Doctors</span></a></li>
+        <li><a href="#reviews"><span lang="es">Reseñas</span><span lang="en">Reviews</span></a></li>
+        <li><a href="#insurance"><span lang="es">Seguros</span><span lang="en">Insurance</span></a></li>
+        <li><a href="#visit"><span lang="es">Oficinas</span><span lang="en">Locations</span></a></li>
       </ul>
     </nav>
-    <a class="btn btn-coral btn-sm" href="#book">Book Appointment</a>
+    <button class="lang-toggle" type="button"><span lang="es">English</span><span lang="en">Español</span></button>
+    <a class="btn btn-coral btn-sm" href="#book"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
   </div>
 </header>
 
@@ -399,32 +414,36 @@ footer .fine{padding-top:22px;font-size:12.5px;color:#8fc0c7}
     <span class="blob b3" aria-hidden="true"></span>
     <div class="wrap hero-in">
       <div>
-        <span class="eyebrow">Now accepting new families</span>
-        <h1>The doctor's office your kids <em>don't mind</em> going to.</h1>
-        <p class="lede">Harbor Family Medical looks after everyone under your roof —
-        newborns, teenagers, parents, and grandparents — in one friendly Bayview office
+        <span class="eyebrow"><span lang="es">Aceptamos familias nuevas</span><span lang="en">Now accepting new families</span></span>
+        <h1 lang="es">La oficina médica a la que sus hijos <em>no les molesta</em> ir.</h1>
+        <h1 lang="en">The doctor's office your kids <em>don't mind</em> going to.</h1>
+        <p class="lede" lang="es">Harbor Family Medical cuida a todos los que viven bajo su
+        techo — bebés, adolescentes, padres y abuelos — en una sola oficina acogedora en
+        Bayview, con citas la misma semana.</p>
+        <p class="lede" lang="en">Harbor Family Medical looks after everyone under your
+        roof — newborns, teenagers, parents, and grandparents — in one friendly Bayview office
         with same-week appointments.</p>
         <div class="hero-cta">
-          <a class="btn btn-coral" href="#book">Book Appointment</a>
-          <a class="btn btn-out" href="tel:+15552140880">Call (555) 214-0880</a>
+          <a class="btn btn-coral" href="#book"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
+          <a class="btn btn-out" href="tel:+15552140880"><span lang="es">Llamar al (555) 214-0880</span><span lang="en">Call (555) 214-0880</span></a>
         </div>
         <div class="hero-trust">
-          <span><i class="tick" aria-hidden="true">✓</i> Same-week openings</span>
-          <span><i class="tick" aria-hidden="true">✓</i> Most insurance</span>
-          <span><i class="tick" aria-hidden="true">✓</i> Se habla español</span>
+          <span class="t"><i class="tick" aria-hidden="true">✓</i> <span lang="es">Citas esta semana</span><span lang="en">Same-week openings</span></span>
+          <span class="t"><i class="tick" aria-hidden="true">✓</i> <span lang="es">La mayoría de los seguros</span><span lang="en">Most insurance</span></span>
+          <span class="t"><i class="tick" aria-hidden="true">✓</i> <span lang="es">We speak English</span><span lang="en">Se habla español</span></span>
         </div>
       </div>
       <div class="hero-art">
-        <div class="photo" role="img" aria-label="A parent and two children laughing with a Harbor physician in a bright exam room">
-          <span class="cap">Photography · Family + physician, warm daylight</span>
+        <div class="photo" role="img" aria-label="Una madre y dos niños riendo con una médica de Harbor en una sala de examen luminosa">
+          <span class="cap"><span lang="es">Fotografía · Familia + médica, luz cálida</span><span lang="en">Photography · Family + physician, warm daylight</span></span>
         </div>
         <div class="badge-float bf-1">
           <span class="bf-num">4.9</span>
-          <span>Patient rating<small>812 reviews</small></span>
+          <span><span lang="es">Calificación</span><span lang="en">Patient rating</span><small><span lang="es">812 reseñas</span><span lang="en">812 reviews</span></small></span>
         </div>
         <div class="badge-float bf-2">
           <span aria-hidden="true">🗓️</span>
-          <span>Next opening<small>Thursday, 9:40 am</small></span>
+          <span><span lang="es">Próximo espacio</span><span lang="en">Next opening</span><small><span lang="es">jueves, 9:40 am</span><span lang="en">Thursday, 9:40 am</span></small></span>
         </div>
       </div>
     </div>
@@ -436,13 +455,13 @@ footer .fine{padding-top:22px;font-size:12.5px;color:#8fc0c7}
   <!-- AGE BANDS -->
   <section class="ages" aria-labelledby="ages-h">
     <div class="wrap">
-      <h2 id="ages-h" class="vh">Who we care for</h2>
+      <h2 id="ages-h" class="vh"><span lang="es">A quiénes cuidamos</span><span lang="en">Who we care for</span></h2>
       <div class="age-row">
-        <div class="age a1"><span aria-hidden="true">👶</span>Babies<small>0–2 years</small></div>
-        <div class="age a2"><span aria-hidden="true">🧒</span>Kids<small>3–12 years</small></div>
-        <div class="age a3"><span aria-hidden="true">🎒</span>Teens<small>13–18 years</small></div>
-        <div class="age a4"><span aria-hidden="true">💼</span>Adults<small>19–64 years</small></div>
-        <div class="age a5"><span aria-hidden="true">🌿</span>Seniors<small>65+ years</small></div>
+        <div class="age a1"><span class="ico" aria-hidden="true">👶</span><span lang="es">Bebés</span><span lang="en">Babies</span><small><span lang="es">0–2 años</span><span lang="en">0–2 years</span></small></div>
+        <div class="age a2"><span class="ico" aria-hidden="true">🧒</span><span lang="es">Niños</span><span lang="en">Kids</span><small><span lang="es">3–12 años</span><span lang="en">3–12 years</span></small></div>
+        <div class="age a3"><span class="ico" aria-hidden="true">🎒</span><span lang="es">Adolescentes</span><span lang="en">Teens</span><small><span lang="es">13–18 años</span><span lang="en">13–18 years</span></small></div>
+        <div class="age a4"><span class="ico" aria-hidden="true">💼</span><span lang="es">Adultos</span><span lang="en">Adults</span><small><span lang="es">19–64 años</span><span lang="en">19–64 years</span></small></div>
+        <div class="age a5"><span class="ico" aria-hidden="true">🌿</span><span lang="es">Mayores</span><span lang="en">Seniors</span><small><span lang="es">65+ años</span><span lang="en">65+ years</span></small></div>
       </div>
     </div>
   </section>
@@ -452,53 +471,65 @@ footer .fine{padding-top:22px;font-size:12.5px;color:#8fc0c7}
     <div class="wrap">
       <div class="rail-head sec-head" style="max-width:none">
         <div style="max-width:52ch">
-          <h2>Everything your family needs, in one place</h2>
-          <p>One chart, one team, and no bouncing between clinics for routine care.</p>
+          <h2><span lang="es">Todo lo que su familia necesita, en un solo lugar</span><span lang="en">Everything your family needs, in one place</span></h2>
+          <p><span lang="es">Un expediente, un equipo, y sin rebotar entre clínicas para el cuidado de rutina.</span><span lang="en">One chart, one team, and no bouncing between clinics for routine care.</span></p>
         </div>
-        <span class="rail-hint" aria-hidden="true">Swipe to see all →</span>
+        <span class="rail-hint" aria-hidden="true"><span lang="es">Deslice para ver más →</span><span lang="en">Swipe to see all →</span></span>
       </div>
       <div class="rail">
         <article class="svc">
           <div class="ic i-sun" aria-hidden="true">🩺</div>
-          <h3>Annual physicals</h3>
-          <p>Yearly checkups, school and sports forms, and labs drawn right here. We
+          <h3><span lang="es">Exámenes físicos anuales</span><span lang="en">Annual physicals</span></h3>
+          <p lang="es">Chequeos anuales, formularios escolares y deportivos, y laboratorios
+          aquí mismo. Le entregamos los papeles el mismo día.</p>
+          <p lang="en">Yearly checkups, school and sports forms, and labs drawn right here. We
           send the paperwork home with you the same day.</p>
-          <span class="pill">All ages</span>
+          <span class="pill"><span lang="es">Todas las edades</span><span lang="en">All ages</span></span>
         </article>
         <article class="svc">
           <div class="ic i-coral" aria-hidden="true">🤒</div>
-          <h3>Same-day sick visits</h3>
-          <p>Fevers, ear infections, sore throats, tummy bugs, and pink eye. Morning
+          <h3><span lang="es">Citas de enfermedad el mismo día</span><span lang="en">Same-day sick visits</span></h3>
+          <p lang="es">Fiebres, infecciones de oído, dolor de garganta, virus estomacales y
+          conjuntivitis. Guardamos espacios cada mañana.</p>
+          <p lang="en">Fevers, ear infections, sore throats, tummy bugs, and pink eye. Morning
           slots are held open every single day.</p>
-          <span class="pill">Same day</span>
+          <span class="pill"><span lang="es">Mismo día</span><span lang="en">Same day</span></span>
         </article>
         <article class="svc">
           <div class="ic i-mint" aria-hidden="true">💚</div>
-          <h3>Chronic care</h3>
-          <p>Asthma, diabetes, blood pressure, and thyroid — with longer visits and a
+          <h3><span lang="es">Cuidado crónico</span><span lang="en">Chronic care</span></h3>
+          <p lang="es">Asma, diabetes, presión arterial y tiroides — con visitas más largas
+          y un plan escrito en lenguaje claro.</p>
+          <p lang="en">Asthma, diabetes, blood pressure, and thyroid — with longer visits and a
           plan written in plain language.</p>
-          <span class="pill">Ongoing</span>
+          <span class="pill"><span lang="es">Continuo</span><span lang="en">Ongoing</span></span>
         </article>
         <article class="svc">
           <div class="ic i-sky" aria-hidden="true">💉</div>
-          <h3>Vaccines</h3>
-          <p>The full childhood schedule, flu shots every fall, and travel vaccines.
+          <h3><span lang="es">Vacunas</span><span lang="en">Vaccines</span></h3>
+          <p lang="es">El calendario infantil completo, influenza cada otoño y vacunas de
+          viaje. Siempre le explicamos primero qué y por qué.</p>
+          <p lang="en">The full childhood schedule, flu shots every fall, and travel vaccines.
           We will always explain what and why first.</p>
-          <span class="pill">Walk-in flu clinic</span>
+          <span class="pill"><span lang="es">Clínica de influenza sin cita</span><span lang="en">Walk-in flu clinic</span></span>
         </article>
         <article class="svc">
           <div class="ic i-grape" aria-hidden="true">📱</div>
-          <h3>Telehealth</h3>
-          <p>Video visits for follow-ups, rashes, and refills — from your kitchen table
+          <h3><span lang="es">Telemedicina</span><span lang="en">Telehealth</span></h3>
+          <p lang="es">Citas por video para seguimientos, erupciones y repeticiones de
+          receta — desde la mesa de su cocina o la fila de la escuela.</p>
+          <p lang="en">Video visits for follow-ups, rashes, and refills — from your kitchen table
           or the school pickup line.</p>
           <span class="pill">Video</span>
         </article>
         <article class="svc">
           <div class="ic i-line" aria-hidden="true">🧪</div>
-          <h3>Lab follow-up</h3>
-          <p>Every result comes with a real explanation from your doctor, not a portal
+          <h3><span lang="es">Seguimiento de laboratorios</span><span lang="en">Lab follow-up</span></h3>
+          <p lang="es">Cada resultado viene con una explicación real de su médico, no un
+          número del portal que usted tenga que buscar en Google.</p>
+          <p lang="en">Every result comes with a real explanation from your doctor, not a portal
           number you have to Google.</p>
-          <span class="pill">Included</span>
+          <span class="pill"><span lang="es">Incluido</span><span lang="en">Included</span></span>
         </article>
       </div>
     </div>
@@ -509,43 +540,47 @@ footer .fine{padding-top:22px;font-size:12.5px;color:#8fc0c7}
     <div class="wrap">
       <div class="rail-head sec-head" style="max-width:none">
         <div style="max-width:50ch">
-          <h2>Meet our doctors</h2>
-          <p>Board-certified, and genuinely happy to see kids in the waiting room.</p>
+          <h2><span lang="es">Conozca a nuestros médicos</span><span lang="en">Meet our doctors</span></h2>
+          <p><span lang="es">Certificados, y genuinamente felices de ver niños en la sala de espera.</span><span lang="en">Board-certified, and genuinely happy to see kids in the waiting room.</span></p>
         </div>
-        <span class="rail-hint" aria-hidden="true">Swipe →</span>
+        <span class="rail-hint" aria-hidden="true"><span lang="es">Deslice →</span><span lang="en">Swipe →</span></span>
       </div>
       <div class="docs">
         <article class="doc">
-          <div class="av av1" role="img" aria-label="Portrait of Dr. Naomi Reyes">NR</div>
-          <h3>Dr. Naomi Reyes, MD</h3>
-          <p class="role">Family Medicine</p>
-          <p class="fun">Keeps a sticker drawer that is better stocked than most pharmacies.</p>
-          <p class="langs">English · Español</p>
-          <a class="btn btn-sm" href="#book">Book</a>
+          <div class="av av1" role="img" aria-label="Retrato de la Dra. Naomi Reyes">NR</div>
+          <h3>Dra. Naomi Reyes, MD</h3>
+          <p class="role"><span lang="es">Medicina familiar</span><span lang="en">Family Medicine</span></p>
+          <p class="fun" lang="es">Tiene una gaveta de calcomanías mejor surtida que muchas farmacias.</p>
+          <p class="fun" lang="en">Keeps a sticker drawer that is better stocked than most pharmacies.</p>
+          <p class="langs">Español · English</p>
+          <a class="btn btn-sm" href="#book"><span lang="es">Reservar</span><span lang="en">Book</span></a>
         </article>
         <article class="doc">
-          <div class="av av2" role="img" aria-label="Portrait of Dr. Samuel Adeyemi">SA</div>
+          <div class="av av2" role="img" aria-label="Retrato del Dr. Samuel Adeyemi">SA</div>
           <h3>Dr. Samuel Adeyemi, MD</h3>
-          <p class="role">Family Medicine</p>
-          <p class="fun">Will draw your kid's ear infection on the exam table paper.</p>
-          <p class="langs">English · Yoruba</p>
-          <a class="btn btn-sm" href="#book">Book</a>
+          <p class="role"><span lang="es">Medicina familiar</span><span lang="en">Family Medicine</span></p>
+          <p class="fun" lang="es">Le dibuja a su hijo la infección de oído en el papel de la camilla.</p>
+          <p class="fun" lang="en">Will draw your kid's ear infection on the exam table paper.</p>
+          <p class="langs">English · Yorùbá</p>
+          <a class="btn btn-sm" href="#book"><span lang="es">Reservar</span><span lang="en">Book</span></a>
         </article>
         <article class="doc">
-          <div class="av av3" role="img" aria-label="Portrait of Dr. Hana Kwon">HK</div>
-          <h3>Dr. Hana Kwon, DO</h3>
-          <p class="role">Family Medicine</p>
-          <p class="fun">Coaches the Northgate middle school swim team on weekends.</p>
+          <div class="av av3" role="img" aria-label="Retrato de la Dra. Hana Kwon">HK</div>
+          <h3>Dra. Hana Kwon, DO</h3>
+          <p class="role"><span lang="es">Medicina familiar</span><span lang="en">Family Medicine</span></p>
+          <p class="fun" lang="es">Entrena al equipo de natación de la escuela intermedia de Northgate los fines de semana.</p>
+          <p class="fun" lang="en">Coaches the Northgate middle school swim team on weekends.</p>
           <p class="langs">English · 한국어</p>
-          <a class="btn btn-sm" href="#book">Book</a>
+          <a class="btn btn-sm" href="#book"><span lang="es">Reservar</span><span lang="en">Book</span></a>
         </article>
         <article class="doc">
-          <div class="av av4" role="img" aria-label="Portrait of Marcus Lyle, PA-C">ML</div>
+          <div class="av av4" role="img" aria-label="Retrato de Marcus Lyle, PA-C">ML</div>
           <h3>Marcus Lyle, PA-C</h3>
-          <p class="role">Same-Day Clinic</p>
-          <p class="fun">Champion of the "you probably don't need antibiotics" talk.</p>
-          <p class="langs">English · Español</p>
-          <a class="btn btn-sm" href="#book">Book</a>
+          <p class="role"><span lang="es">Clínica del mismo día</span><span lang="en">Same-Day Clinic</span></p>
+          <p class="fun" lang="es">Campeón de la charla "probablemente no necesitas antibióticos".</p>
+          <p class="fun" lang="en">Champion of the "you probably don't need antibiotics" talk.</p>
+          <p class="langs">Español · English</p>
+          <a class="btn btn-sm" href="#book"><span lang="es">Reservar</span><span lang="en">Book</span></a>
         </article>
       </div>
     </div>
@@ -554,38 +589,44 @@ footer .fine{padding-top:22px;font-size:12.5px;color:#8fc0c7}
   <!-- REVIEWS -->
   <section class="sec" id="reviews">
     <div class="wrap">
-      <div class="sec-head"><h2>What families tell us</h2></div>
+      <div class="sec-head"><h2><span lang="es">Lo que nos cuentan las familias</span><span lang="en">What families tell us</span></h2></div>
       <div class="score">
         <span class="big">4.9</span>
-        <span>★★★★★ average<small>Across 812 verified patient reviews</small></span>
+        <span><span lang="es">★★★★★ promedio</span><span lang="en">★★★★★ average</span><small><span lang="es">Entre 812 reseñas verificadas de pacientes</span><span lang="en">Across 812 verified patient reviews</span></small></span>
         <span style="margin-left:auto;font-size:14px">Google · Healthgrades · Vitals</span>
       </div>
       <div class="bubbles">
         <article class="bub">
-          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <p>"I called at 8am about my son's fever and we were seen before lunch. Nobody
+          <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          <p lang="es">"Llamé a las 8 am por la fiebre de mi hijo y nos atendieron antes del
+          mediodía. Nadie me hizo sentir que estaba exagerando."</p>
+          <p lang="en">"I called at 8am about my son's fever and we were seen before lunch. Nobody
           made me feel like I was overreacting."</p>
           <div class="who">
             <span class="av av3" style="width:40px;height:40px;border:0;box-shadow:none" aria-hidden="true">MT</span>
-            <span><b>Marisol T.</b><small>Patient since 2016</small></span>
+            <span><b>Marisol T.</b><small><span lang="es">Paciente desde 2016</span><span lang="en">Patient since 2016</span></small></span>
           </div>
         </article>
         <article class="bub">
-          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <p>"Dr. Adeyemi caught a thyroid problem two other doctors missed. He actually
+          <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          <p lang="es">"El Dr. Adeyemi encontró un problema de tiroides que otros dos médicos
+          pasaron por alto. Él sí lee el expediente antes de entrar."</p>
+          <p lang="en">"Dr. Adeyemi caught a thyroid problem two other doctors missed. He actually
           reads the chart before he walks in."</p>
           <div class="who">
             <span class="av av1" style="width:40px;height:40px;border:0;box-shadow:none" aria-hidden="true">DW</span>
-            <span><b>Daniel W.</b><small>Patient since 2019</small></span>
+            <span><b>Daniel W.</b><small><span lang="es">Paciente desde 2019</span><span lang="en">Patient since 2019</span></small></span>
           </div>
         </article>
         <article class="bub">
-          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <p>"Telehealth follow-up took eleven minutes on my lunch break instead of half
+          <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          <p lang="es">"El seguimiento por telemedicina me tomó once minutos en el almuerzo
+          en vez de medio día libre del trabajo."</p>
+          <p lang="en">"Telehealth follow-up took eleven minutes on my lunch break instead of half
           a day off work."</p>
           <div class="who">
             <span class="av av2" style="width:40px;height:40px;border:0;box-shadow:none" aria-hidden="true">PR</span>
-            <span><b>Priya R.</b><small>Patient since 2021</small></span>
+            <span><b>Priya R.</b><small><span lang="es">Paciente desde 2021</span><span lang="en">Patient since 2021</span></small></span>
           </div>
         </article>
       </div>
@@ -596,14 +637,18 @@ footer .fine{padding-top:22px;font-size:12.5px;color:#8fc0c7}
   <section class="sec sec-sky" id="insurance">
     <div class="wrap">
       <div class="sec-head">
-        <h2>Insurance we accept</h2>
-        <p>In-network with most major plans, plus Medicare and Medicaid.</p>
+        <h2><span lang="es">Seguros que aceptamos</span><span lang="en">Insurance we accept</span></h2>
+        <p><span lang="es">En red con la mayoría de los planes principales, además de Medicare y Medicaid.</span><span lang="en">In-network with most major plans, plus Medicare and Medicaid.</span></p>
       </div>
       <ul class="plans">
         <li>Aetna</li><li>Blue Cross Blue Shield</li><li>Cigna</li><li>Humana</li>
         <li>Medicare</li><li>Medicaid</li><li>UnitedHealthcare</li><li>Tricare</li>
       </ul>
-      <p class="note">Plans change all the time. Call us with your member ID and we will
+      <p class="note" lang="es">Los planes cambian todo el tiempo. Llámenos con su número de
+      asegurado y verificaremos su cubierta mientras está en la línea — antes de que se
+      siente en una sala de espera. Los precios de pago directo están publicados en
+      recepción y se cotizan por adelantado.</p>
+      <p class="note" lang="en">Plans change all the time. Call us with your member ID and we will
       check your coverage while you are on the phone — before you ever sit in a waiting
       room. Self-pay prices are posted at the front desk and quoted up front.</p>
     </div>
@@ -612,47 +657,66 @@ footer .fine{padding-top:22px;font-size:12.5px;color:#8fc0c7}
   <!-- LOCATIONS + BOOK -->
   <section class="sec" id="visit">
     <div class="wrap">
-      <div class="sec-head"><h2>Two offices, same team</h2></div>
+      <div class="sec-head"><h2><span lang="es">Dos oficinas, el mismo equipo</span><span lang="en">Two offices, same team</span></h2></div>
       <div class="locs">
         <div class="loc">
-          <div class="map" role="img" aria-label="Map showing Harbor Family Medical on Harbor Street in Bayview"><span class="pin" aria-hidden="true">📍</span></div>
+          <div class="map" role="img" aria-label="Mapa de Harbor Family Medical en la calle Harbor, Bayview"><span class="pin" aria-hidden="true">📍</span></div>
           <div class="bd">
             <h3>Bayview</h3>
-            <p class="kind">Main clinic</p>
-            <address>240 Harbor Street, Suite 300<br>Bayview, ST 00000</address>
-            <dl>
+            <p class="kind"><span lang="es">Clínica principal</span><span lang="en">Main clinic</span></p>
+            <address>240 Harbor Street, Suite 300<br>Bayview, PR 00000</address>
+            <dl lang="es">
+              <div><dt>Lun – Jue</dt><dd>7:30a – 6:00p</dd></div>
+              <div><dt>Viernes</dt><dd>7:30a – 4:00p</dd></div>
+              <div><dt>Sábado</dt><dd>8:00a – 12:00p</dd></div>
+            </dl>
+            <dl lang="en">
               <div><dt>Mon – Thu</dt><dd>7:30a – 6:00p</dd></div>
               <div><dt>Friday</dt><dd>7:30a – 4:00p</dd></div>
               <div><dt>Saturday</dt><dd>8:00a – 12:00p</dd></div>
             </dl>
-            <a class="btn btn-out btn-sm" href="tel:+15552140880">Call (555) 214-0880</a>
+            <a class="btn btn-out btn-sm" href="tel:+15552140880"><span lang="es">Llamar al (555) 214-0880</span><span lang="en">Call (555) 214-0880</span></a>
           </div>
         </div>
         <div class="loc">
-          <div class="map" role="img" aria-label="Map showing the Harbor satellite office at Northgate Plaza"><span class="pin" aria-hidden="true">📍</span></div>
+          <div class="map" role="img" aria-label="Mapa de la oficina satélite en Northgate Plaza"><span class="pin" aria-hidden="true">📍</span></div>
           <div class="bd">
             <h3>Northgate</h3>
-            <p class="kind">Satellite office</p>
-            <address>1170 Northgate Plaza, Unit B<br>Northgate, ST 00000</address>
-            <dl>
+            <p class="kind"><span lang="es">Oficina satélite</span><span lang="en">Satellite office</span></p>
+            <address>1170 Northgate Plaza, Unit B<br>Northgate, PR 00000</address>
+            <dl lang="es">
+              <div><dt>Lun – Vie</dt><dd>8:00a – 5:00p</dd></div>
+              <div><dt>Sábado</dt><dd>Cerrado</dd></div>
+              <div><dt>Domingo</dt><dd>Cerrado</dd></div>
+            </dl>
+            <dl lang="en">
               <div><dt>Mon – Fri</dt><dd>8:00a – 5:00p</dd></div>
               <div><dt>Saturday</dt><dd>Closed</dd></div>
               <div><dt>Sunday</dt><dd>Closed</dd></div>
             </dl>
-            <a class="btn btn-out btn-sm" href="tel:+15552140895">Call (555) 214-0895</a>
+            <a class="btn btn-out btn-sm" href="tel:+15552140895"><span lang="es">Llamar al (555) 214-0895</span><span lang="en">Call (555) 214-0895</span></a>
           </div>
         </div>
       </div>
 
       <div id="book" style="margin-top:44px;background:var(--sun);border-radius:var(--r-lg);padding:36px 32px">
-        <h2 style="font-size:clamp(1.6rem,3.2vw,2.3rem);max-width:26ch">Ready when you are</h2>
-        <p style="max-width:48ch;font-weight:600;color:#4a3200">Book online in about a
+        <h2 style="font-size:clamp(1.6rem,3.2vw,2.3rem);max-width:26ch"><span lang="es">Listos cuando usted lo esté</span><span lang="en">Ready when you are</span></h2>
+        <p style="max-width:48ch;font-weight:600;color:#4a3200" lang="es">Reserve en línea en
+        más o menos un minuto, o llame y hable con una persona de verdad en recepción.</p>
+        <p style="max-width:48ch;font-weight:600;color:#4a3200" lang="en">Book online in about a
         minute, or call and talk to an actual person at the front desk.</p>
         <div class="hero-cta" style="margin-bottom:22px">
-          <a class="btn btn-coral" href="#book">Book Appointment</a>
-          <a class="btn btn-out" href="tel:+15552140880">Call Now</a>
+          <a class="btn btn-coral" href="#book"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
+          <a class="btn btn-out" href="tel:+15552140880"><span lang="es">Llamar ahora</span><span lang="en">Call Now</span></a>
         </div>
-        <div class="privacy">
+        <div class="privacy" lang="es">
+          <strong>Una nota sobre privacidad.</strong> La reserva ocurre dentro de nuestro
+          portal seguro de pacientes que cumple con HIPAA — nunca por un formulario web
+          abierto. Por favor no envíe síntomas, diagnósticos ni números de seguro por
+          correo electrónico. Si esto es una emergencia médica, llame al
+          <strong>911</strong> o acuda a la sala de emergencias más cercana.
+        </div>
+        <div class="privacy" lang="en">
           <strong>A note on privacy.</strong> Booking happens inside our secure,
           HIPAA-compliant patient portal — never through an open web form. Please do not
           email symptoms, diagnoses, or insurance ID numbers. If this is a medical
@@ -669,29 +733,31 @@ footer .fine{padding-top:22px;font-size:12.5px;color:#8fc0c7}
     <div class="c4">
       <div>
         <div class="fbrand"><span class="mk" aria-hidden="true">H</span><b>Harbor Family Medical</b></div>
-        <p>Family medicine for every age in Bayview and Northgate. Board-certified
+        <p lang="es">Medicina familiar para todas las edades en Bayview y Northgate.
+        Médicos certificados, citas la misma semana, personal bilingüe.</p>
+        <p lang="en">Family medicine for every age in Bayview and Northgate. Board-certified
         physicians, same-week appointments, bilingual staff.</p>
       </div>
       <div>
-        <h4>Care</h4>
+        <h4><span lang="es">Cuidado</span><span lang="en">Care</span></h4>
         <ul>
-          <li><a href="#services">Physicals</a></li>
-          <li><a href="#services">Sick visits</a></li>
-          <li><a href="#services">Vaccines</a></li>
-          <li><a href="#services">Telehealth</a></li>
+          <li><a href="#services"><span lang="es">Exámenes físicos</span><span lang="en">Physicals</span></a></li>
+          <li><a href="#services"><span lang="es">Citas de enfermedad</span><span lang="en">Sick visits</span></a></li>
+          <li><a href="#services"><span lang="es">Vacunas</span><span lang="en">Vaccines</span></a></li>
+          <li><a href="#services"><span lang="es">Telemedicina</span><span lang="en">Telehealth</span></a></li>
         </ul>
       </div>
       <div>
-        <h4>Practice</h4>
+        <h4><span lang="es">La práctica</span><span lang="en">Practice</span></h4>
         <ul>
-          <li><a href="#doctors">Our doctors</a></li>
-          <li><a href="#insurance">Insurance</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#book">Patient portal</a></li>
+          <li><a href="#doctors"><span lang="es">Nuestros médicos</span><span lang="en">Our doctors</span></a></li>
+          <li><a href="#insurance"><span lang="es">Seguros</span><span lang="en">Insurance</span></a></li>
+          <li><a href="#reviews"><span lang="es">Reseñas</span><span lang="en">Reviews</span></a></li>
+          <li><a href="#book"><span lang="es">Portal de pacientes</span><span lang="en">Patient portal</span></a></li>
         </ul>
       </div>
       <div>
-        <h4>Contact</h4>
+        <h4><span lang="es">Contacto</span><span lang="en">Contact</span></h4>
         <ul>
           <li>Bayview <a href="tel:+15552140880">(555) 214-0880</a></li>
           <li>Northgate <a href="tel:+15552140895">(555) 214-0895</a></li>
@@ -699,21 +765,45 @@ footer .fine{padding-top:22px;font-size:12.5px;color:#8fc0c7}
         </ul>
       </div>
     </div>
-    <p class="fine">Concept demo — fictional practice. Providers, reviews, and contact
-    details are placeholders. · Privacy Practices · Accessibility · Nondiscrimination</p>
+    <p class="fine"><span lang="es">Demostración conceptual — práctica ficticia. Médicos,
+    reseñas y datos de contacto son ejemplos. · Prácticas de Privacidad · Accesibilidad ·
+    No Discriminación</span><span lang="en">Concept demo — fictional practice. Providers, reviews, and contact
+    details are placeholders. · Privacy Practices · Accessibility · Nondiscrimination</span></p>
   </div>
 </footer>
 
 <!-- mobile bottom tab bar -->
-<nav class="tabbar" aria-label="Quick actions">
+<nav class="tabbar" aria-label="Acciones rápidas">
   <ul>
-    <li><a href="#services"><i aria-hidden="true">🩺</i>Services</a></li>
-    <li><a href="#doctors"><i aria-hidden="true">👩‍⚕️</i>Doctors</a></li>
-    <li><a class="acc" href="#book"><i aria-hidden="true">🗓️</i>Book</a></li>
-    <li><a href="tel:+15552140880"><i aria-hidden="true">📞</i>Call</a></li>
-    <li><a href="#visit"><i aria-hidden="true">📍</i>Visit</a></li>
+    <li><a href="#services"><i aria-hidden="true">🩺</i><span lang="es">Servicios</span><span lang="en">Services</span></a></li>
+    <li><a href="#doctors"><i aria-hidden="true">👩‍⚕️</i><span lang="es">Médicos</span><span lang="en">Doctors</span></a></li>
+    <li><a class="acc" href="#book"><i aria-hidden="true">🗓️</i><span lang="es">Reservar</span><span lang="en">Book</span></a></li>
+    <li><a href="tel:+15552140880"><i aria-hidden="true">📞</i><span lang="es">Llamar</span><span lang="en">Call</span></a></li>
+    <li><a href="#visit"><i aria-hidden="true">📍</i><span lang="es">Visitar</span><span lang="en">Visit</span></a></li>
   </ul>
 </nav>
+
+<script>
+(function(){
+  var TITLES = {
+    es: 'Harbor Family Medical — Concepto 2: Harbor Bright',
+    en: 'Harbor Family Medical — Concept 2: Harbor Bright'
+  };
+  function setLang(l){
+    var d = document.documentElement;
+    d.setAttribute('lang', l);
+    d.setAttribute('data-lang', l);
+    document.title = TITLES[l];
+    try { localStorage.setItem('harborLang', l); } catch(e) {}
+  }
+  document.querySelectorAll('.lang-toggle').forEach(function(b){
+    b.addEventListener('click', function(){
+      setLang(document.documentElement.getAttribute('data-lang') === 'es' ? 'en' : 'es');
+    });
+  });
+  document.title = TITLES[document.documentElement.getAttribute('data-lang')] || TITLES.es;
+})();
+</script>
 
 </body>
 </html>

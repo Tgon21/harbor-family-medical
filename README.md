@@ -46,6 +46,15 @@ python3 -m http.server 8000
 Mobile is a re-layout in every case, not a collapsed desktop grid — the differences are
 listed per concept in CONCEPTS.md.
 
+## Language
+
+All five concepts are **Spanish-first** (`<html lang="es">`, Spanish default copy) with an
+English toggle in every header. Content is duplicated inline with `lang="es"` / `lang="en"`
+attributes — only the inactive language is hidden, so screen readers pronounce each language
+correctly. The choice persists across all five demos via `localStorage`. Dynamic JS strings
+(Concept 3's booking widget, Concept 5's live status board) are localized through a per-page
+dictionary and re-render on toggle.
+
 ## What's interactive
 
 - **Concept 3** — functional 14-day slot picker with per-day opening counts, segmented
