@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>(function(){var l=null;try{l=localStorage.getItem('harborLang')}catch(e){}l=l==='en'?'en':'es';var d=document.documentElement;d.setAttribute('lang',l);d.setAttribute('data-lang',l);})();</script>
-<title>Harbor Family Medical — Concepto 3: Harbor Connect</title>
-<meta name="description" content="Reserve atención primaria en Bayview en línea en 60 segundos. Citas presenciales y por telemedicina, disponibilidad la misma semana, médicos de familia certificados.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230f172a'/><path d='M9 22V10h3v4.5h8V10h3v12h-3v-4.7h-8V22z' fill='%2313b487'/></svg>">
+<title>Lunaris Medical Clinic — Concepto 3: Harbor Connect</title>
+<meta name="description" content="Reserve atención primaria en Caguas en línea en 60 segundos. Citas presenciales y por telemedicina, disponibilidad la misma semana, médicos de familia certificados.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231d1526'/><path d='M9 22V10h3v4.5h8V10h3v12h-3v-4.7h-8V22z' fill='%23a678d8'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -23,23 +23,23 @@
 :root{
   --bg:#fcfcfd;
   --panel:#fff;
-  --ink:#0f172a;
-  --ink-2:#334155;
-  --ink-3:#64748b;
-  --line:#e4e8ee;
-  --line-2:#cfd6e0;
-  --grn:#0e9f7a;
-  --grn-dk:#0a7d60;
-  --grn-lt:#e7f7f1;
-  --amber:#b45309;
-  --amber-lt:#fef4e6;
+  --ink:#1d1526;
+  --ink-2:#3f3552;
+  --ink-3:#6f6684;
+  --line:#e8e2ef;
+  --line-2:#d4cade;
+  --grn:#8b66b8;
+  --grn-dk:#6d4d96;
+  --grn-lt:#f1eaf8;
+  --amber:#93702f;
+  --amber-lt:#faf3e3;
   --r:12px;
   --r-sm:8px;
   --wrap:1200px;
   --sans:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
-  --sh-1:0 1px 2px rgba(15,23,42,.05);
-  --sh-2:0 8px 24px -12px rgba(15,23,42,.18);
+  --sh-1:0 1px 2px rgba(29,21,38,.05);
+  --sh-2:0 8px 24px -12px rgba(29,21,38,.18);
 }
 
 *{box-sizing:border-box}
@@ -99,7 +99,7 @@ a{color:var(--grn-dk);text-decoration:none}
 }
 .btn:hover{background:var(--grn);border-color:var(--grn);color:#fff}
 .btn-2{background:var(--panel);color:var(--ink);border-color:var(--line-2)}
-.btn-2:hover{background:#f6f8fa;color:var(--ink);border-color:var(--ink-3)}
+.btn-2:hover{background:#f7f4fa;color:var(--ink);border-color:var(--ink-3)}
 .btn-lg{padding:15px 26px;min-height:52px;font-size:16px}
 .btn:disabled{opacity:.45;cursor:not-allowed}
 
@@ -127,7 +127,7 @@ select,input[type=text]{
   background:var(--panel);border:1px solid var(--line-2);border-radius:var(--r-sm);min-height:44px;
 }
 /* segmented control */
-.seg{display:flex;background:#f1f4f7;border-radius:var(--r-sm);padding:3px;gap:3px}
+.seg{display:flex;background:#f2eef6;border-radius:var(--r-sm);padding:3px;gap:3px}
 .seg button{
   flex:1;font:inherit;font-size:13.5px;font-weight:600;padding:9px 8px;min-height:40px;
   border:0;border-radius:6px;background:transparent;color:var(--ink-3);cursor:pointer;
@@ -198,16 +198,17 @@ select,input[type=text]{
 .roster{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-1)}
 .rrow{display:grid;grid-template-columns:52px 1.5fr 1.1fr .9fr auto;gap:18px;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}
 .rrow:last-child{border-bottom:0}
-.rrow .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-size:13.5px;font-weight:650;color:#fff}
-.a1{background:#0e9f7a}.a2{background:#0f172a}.a3{background:#b45309}.a4{background:#3f5c8a}
+.rrow .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-size:13.5px;font-weight:650;color:#fff;overflow:hidden}
+.rrow .av img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.a1{background:#8b66b8}.a2{background:#93702f}.a3{background:#1d1526}.a4{background:#7c5f9e}
 .rrow h3{font-size:15.5px;margin:0 0 2px}
 .rrow .cred{font-size:12.5px;color:var(--ink-3)}
 .rrow .focus{font-size:13.5px;color:var(--ink-2)}
 .chip{
   display:inline-flex;align-items:center;gap:6px;background:var(--grn-lt);color:var(--grn-dk);
-  border:1px solid #bfe8da;border-radius:999px;padding:5px 11px;font-size:12.5px;font-weight:600;white-space:nowrap;
+  border:1px solid #d8c8ea;border-radius:999px;padding:5px 11px;font-size:12.5px;font-weight:600;white-space:nowrap;
 }
-.chip.wait{background:var(--amber-lt);color:var(--amber);border-color:#f3dcbb}
+.chip.wait{background:var(--amber-lt);color:var(--amber);border-color:#e6d5ae}
 .rhead{display:grid;grid-template-columns:52px 1.5fr 1.1fr .9fr auto;gap:18px;padding:11px 20px;background:#fafbfc;border-bottom:1px solid var(--line)}
 .rhead span{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
 
@@ -215,15 +216,15 @@ select,input[type=text]{
 .rev-top{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:26px 28px;margin-bottom:16px}
 .rev-score{text-align:center;padding-right:34px;border-right:1px solid var(--line)}
 .rev-score .n{font-size:3rem;font-weight:650;letter-spacing:-.03em;line-height:1}
-.rev-score .s{color:#d99000;letter-spacing:.12em;font-size:14px}
+.rev-score .s{color:#b98d4f;letter-spacing:.12em;font-size:14px}
 .rev-score .c{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-top:6px}
 .bars{display:grid;gap:7px;font-size:12.5px}
 .bar{display:grid;grid-template-columns:64px 1fr 42px;gap:12px;align-items:center;color:var(--ink-3)}
-.bar .t{height:7px;background:#eef1f5;border-radius:99px;overflow:hidden}
+.bar .t{height:7px;background:#efeaf4;border-radius:99px;overflow:hidden}
 .bar .t i{display:block;height:100%;background:var(--grn);border-radius:99px}
 .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .rev{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:var(--sh-1)}
-.rev .s{color:#d99000;letter-spacing:.1em;font-size:13px;margin-bottom:9px}
+.rev .s{color:#b98d4f;letter-spacing:.1em;font-size:13px;margin-bottom:9px}
 .rev p{font-size:.96rem;color:var(--ink-2)}
 .rev .who{font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:11px;margin-top:14px}
 .rev .who b{color:var(--ink);font-weight:600}
@@ -245,10 +246,10 @@ select,input[type=text]{
 .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .loc{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-1)}
 .loc .mp{height:132px;border-bottom:1px solid var(--line);position:relative;background:
-  linear-gradient(0deg,rgba(14,159,122,.05),rgba(14,159,122,.05)),
-  repeating-linear-gradient(90deg,#eef1f5 0 1px,transparent 1px 44px),
-  repeating-linear-gradient(0deg,#eef1f5 0 1px,transparent 1px 44px),#fff}
-.loc .mp::after{content:"";position:absolute;left:46%;top:50%;width:14px;height:14px;border-radius:50%;background:var(--grn-dk);box-shadow:0 0 0 6px rgba(14,159,122,.2)}
+  linear-gradient(0deg,rgba(139,102,184,.06),rgba(139,102,184,.06)),
+  repeating-linear-gradient(90deg,#efeaf4 0 1px,transparent 1px 44px),
+  repeating-linear-gradient(0deg,#efeaf4 0 1px,transparent 1px 44px),#fff}
+.loc .mp::after{content:"";position:absolute;left:46%;top:50%;width:14px;height:14px;border-radius:50%;background:var(--grn-dk);box-shadow:0 0 0 6px rgba(139,102,184,.2)}
 .loc .bd{padding:20px}
 .loc .hd{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px}
 .loc h3{font-size:1.1rem;margin:0}
@@ -267,23 +268,23 @@ select,input[type=text]{
 .priv .mono{display:block;margin-bottom:9px}
 
 /* footer */
-footer{background:var(--ink);color:#94a3b8;padding:56px 0 28px;font-size:14px}
-footer .c4{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid #1e293b}
-footer h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:#64748b;margin-bottom:1.5em}
+footer{background:var(--ink);color:#a396b5;padding:56px 0 28px;font-size:14px}
+footer .c4{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid #2a2138}
+footer h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:#8a7d99;margin-bottom:1.5em}
 footer ul{list-style:none;margin:0;padding:0}
 footer li{margin-bottom:10px}
-footer a{color:#e2e8f0}
+footer a{color:#e9e2f2}
 footer a:hover{color:#fff;text-decoration:underline}
 footer .fb{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-footer .fb .mk{width:30px;height:30px;border-radius:8px;background:#1e293b;color:var(--grn);display:grid;place-items:center;font-weight:700;font-size:15px}
+footer .fb .mk{width:30px;height:30px;border-radius:8px;background:#2a2138;color:var(--grn);display:grid;place-items:center;font-weight:700;font-size:15px}
 footer .fb b{color:#fff}
-footer .fine{padding-top:22px;font-size:12.5px;color:#64748b;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer .fine{padding-top:22px;font-size:12.5px;color:#8a7d99;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
 /* mobile sticky action bar */
 .actbar{
   position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:10px;
   background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-top:1px solid var(--line-2);
-  padding:10px 16px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -4px 18px rgba(15,23,42,.07);
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -4px 18px rgba(29,21,38,.07);
 }
 .actbar .btn{flex:1}
 .actbar .btn-2{flex:0 0 116px}
@@ -351,8 +352,8 @@ html[data-lang="en"] [lang="es"]{display:none!important}
 <header class="hdr">
   <div class="wrap hdr-in">
     <a class="brand" href="#top">
-      <span class="mk" aria-hidden="true">H</span>
-      <b>Harbor Family Medical</b>
+      <span class="mk" aria-hidden="true">L</span>
+      <b>Lunaris Medical Clinic</b>
     </a>
     <nav aria-label="Principal">
       <ul class="dnav">
@@ -379,7 +380,7 @@ html[data-lang="en"] [lang="es"]{display:none!important}
       <li><a href="#reviews"><span lang="es">Reseñas</span><span lang="en">Reviews</span></a></li>
       <li><a href="#insurance"><span lang="es">Seguros</span><span lang="en">Insurance</span></a></li>
       <li><a href="#visit"><span lang="es">Oficinas</span><span lang="en">Locations</span></a></li>
-      <li><a href="tel:+15552140880"><span lang="es">Llamar al (555) 214-0880</span><span lang="en">Call (555) 214-0880</span></a></li>
+      <li><a href="tel:+17871234567"><span lang="es">Llamar al (787) 123-4567</span><span lang="en">Call (787) 123-4567</span></a></li>
     </ul>
   </nav>
 </header>
@@ -390,13 +391,13 @@ html[data-lang="en"] [lang="es"]{display:none!important}
   <section class="hero" id="top">
     <div class="wrap hero-in">
       <div>
-        <span class="mono"><span lang="es">Bayview y Northgate · Atención primaria</span><span lang="en">Bayview &amp; Northgate · Primary care</span></span>
+        <span class="mono"><span lang="es">Caguas, Puerto Rico · Atención primaria</span><span lang="en">Caguas, Puerto Rico · Primary care</span></span>
         <h1 style="margin-top:14px" lang="es">Reserve una cita real en unos sesenta segundos.</h1>
         <h1 style="margin-top:14px" lang="en">Book a real appointment in about sixty seconds.</h1>
-        <p class="lede" lang="es">Harbor Family Medical une médicos de familia certificados con
+        <p class="lede" lang="es">Lunaris Medical Clinic une médicos de familia certificados con
         un sistema de citas que de verdad funciona — elija su médico, elija su hora, listo.
         En persona o por video.</p>
-        <p class="lede" lang="en">Harbor Family Medical pairs board-certified family physicians
+        <p class="lede" lang="en">Lunaris Medical Clinic pairs board-certified family physicians
         with scheduling that actually works — pick a doctor, pick a time, done. In person
         or by video.</p>
         <div class="kpis">
@@ -406,7 +407,7 @@ html[data-lang="en"] [lang="es"]{display:none!important}
         </div>
         <div class="hero-links">
           <a class="btn btn-2 btn-lg" href="#doctors"><span lang="es">Conozca a nuestros médicos</span><span lang="en">Meet Our Doctors</span></a>
-          <a class="btn btn-2 btn-lg" href="tel:+15552140880"><span lang="es">Llamar ahora</span><span lang="en">Call Now</span></a>
+          <a class="btn btn-2 btn-lg" href="tel:+17871234567"><span lang="es">Llamar ahora</span><span lang="en">Call Now</span></a>
         </div>
       </div>
 
@@ -427,8 +428,8 @@ html[data-lang="en"] [lang="es"]{display:none!important}
           <div class="field">
             <label for="loc"><span lang="es">Oficina</span><span lang="en">Location</span></label>
             <select id="loc">
-              <option value="bayview">Bayview — 240 Harbor Street</option>
-              <option value="northgate">Northgate — 1170 Northgate Plaza</option>
+              <option value="lunaris">Lunaris Medical Clinic — Caguas</option>
+              <option value="metaporphosis">Metaporphosis — Wellness &amp; Counseling</option>
             </select>
           </div>
           <div class="field">
@@ -464,9 +465,9 @@ html[data-lang="en"] [lang="es"]{display:none!important}
   <!-- TRUST STRIP -->
   <section class="strip" aria-label="Puntos clave">
     <div class="wrap strip-in">
-      <div><b><span lang="es">Certificación de junta</span><span lang="en">Board certified</span></b><span><span lang="es">Los cuatro proveedores, ABFM y NCCPA</span><span lang="en">All four providers, ABFM &amp; NCCPA</span></span></div>
+      <div><b><span lang="es">Certificada y licenciada</span><span lang="en">Certified &amp; licensed</span></b><span><span lang="es">Medicina primaria y trabajo social clínico</span><span lang="en">Primary care &amp; clinical social work</span></span></div>
       <div><b><span lang="es">Citas la misma semana</span><span lang="en">Same-week availability</span></b><span><span lang="es">Mediana de 2.4 días hasta la cita</span><span lang="en">Median 2.4 days to appointment</span></span></div>
-      <div><b><span lang="es">Personal bilingüe</span><span lang="en">Bilingual staff</span></b><span>Español, English, 한국어, Yorùbá</span></div>
+      <div><b><span lang="es">Personal bilingüe</span><span lang="en">Bilingual staff</span></b><span>Español · English</span></div>
       <div><b><span lang="es">La mayoría de los seguros</span><span lang="en">Most insurance accepted</span></b><span><span lang="es">8 planes principales + Medicare / Medicaid</span><span lang="en">8 major plans + Medicare / Medicaid</span></span></div>
     </div>
   </section>
@@ -557,7 +558,7 @@ html[data-lang="en"] [lang="es"]{display:none!important}
             <h3><span lang="es">Referidos e imágenes</span><span lang="en">Referrals &amp; imaging</span></h3>
             <p lang="es">Hacemos la orden, perseguimos el informe y le decimos qué dijo. Usted no es el mensajero.</p>
             <p lang="en">We place the order, chase the report, and tell you what it said. You are not the courier.</p>
-            <div class="meta"><span lang="es">Informe <b>rastreado</b></span><span lang="en">Report <b>tracked</b></span> <span lang="es">Red: <b>Bayview General</b></span><span lang="en">Network <b>Bayview General</b></span></div>
+            <div class="meta"><span lang="es">Informe <b>rastreado</b></span><span lang="en">Report <b>tracked</b></span> <span lang="es">Red: <b>Caguas General</b></span><span lang="en">Network <b>Caguas General</b></span></div>
           </article>
         </div>
       </div>
@@ -569,38 +570,24 @@ html[data-lang="en"] [lang="es"]{display:none!important}
     <div class="wrap">
       <div class="sec-head">
         <h2><span lang="es">Conozca a nuestros médicos</span><span lang="en">Meet our doctors</span></h2>
-        <p><span lang="es">Cuatro proveedores, horarios reales de próxima disponibilidad, y ningún misterio sobre a quién verá.</span><span lang="en">Four providers, real next-available times, and no mystery about who you will see.</span></p>
+        <p><span lang="es">Nuestro equipo, horarios reales de próxima disponibilidad, y ningún misterio sobre a quién verá.</span><span lang="en">Our team, real next-available times, and no mystery about who you will see.</span></p>
       </div>
       <div class="roster">
         <div class="rhead" aria-hidden="true">
           <span></span><span><span lang="es">Proveedor</span><span lang="en">Provider</span></span><span><span lang="es">Enfoque</span><span lang="en">Focus</span></span><span><span lang="es">Próxima cita</span><span lang="en">Next available</span></span><span></span>
         </div>
         <div class="rrow">
-          <div class="av a1" role="img" aria-label="Retrato de la Dra. Naomi Reyes">NR</div>
-          <div class="nm"><h3>Dra. Naomi Reyes, MD</h3><div class="cred"><span lang="es">Medicina familiar · Certificada ABFM · 21 años · Español, English</span><span lang="en">Family Medicine · ABFM board certified · 21 yrs · English, Español</span></div></div>
-          <div class="focus"><span lang="es">Diabetes, salud de la mujer</span><span lang="en">Diabetes, women's health</span></div>
+          <div class="av a1"><img src="photos/morayma.jpg" alt="Dra. Morayma Rivera Nieves"></div>
+          <div class="nm"><h3>Dra. Morayma Rivera Nieves</h3><div class="cred"><span lang="es">Medicina primaria · Certificada · Español, English</span><span lang="en">Primary care · Board certified · English, Español</span></div></div>
+          <div class="focus"><span lang="es">Atención primaria integral</span><span lang="en">Whole-person primary care</span></div>
           <div class="ch"><span class="chip"><span lang="es">jue 9:40 am</span><span lang="en">Thu 9:40 am</span></span></div>
           <div class="bk"><a class="btn btn-2" href="#book"><span lang="es">Reservar</span><span lang="en">Book</span></a></div>
         </div>
         <div class="rrow">
-          <div class="av a2" role="img" aria-label="Retrato del Dr. Samuel Adeyemi">SA</div>
-          <div class="nm"><h3>Dr. Samuel Adeyemi, MD</h3><div class="cred"><span lang="es">Medicina familiar · Certificado ABFM · 18 años · English, Yorùbá</span><span lang="en">Family Medicine · ABFM board certified · 18 yrs · English, Yoruba</span></div></div>
-          <div class="focus"><span lang="es">Geriatría, reducción de medicamentos</span><span lang="en">Geriatrics, deprescribing</span></div>
-          <div class="ch"><span class="chip"><span lang="es">mié 2:20 pm</span><span lang="en">Wed 2:20 pm</span></span></div>
-          <div class="bk"><a class="btn btn-2" href="#book"><span lang="es">Reservar</span><span lang="en">Book</span></a></div>
-        </div>
-        <div class="rrow">
-          <div class="av a3" role="img" aria-label="Retrato de la Dra. Hana Kwon">HK</div>
-          <div class="nm"><h3>Dra. Hana Kwon, DO</h3><div class="cred"><span lang="es">Medicina familiar · Certificada ABFM · 11 años · English, 한국어</span><span lang="en">Family Medicine · ABFM board certified · 11 yrs · English, 한국어</span></div></div>
-          <div class="focus"><span lang="es">Musculoesquelético, cuidado crónico</span><span lang="en">Musculoskeletal, chronic care</span></div>
-          <div class="ch"><span class="chip wait"><span lang="es">Próxima semana</span><span lang="en">Next week</span></span></div>
-          <div class="bk"><a class="btn btn-2" href="#book"><span lang="es">Reservar</span><span lang="en">Book</span></a></div>
-        </div>
-        <div class="rrow">
-          <div class="av a4" role="img" aria-label="Retrato de Marcus Lyle, PA-C">ML</div>
-          <div class="nm"><h3>Marcus Lyle, PA-C</h3><div class="cred"><span lang="es">Asistente médico · Certificado NCCPA · 9 años · Español, English</span><span lang="en">Physician Assistant · NCCPA certified · 9 yrs · English, Español</span></div></div>
-          <div class="focus"><span lang="es">Clínica del mismo día, exámenes deportivos</span><span lang="en">Same-day clinic, sports physicals</span></div>
-          <div class="ch"><span class="chip"><span lang="es">Hoy 4:00 pm</span><span lang="en">Today 4:00 pm</span></span></div>
+          <div class="av a2"><img src="photos/daisy.jpg" alt="Lcda. Daisy Santiago"></div>
+          <div class="nm"><h3>Lcda. Daisy Santiago</h3><div class="cred"><span lang="es">Trabajo social clínico · Licenciada · Español, English</span><span lang="en">Clinical social work · Licensed · English, Español</span></div></div>
+          <div class="focus"><span lang="es">Salud mental y bienestar emocional</span><span lang="en">Mental health &amp; emotional wellness</span></div>
+          <div class="ch"><span class="chip"><span lang="es">Esta semana</span><span lang="en">This week</span></span></div>
           <div class="bk"><a class="btn btn-2" href="#book"><span lang="es">Reservar</span><span lang="en">Book</span></a></div>
         </div>
       </div>
@@ -634,8 +621,8 @@ html[data-lang="en"] [lang="es"]{display:none!important}
         </article>
         <article class="rev">
           <div class="s" aria-label="5 de 5">★★★★★</div>
-          <p lang="es">"El Dr. Adeyemi encontró un problema de tiroides que otros dos médicos pasaron por alto. Él sí lee el expediente antes de entrar."</p>
-          <p lang="en">"Dr. Adeyemi caught a thyroid problem two other doctors missed. He actually reads the chart before he walks in."</p>
+          <p lang="es">"Aquí encontraron un problema de tiroides que otros dos médicos pasaron por alto. Sí leen el expediente antes de entrar."</p>
+          <p lang="en">"They caught a thyroid problem two other doctors missed. They actually read the chart before walking in."</p>
           <div class="who"><b>Daniel W.</b> · <span lang="es">Paciente desde 2019 · Verificada</span><span lang="en">Patient since 2019 · Verified</span></div>
         </article>
         <article class="rev">
@@ -673,8 +660,8 @@ html[data-lang="en"] [lang="es"]{display:none!important}
         <div class="ins"><span class="ok" aria-hidden="true">✓</span>Tricare</div>
       </div>
       <p class="ins-none" id="insNone" hidden><span lang="es">No hay coincidencias en la lista. Las redes cambian a menudo — llame al
-        <a href="tel:+15552140880">(555) 214-0880</a> con su número de asegurado y lo verificamos en la línea.</span><span lang="en">No match in that list. Networks change often — call
-        <a href="tel:+15552140880">(555) 214-0880</a> with your member ID and we will verify while you wait.</span></p>
+        <a href="tel:+17871234567">(787) 123-4567</a> con su número de asegurado y lo verificamos en la línea.</span><span lang="en">No match in that list. Networks change often — call
+        <a href="tel:+17871234567">(787) 123-4567</a> with your member ID and we will verify while you wait.</span></p>
       <div class="priv">
         <span class="mono"><span lang="es">Privacidad y seguridad</span><span lang="en">Privacy &amp; security</span></span>
         <span lang="es"><strong>No recopilamos información clínica en este sitio web.</strong>
@@ -700,13 +687,13 @@ html[data-lang="en"] [lang="es"]{display:none!important}
       <div class="sec-head"><h2><span lang="es">Oficinas y horarios</span><span lang="en">Locations &amp; hours</span></h2></div>
       <div class="loc-grid">
         <div class="loc">
-          <div class="mp" role="img" aria-label="Mapa de 240 Harbor Street, Bayview"></div>
+          <div class="mp" role="img" aria-label="Mapa de Lunaris Medical Clinic, Caguas"></div>
           <div class="bd">
             <div class="hd">
-              <div><h3>Bayview</h3><span class="mono"><span lang="es">Clínica principal</span><span lang="en">Main clinic</span></span></div>
+              <div><h3>Caguas</h3><span class="mono"><span lang="es">Clínica principal</span><span lang="en">Main clinic</span></span></div>
               <span class="chip" id="bayStatus"></span>
             </div>
-            <address>240 Harbor Street, Suite 300<br>Bayview, PR 00000</address>
+            <address>Caguas, Puerto Rico</address>
             <table lang="es">
               <tr><td>Lun – Jue</td><td>7:30 am – 6:00 pm</td></tr>
               <tr><td>Viernes</td><td>7:30 am – 4:00 pm</td></tr>
@@ -721,33 +708,35 @@ html[data-lang="en"] [lang="es"]{display:none!important}
             </table>
             <div class="acts">
               <a class="btn" href="#book"><span lang="es">Reservar aquí</span><span lang="en">Book here</span></a>
-              <a class="btn btn-2" href="tel:+15552140880">(555) 214-0880</a>
-              <a class="btn btn-2" href="https://maps.google.com/?q=240+Harbor+Street"><span lang="es">Cómo llegar</span><span lang="en">Directions</span></a>
+              <a class="btn btn-2" href="tel:+17871234567">(787) 123-4567</a>
+              <a class="btn btn-2" href="https://maps.google.com/?q=Caguas+Puerto+Rico"><span lang="es">Cómo llegar</span><span lang="en">Directions</span></a>
             </div>
           </div>
         </div>
         <div class="loc">
-          <div class="mp" role="img" aria-label="Mapa de 1170 Northgate Plaza"></div>
+          <div class="mp" role="img" aria-label="Metaporphosis Wellness &amp; Counseling"></div>
           <div class="bd">
             <div class="hd">
-              <div><h3>Northgate</h3><span class="mono"><span lang="es">Oficina satélite</span><span lang="en">Satellite office</span></span></div>
-              <span class="chip wait" id="ngStatus"></span>
+              <div><h3>Metaporphosis</h3><span class="mono">Wellness &amp; Counseling</span></div>
+              <span class="chip" id="ngStatus"></span>
             </div>
-            <address>1170 Northgate Plaza, Unit B<br>Northgate, PR 00000</address>
+            <address><span lang="es">Servicios presenciales y virtuales · Sanar · Crecer · Transformar</span><span lang="en">In-person and virtual services · Heal · Grow · Transform</span></address>
             <table lang="es">
-              <tr><td>Lun – Vie</td><td>8:00 am – 5:00 pm</td></tr>
-              <tr><td>Sábado</td><td>Cerrado</td></tr>
-              <tr><td>Domingo</td><td>Cerrado</td></tr>
+              <tr><td>Psicoterapia individual</td><td>✓</td></tr>
+              <tr><td>Terapia de pareja y familia</td><td>✓</td></tr>
+              <tr><td>Ansiedad y estrés</td><td>✓</td></tr>
+              <tr><td>Duelo y crecimiento personal</td><td>✓</td></tr>
             </table>
             <table lang="en">
-              <tr><td>Mon – Fri</td><td>8:00 am – 5:00 pm</td></tr>
-              <tr><td>Saturday</td><td>Closed</td></tr>
-              <tr><td>Sunday</td><td>Closed</td></tr>
+              <tr><td>Individual psychotherapy</td><td>✓</td></tr>
+              <tr><td>Couples &amp; family therapy</td><td>✓</td></tr>
+              <tr><td>Anxiety &amp; stress</td><td>✓</td></tr>
+              <tr><td>Grief &amp; personal growth</td><td>✓</td></tr>
             </table>
             <div class="acts">
-              <a class="btn" href="#book"><span lang="es">Reservar aquí</span><span lang="en">Book here</span></a>
-              <a class="btn btn-2" href="tel:+15552140895">(555) 214-0895</a>
-              <a class="btn btn-2" href="https://maps.google.com/?q=1170+Northgate+Plaza"><span lang="es">Cómo llegar</span><span lang="en">Directions</span></a>
+              <a class="btn" href="#book"><span lang="es">Reservar</span><span lang="en">Book</span></a>
+              <a class="btn btn-2" href="tel:+17872488417">(787) 248-8417</a>
+              <a class="btn btn-2" href="mailto:metaporphosis.wellness@gmail.com">Email</a>
             </div>
           </div>
         </div>
@@ -761,11 +750,11 @@ html[data-lang="en"] [lang="es"]{display:none!important}
   <div class="wrap">
     <div class="c4">
       <div>
-        <div class="fb"><span class="mk" aria-hidden="true">H</span><b>Harbor Family Medical</b></div>
-        <p lang="es">Medicina familiar certificada en Bayview y Northgate. Visitas
+        <div class="fb"><span class="mk" aria-hidden="true">L</span><b>Lunaris Medical Clinic</b></div>
+        <p lang="es">Medicina familiar certificada en Caguas, Puerto Rico. Visitas
         presenciales y por telemedicina, disponibilidad la misma semana.</p>
-        <p lang="en">Board-certified family medicine in Bayview and Northgate. In-person and
-        telehealth visits, same-week availability.</p>
+        <p lang="en">Board-certified primary care and clinical counseling in Caguas —
+        Lunaris and Metaporphosis. In-person and telehealth visits.</p>
       </div>
       <div>
         <h4><span lang="es">Servicios</span><span lang="en">Services</span></h4>
@@ -788,22 +777,22 @@ html[data-lang="en"] [lang="es"]{display:none!important}
       <div>
         <h4><span lang="es">Contacto</span><span lang="en">Contact</span></h4>
         <ul>
-          <li>Bayview <a href="tel:+15552140880">(555) 214-0880</a></li>
-          <li>Northgate <a href="tel:+15552140895">(555) 214-0895</a></li>
-          <li>Fax (555) 214-0881</li>
+          <li>Caguas <a href="tel:+17871234567">(787) 123-4567</a></li>
+          <li>Metaporphosis <a href="tel:+17872488417">(787) 248-8417</a></li>
+          <li>Fax (787) 123-4568</li>
         </ul>
       </div>
     </div>
     <div class="fine">
-      <span lang="es">Demostración conceptual — práctica ficticia. Proveedores, disponibilidad y reseñas son ejemplos.</span>
-      <span lang="en">Concept demo — fictional practice. Providers, availability, and reviews are placeholders.</span>
+      <span lang="es">Borrador de diseño para Lunaris Medical Clinic. Proveedores, disponibilidad y reseñas son ejemplos.</span>
+      <span lang="en">Design draft for Lunaris Medical Clinic. Providers, availability, and reviews are placeholders.</span>
       <span><span lang="es">Aviso de Prácticas de Privacidad · Accesibilidad · No Discriminación</span><span lang="en">Notice of Privacy Practices · Accessibility · Nondiscrimination</span></span>
     </div>
   </div>
 </footer>
 
 <div class="actbar">
-  <a class="btn btn-2" href="tel:+15552140880"><span lang="es">Llamar</span><span lang="en">Call</span></a>
+  <a class="btn btn-2" href="tel:+17871234567"><span lang="es">Llamar</span><span lang="en">Call</span></a>
   <a class="btn" href="#book"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
 </div>
 
@@ -827,7 +816,7 @@ html[data-lang="en"] [lang="es"]{display:none!important}
       reasons: [['physical','Examen físico anual (45 min)'],['sick','Cita de enfermedad el mismo día (20 min)'],['chronic','Seguimiento de cuidado crónico (30 min)'],['vaccine','Vacuna / inmunización (15 min)'],['labs','Revisión de resultados (15 min)'],['new','Visita de paciente nuevo (60 min)']],
       anyProv: 'Cualquier proveedor disponible',
       at: ' a las ',
-      title: 'Harbor Family Medical — Concepto 3: Harbor Connect'
+      title: 'Lunaris Medical Clinic — Concepto 3: Harbor Connect'
     },
     en: {
       days: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
@@ -843,10 +832,10 @@ html[data-lang="en"] [lang="es"]{display:none!important}
       reasons: [['physical','Annual physical (45 min)'],['sick','Same-day sick visit (20 min)'],['chronic','Chronic care follow-up (30 min)'],['vaccine','Vaccine / immunization (15 min)'],['labs','Lab results review (15 min)'],['new','New patient visit (60 min)']],
       anyProv: 'Any available provider',
       at: ' at ',
-      title: 'Harbor Family Medical — Concept 3: Harbor Connect'
+      title: 'Lunaris Medical Clinic — Concept 3: Harbor Connect'
     }
   };
-  var PROVIDERS = [['any',null],['reyes','Dra. Naomi Reyes, MD'],['adeyemi','Dr. Samuel Adeyemi, MD'],['kwon','Dra. Hana Kwon, DO'],['lyle','Marcus Lyle, PA-C']];
+  var PROVIDERS = [['any',null],['rivera','Dra. Morayma Rivera Nieves'],['santiago','Lcda. Daisy Santiago, TSC']];
   function lang(){ return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'es'; }
   function t(){ return L[lang()]; }
 
@@ -914,7 +903,7 @@ html[data-lang="en"] [lang="es"]{display:none!important}
     var dow = date.getDay();
     if (dow === 0) return [];
     var sat = dow === 6;
-    if (sat && locEl.value === 'northgate') return [];
+    if (sat && locEl.value === 'metaporphosis') return [];
     var base = sat ? ['8:00','8:40','9:20','10:00','10:40','11:20']
                    : ['7:40','8:20','9:00','9:40','10:20','11:00','13:20','14:00','14:40','15:20','16:00','16:40'];
     var seed = date.getDate() + date.getMonth() * 31 + (mode === 'video' ? 3 : 0) + docEl.selectedIndex * 5;
@@ -987,7 +976,7 @@ html[data-lang="en"] [lang="es"]{display:none!important}
 
   function updateSummary(){
     if (chosenDay && chosenSlot){
-      var where = mode === 'video' ? t().video : (locEl.value === 'bayview' ? 'Bayview' : 'Northgate');
+      var where = mode === 'video' ? t().video : (locEl.value === 'lunaris' ? 'Lunaris — Caguas' : 'Metaporphosis');
       sumEl.innerHTML = '<b>' + t().days[chosenDay.getDay()] + ', ' + chosenDay.getDate() + ' ' +
         t().months[chosenDay.getMonth()] + t().at + fmtTime(chosenSlot) + '</b> · ' + where + ' · ' + reasonLabel();
       confirmEl.disabled = false;

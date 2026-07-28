@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>(function(){var l=null;try{l=localStorage.getItem('harborLang')}catch(e){}l=l==='en'?'en':'es';var d=document.documentElement;d.setAttribute('lang',l);d.setAttribute('data-lang',l);})();</script>
-<title>Harbor Family Medical — Concepto 1: Harbor &amp; Oak</title>
-<meta name="description" content="Harbor Family Medical es una práctica de medicina familiar certificada en Bayview: exámenes físicos anuales, citas de enfermedad el mismo día, cuidado crónico y telemedicina.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2323201c'/><text x='16' y='23' font-size='19' font-family='Georgia,serif' fill='%23fbf8f3' text-anchor='middle'>H</text></svg>">
+<title>Lunaris Medical Clinic — Concepto 1: Harbor &amp; Oak</title>
+<meta name="description" content="Lunaris Medical Clinic es una práctica de medicina familiar certificada en Caguas: exámenes físicos anuales, citas de enfermedad el mismo día, cuidado crónico y telemedicina.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%232c2335'/><text x='16' y='23' font-size='19' font-family='Georgia,serif' fill='%23c9a45c' text-anchor='middle'>L</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&display=swap">
@@ -20,13 +20,13 @@
    ============================================================ */
 
 :root{
-  --bone:#fbf8f3;
-  --bone-2:#f3ede3;
-  --ink:#23201c;
-  --ink-soft:#5f584e;
-  --rule:#ded5c7;
-  --brass:#6e5a3c;
-  --oak:#8a7355;
+  --bone:#faf6fa;
+  --bone-2:#f1e9f4;
+  --ink:#2c2335;
+  --ink-soft:#60546f;
+  --rule:#e0d5e7;
+  --brass:#93702f;
+  --oak:#b98d4f;
   --wrap:1180px;
   --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
   --display:"Fraunces","Iowan Old Style",Palatino,Georgia,serif;
@@ -71,7 +71,7 @@ img{max-width:100%}
 /* ---------- header: wordmark centered, nav on a hairline ---------- */
 
 .topline{
-  background:var(--ink);color:#d8cfc2;font-family:var(--sans);
+  background:var(--ink);color:#d7cde0;font-family:var(--sans);
   font-size:12.5px;letter-spacing:.04em;
 }
 .topline .wrap{display:flex;justify-content:space-between;gap:20px;padding:9px 32px;flex-wrap:wrap}
@@ -146,8 +146,8 @@ img{max-width:100%}
 .plate{
   position:relative;height:min(66vh,560px);min-height:380px;
   background:
-    linear-gradient(155deg,rgba(35,32,28,.62),rgba(110,90,60,.34)),
-    linear-gradient(30deg,#8a7355,#c4b49b 55%,#e6dcca);
+    linear-gradient(155deg,rgba(44,35,53,.60),rgba(124,95,158,.34)),
+    linear-gradient(30deg,#7c5f9e,#b7a3cc 55%,#e9def0);
   overflow:hidden;
 }
 .plate::after{
@@ -155,7 +155,7 @@ img{max-width:100%}
   opacity:.14;mix-blend-mode:overlay;pointer-events:none;
 }
 .plate-note{
-  position:absolute;right:22px;bottom:16px;color:#f4ece0;opacity:.78;
+  position:absolute;right:22px;bottom:16px;color:#f0e8f5;opacity:.78;
   font-family:var(--sans);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
 }
 .hero-card{
@@ -189,7 +189,7 @@ img{max-width:100%}
   align-items:baseline;padding:30px 8px 30px 0;border-bottom:1px solid var(--rule);
   transition:padding-left .2s,background .2s;
 }
-.svc-row:hover{background:#f7f2e9;padding-left:14px}
+.svc-row:hover{background:#f4ecf6;padding-left:14px}
 .svc-num{font-family:var(--serif);font-size:1.05rem;color:var(--oak)}
 .svc-row h3{font-size:1.42rem;margin:0}
 .svc-row p{font-family:var(--sans);font-size:.95rem;color:var(--ink-soft);margin:0;line-height:1.65}
@@ -204,11 +204,12 @@ img{max-width:100%}
 .prov:nth-child(even) .portrait{order:2}
 .portrait{
   aspect-ratio:4/5;position:relative;overflow:hidden;
-  background:linear-gradient(160deg,#cfc0a6,#a8927a 60%,#6e5a3c);
+  background:linear-gradient(160deg,#d6c7e2,#a68cc0 60%,#5e4680);
   display:grid;place-items:center;
 }
 .portrait::after{content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.13;mix-blend-mode:overlay}
 .portrait span{font-family:var(--display);font-size:4.4rem;color:rgba(255,255,255,.82)}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 .prov h3{font-size:2rem;margin-bottom:.15em}
 .prov .cred{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--brass);margin-bottom:1.3em}
 .prov p{color:var(--ink-soft);font-size:1.04rem}
@@ -263,15 +264,15 @@ img{max-width:100%}
 
 /* ---------- footer ---------- */
 
-footer{background:var(--ink);color:#cdc4b7;padding:70px 0 34px;font-family:var(--sans);font-size:14px}
-footer .cols4{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;padding-bottom:44px;border-bottom:1px solid #3c3630}
-footer h4{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#8f8578;margin-bottom:1.5em}
+footer{background:var(--ink);color:#cfc5da;padding:70px 0 34px;font-family:var(--sans);font-size:14px}
+footer .cols4{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;padding-bottom:44px;border-bottom:1px solid #453a52}
+footer h4{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#948aa3;margin-bottom:1.5em}
 footer ul{list-style:none;margin:0;padding:0}
 footer li{margin-bottom:11px}
-footer a{color:#e6ded2}
+footer a{color:#e6ddf0}
 footer a:hover{color:#fff;text-decoration:underline}
 footer .fm .name{font-family:var(--display);font-size:22px;color:#fff;display:block;margin-bottom:14px}
-footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer .fine{padding-top:26px;color:#948aa3;font-size:12.5px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 
 /* ---------- mobile sticky book bar (appears on scroll) ---------- */
 
@@ -368,19 +369,19 @@ html[data-lang="en"] [lang="es"]{display:none!important}
 
 <div class="topline">
   <div class="wrap">
-    <span><span lang="es">Medicina familiar certificada · Bayview y Northgate</span><span lang="en">Board-certified family medicine · Bayview &amp; Northgate</span></span>
-    <span><span lang="es">Citas esta misma semana · </span><span lang="en">Same-week appointments · </span><a href="tel:+15552140880">(555) 214-0880</a></span>
+    <span><span lang="es">Medicina familiar certificada · Caguas, Puerto Rico</span><span lang="en">Board-certified family medicine · Caguas, Puerto Rico</span></span>
+    <span><span lang="es">Citas esta misma semana · </span><span lang="en">Same-week appointments · </span><a href="tel:+17871234567">(787) 123-4567</a></span>
   </div>
 </div>
 
 <header class="masthead">
   <div class="mast-inner">
     <a class="wordmark" href="#top">
-      <span class="name">Harbor Family Medical</span>
-      <span class="sub"><span lang="es">Desde 2004</span><span lang="en">Established 2004</span></span>
+      <span class="name">Lunaris Medical Clinic</span>
+      <span class="sub">Caguas · Puerto Rico</span>
     </a>
     <div class="mast-actions">
-      <span class="phone">Bayview <strong>(555) 214-0880</strong></span>
+      <span class="phone">Caguas <strong>(787) 123-4567</strong></span>
       <a class="btn" href="#book"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
       <button class="lang-toggle" type="button"><span lang="es">English</span><span lang="en">Español</span></button>
       <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="ovl"><span lang="es">Menú</span><span lang="en">Menu</span></button>
@@ -415,8 +416,8 @@ html[data-lang="en"] [lang="es"]{display:none!important}
   </nav>
   <div class="ov-foot">
     <p style="margin-bottom:14px"><button class="lang-toggle" type="button"><span lang="es">English</span><span lang="en">Español</span></button></p>
-    <p>Bayview <a href="tel:+15552140880"><strong>(555) 214-0880</strong></a><br>
-    Northgate <a href="tel:+15552140895"><strong>(555) 214-0895</strong></a></p>
+    <p>Caguas <a href="tel:+17871234567"><strong>(787) 123-4567</strong></a><br>
+    Metaporphosis <a href="tel:+17872488417"><strong>(787) 248-8417</strong></a></p>
     <a class="btn" href="#book" style="width:100%"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
   </div>
 </div>
@@ -425,7 +426,7 @@ html[data-lang="en"] [lang="es"]{display:none!important}
 
   <!-- HERO -->
   <section class="hero" id="top">
-    <div class="plate" role="img" aria-label="Sala de espera de Harbor Family Medical con luz natural, sillas de lino y recepción de madera">
+    <div class="plate" role="img" aria-label="Sala de espera de Lunaris Medical Clinic con luz natural, sillas de lino y recepción de madera">
       <span class="plate-note"><span lang="es">Fotografía · Interior de la clínica, luz natural</span><span lang="en">Photography · Clinic interior, natural light</span></span>
     </div>
     <div class="wrap">
@@ -433,15 +434,13 @@ html[data-lang="en"] [lang="es"]{display:none!important}
         <span class="label"><span lang="es">Aceptamos pacientes nuevos</span><span lang="en">Accepting new patients</span></span>
         <h1 lang="es">Un médico de familia con tiempo para toda la conversación.</h1>
         <h1 lang="en">A family doctor who has time for the whole conversation.</h1>
-        <p class="lede" lang="es">Cuatro médicos certificados en Bayview que cuidan de familias,
-        adultos que trabajan y personas mayores — con citas la misma semana y una recepción
-        que lo conoce por su nombre.</p>
-        <p class="lede" lang="en">Four board-certified physicians in Bayview, caring for families,
-        working adults, and seniors — with same-week appointments and a front desk that
-        knows your name.</p>
+        <p class="lede" lang="es">Medicina primaria y bienestar emocional bajo un mismo techo
+        en Caguas — con citas la misma semana y una recepción que lo conoce por su nombre.</p>
+        <p class="lede" lang="en">Primary care and emotional wellness under one roof in
+        Caguas — with same-week appointments and a front desk that knows your name.</p>
         <div class="hero-cta">
           <a class="btn" href="#book"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
-          <a class="btn btn-out" href="tel:+15552140880"><span lang="es">Llamar al (555) 214-0880</span><span lang="en">Call (555) 214-0880</span></a>
+          <a class="btn btn-out" href="tel:+17871234567"><span lang="es">Llamar al (787) 123-4567</span><span lang="en">Call (787) 123-4567</span></a>
         </div>
         <p class="hero-meta">
           <span class="dot" aria-hidden="true"></span>
@@ -467,31 +466,33 @@ html[data-lang="en"] [lang="es"]{display:none!important}
         treatment. Seeing the same doctor for twenty years is worth more than any
         single visit.</p>
         <div class="body-2" lang="es">
-          <p>Harbor Family Medical abrió en la calle Harbor en 2004 con una sola médica y
-          un fax compartido. Dos décadas después somos cuatro médicos y un asistente
-          médico en dos oficinas, y seguimos limitando nuestros paneles para que las
-          citas empiecen a tiempo.</p>
+          <p>Lunaris Medical Clinic une dos cosas que casi siempre viven separadas: la
+          medicina primaria y el bienestar emocional. Una médica de atención primaria y
+          una trabajadora social clínica licenciada, bajo un mismo techo en Caguas, con
+          paneles limitados para que las citas empiecen a tiempo.</p>
           <p>Eso significa exámenes físicos anuales sin prisa, citas de enfermedad el
           mismo día para nuestros propios pacientes, y cuidado crónico — diabetes,
           presión arterial, tiroides, colesterol — manejado por alguien que recuerda qué
           intentó usted el año pasado y por qué no funcionó.</p>
-          <p>Ofrecemos telemedicina para seguimientos y revisión de laboratorios, porque
-          perder medio día de trabajo para escuchar "sus laboratorios están normales" es
-          perder su tiempo.</p>
-          <p><a class="link-more" href="#doctors">Conozca a nuestros médicos</a></p>
+          <p>Y cuando lo que hace falta es apoyo emocional continuo, nuestra hermana
+          <strong>Metaporphosis Wellness &amp; Counseling</strong> ofrece psicoterapia
+          individual, de pareja y familiar — presencial o virtual. Sanar, crecer,
+          transformar.</p>
+          <p><a class="link-more" href="#doctors">Conozca a nuestro equipo</a></p>
         </div>
         <div class="body-2" lang="en">
-          <p>Harbor Family Medical opened on Harbor Street in 2004 with one physician
-          and a shared fax machine. Two decades later we are four physicians and a
-          physician assistant across two offices, and we still cap our panels so
-          appointments run on time.</p>
+          <p>Lunaris Medical Clinic brings together two things that almost always live
+          apart: primary care and emotional wellness. A primary care physician and a
+          licensed clinical social worker, under one roof in Caguas, with capped panels
+          so appointments run on time.</p>
           <p>That means annual physicals that are not rushed, same-day sick visits for
           our own patients, and chronic care — diabetes, blood pressure, thyroid,
           cholesterol — managed by someone who remembers what you tried last year and
           why it did not work.</p>
-          <p>We handle telehealth for follow-ups and lab reviews, because taking half a
-          day off work to hear "your labs are normal" is a waste of your time.</p>
-          <p><a class="link-more" href="#doctors">Meet our doctors</a></p>
+          <p>And when what you need is ongoing emotional support, our sister practice
+          <strong>Metaporphosis Wellness &amp; Counseling</strong> offers individual,
+          couples, and family therapy — in person or virtual. Heal, grow, transform.</p>
+          <p><a class="link-more" href="#doctors">Meet our team</a></p>
         </div>
       </div>
     </div>
@@ -557,81 +558,33 @@ html[data-lang="en"] [lang="es"]{display:none!important}
     <div class="wrap">
       <span class="label"><span lang="es">03 — Nuestros Médicos</span><span lang="en">03 — Meet Our Doctors</span></span>
       <div class="prov">
-        <div class="portrait" role="img" aria-label="Retrato de la Dra. Naomi Reyes"><span>NR</span></div>
+        <div class="portrait"><img src="photos/morayma.jpg" alt="Dra. Morayma Rivera Nieves"></div>
         <div>
-          <h3>Dra. Naomi Reyes, MD</h3>
-          <p class="cred"><span lang="es">Medicina familiar · Certificada · Médica fundadora</span><span lang="en">Family Medicine · Board Certified · Founding Physician</span></p>
-          <p lang="es">Naomi abrió Harbor en 2004 tras su residencia en el Bayview General.
-          Atiende a tres generaciones de algunas familias y considera que ese es
-          exactamente el propósito de la atención primaria. Su enfoque clínico es la
-          diabetes y la salud de la mujer.</p>
-          <p lang="en">Naomi opened Harbor in 2004 after residency at Bayview General. She sees
-          three generations of some families and considers that the entire point of
-          primary care. Her clinical focus is diabetes and women's health.</p>
+          <h3>Dra. Morayma Rivera Nieves</h3>
+          <p class="cred"><span lang="es">Medicina primaria · Certificada</span><span lang="en">Primary Care Physician · Board Certified</span></p>
+          <p lang="es">Médica de atención primaria dedicada al cuidado integral de adultos y familias — prevención, condiciones crónicas y la salud del día a día, con tiempo para escuchar.</p>
+          <p lang="en">Primary care physician devoted to whole-person care for adults and families — prevention, chronic conditions, and everyday health, with time to listen.</p>
           <dl>
-            <div><dt><span lang="es">Experiencia</span><span lang="en">Experience</span></dt><dd><span lang="es">21 años</span><span lang="en">21 years</span></dd></div>
+            <div><dt><span lang="es">Enfoque</span><span lang="en">Focus</span></dt><dd><span lang="es">Medicina primaria integral</span><span lang="en">Whole-person primary care</span></dd></div>
             <div><dt><span lang="es">Idiomas</span><span lang="en">Languages</span></dt><dd>Español, English</dd></div>
-            <div><dt><span lang="es">Oficina</span><span lang="en">Location</span></dt><dd>Bayview</dd></div>
+            <div><dt><span lang="es">Oficina</span><span lang="en">Location</span></dt><dd>Lunaris · Caguas</dd></div>
           </dl>
-          <a class="link-more" href="#book"><span lang="es">Reservar con la Dra. Reyes</span><span lang="en">Book with Dr. Reyes</span></a>
+          <a class="link-more" href="#book"><span lang="es">Reservar con la Dra. Rivera Nieves</span><span lang="en">Book with Dr. Rivera Nieves</span></a>
         </div>
       </div>
       <div class="prov">
-        <div class="portrait" role="img" aria-label="Retrato del Dr. Samuel Adeyemi"><span>SA</span></div>
+        <div class="portrait"><img src="photos/daisy.jpg" alt="Lcda. Daisy Santiago"></div>
         <div>
-          <h3>Dr. Samuel Adeyemi, MD</h3>
-          <p class="cred"><span lang="es">Medicina familiar · Certificado · Enfoque geriátrico</span><span lang="en">Family Medicine · Board Certified · Geriatric Focus</span></p>
-          <p lang="es">Samuel se unió en 2011 y lleva la mayor parte de nuestro panel de
-          personas mayores. Es el médico que lee el expediente completo antes de entrar,
-          y con gusto dedica una visita a reducir una lista de medicamentos en lugar de
-          alargarla.</p>
-          <p lang="en">Samuel joined in 2011 and carries most of our senior panel. He is the
-          physician who reads the whole chart before walking in, and he will happily
-          spend a visit reducing a medication list rather than adding to it.</p>
+          <h3>Lcda. Daisy Santiago</h3>
+          <p class="cred"><span lang="es">Trabajadora social clínica · Licenciada</span><span lang="en">Clinical Social Worker · Licensed</span></p>
+          <p lang="es">Trabajadora social clínica licenciada. Acompaña a pacientes y familias en salud mental y bienestar emocional, con un enfoque compasivo y sin juicios.</p>
+          <p lang="en">Licensed clinical social worker. Supports patients and families with mental health and emotional wellness, with a compassionate, judgment-free approach.</p>
           <dl>
-            <div><dt><span lang="es">Experiencia</span><span lang="en">Experience</span></dt><dd><span lang="es">18 años</span><span lang="en">18 years</span></dd></div>
-            <div><dt><span lang="es">Idiomas</span><span lang="en">Languages</span></dt><dd>English, Yorùbá</dd></div>
-            <div><dt><span lang="es">Oficina</span><span lang="en">Location</span></dt><dd>Bayview &amp; Northgate</dd></div>
-          </dl>
-          <a class="link-more" href="#book"><span lang="es">Reservar con el Dr. Adeyemi</span><span lang="en">Book with Dr. Adeyemi</span></a>
-        </div>
-      </div>
-      <div class="prov">
-        <div class="portrait" role="img" aria-label="Retrato de la Dra. Hana Kwon"><span>HK</span></div>
-        <div>
-          <h3>Dra. Hana Kwon, DO</h3>
-          <p class="cred"><span lang="es">Medicina familiar · Certificada · Osteopática</span><span lang="en">Family Medicine · Board Certified · Osteopathic</span></p>
-          <p lang="es">Hana llegó a Harbor en 2018 desde un sistema hospitalario y no tiene
-          intención de volver. Su formación osteopática guía cómo trata el dolor de
-          espalda, cuello y articulaciones — muchas veces sin recetario.</p>
-          <p lang="en">Hana came to Harbor in 2018 from a hospital system and has no intention of
-          going back. Osteopathic training informs how she approaches back, neck, and
-          joint pain — often without a prescription pad.</p>
-          <dl>
-            <div><dt><span lang="es">Experiencia</span><span lang="en">Experience</span></dt><dd><span lang="es">11 años</span><span lang="en">11 years</span></dd></div>
-            <div><dt><span lang="es">Idiomas</span><span lang="en">Languages</span></dt><dd>English, 한국어</dd></div>
-            <div><dt><span lang="es">Oficina</span><span lang="en">Location</span></dt><dd>Northgate</dd></div>
-          </dl>
-          <a class="link-more" href="#book"><span lang="es">Reservar con la Dra. Kwon</span><span lang="en">Book with Dr. Kwon</span></a>
-        </div>
-      </div>
-      <div class="prov">
-        <div class="portrait" role="img" aria-label="Retrato de Marcus Lyle, PA-C"><span>ML</span></div>
-        <div>
-          <h3>Marcus Lyle, PA-C</h3>
-          <p class="cred"><span lang="es">Asistente médico · Certificado · Clínica del mismo día</span><span lang="en">Physician Assistant · Certified · Same-Day Clinic</span></p>
-          <p lang="es">Marcus dirige nuestra clínica del mismo día y de los sábados.
-          Exámenes deportivos, suturas, infecciones de oído, y la explicación tranquila
-          de por qué su hijo no necesita antibióticos para esta tos en particular.</p>
-          <p lang="en">Marcus runs our same-day and Saturday clinic. Sports physicals, stitches,
-          ear infections, and the calm explanation of why your child does not need
-          antibiotics for this particular cough.</p>
-          <dl>
-            <div><dt><span lang="es">Experiencia</span><span lang="en">Experience</span></dt><dd><span lang="es">9 años</span><span lang="en">9 years</span></dd></div>
+            <div><dt><span lang="es">Enfoque</span><span lang="en">Focus</span></dt><dd><span lang="es">Salud mental y bienestar</span><span lang="en">Mental health &amp; wellness</span></dd></div>
             <div><dt><span lang="es">Idiomas</span><span lang="en">Languages</span></dt><dd>Español, English</dd></div>
-            <div><dt><span lang="es">Oficina</span><span lang="en">Location</span></dt><dd>Bayview</dd></div>
+            <div><dt><span lang="es">Oficina</span><span lang="en">Location</span></dt><dd>Lunaris &amp; Metaporphosis</dd></div>
           </dl>
-          <a class="link-more" href="#book"><span lang="es">Reservar con Marcus</span><span lang="en">Book with Marcus</span></a>
+          <a class="link-more" href="#book"><span lang="es">Reservar con la Lcda. Santiago</span><span lang="en">Book with Lcda. Santiago</span></a>
         </div>
       </div>
     </div>
@@ -654,10 +607,9 @@ html[data-lang="en"] [lang="es"]{display:none!important}
       </div>
       <div class="mini-quotes">
         <div>
-          <p lang="es">"El Dr. Adeyemi encontró un problema de tiroides que otros dos
-          médicos habían pasado por alto. Él sí lee el expediente antes de entrar."</p>
-          <p lang="en">"Dr. Adeyemi caught a thyroid problem two other doctors had missed. He
-          actually reads the chart before he walks in."</p>
+          <p lang="es">"Aquí encontraron un problema de tiroides que otros dos
+          médicos habían pasado por alto. Sí leen el expediente antes de entrar."</p>
+          <p lang="en">"They caught a thyroid problem two other doctors had missed. They actually read the chart before walking in."</p>
           <span class="who"><span lang="es">Daniel W. · Desde 2019</span><span lang="en">Daniel W. · Since 2019</span></span>
         </div>
         <div>
@@ -695,7 +647,7 @@ html[data-lang="en"] [lang="es"]{display:none!important}
         change constantly. Call the front desk with your member ID before your first
         visit and we will verify coverage while you are on the phone. Self-pay pricing
         is published and quoted up front — no surprise billing.</p>
-        <a class="link-more" href="tel:+15552140880"><span lang="es">Verificar mi cubierta</span><span lang="en">Verify my coverage</span></a>
+        <a class="link-more" href="tel:+17871234567"><span lang="es">Verificar mi cubierta</span><span lang="en">Verify my coverage</span></a>
       </div>
     </div>
   </section>
@@ -708,9 +660,9 @@ html[data-lang="en"] [lang="es"]{display:none!important}
       <span class="label"><span lang="es">05 — Visítenos</span><span lang="en">05 — Visit Us</span></span>
       <div class="locs">
         <div class="loc">
-          <h3>Bayview</h3>
+          <h3>Caguas</h3>
           <p class="kind"><span lang="es">Clínica principal</span><span lang="en">Main clinic</span></p>
-          <address>240 Harbor Street, Suite 300<br>Bayview, PR 00000</address>
+          <address>Caguas, Puerto Rico</address>
           <table lang="es">
             <tr><td>Lun – Jue</td><td>7:30 am – 6:00 pm</td></tr>
             <tr><td>Viernes</td><td>7:30 am – 4:00 pm</td></tr>
@@ -723,23 +675,25 @@ html[data-lang="en"] [lang="es"]{display:none!important}
             <tr><td>Saturday</td><td>8:00 am – 12:00 pm</td></tr>
             <tr><td>Sunday</td><td>Closed</td></tr>
           </table>
-          <p><a class="link-more" href="tel:+15552140880">(555) 214-0880</a></p>
+          <p><a class="link-more" href="tel:+17871234567">(787) 123-4567</a></p>
         </div>
         <div class="loc">
-          <h3>Northgate</h3>
-          <p class="kind"><span lang="es">Oficina satélite</span><span lang="en">Satellite office</span></p>
-          <address>1170 Northgate Plaza, Unit B<br>Northgate, PR 00000</address>
+          <h3>Metaporphosis</h3>
+          <p class="kind">Wellness &amp; Counseling · Sanar · Crecer · Transformar</p>
+          <address><span lang="es">Servicios presenciales y virtuales</span><span lang="en">In-person and virtual services</span></address>
           <table lang="es">
-            <tr><td>Lun – Vie</td><td>8:00 am – 5:00 pm</td></tr>
-            <tr><td>Sábado</td><td>Cerrado</td></tr>
-            <tr><td>Domingo</td><td>Cerrado</td></tr>
+            <tr><td>Psicoterapia individual</td><td>Presencial / virtual</td></tr>
+            <tr><td>Terapia de pareja y familia</td><td>Presencial / virtual</td></tr>
+            <tr><td>Ansiedad y estrés</td><td>Presencial / virtual</td></tr>
+            <tr><td>Duelo y crecimiento personal</td><td>Presencial / virtual</td></tr>
           </table>
           <table lang="en">
-            <tr><td>Mon – Fri</td><td>8:00 am – 5:00 pm</td></tr>
-            <tr><td>Saturday</td><td>Closed</td></tr>
-            <tr><td>Sunday</td><td>Closed</td></tr>
+            <tr><td>Individual psychotherapy</td><td>In person / virtual</td></tr>
+            <tr><td>Couples &amp; family therapy</td><td>In person / virtual</td></tr>
+            <tr><td>Anxiety &amp; stress</td><td>In person / virtual</td></tr>
+            <tr><td>Grief &amp; personal growth</td><td>In person / virtual</td></tr>
           </table>
-          <p><a class="link-more" href="tel:+15552140895">(555) 214-0895</a></p>
+          <p><a class="link-more" href="tel:+17872488417">(787) 248-8417</a> · <a class="link-more" href="mailto:metaporphosis.wellness@gmail.com">metaporphosis.wellness@gmail.com</a></p>
         </div>
       </div>
 
@@ -747,14 +701,14 @@ html[data-lang="en"] [lang="es"]{display:none!important}
         <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);max-width:24ch"><span lang="es">Reserve una cita</span><span lang="en">Book an appointment</span></h2>
         <p style="color:var(--ink-soft);max-width:52ch" lang="es">Pacientes nuevos y
         establecidos pueden reservar en línea a través de nuestro portal de pacientes, o
-        llamar a cualquiera de las oficinas y hablar con una persona — no usamos
+        llamar a Lunaris o a Metaporphosis y hablar con una persona — no usamos
         contestadora automática.</p>
         <p style="color:var(--ink-soft);max-width:52ch" lang="en">New and established patients can
-        book online through our patient portal, or call either office and speak to a
+        book online through our patient portal, or call Lunaris or Metaporphosis and speak to a
         person — we do not use a phone tree.</p>
         <div class="hero-cta">
           <a class="btn" href="#book"><span lang="es">Reservar en el portal de pacientes</span><span lang="en">Book in the patient portal</span></a>
-          <a class="btn btn-out" href="tel:+15552140880"><span lang="es">Llamar ahora</span><span lang="en">Call Now</span></a>
+          <a class="btn btn-out" href="tel:+17871234567"><span lang="es">Llamar ahora</span><span lang="en">Call Now</span></a>
         </div>
         <div class="privacy" lang="es">
           <strong>Su privacidad.</strong> La reserva en línea ocurre dentro de nuestro
@@ -781,10 +735,10 @@ html[data-lang="en"] [lang="es"]{display:none!important}
   <div class="wrap">
     <div class="cols4">
       <div class="fm">
-        <span class="name">Harbor Family Medical</span>
-        <p lang="es">Medicina familiar certificada para Bayview y Northgate desde 2004.
+        <span class="name">Lunaris Medical Clinic</span>
+        <p lang="es">Medicina primaria y bienestar emocional en Caguas, Puerto Rico.
         Aceptamos pacientes nuevos de todas las edades.</p>
-        <p lang="en">Board-certified family medicine for Bayview and Northgate since 2004.
+        <p lang="en">Primary care and emotional wellness in Caguas, Puerto Rico.
         Accepting new patients of every age.</p>
       </div>
       <div>
@@ -808,15 +762,15 @@ html[data-lang="en"] [lang="es"]{display:none!important}
       <div>
         <h4><span lang="es">Contacto</span><span lang="en">Contact</span></h4>
         <ul>
-          <li>Bayview <a href="tel:+15552140880">(555) 214-0880</a></li>
-          <li>Northgate <a href="tel:+15552140895">(555) 214-0895</a></li>
-          <li>Fax (555) 214-0881</li>
+          <li>Caguas <a href="tel:+17871234567">(787) 123-4567</a></li>
+          <li>Metaporphosis <a href="tel:+17872488417">(787) 248-8417</a></li>
+          <li>Fax (787) 123-4568</li>
         </ul>
       </div>
     </div>
     <div class="fine">
-      <span lang="es">Demostración conceptual — práctica ficticia. Nombres, médicos, reseñas y datos de contacto son ejemplos.</span>
-      <span lang="en">Concept demo — fictional practice. Names, providers, reviews, and contact details are placeholders.</span>
+      <span lang="es">Borrador de diseño para Lunaris Medical Clinic. Nombres, médicos, reseñas y datos de contacto son ejemplos.</span>
+      <span lang="en">Design draft for Lunaris Medical Clinic. Names, providers, reviews, and contact details are placeholders.</span>
       <span><span lang="es">Prácticas de Privacidad · Accesibilidad · No Discriminación</span><span lang="en">Privacy Practices · Accessibility · Nondiscrimination</span></span>
     </div>
   </div>
@@ -824,7 +778,7 @@ html[data-lang="en"] [lang="es"]{display:none!important}
 
 <!-- mobile sticky booking bar -->
 <div class="sticky-book" id="stickyBook" data-show="false">
-  <a class="btn btn-out" href="tel:+15552140880"><span lang="es">Llamar</span><span lang="en">Call</span></a>
+  <a class="btn btn-out" href="tel:+17871234567"><span lang="es">Llamar</span><span lang="en">Call</span></a>
   <a class="btn" href="#book"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
 </div>
 
@@ -861,8 +815,8 @@ html[data-lang="en"] [lang="es"]{display:none!important}
 
   /* ---- language toggle: Spanish default, English on demand ---- */
   var TITLES = {
-    es: 'Harbor Family Medical — Concepto 1: Harbor & Oak',
-    en: 'Harbor Family Medical — Concept 1: Harbor & Oak'
+    es: 'Lunaris Medical Clinic — Concepto 1: Harbor & Oak',
+    en: 'Lunaris Medical Clinic — Concept 1: Harbor & Oak'
   };
   function setLang(l){
     var d = document.documentElement;

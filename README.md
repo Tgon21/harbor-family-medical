@@ -1,4 +1,11 @@
-# Harbor Family Medical — 5 homepage concepts
+# Lunaris Medical Clinic — 5 homepage concepts
+
+Now branded for the real client: **Lunaris Medical Clinic and Behavioral Wellness**
+(Caguas, Puerto Rico) with its sister practice **Metaporphosis Wellness & Counseling**,
+in the brand's lavender / plum / antique-gold palette from the client flyers. Providers:
+Dra. Morayma Rivera Nieves (Medicina Primaria) and Lcda. Daisy Santiago (T.S. Clínico),
+with photos from the flyer and generic bios. Reviews, ratings, prices, hours, and
+availability remain placeholder content pending confirmation.
 
 Five genuinely different homepage design directions for one fictional family medicine
 practice. Same brand, services, providers, and trust signals across all five, so the design
