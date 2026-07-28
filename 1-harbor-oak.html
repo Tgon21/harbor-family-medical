@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbor Family Medical — Concept 1: Harbor &amp; Oak</title>
+<meta name="description" content="Harbor Family Medical is a board-certified family medicine practice in Bayview offering annual physicals, same-day sick visits, chronic care, and telehealth.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2323201c'/><text x='16' y='23' font-size='19' font-family='Georgia,serif' fill='%23fbf8f3' text-anchor='middle'>H</text></svg>">
+<style>
+/* ============================================================
+   CONCEPT 1 — "HARBOR & OAK"
+   Calm, premium, editorial. Warm neutrals, serif display,
+   hairline rules instead of cards, very low density.
+   Signature: no card grid anywhere. Numbered editorial lists.
+   ============================================================ */
+
+:root{
+  --bone:#fbf8f3;
+  --bone-2:#f3ede3;
+  --ink:#23201c;
+  --ink-soft:#5f584e;
+  --rule:#ded5c7;
+  --brass:#6e5a3c;
+  --oak:#8a7355;
+  --wrap:1180px;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bone);color:var(--ink);
+  font:400 18px/1.7 var(--serif);
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.14;letter-spacing:-.012em;margin:0 0 .55em}
+p{margin:0 0 1.15em}
+a{color:var(--ink);text-decoration:none}
+img{max-width:100%}
+
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+.rule{border:0;border-top:1px solid var(--rule);margin:0}
+
+.label{
+  font-family:var(--sans);font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.19em;color:var(--brass);
+  margin:0 0 1.6em;display:block;
+}
+
+.skip{position:absolute;left:-9999px;background:var(--ink);color:var(--bone);padding:12px 18px;z-index:80;font-family:var(--sans)}
+.skip:focus{left:12px;top:12px}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+
+/* ---------- header: wordmark centered, nav on a hairline ---------- */
+
+.topline{
+  background:var(--ink);color:#d8cfc2;font-family:var(--sans);
+  font-size:12.5px;letter-spacing:.04em;
+}
+.topline .wrap{display:flex;justify-content:space-between;gap:20px;padding:9px 32px;flex-wrap:wrap}
+.topline a{color:#fff;font-weight:600}
+
+.masthead{background:var(--bone);position:relative;z-index:40}
+.mast-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 32px 22px}
+.wordmark{display:flex;flex-direction:column;line-height:1}
+.wordmark .name{font-family:var(--serif);font-size:26px;letter-spacing:.01em}
+.wordmark .sub{
+  font-family:var(--sans);font-size:10px;font-weight:600;text-transform:uppercase;
+  letter-spacing:.26em;color:var(--brass);margin-top:8px;
+}
+.mast-actions{display:flex;align-items:center;gap:26px;font-family:var(--sans);font-size:14px}
+.mast-actions .phone{color:var(--ink-soft)}
+.mast-actions .phone strong{color:var(--ink)}
+
+.desknav{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--bone)}
+.desknav ul{
+  display:flex;justify-content:center;gap:46px;list-style:none;margin:0;
+  padding:15px 32px;font-family:var(--sans);font-size:11.5px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.17em;flex-wrap:wrap;
+}
+.desknav a{color:var(--ink-soft);padding:4px 0;border-bottom:1px solid transparent}
+.desknav a:hover{color:var(--ink);border-bottom-color:var(--oak)}
+
+/* editorial "Menu" text button — not a hamburger */
+.menu-btn{
+  display:none;font-family:var(--sans);font-size:12px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.16em;background:none;border:0;
+  border-bottom:1px solid var(--ink);color:var(--ink);padding:8px 2px;cursor:pointer;
+  min-height:44px;
+}
+
+/* mobile: full-screen serif overlay */
+.overlay{
+  position:fixed;inset:0;background:var(--bone);z-index:70;
+  display:none;flex-direction:column;padding:26px 32px 40px;overflow-y:auto;
+}
+.overlay[data-open="true"]{display:flex}
+.overlay-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:44px}
+.overlay nav ul{list-style:none;margin:0;padding:0}
+.overlay nav a{
+  display:block;font-family:var(--serif);font-size:34px;padding:15px 0;
+  border-bottom:1px solid var(--rule);
+}
+.overlay .ov-foot{margin-top:auto;padding-top:36px;font-family:var(--sans);font-size:14px;color:var(--ink-soft)}
+
+/* ---------- buttons ---------- */
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  font-family:var(--sans);font-size:13.5px;font-weight:600;letter-spacing:.09em;
+  text-transform:uppercase;padding:16px 30px;min-height:48px;
+  background:var(--ink);color:var(--bone);border:1px solid var(--ink);cursor:pointer;
+  border-radius:1px;transition:background .18s,color .18s;
+}
+.btn:hover{background:#3b352d;color:#fff}
+.btn-out{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-out:hover{background:var(--ink);color:var(--bone)}
+.link-more{
+  font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.05em;
+  border-bottom:1px solid var(--oak);padding-bottom:2px;
+}
+
+/* ---------- hero: full-bleed duotone plate + offset bone card ---------- */
+
+.hero{position:relative;background:var(--bone-2)}
+.plate{
+  position:relative;height:min(66vh,560px);min-height:380px;
+  background:
+    linear-gradient(155deg,rgba(35,32,28,.62),rgba(110,90,60,.34)),
+    linear-gradient(30deg,#8a7355,#c4b49b 55%,#e6dcca);
+  overflow:hidden;
+}
+.plate::after{
+  content:"";position:absolute;inset:0;background-image:var(--grain);
+  opacity:.14;mix-blend-mode:overlay;pointer-events:none;
+}
+.plate-note{
+  position:absolute;right:22px;bottom:16px;color:#f4ece0;opacity:.78;
+  font-family:var(--sans);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+}
+.hero-card{
+  background:var(--bone);padding:52px 56px 46px;max-width:620px;
+  margin:-118px 0 0;position:relative;z-index:2;border-top:3px solid var(--ink);
+}
+.hero-card h1{font-size:clamp(2.3rem,4.6vw,3.55rem)}
+.hero-card .lede{font-size:1.14rem;color:var(--ink-soft);max-width:46ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.hero-meta{
+  margin-top:30px;padding-top:22px;border-top:1px solid var(--rule);
+  font-family:var(--sans);font-size:13px;color:var(--ink-soft);
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+}
+.dot{width:6px;height:6px;border-radius:50%;background:#4e7a52;display:inline-block}
+
+/* ---------- editorial two-column with sticky label ---------- */
+
+.section{padding:96px 0}
+.tight{padding:72px 0}
+.cols{display:grid;grid-template-columns:200px 1fr;gap:64px;align-items:start}
+.cols .sticky{position:sticky;top:100px}
+.lead-para{font-size:1.42rem;line-height:1.55;max-width:34ch}
+.body-2{columns:2;column-gap:52px;color:var(--ink-soft);font-size:1.02rem}
+
+/* ---------- services: numbered editorial list, no cards ---------- */
+
+.svc{border-top:1px solid var(--rule)}
+.svc-row{
+  display:grid;grid-template-columns:64px 1.05fr 1.35fr auto;gap:28px;
+  align-items:baseline;padding:30px 8px 30px 0;border-bottom:1px solid var(--rule);
+  transition:padding-left .2s,background .2s;
+}
+.svc-row:hover{background:#f7f2e9;padding-left:14px}
+.svc-num{font-family:var(--serif);font-size:1.05rem;color:var(--oak)}
+.svc-row h3{font-size:1.42rem;margin:0}
+.svc-row p{font-family:var(--sans);font-size:.95rem;color:var(--ink-soft);margin:0;line-height:1.65}
+.svc-row .tag{
+  font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--brass);white-space:nowrap;
+}
+
+/* ---------- providers: alternating portrait + long bio ---------- */
+
+.prov{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:58px 0;border-bottom:1px solid var(--rule)}
+.prov:nth-child(even) .portrait{order:2}
+.portrait{
+  aspect-ratio:4/5;position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#cfc0a6,#a8927a 60%,#6e5a3c);
+  display:grid;place-items:center;
+}
+.portrait::after{content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.13;mix-blend-mode:overlay}
+.portrait span{font-family:var(--serif);font-size:4.4rem;color:rgba(255,255,255,.82)}
+.prov h3{font-size:2rem;margin-bottom:.15em}
+.prov .cred{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--brass);margin-bottom:1.3em}
+.prov p{color:var(--ink-soft);font-size:1.04rem}
+.prov dl{font-family:var(--sans);font-size:13.5px;margin:26px 0 26px;border-top:1px solid var(--rule)}
+.prov dl div{display:flex;gap:16px;padding:9px 0;border-bottom:1px solid var(--rule)}
+.prov dt{width:112px;flex:none;color:var(--ink-soft)}
+.prov dd{margin:0;font-weight:600}
+
+/* ---------- reviews: oversized pull quote ---------- */
+
+.quotes{background:var(--bone-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.pull{max-width:900px;margin:0 auto;text-align:center}
+.pull blockquote{
+  font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,3.4vw,2.5rem);
+  line-height:1.35;margin:0 0 30px;
+}
+.pull cite{font-family:var(--sans);font-style:normal;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.rating{display:flex;justify-content:center;align-items:baseline;gap:12px;margin-bottom:36px;font-family:var(--sans)}
+.rating .num{font-family:var(--serif);font-size:2.5rem}
+.rating .stars{color:var(--oak);letter-spacing:.15em;font-size:1.05rem}
+.rating .cnt{font-size:13px;color:var(--ink-soft)}
+.mini-quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:70px;border-top:1px solid var(--rule)}
+.mini-quotes div{padding:32px 30px;border-right:1px solid var(--rule)}
+.mini-quotes div:last-child{border-right:0}
+.mini-quotes p{font-size:1rem;font-style:italic;color:var(--ink-soft)}
+.mini-quotes span{font-family:var(--sans);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--brass)}
+
+/* ---------- insurance: plain text row ---------- */
+
+.plans{font-size:1.24rem;line-height:2;max-width:60ch}
+.plans b{font-weight:400}
+.plans .sep{color:var(--oak);padding:0 8px}
+
+/* ---------- locations ---------- */
+
+.locs{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule)}
+.loc{padding:44px 48px 44px 0;border-right:1px solid var(--rule)}
+.locs .loc:last-child{padding:44px 0 44px 48px;border-right:0}
+.loc h3{font-size:1.5rem;margin-bottom:.2em}
+.loc .kind{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:1.4em}
+.loc address{font-style:normal;font-size:1.05rem;margin-bottom:1.1em}
+.loc table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:13.5px;margin-bottom:20px}
+.loc td{padding:8px 0;border-bottom:1px solid var(--rule);color:var(--ink-soft)}
+.loc td+td{text-align:right;color:var(--ink);font-weight:600}
+
+.privacy{
+  background:var(--bone-2);border-left:3px solid var(--oak);
+  padding:22px 26px;font-family:var(--sans);font-size:13.5px;
+  color:var(--ink-soft);line-height:1.7;margin-top:40px;
+}
+.privacy strong{color:var(--ink)}
+
+/* ---------- footer ---------- */
+
+footer{background:var(--ink);color:#cdc4b7;padding:70px 0 34px;font-family:var(--sans);font-size:14px}
+footer .cols4{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;padding-bottom:44px;border-bottom:1px solid #3c3630}
+footer h4{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#8f8578;margin-bottom:1.5em}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin-bottom:11px}
+footer a{color:#e6ded2}
+footer a:hover{color:#fff;text-decoration:underline}
+footer .fm .name{font-family:var(--serif);font-size:22px;color:#fff;display:block;margin-bottom:14px}
+footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+
+/* ---------- mobile sticky book bar (appears on scroll) ---------- */
+
+.sticky-book{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;
+  background:var(--bone);border-top:1px solid var(--rule);
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  gap:10px;box-shadow:0 -8px 24px rgba(35,32,28,.09);
+  transform:translateY(105%);transition:transform .26s ease;
+}
+.sticky-book[data-show="true"]{transform:translateY(0)}
+.sticky-book .btn{flex:1;padding:15px 12px;font-size:12.5px}
+
+/* ============================================================
+   RESPONSIVE — mobile is a re-layout, not a collapse
+   ============================================================ */
+
+@media (max-width:1000px){
+  .cols{grid-template-columns:1fr;gap:26px}
+  .cols .sticky{position:static}
+  .body-2{columns:1}
+  .prov{grid-template-columns:1fr;gap:30px}
+  .prov:nth-child(even) .portrait{order:0}
+  .portrait{aspect-ratio:3/2}
+  .mini-quotes{grid-template-columns:1fr}
+  .mini-quotes div{border-right:0;border-bottom:1px solid var(--rule)}
+  .locs{grid-template-columns:1fr}
+  .loc,.locs .loc:last-child{padding:36px 0;border-right:0;border-bottom:1px solid var(--rule)}
+  footer .cols4{grid-template-columns:1fr 1fr;gap:34px}
+}
+
+@media (max-width:760px){
+  body{font-size:17px}
+  .wrap{padding:0 22px}
+  .desknav{display:none}
+  .menu-btn{display:inline-block}
+  .mast-actions .phone{display:none}
+  .mast-inner{padding:18px 22px}
+  .section{padding:62px 0}
+  .tight{padding:48px 0}
+
+  /* hero: plate shortens, card goes full-width and stops overlapping */
+  .plate{height:230px;min-height:0}
+  .hero-card{margin:0;padding:34px 22px 32px;max-width:none;border-top-width:2px}
+  .hero-card .lede{font-size:1.05rem}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .hero-cta .btn{width:100%}
+
+  /* services: number becomes an inline prefix, 4 cols → stacked block */
+  .svc-row{grid-template-columns:1fr;gap:8px;padding:24px 0}
+  .svc-row:hover{padding-left:0}
+  .svc-num{font-size:.9rem;letter-spacing:.1em}
+  .svc-row h3{font-size:1.3rem}
+  .svc-row .tag{margin-top:4px}
+
+  .lead-para{font-size:1.24rem}
+  .prov h3{font-size:1.65rem}
+  .prov dt{width:96px}
+  .plans{font-size:1.08rem;line-height:1.9}
+  .sticky-book{display:flex}
+  footer .cols4{grid-template-columns:1fr;gap:28px}
+  footer{padding-bottom:96px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+  .sticky-book{transform:none}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<div class="topline">
+  <div class="wrap">
+    <span>Board-certified family medicine · Bayview &amp; Northgate</span>
+    <span>Same-week appointments · <a href="tel:+15552140880">(555) 214-0880</a></span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="mast-inner">
+    <a class="wordmark" href="#top">
+      <span class="name">Harbor Family Medical</span>
+      <span class="sub">Established 2004</span>
+    </a>
+    <div class="mast-actions">
+      <span class="phone">Bayview <strong>(555) 214-0880</strong></span>
+      <a class="btn" href="#book">Book Appointment</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="ovl">Menu</button>
+    </div>
+  </div>
+  <nav class="desknav" aria-label="Main">
+    <ul>
+      <li><a href="#practice">The Practice</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#doctors">Meet Our Doctors</a></li>
+      <li><a href="#reviews">Patient Voices</a></li>
+      <li><a href="#insurance">Insurance</a></li>
+      <li><a href="#visit">Visit Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="overlay" id="ovl" data-open="false">
+  <div class="overlay-top">
+    <span class="wordmark"><span class="name">Harbor</span></span>
+    <button class="menu-btn" id="closeBtn" aria-label="Close menu">Close</button>
+  </div>
+  <nav aria-label="Mobile">
+    <ul>
+      <li><a href="#practice">The Practice</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#doctors">Meet Our Doctors</a></li>
+      <li><a href="#reviews">Patient Voices</a></li>
+      <li><a href="#insurance">Insurance</a></li>
+      <li><a href="#visit">Visit Us</a></li>
+    </ul>
+  </nav>
+  <div class="ov-foot">
+    <p>Bayview <a href="tel:+15552140880"><strong>(555) 214-0880</strong></a><br>
+    Northgate <a href="tel:+15552140895"><strong>(555) 214-0895</strong></a></p>
+    <a class="btn" href="#book" style="width:100%">Book Appointment</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="plate" role="img" aria-label="Sunlit waiting room at Harbor Family Medical with linen chairs and a wood reception desk">
+      <span class="plate-note">Photography · Clinic interior, natural light</span>
+    </div>
+    <div class="wrap">
+      <div class="hero-card">
+        <span class="label">Accepting new patients</span>
+        <h1>A family doctor who has time for the whole conversation.</h1>
+        <p class="lede">Four board-certified physicians in Bayview, caring for families,
+        working adults, and seniors — with same-week appointments and a front desk that
+        knows your name.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#book">Book Appointment</a>
+          <a class="btn btn-out" href="tel:+15552140880">Call (555) 214-0880</a>
+        </div>
+        <p class="hero-meta">
+          <span class="dot" aria-hidden="true"></span> Same-week availability
+          <span aria-hidden="true">·</span> Most insurance accepted
+          <span aria-hidden="true">·</span> Bilingual staff (English / Español)
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PRACTICE -->
+  <section class="section" id="practice">
+    <div class="wrap cols">
+      <div class="sticky"><span class="label">01 — The Practice</span></div>
+      <div>
+        <p class="lead-para">We built Harbor around a simple idea: continuity is the
+        treatment. Seeing the same doctor for twenty years is worth more than any
+        single visit.</p>
+        <div class="body-2">
+          <p>Harbor Family Medical opened on Harbor Street in 2004 with one physician
+          and a shared fax machine. Two decades later we are four physicians and a
+          physician assistant across two offices, and we still cap our panels so
+          appointments run on time.</p>
+          <p>That means annual physicals that are not rushed, same-day sick visits for
+          our own patients, and chronic care — diabetes, blood pressure, thyroid,
+          cholesterol — managed by someone who remembers what you tried last year and
+          why it did not work.</p>
+          <p>We handle telehealth for follow-ups and lab reviews, because taking half a
+          day off work to hear "your labs are normal" is a waste of your time.</p>
+          <p><a class="link-more" href="#doctors">Meet our doctors</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- SERVICES — numbered editorial list -->
+  <section class="section" id="services">
+    <div class="wrap cols">
+      <div class="sticky"><span class="label">02 — Services</span></div>
+      <div class="svc">
+        <div class="svc-row">
+          <span class="svc-num">i.</span>
+          <h3>Annual physicals</h3>
+          <p>A full hour. Labs drawn on site, results reviewed with you by phone or video within a week — never a portal message with no explanation.</p>
+          <span class="tag">All ages</span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-num">ii.</span>
+          <h3>Same-day sick visits</h3>
+          <p>Reserved slots held every morning for established patients. Call before 10am and we will almost always see you that day.</p>
+          <span class="tag">Same day</span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-num">iii.</span>
+          <h3>Chronic care management</h3>
+          <p>Diabetes, hypertension, thyroid, asthma, cholesterol. Longer visits, a written plan, and one physician following the whole arc.</p>
+          <span class="tag">Ongoing</span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-num">iv.</span>
+          <h3>Vaccines &amp; immunizations</h3>
+          <p>Childhood schedule, annual flu, shingles, pneumonia, travel counselling, Tdap and tetanus. Walk-in flu clinic each October.</p>
+          <span class="tag">Walk-in</span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-num">v.</span>
+          <h3>Telehealth visits</h3>
+          <p>Video appointments for follow-ups, medication adjustments, rashes, and anything that does not need a stethoscope. Same physicians.</p>
+          <span class="tag">Video</span>
+        </div>
+        <div class="svc-row">
+          <span class="svc-num">vi.</span>
+          <h3>Lab &amp; imaging follow-up</h3>
+          <p>Every result gets a human explanation. We coordinate specialist referrals and chase the reports so you are not the messenger.</p>
+          <span class="tag">Included</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- DOCTORS -->
+  <section class="section" id="doctors">
+    <div class="wrap">
+      <span class="label">03 — Meet Our Doctors</span>
+      <div class="prov">
+        <div class="portrait" role="img" aria-label="Portrait of Dr. Naomi Reyes"><span>NR</span></div>
+        <div>
+          <h3>Dr. Naomi Reyes, MD</h3>
+          <p class="cred">Family Medicine · Board Certified · Founding Physician</p>
+          <p>Naomi opened Harbor in 2004 after residency at Bayview General. She sees
+          three generations of some families and considers that the entire point of
+          primary care. Her clinical focus is diabetes and women's health.</p>
+          <dl>
+            <div><dt>Experience</dt><dd>21 years</dd></div>
+            <div><dt>Languages</dt><dd>English, Español</dd></div>
+            <div><dt>Location</dt><dd>Bayview</dd></div>
+          </dl>
+          <a class="link-more" href="#book">Book with Dr. Reyes</a>
+        </div>
+      </div>
+      <div class="prov">
+        <div class="portrait" role="img" aria-label="Portrait of Dr. Samuel Adeyemi"><span>SA</span></div>
+        <div>
+          <h3>Dr. Samuel Adeyemi, MD</h3>
+          <p class="cred">Family Medicine · Board Certified · Geriatric Focus</p>
+          <p>Samuel joined in 2011 and carries most of our senior panel. He is the
+          physician who reads the whole chart before walking in, and he will happily
+          spend a visit reducing a medication list rather than adding to it.</p>
+          <dl>
+            <div><dt>Experience</dt><dd>18 years</dd></div>
+            <div><dt>Languages</dt><dd>English, Yoruba</dd></div>
+            <div><dt>Location</dt><dd>Bayview &amp; Northgate</dd></div>
+          </dl>
+          <a class="link-more" href="#book">Book with Dr. Adeyemi</a>
+        </div>
+      </div>
+      <div class="prov">
+        <div class="portrait" role="img" aria-label="Portrait of Dr. Hana Kwon"><span>HK</span></div>
+        <div>
+          <h3>Dr. Hana Kwon, DO</h3>
+          <p class="cred">Family Medicine · Board Certified · Osteopathic</p>
+          <p>Hana came to Harbor in 2018 from a hospital system and has no intention of
+          going back. Osteopathic training informs how she approaches back, neck, and
+          joint pain — often without a prescription pad.</p>
+          <dl>
+            <div><dt>Experience</dt><dd>11 years</dd></div>
+            <div><dt>Languages</dt><dd>English, 한국어</dd></div>
+            <div><dt>Location</dt><dd>Northgate</dd></div>
+          </dl>
+          <a class="link-more" href="#book">Book with Dr. Kwon</a>
+        </div>
+      </div>
+      <div class="prov">
+        <div class="portrait" role="img" aria-label="Portrait of Marcus Lyle, PA-C"><span>ML</span></div>
+        <div>
+          <h3>Marcus Lyle, PA-C</h3>
+          <p class="cred">Physician Assistant · Certified · Same-Day Clinic</p>
+          <p>Marcus runs our same-day and Saturday clinic. Sports physicals, stitches,
+          ear infections, and the calm explanation of why your child does not need
+          antibiotics for this particular cough.</p>
+          <dl>
+            <div><dt>Experience</dt><dd>9 years</dd></div>
+            <div><dt>Languages</dt><dd>English, Español</dd></div>
+            <div><dt>Location</dt><dd>Bayview</dd></div>
+          </dl>
+          <a class="link-more" href="#book">Book with Marcus</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section quotes" id="reviews">
+    <div class="wrap">
+      <div class="pull">
+        <div class="rating">
+          <span class="num">4.9</span>
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span class="cnt">Average of 812 verified patient reviews</span>
+        </div>
+        <blockquote>"I called at eight in the morning about my son's fever and we were
+        seen before lunch. Nobody made me feel like I was overreacting."</blockquote>
+        <cite>Marisol T. · Patient since 2016</cite>
+      </div>
+      <div class="mini-quotes">
+        <div>
+          <p>"Dr. Adeyemi caught a thyroid problem two other doctors had missed. He
+          actually reads the chart before he walks in."</p>
+          <span>Daniel W. · Since 2019</span>
+        </div>
+        <div>
+          <p>"A telehealth follow-up took eleven minutes on my lunch break instead of
+          half a day off work."</p>
+          <span>Priya R. · Since 2021</span>
+        </div>
+        <div>
+          <p>"My mother is 84 and they never talk over her to me. That is rarer than
+          it should be."</p>
+          <span>Anne-Marie C. · Since 2009</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSURANCE -->
+  <section class="section tight" id="insurance">
+    <div class="wrap cols">
+      <div class="sticky"><span class="label">04 — Insurance</span></div>
+      <div>
+        <p class="plans">
+          <b>Aetna</b><span class="sep">·</span><b>Blue Cross Blue Shield</b><span class="sep">·</span><b>Cigna</b><span class="sep">·</span><b>Humana</b><span class="sep">·</span><b>Medicare</b><span class="sep">·</span><b>Medicaid</b><span class="sep">·</span><b>UnitedHealthcare</b><span class="sep">·</span><b>Tricare</b>
+        </p>
+        <p style="color:var(--ink-soft);max-width:52ch;font-size:1rem">Plans and networks
+        change constantly. Call the front desk with your member ID before your first
+        visit and we will verify coverage while you are on the phone. Self-pay pricing
+        is published and quoted up front — no surprise billing.</p>
+        <a class="link-more" href="tel:+15552140880">Verify my coverage</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- VISIT / BOOK -->
+  <section class="section" id="visit">
+    <div class="wrap">
+      <span class="label">05 — Visit Us</span>
+      <div class="locs">
+        <div class="loc">
+          <h3>Bayview</h3>
+          <p class="kind">Main clinic</p>
+          <address>240 Harbor Street, Suite 300<br>Bayview, ST 00000</address>
+          <table>
+            <tr><td>Mon – Thu</td><td>7:30 am – 6:00 pm</td></tr>
+            <tr><td>Friday</td><td>7:30 am – 4:00 pm</td></tr>
+            <tr><td>Saturday</td><td>8:00 am – 12:00 pm</td></tr>
+            <tr><td>Sunday</td><td>Closed</td></tr>
+          </table>
+          <p><a class="link-more" href="tel:+15552140880">(555) 214-0880</a></p>
+        </div>
+        <div class="loc">
+          <h3>Northgate</h3>
+          <p class="kind">Satellite office</p>
+          <address>1170 Northgate Plaza, Unit B<br>Northgate, ST 00000</address>
+          <table>
+            <tr><td>Mon – Fri</td><td>8:00 am – 5:00 pm</td></tr>
+            <tr><td>Saturday</td><td>Closed</td></tr>
+            <tr><td>Sunday</td><td>Closed</td></tr>
+          </table>
+          <p><a class="link-more" href="tel:+15552140895">(555) 214-0895</a></p>
+        </div>
+      </div>
+
+      <div id="book" style="margin-top:70px">
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);max-width:24ch">Book an appointment</h2>
+        <p style="color:var(--ink-soft);max-width:52ch">New and established patients can
+        book online through our patient portal, or call either office and speak to a
+        person — we do not use a phone tree.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#book">Book in the patient portal</a>
+          <a class="btn btn-out" href="tel:+15552140880">Call Now</a>
+        </div>
+        <div class="privacy">
+          <strong>Your privacy.</strong> Online booking runs inside our secure,
+          HIPAA-compliant patient portal — not through this website. Please do not send
+          symptoms, diagnoses, or insurance ID numbers by email or web form. For a
+          medical emergency call <strong>911</strong> or go to the nearest emergency
+          department; website messages are not monitored after hours.
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols4">
+      <div class="fm">
+        <span class="name">Harbor Family Medical</span>
+        <p>Board-certified family medicine for Bayview and Northgate since 2004.
+        Accepting new patients of every age.</p>
+      </div>
+      <div>
+        <h4>Care</h4>
+        <ul>
+          <li><a href="#services">Annual physicals</a></li>
+          <li><a href="#services">Same-day sick visits</a></li>
+          <li><a href="#services">Chronic care</a></li>
+          <li><a href="#services">Telehealth</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Practice</h4>
+        <ul>
+          <li><a href="#doctors">Meet our doctors</a></li>
+          <li><a href="#insurance">Insurance</a></li>
+          <li><a href="#reviews">Patient reviews</a></li>
+          <li><a href="#book">Patient portal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Bayview <a href="tel:+15552140880">(555) 214-0880</a></li>
+          <li>Northgate <a href="tel:+15552140895">(555) 214-0895</a></li>
+          <li>Fax (555) 214-0881</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fine">
+      <span>Concept demo — fictional practice. Names, providers, reviews, and contact details are placeholders.</span>
+      <span>Privacy Practices · Accessibility · Nondiscrimination</span>
+    </div>
+  </div>
+</footer>
+
+<!-- mobile sticky booking bar -->
+<div class="sticky-book" id="stickyBook" data-show="false">
+  <a class="btn btn-out" href="tel:+15552140880">Call</a>
+  <a class="btn" href="#book">Book Appointment</a>
+</div>
+
+<script>
+(function(){
+  var ovl = document.getElementById('ovl'),
+      openBtn = document.getElementById('menuBtn'),
+      closeBtn = document.getElementById('closeBtn'),
+      bar = document.getElementById('stickyBook');
+
+  function setMenu(open){
+    ovl.dataset.open = open;
+    openBtn.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open === 'true' ? 'hidden' : '';
+    if (open === 'true') { ovl.querySelector('a').focus(); } else { openBtn.focus(); }
+  }
+  openBtn.addEventListener('click', function(){ setMenu('true'); });
+  closeBtn.addEventListener('click', function(){ setMenu('false'); });
+  ovl.addEventListener('click', function(e){ if (e.target.tagName === 'A') setMenu('false'); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && ovl.dataset.open === 'true') setMenu('false');
+  });
+
+  // sticky book bar reveals once the hero CTA has scrolled away
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){
+      bar.dataset.show = window.scrollY > 520 ? 'true' : 'false';
+      ticking = false;
+    });
+  }, {passive:true});
+})();
+</script>
+
+</body>
+</html>

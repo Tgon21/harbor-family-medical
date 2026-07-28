@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbor Family Medical — Concept 2: Harbor Bright</title>
+<meta name="description" content="Harbor Family Medical cares for every age in Bayview — physicals, same-day sick visits, vaccines, chronic care, and telehealth. Book online in under a minute.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%230a7d8c'/><text x='16' y='23' font-size='18' font-weight='bold' font-family='system-ui' fill='%23ffd166' text-anchor='middle'>H</text></svg>">
+<style>
+/* ============================================================
+   CONCEPT 2 — "HARBOR BRIGHT"
+   Bright, welcoming, family-first. Soft sky + sunshine + coral.
+   Pillowy rounded cards, curved section dividers, rounded sans.
+   Signature: horizontal snap carousels + bottom tab bar on mobile.
+   ============================================================ */
+
+:root{
+  --sky:#eaf6f8;
+  --sky-2:#d3ecf1;
+  --teal:#0a7d8c;
+  --teal-dk:#06626f;
+  --sun:#ffd166;
+  --sun-dk:#a06d00;
+  --coral:#f2724f;
+  --coral-dk:#c14324;
+  --mint:#8fd8b8;
+  --grape:#6b5ca5;
+  --ink:#16303a;
+  --ink-soft:#4d6772;
+  --white:#fff;
+  --line:#cfe4e9;
+  --r:22px;
+  --r-lg:32px;
+  --wrap:1180px;
+  --sans:"Nunito","Avenir Next",ui-rounded,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --sh:0 10px 28px -14px rgba(22,48,58,.28);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--white);color:var(--ink);font:400 17px/1.68 var(--sans);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-weight:800;line-height:1.16;letter-spacing:-.02em;margin:0 0 .5em}
+p{margin:0 0 1em}
+a{color:var(--teal-dk);text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+
+.skip{position:absolute;left:-9999px;background:var(--teal-dk);color:#fff;padding:12px 18px;border-radius:12px;z-index:90}
+.skip:focus{left:12px;top:12px}
+:focus-visible{outline:3px solid var(--coral-dk);outline-offset:3px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.eyebrow{
+  display:inline-block;background:var(--sun);color:#4a3200;font-weight:800;
+  font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;
+  padding:7px 16px;border-radius:999px;margin-bottom:18px;
+}
+
+/* ---------- header ---------- */
+
+.hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:2px solid var(--sky-2)}
+.hdr-in{display:flex;align-items:center;gap:22px;min-height:78px}
+.brand{display:flex;align-items:center;gap:12px;margin-right:auto}
+.brand .mk{
+  width:46px;height:46px;border-radius:15px;flex:none;display:grid;place-items:center;
+  background:var(--teal);color:var(--sun);font-weight:800;font-size:22px;
+}
+.brand b{display:block;font-size:18px;line-height:1.15}
+.brand small{color:var(--ink-soft);font-size:12.5px;font-weight:700}
+.dnav{display:flex;gap:8px;list-style:none;margin:0;padding:0}
+.dnav a{
+  display:block;padding:10px 16px;border-radius:999px;font-weight:700;font-size:15px;
+  color:var(--ink-soft);
+}
+.dnav a:hover{background:var(--sky);color:var(--teal-dk)}
+.hdr .btn{flex:none}
+
+/* ---------- buttons ---------- */
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:inherit;font-weight:800;font-size:16px;padding:15px 26px;min-height:52px;
+  border-radius:999px;border:2px solid var(--teal);background:var(--teal);color:#fff;
+  cursor:pointer;box-shadow:0 6px 0 var(--teal-dk);transition:transform .12s,box-shadow .12s;
+}
+.btn:hover{color:#fff;transform:translateY(2px);box-shadow:0 4px 0 var(--teal-dk)}
+.btn:active{transform:translateY(6px);box-shadow:0 0 0 var(--teal-dk)}
+.btn-coral{background:var(--coral);border-color:var(--coral);box-shadow:0 6px 0 var(--coral-dk)}
+.btn-coral:hover{box-shadow:0 4px 0 var(--coral-dk)}
+.btn-out{background:#fff;color:var(--teal-dk);border-color:var(--teal);box-shadow:0 6px 0 var(--sky-2)}
+.btn-out:hover{color:var(--teal-dk);box-shadow:0 4px 0 var(--sky-2)}
+.btn-sm{padding:11px 20px;min-height:44px;font-size:14.5px;box-shadow:0 4px 0 var(--teal-dk)}
+
+/* ---------- hero with blobs + curved bottom ---------- */
+
+.hero{position:relative;background:linear-gradient(180deg,var(--sky) 0%,#f7fcfd 100%);overflow:hidden;padding:64px 0 0}
+.blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:.55;pointer-events:none}
+.b1{width:340px;height:340px;background:var(--sun);top:-120px;right:-70px;opacity:.4}
+.b2{width:230px;height:230px;background:var(--mint);bottom:60px;left:-90px;opacity:.5}
+.b3{width:130px;height:130px;background:var(--coral);top:130px;right:270px;opacity:.22}
+
+.hero-in{display:grid;grid-template-columns:1.06fr .94fr;gap:52px;align-items:center;position:relative;z-index:2;padding-bottom:70px}
+.hero h1{font-size:clamp(2.15rem,4.7vw,3.5rem)}
+.hero h1 em{font-style:normal;color:var(--teal);position:relative;white-space:nowrap}
+.hero h1 em::after{
+  content:"";position:absolute;left:0;right:0;bottom:4px;height:9px;
+  background:var(--sun);border-radius:6px;z-index:-1;
+}
+.hero .lede{font-size:1.16rem;color:var(--ink-soft);max-width:44ch;font-weight:500}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 22px}
+.hero-trust{display:flex;gap:20px;flex-wrap:wrap;font-size:14.5px;font-weight:700;color:var(--ink-soft)}
+.hero-trust span{display:flex;align-items:center;gap:7px}
+.tick{width:22px;height:22px;border-radius:50%;background:var(--mint);color:#0d4f36;display:grid;place-items:center;font-size:13px;flex:none}
+
+/* friendly illustrated family photo card */
+.hero-art{position:relative}
+.photo{
+  border-radius:var(--r-lg);overflow:hidden;position:relative;aspect-ratio:4/3.4;
+  background:linear-gradient(150deg,var(--sun) 0%,var(--coral) 48%,var(--grape) 100%);
+  box-shadow:var(--sh);border:5px solid #fff;
+}
+.photo::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.45),transparent 55%);
+}
+.photo .cap{
+  position:absolute;bottom:10px;left:12px;right:12px;color:#fff;font-size:11.5px;
+  font-weight:700;letter-spacing:.05em;text-transform:uppercase;opacity:.9;z-index:2;
+}
+.badge-float{
+  position:absolute;background:#fff;border-radius:18px;padding:13px 18px;
+  box-shadow:var(--sh);font-weight:800;font-size:14px;display:flex;align-items:center;gap:10px;
+}
+.badge-float small{display:block;font-weight:700;font-size:11.5px;color:var(--ink-soft)}
+.bf-1{bottom:-16px;left:-18px}
+.bf-2{top:22px;right:-20px}
+.bf-num{font-size:22px;color:var(--teal)}
+
+.curve{display:block;width:100%;height:64px}
+
+/* ---------- age bands (unique to this concept) ---------- */
+
+.ages{background:#fff;padding:56px 0 10px}
+.age-row{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.age{
+  border-radius:var(--r);padding:22px 18px;text-align:center;font-weight:800;
+  border:2px solid transparent;
+}
+.age span{display:block;font-size:30px;margin-bottom:8px}
+.age small{display:block;font-weight:700;font-size:12.5px;color:var(--ink-soft);margin-top:5px}
+.a1{background:#fff4d6;border-color:#f4d99a}
+.a2{background:#e3f7ec;border-color:#a8dfc3}
+.a3{background:#e6f3fb;border-color:#a8cfe8}
+.a4{background:#fdeae4;border-color:#f5c0ae}
+.a5{background:#efeafa;border-color:#c9bee9}
+
+/* ---------- section shells ---------- */
+
+.sec{padding:74px 0}
+.sec-sky{background:var(--sky);border-radius:var(--r-lg) var(--r-lg) 0 0}
+.sec-head{max-width:56ch;margin-bottom:38px}
+.sec-head h2{font-size:clamp(1.75rem,3.4vw,2.5rem)}
+.sec-head p{color:var(--ink-soft);font-size:1.08rem}
+
+/* ---------- services: pillowy bubble cards / mobile carousel ---------- */
+
+.rail-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.rail-hint{display:none;font-size:13px;font-weight:700;color:var(--ink-soft)}
+.rail{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{
+  background:#fff;border-radius:var(--r-lg);padding:28px;border:2px solid var(--line);
+  box-shadow:var(--sh);
+}
+.svc .ic{
+  width:58px;height:58px;border-radius:19px;display:grid;place-items:center;
+  font-size:27px;margin-bottom:16px;
+}
+.svc h3{font-size:1.22rem}
+.svc p{color:var(--ink-soft);font-size:.98rem;margin-bottom:14px}
+.svc .pill{
+  display:inline-block;background:var(--sky);color:var(--teal-dk);font-weight:800;
+  font-size:12px;padding:5px 12px;border-radius:999px;
+}
+.i-sun{background:#fff4d6}.i-mint{background:#e3f7ec}.i-sky{background:#e6f3fb}
+.i-coral{background:#fdeae4}.i-grape{background:#efeafa}.i-line{background:var(--sky-2)}
+
+/* ---------- providers: circle photos + fun fact ---------- */
+
+.docs{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.doc{background:#fff;border:2px solid var(--line);border-radius:var(--r-lg);padding:24px 20px;text-align:center;box-shadow:var(--sh)}
+.doc .av{
+  width:104px;height:104px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;
+  font-size:30px;font-weight:800;color:#fff;border:5px solid #fff;box-shadow:0 6px 16px -6px rgba(22,48,58,.4);
+}
+.av1{background:linear-gradient(140deg,#0a7d8c,#8fd8b8)}
+.av2{background:linear-gradient(140deg,#6b5ca5,#b3a4e6)}
+.av3{background:linear-gradient(140deg,#f2724f,#ffd166)}
+.av4{background:linear-gradient(140deg,#0d8f68,#a8dfc3)}
+.doc h3{font-size:1.06rem;margin-bottom:.2em}
+.doc .role{font-size:12.5px;font-weight:800;color:var(--teal);text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px}
+.doc .fun{background:var(--sky);border-radius:14px;padding:11px 13px;font-size:13.5px;color:var(--ink-soft);font-weight:600;margin-bottom:14px}
+.doc .langs{font-size:12.5px;font-weight:700;color:var(--ink-soft);margin-bottom:14px}
+
+/* ---------- reviews as speech bubbles ---------- */
+
+.bubbles{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:34px}
+.bub{background:#fff;border:2px solid var(--line);border-radius:var(--r-lg);padding:26px;position:relative;box-shadow:var(--sh)}
+.bub::after{
+  content:"";position:absolute;left:34px;bottom:-15px;width:26px;height:26px;
+  background:#fff;border-right:2px solid var(--line);border-bottom:2px solid var(--line);
+  transform:rotate(52deg) skew(6deg);border-radius:0 0 7px 0;
+}
+.bub .stars{color:#e8a800;letter-spacing:.1em;margin-bottom:10px}
+.bub p{font-size:1.02rem;font-weight:600}
+.bub .who{display:flex;align-items:center;gap:11px;margin-top:20px}
+.bub .who .av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px;color:#fff;flex:none}
+.bub .who b{display:block;font-size:14px}
+.bub .who small{color:var(--ink-soft);font-size:12.5px;font-weight:700}
+.score{
+  display:flex;align-items:center;gap:18px;background:var(--sun);border-radius:var(--r-lg);
+  padding:22px 28px;font-weight:800;flex-wrap:wrap;
+}
+.score .big{font-size:44px;line-height:1;color:#4a3200}
+.score small{display:block;font-size:13px;font-weight:700;color:#6b4a00}
+
+/* ---------- insurance pills ---------- */
+
+.plans{display:flex;flex-wrap:wrap;gap:11px;margin-bottom:22px}
+.plans li{
+  list-style:none;background:#fff;border:2px solid var(--line);border-radius:999px;
+  padding:11px 20px;font-weight:800;font-size:14.5px;
+}
+.note{
+  background:#fff;border:2px dashed var(--line);border-radius:var(--r);
+  padding:20px 22px;font-size:14.5px;color:var(--ink-soft);font-weight:600;
+}
+
+/* ---------- location cards ---------- */
+
+.locs{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.loc{background:#fff;border:2px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh)}
+.loc .map{height:150px;background:
+  repeating-linear-gradient(90deg,#dff0f4 0 34px,#eaf6f8 34px 68px),
+  repeating-linear-gradient(0deg,#dff0f4 0 34px,#eaf6f8 34px 68px);
+  position:relative;border-bottom:2px solid var(--line)}
+.loc .map .pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-70%);font-size:34px}
+.loc .bd{padding:24px}
+.loc h3{font-size:1.2rem;margin-bottom:.15em}
+.loc .kind{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--coral-dk);margin-bottom:14px}
+.loc address{font-style:normal;font-weight:600;margin-bottom:14px}
+.loc dl{font-size:14px;margin:0 0 18px}
+.loc dl div{display:flex;justify-content:space-between;gap:14px;padding:7px 0;border-bottom:1px solid var(--line)}
+.loc dt{color:var(--ink-soft);font-weight:700;margin:0}
+.loc dd{margin:0;font-weight:800}
+
+/* ---------- privacy ---------- */
+
+.privacy{
+  background:#fff;border:2px solid var(--mint);border-left-width:8px;border-radius:var(--r);
+  padding:22px 24px;font-size:14.5px;color:var(--ink-soft);font-weight:600;line-height:1.7;
+}
+.privacy strong{color:var(--ink)}
+
+/* ---------- footer ---------- */
+
+footer{background:var(--teal-dk);color:#c8e6ea;padding:64px 0 30px;border-radius:var(--r-lg) var(--r-lg) 0 0;margin-top:10px}
+footer .c4{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:36px;padding-bottom:34px;border-bottom:2px solid rgba(255,255,255,.16)}
+footer h4{color:var(--sun);font-size:13px;text-transform:uppercase;letter-spacing:.09em;margin-bottom:1.3em}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin-bottom:10px;font-weight:600}
+footer a{color:#e4f4f6}
+footer a:hover{color:#fff;text-decoration:underline}
+footer .fbrand{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+footer .fbrand .mk{width:44px;height:44px;border-radius:14px;background:var(--sun);color:var(--teal-dk);display:grid;place-items:center;font-weight:800;font-size:21px}
+footer .fbrand b{color:#fff;font-size:17px}
+footer .fine{padding-top:22px;font-size:12.5px;color:#8fc0c7}
+
+/* ---------- mobile bottom tab bar (app-like) ---------- */
+
+.tabbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;
+  background:#fff;border-top:2px solid var(--sky-2);
+  padding:8px 6px calc(6px + env(safe-area-inset-bottom));
+  box-shadow:0 -6px 20px rgba(22,48,58,.1);
+}
+.tabbar ul{display:flex;list-style:none;margin:0;padding:0}
+.tabbar li{flex:1}
+.tabbar a{
+  display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 2px;min-height:52px;
+  font-size:10.5px;font-weight:800;color:var(--ink-soft);border-radius:14px;
+}
+.tabbar a i{font-size:20px;font-style:normal;line-height:1}
+.tabbar a.acc{background:var(--coral);color:#fff;margin:0 4px}
+
+/* ============================================================
+   RESPONSIVE — mobile gets carousels + tab bar, not a stack of
+   the desktop grid.
+   ============================================================ */
+
+@media (max-width:1040px){
+  .hero-in{grid-template-columns:1fr;gap:36px}
+  .hero-art{max-width:520px}
+  .rail{grid-template-columns:repeat(2,1fr)}
+  .docs{grid-template-columns:repeat(2,1fr)}
+  .bubbles{grid-template-columns:1fr}
+  .dnav{display:none}
+  footer .c4{grid-template-columns:1fr 1fr}
+}
+
+@media (max-width:760px){
+  body{font-size:16.5px}
+  .wrap{padding:0 18px}
+  .hdr .btn{display:none}
+  .hdr-in{min-height:66px}
+  .sec{padding:52px 0}
+  .hero{padding-top:34px}
+  .hero-in{padding-bottom:44px}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .hero-cta .btn{width:100%}
+  .b1,.b3{display:none}
+  .bf-2{display:none}
+  .bf-1{left:auto;right:10px;bottom:-14px}
+
+  /* age bands become a 2-line grid, still scannable */
+  .age-row{grid-template-columns:repeat(3,1fr);gap:10px}
+  .age{padding:16px 10px}
+  .age span{font-size:24px}
+  .age small{display:none}
+
+  /* SERVICES + DOCTORS become swipe rails — the distinct mobile pattern */
+  .rail,.docs{
+    display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+    padding:4px 18px 18px;margin:0 -18px;
+    scrollbar-width:none;
+  }
+  .rail::-webkit-scrollbar,.docs::-webkit-scrollbar{display:none}
+  .rail>*,.docs>*{flex:0 0 82%;scroll-snap-align:center}
+  .docs>*{flex:0 0 68%}
+  .rail-hint{display:block}
+
+  .score{padding:18px 20px}
+  .score .big{font-size:36px}
+  .locs{grid-template-columns:1fr}
+  .tabbar{display:block}
+  footer{padding-bottom:104px}
+  footer .c4{grid-template-columns:1fr;gap:26px}
+}
+
+@media (max-width:420px){
+  .rail>*{flex:0 0 88%}
+  .docs>*{flex:0 0 78%}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href="#top">
+      <span class="mk" aria-hidden="true">H</span>
+      <span><b>Harbor Family Medical</b><small>Every age, every stage</small></span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="dnav">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#doctors">Our Doctors</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#insurance">Insurance</a></li>
+        <li><a href="#visit">Locations</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-coral btn-sm" href="#book">Book Appointment</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <span class="blob b1" aria-hidden="true"></span>
+    <span class="blob b2" aria-hidden="true"></span>
+    <span class="blob b3" aria-hidden="true"></span>
+    <div class="wrap hero-in">
+      <div>
+        <span class="eyebrow">Now accepting new families</span>
+        <h1>The doctor's office your kids <em>don't mind</em> going to.</h1>
+        <p class="lede">Harbor Family Medical looks after everyone under your roof —
+        newborns, teenagers, parents, and grandparents — in one friendly Bayview office
+        with same-week appointments.</p>
+        <div class="hero-cta">
+          <a class="btn btn-coral" href="#book">Book Appointment</a>
+          <a class="btn btn-out" href="tel:+15552140880">Call (555) 214-0880</a>
+        </div>
+        <div class="hero-trust">
+          <span><i class="tick" aria-hidden="true">✓</i> Same-week openings</span>
+          <span><i class="tick" aria-hidden="true">✓</i> Most insurance</span>
+          <span><i class="tick" aria-hidden="true">✓</i> Se habla español</span>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="photo" role="img" aria-label="A parent and two children laughing with a Harbor physician in a bright exam room">
+          <span class="cap">Photography · Family + physician, warm daylight</span>
+        </div>
+        <div class="badge-float bf-1">
+          <span class="bf-num">4.9</span>
+          <span>Patient rating<small>812 reviews</small></span>
+        </div>
+        <div class="badge-float bf-2">
+          <span aria-hidden="true">🗓️</span>
+          <span>Next opening<small>Thursday, 9:40 am</small></span>
+        </div>
+      </div>
+    </div>
+    <svg class="curve" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,64 C360,0 1080,0 1440,64 L1440,64 L0,64 Z" fill="#fff"></path>
+    </svg>
+  </section>
+
+  <!-- AGE BANDS -->
+  <section class="ages" aria-labelledby="ages-h">
+    <div class="wrap">
+      <h2 id="ages-h" class="vh">Who we care for</h2>
+      <div class="age-row">
+        <div class="age a1"><span aria-hidden="true">👶</span>Babies<small>0–2 years</small></div>
+        <div class="age a2"><span aria-hidden="true">🧒</span>Kids<small>3–12 years</small></div>
+        <div class="age a3"><span aria-hidden="true">🎒</span>Teens<small>13–18 years</small></div>
+        <div class="age a4"><span aria-hidden="true">💼</span>Adults<small>19–64 years</small></div>
+        <div class="age a5"><span aria-hidden="true">🌿</span>Seniors<small>65+ years</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="sec" id="services">
+    <div class="wrap">
+      <div class="rail-head sec-head" style="max-width:none">
+        <div style="max-width:52ch">
+          <h2>Everything your family needs, in one place</h2>
+          <p>One chart, one team, and no bouncing between clinics for routine care.</p>
+        </div>
+        <span class="rail-hint" aria-hidden="true">Swipe to see all →</span>
+      </div>
+      <div class="rail">
+        <article class="svc">
+          <div class="ic i-sun" aria-hidden="true">🩺</div>
+          <h3>Annual physicals</h3>
+          <p>Yearly checkups, school and sports forms, and labs drawn right here. We
+          send the paperwork home with you the same day.</p>
+          <span class="pill">All ages</span>
+        </article>
+        <article class="svc">
+          <div class="ic i-coral" aria-hidden="true">🤒</div>
+          <h3>Same-day sick visits</h3>
+          <p>Fevers, ear infections, sore throats, tummy bugs, and pink eye. Morning
+          slots are held open every single day.</p>
+          <span class="pill">Same day</span>
+        </article>
+        <article class="svc">
+          <div class="ic i-mint" aria-hidden="true">💚</div>
+          <h3>Chronic care</h3>
+          <p>Asthma, diabetes, blood pressure, and thyroid — with longer visits and a
+          plan written in plain language.</p>
+          <span class="pill">Ongoing</span>
+        </article>
+        <article class="svc">
+          <div class="ic i-sky" aria-hidden="true">💉</div>
+          <h3>Vaccines</h3>
+          <p>The full childhood schedule, flu shots every fall, and travel vaccines.
+          We will always explain what and why first.</p>
+          <span class="pill">Walk-in flu clinic</span>
+        </article>
+        <article class="svc">
+          <div class="ic i-grape" aria-hidden="true">📱</div>
+          <h3>Telehealth</h3>
+          <p>Video visits for follow-ups, rashes, and refills — from your kitchen table
+          or the school pickup line.</p>
+          <span class="pill">Video</span>
+        </article>
+        <article class="svc">
+          <div class="ic i-line" aria-hidden="true">🧪</div>
+          <h3>Lab follow-up</h3>
+          <p>Every result comes with a real explanation from your doctor, not a portal
+          number you have to Google.</p>
+          <span class="pill">Included</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTORS -->
+  <section class="sec sec-sky" id="doctors">
+    <div class="wrap">
+      <div class="rail-head sec-head" style="max-width:none">
+        <div style="max-width:50ch">
+          <h2>Meet our doctors</h2>
+          <p>Board-certified, and genuinely happy to see kids in the waiting room.</p>
+        </div>
+        <span class="rail-hint" aria-hidden="true">Swipe →</span>
+      </div>
+      <div class="docs">
+        <article class="doc">
+          <div class="av av1" role="img" aria-label="Portrait of Dr. Naomi Reyes">NR</div>
+          <h3>Dr. Naomi Reyes, MD</h3>
+          <p class="role">Family Medicine</p>
+          <p class="fun">Keeps a sticker drawer that is better stocked than most pharmacies.</p>
+          <p class="langs">English · Español</p>
+          <a class="btn btn-sm" href="#book">Book</a>
+        </article>
+        <article class="doc">
+          <div class="av av2" role="img" aria-label="Portrait of Dr. Samuel Adeyemi">SA</div>
+          <h3>Dr. Samuel Adeyemi, MD</h3>
+          <p class="role">Family Medicine</p>
+          <p class="fun">Will draw your kid's ear infection on the exam table paper.</p>
+          <p class="langs">English · Yoruba</p>
+          <a class="btn btn-sm" href="#book">Book</a>
+        </article>
+        <article class="doc">
+          <div class="av av3" role="img" aria-label="Portrait of Dr. Hana Kwon">HK</div>
+          <h3>Dr. Hana Kwon, DO</h3>
+          <p class="role">Family Medicine</p>
+          <p class="fun">Coaches the Northgate middle school swim team on weekends.</p>
+          <p class="langs">English · 한국어</p>
+          <a class="btn btn-sm" href="#book">Book</a>
+        </article>
+        <article class="doc">
+          <div class="av av4" role="img" aria-label="Portrait of Marcus Lyle, PA-C">ML</div>
+          <h3>Marcus Lyle, PA-C</h3>
+          <p class="role">Same-Day Clinic</p>
+          <p class="fun">Champion of the "you probably don't need antibiotics" talk.</p>
+          <p class="langs">English · Español</p>
+          <a class="btn btn-sm" href="#book">Book</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="sec" id="reviews">
+    <div class="wrap">
+      <div class="sec-head"><h2>What families tell us</h2></div>
+      <div class="score">
+        <span class="big">4.9</span>
+        <span>★★★★★ average<small>Across 812 verified patient reviews</small></span>
+        <span style="margin-left:auto;font-size:14px">Google · Healthgrades · Vitals</span>
+      </div>
+      <div class="bubbles">
+        <article class="bub">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"I called at 8am about my son's fever and we were seen before lunch. Nobody
+          made me feel like I was overreacting."</p>
+          <div class="who">
+            <span class="av av3" style="width:40px;height:40px;border:0;box-shadow:none" aria-hidden="true">MT</span>
+            <span><b>Marisol T.</b><small>Patient since 2016</small></span>
+          </div>
+        </article>
+        <article class="bub">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"Dr. Adeyemi caught a thyroid problem two other doctors missed. He actually
+          reads the chart before he walks in."</p>
+          <div class="who">
+            <span class="av av1" style="width:40px;height:40px;border:0;box-shadow:none" aria-hidden="true">DW</span>
+            <span><b>Daniel W.</b><small>Patient since 2019</small></span>
+          </div>
+        </article>
+        <article class="bub">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"Telehealth follow-up took eleven minutes on my lunch break instead of half
+          a day off work."</p>
+          <div class="who">
+            <span class="av av2" style="width:40px;height:40px;border:0;box-shadow:none" aria-hidden="true">PR</span>
+            <span><b>Priya R.</b><small>Patient since 2021</small></span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSURANCE -->
+  <section class="sec sec-sky" id="insurance">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Insurance we accept</h2>
+        <p>In-network with most major plans, plus Medicare and Medicaid.</p>
+      </div>
+      <ul class="plans">
+        <li>Aetna</li><li>Blue Cross Blue Shield</li><li>Cigna</li><li>Humana</li>
+        <li>Medicare</li><li>Medicaid</li><li>UnitedHealthcare</li><li>Tricare</li>
+      </ul>
+      <p class="note">Plans change all the time. Call us with your member ID and we will
+      check your coverage while you are on the phone — before you ever sit in a waiting
+      room. Self-pay prices are posted at the front desk and quoted up front.</p>
+    </div>
+  </section>
+
+  <!-- LOCATIONS + BOOK -->
+  <section class="sec" id="visit">
+    <div class="wrap">
+      <div class="sec-head"><h2>Two offices, same team</h2></div>
+      <div class="locs">
+        <div class="loc">
+          <div class="map" role="img" aria-label="Map showing Harbor Family Medical on Harbor Street in Bayview"><span class="pin" aria-hidden="true">📍</span></div>
+          <div class="bd">
+            <h3>Bayview</h3>
+            <p class="kind">Main clinic</p>
+            <address>240 Harbor Street, Suite 300<br>Bayview, ST 00000</address>
+            <dl>
+              <div><dt>Mon – Thu</dt><dd>7:30a – 6:00p</dd></div>
+              <div><dt>Friday</dt><dd>7:30a – 4:00p</dd></div>
+              <div><dt>Saturday</dt><dd>8:00a – 12:00p</dd></div>
+            </dl>
+            <a class="btn btn-out btn-sm" href="tel:+15552140880">Call (555) 214-0880</a>
+          </div>
+        </div>
+        <div class="loc">
+          <div class="map" role="img" aria-label="Map showing the Harbor satellite office at Northgate Plaza"><span class="pin" aria-hidden="true">📍</span></div>
+          <div class="bd">
+            <h3>Northgate</h3>
+            <p class="kind">Satellite office</p>
+            <address>1170 Northgate Plaza, Unit B<br>Northgate, ST 00000</address>
+            <dl>
+              <div><dt>Mon – Fri</dt><dd>8:00a – 5:00p</dd></div>
+              <div><dt>Saturday</dt><dd>Closed</dd></div>
+              <div><dt>Sunday</dt><dd>Closed</dd></div>
+            </dl>
+            <a class="btn btn-out btn-sm" href="tel:+15552140895">Call (555) 214-0895</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="book" style="margin-top:44px;background:var(--sun);border-radius:var(--r-lg);padding:36px 32px">
+        <h2 style="font-size:clamp(1.6rem,3.2vw,2.3rem);max-width:26ch">Ready when you are</h2>
+        <p style="max-width:48ch;font-weight:600;color:#4a3200">Book online in about a
+        minute, or call and talk to an actual person at the front desk.</p>
+        <div class="hero-cta" style="margin-bottom:22px">
+          <a class="btn btn-coral" href="#book">Book Appointment</a>
+          <a class="btn btn-out" href="tel:+15552140880">Call Now</a>
+        </div>
+        <div class="privacy">
+          <strong>A note on privacy.</strong> Booking happens inside our secure,
+          HIPAA-compliant patient portal — never through an open web form. Please do not
+          email symptoms, diagnoses, or insurance ID numbers. If this is a medical
+          emergency, call <strong>911</strong> or go to the nearest emergency department.
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="c4">
+      <div>
+        <div class="fbrand"><span class="mk" aria-hidden="true">H</span><b>Harbor Family Medical</b></div>
+        <p>Family medicine for every age in Bayview and Northgate. Board-certified
+        physicians, same-week appointments, bilingual staff.</p>
+      </div>
+      <div>
+        <h4>Care</h4>
+        <ul>
+          <li><a href="#services">Physicals</a></li>
+          <li><a href="#services">Sick visits</a></li>
+          <li><a href="#services">Vaccines</a></li>
+          <li><a href="#services">Telehealth</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Practice</h4>
+        <ul>
+          <li><a href="#doctors">Our doctors</a></li>
+          <li><a href="#insurance">Insurance</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#book">Patient portal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Bayview <a href="tel:+15552140880">(555) 214-0880</a></li>
+          <li>Northgate <a href="tel:+15552140895">(555) 214-0895</a></li>
+          <li>Fax (555) 214-0881</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">Concept demo — fictional practice. Providers, reviews, and contact
+    details are placeholders. · Privacy Practices · Accessibility · Nondiscrimination</p>
+  </div>
+</footer>
+
+<!-- mobile bottom tab bar -->
+<nav class="tabbar" aria-label="Quick actions">
+  <ul>
+    <li><a href="#services"><i aria-hidden="true">🩺</i>Services</a></li>
+    <li><a href="#doctors"><i aria-hidden="true">👩‍⚕️</i>Doctors</a></li>
+    <li><a class="acc" href="#book"><i aria-hidden="true">🗓️</i>Book</a></li>
+    <li><a href="tel:+15552140880"><i aria-hidden="true">📞</i>Call</a></li>
+    <li><a href="#visit"><i aria-hidden="true">📍</i>Visit</a></li>
+  </ul>
+</nav>
+
+</body>
+</html>

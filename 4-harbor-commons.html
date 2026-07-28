@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbor Family Medical — Concept 4: Harbor Commons</title>
+<meta name="description" content="Your neighbors' family doctor since 2004. Harbor Family Medical serves Bayview and Northgate with primary care for every generation.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231f4436'/><text x='16' y='23' font-size='18' font-family='Georgia,serif' fill='%23f6f1e7' text-anchor='middle'>H</text></svg>">
+<style>
+/* ============================================================
+   CONCEPT 4 — "HARBOR COMMONS"
+   Community neighborhood practice. Cream, deep pine, brick.
+   Photo-driven, human, relationship-based. Warm serif + sans.
+   Signature: asymmetric photo mosaic hero, "since 2004" timeline,
+   community bulletin board, phone-first CTA hierarchy.
+   ============================================================ */
+
+:root{
+  --cream:#f6f1e7;
+  --cream-2:#efe7d8;
+  --paper:#fffdf8;
+  --pine:#1f4436;
+  --pine-2:#2c5c49;
+  --pine-lt:#e3ece7;
+  --brick:#a8452c;
+  --brick-dk:#8a3722;
+  --sun:#d99a2b;
+  --ink:#231f1a;
+  --ink-soft:#544c42;
+  --line:#ded2bd;
+  --r:14px;
+  --wrap:1160px;
+  --serif:"Charter","Bitstream Charter","Georgia",Cambria,"Times New Roman",serif;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 17.5px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.18;letter-spacing:-.012em;margin:0 0 .5em}
+p{margin:0 0 1em}
+a{color:var(--pine);text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+
+.skip{position:absolute;left:-9999px;background:var(--pine);color:#fff;padding:12px 18px;border-radius:8px;z-index:90}
+.skip:focus{left:12px;top:12px}
+:focus-visible{outline:3px solid var(--brick);outline-offset:3px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.kicker{
+  font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--brick);margin:0 0 14px;display:block;
+}
+
+/* ---------- photo placeholders: warm duotone tiles ---------- */
+
+.ph{position:relative;overflow:hidden;background:var(--cream-2)}
+.ph::after{
+  content:"";position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity:.1;mix-blend-mode:multiply;pointer-events:none;
+}
+.ph .cap{
+  position:absolute;left:0;right:0;bottom:0;padding:9px 12px;font-family:var(--sans);
+  font-size:10.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;
+  color:#fff;background:linear-gradient(0deg,rgba(35,31,26,.72),transparent);
+}
+.ph-a{background:linear-gradient(155deg,#a8452c,#d99a2b 70%,#f0d9a8)}
+.ph-b{background:linear-gradient(140deg,#1f4436,#4c7a63 65%,#a8c4b6)}
+.ph-c{background:linear-gradient(165deg,#d99a2b,#efe7d8)}
+.ph-d{background:linear-gradient(200deg,#2c5c49,#a8452c)}
+.ph-e{background:linear-gradient(150deg,#54756a,#d8c9ab)}
+
+/* ---------- header ---------- */
+
+.hdr{background:var(--cream);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.hdr-in{display:flex;align-items:center;gap:26px;min-height:80px}
+.brand{display:flex;align-items:center;gap:13px;margin-right:auto}
+.brand .mk{
+  width:48px;height:48px;flex:none;border-radius:50%;background:var(--pine);color:var(--cream);
+  display:grid;place-items:center;font-family:var(--serif);font-size:23px;font-weight:700;
+}
+.brand b{display:block;font-family:var(--serif);font-size:20px;font-weight:700;line-height:1.2}
+.brand small{font-size:12px;font-weight:600;color:var(--ink-soft);letter-spacing:.03em}
+.dnav{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:15.5px;font-weight:600}
+.dnav a{color:var(--ink-soft);padding:6px 0;border-bottom:2px solid transparent}
+.dnav a:hover{color:var(--pine);border-bottom-color:var(--sun)}
+.hdr-phone{
+  display:flex;align-items:center;gap:11px;background:var(--paper);border:1px solid var(--line);
+  border-radius:999px;padding:9px 18px 9px 14px;font-family:var(--sans);
+}
+.hdr-phone .ic{font-size:17px}
+.hdr-phone b{display:block;font-size:15.5px;color:var(--ink)}
+.hdr-phone small{display:block;font-size:11.5px;color:var(--ink-soft);font-weight:600}
+
+.drawer-btn{display:none;background:var(--paper);border:1px solid var(--line);border-radius:10px;width:46px;height:46px;cursor:pointer;color:var(--pine)}
+.drawer-btn span{display:block;width:19px;height:2px;background:currentColor;margin:4px auto;border-radius:2px}
+.scrim{position:fixed;inset:0;background:rgba(35,31,26,.5);z-index:64;opacity:0;pointer-events:none;transition:opacity .2s}
+.scrim[data-open="true"]{opacity:1;pointer-events:auto}
+.drawer{
+  position:fixed;top:0;right:0;bottom:0;width:min(85vw,340px);background:var(--cream);z-index:65;
+  transform:translateX(101%);transition:transform .25s ease;padding:22px;overflow-y:auto;
+  border-left:5px solid var(--pine);
+}
+.drawer[data-open="true"]{transform:translateX(0)}
+.drawer-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.drawer nav ul{list-style:none;margin:0 0 26px;padding:0}
+.drawer nav a{display:block;font-family:var(--serif);font-size:21px;font-weight:700;padding:14px 0;border-bottom:1px solid var(--line)}
+.drawer .d-call{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:12px}
+.drawer .d-call b{display:block;font-size:17px}
+.drawer .d-call small{color:var(--ink-soft);font-size:12.5px;font-weight:600}
+
+/* ---------- buttons ---------- */
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:var(--sans);font-size:16px;font-weight:700;padding:15px 26px;min-height:52px;
+  border-radius:999px;border:2px solid var(--pine);background:var(--pine);color:var(--cream);cursor:pointer;
+  transition:background .16s;
+}
+.btn:hover{background:var(--pine-2);color:#fff}
+.btn-brick{background:var(--brick);border-color:var(--brick)}
+.btn-brick:hover{background:var(--brick-dk)}
+.btn-out{background:transparent;color:var(--pine);border-color:var(--pine)}
+.btn-out:hover{background:var(--pine);color:var(--cream)}
+.btn-sm{padding:11px 20px;min-height:44px;font-size:14.5px}
+.tlink{font-weight:700;border-bottom:2px solid var(--sun);padding-bottom:1px}
+
+/* ---------- hero: asymmetric photo mosaic + cream card ---------- */
+
+.hero{padding:44px 0 66px;background:var(--cream)}
+.mosaic{
+  display:grid;grid-template-columns:1.35fr .82fr .82fr;grid-template-rows:196px 196px;
+  gap:12px;margin-bottom:-84px;
+}
+.mosaic .ph{border-radius:var(--r)}
+.m1{grid-row:span 2;border-radius:var(--r)}
+.hero-card{
+  position:relative;z-index:2;background:var(--paper);border:1px solid var(--line);
+  border-radius:var(--r);padding:40px 44px 36px;max-width:700px;
+  box-shadow:0 22px 44px -28px rgba(35,31,26,.45);
+}
+.hero-card h1{font-size:clamp(2.05rem,4.3vw,3.15rem)}
+.hero-card .lede{font-size:1.12rem;color:var(--ink-soft);max-width:48ch}
+.hero-cta{display:flex;gap:13px;flex-wrap:wrap;margin-top:26px;align-items:center}
+.hero-cta .or{font-size:14px;color:var(--ink-soft);font-weight:600}
+.hero-note{margin:22px 0 0;font-size:14.5px;color:var(--ink-soft);display:flex;gap:9px;align-items:center}
+.hero-note .sd{width:9px;height:9px;border-radius:50%;background:var(--pine);flex:none}
+
+/* ---------- since-2004 timeline (unique) ---------- */
+
+.tl{background:var(--pine);color:#dce8e2;padding:46px 0}
+.tl h2{color:#fff;font-size:1.35rem;margin-bottom:1.5em}
+.tl-row{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.tl-row::before{content:"";position:absolute;left:0;right:0;top:11px;height:2px;background:rgba(255,255,255,.2)}
+.tl-item{padding-right:22px;position:relative}
+.tl-item .pip{
+  width:24px;height:24px;border-radius:50%;background:var(--sun);border:4px solid var(--pine);
+  position:relative;z-index:2;margin-bottom:16px;
+}
+.tl-item b{display:block;font-family:var(--serif);font-size:1.35rem;color:#fff;margin-bottom:5px}
+.tl-item span{font-size:14px;line-height:1.55;display:block;color:#bed3ca}
+
+/* ---------- sections ---------- */
+
+.sec{padding:76px 0}
+.sec-paper{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sec-head{max-width:58ch;margin-bottom:38px}
+.sec-head h2{font-size:clamp(1.75rem,3.4vw,2.5rem)}
+.sec-head p{color:var(--ink-soft);font-size:1.07rem}
+
+/* services: checklist + one big photo, deliberately not cards */
+.svc-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:start}
+.svc-list{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+.svc-item{padding:20px 0;border-bottom:1px solid var(--line)}
+.svc-item h3{font-size:1.16rem;margin-bottom:.3em;display:flex;align-items:baseline;gap:10px}
+.svc-item h3::before{content:"✓";color:var(--brick);font-family:var(--sans);font-weight:800;font-size:14px}
+.svc-item p{font-size:.96rem;color:var(--ink-soft);margin:0}
+.svc-photo .ph{border-radius:var(--r);aspect-ratio:3/4}
+.svc-photo figcaption{font-size:13.5px;color:var(--ink-soft);margin-top:12px;font-style:italic}
+
+/* providers: neighbor rows */
+.neigh{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.nrow{display:grid;grid-template-columns:168px 1fr 210px;gap:28px;padding:24px;border-bottom:1px solid var(--line);align-items:center}
+.nrow:last-child{border-bottom:0}
+.nrow .ph{border-radius:10px;aspect-ratio:1/1}
+.nrow h3{font-size:1.3rem;margin-bottom:.1em}
+.nrow .cred{font-family:var(--sans);font-size:13px;font-weight:700;color:var(--brick);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.7em}
+.nrow p{font-size:1rem;color:var(--ink-soft);margin-bottom:.6em}
+.nrow .personal{font-family:var(--serif);font-style:italic;color:var(--ink);font-size:1.04rem;margin:0}
+.nrow .side{border-left:1px solid var(--line);padding-left:26px;font-size:14px}
+.nrow .side dt{font-weight:600;color:var(--ink-soft);font-size:12.5px}
+.nrow .side dd{margin:0 0 12px;font-weight:700}
+.nrow .side dl{margin:0 0 14px}
+
+/* reviews: neighborhood-tagged cards */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px;position:relative}
+.rev .stars{color:var(--sun);letter-spacing:.11em;font-size:15px;margin-bottom:12px}
+.rev p{font-family:var(--serif);font-size:1.08rem;line-height:1.6}
+.rev .who{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:16px;margin-top:18px}
+.rev .who .ph{width:44px;height:44px;border-radius:50%;flex:none}
+.rev .who b{display:block;font-size:14.5px}
+.rev .who small{font-size:12.5px;color:var(--ink-soft);font-weight:600}
+.rating-line{
+  display:flex;align-items:center;gap:16px;margin-bottom:26px;flex-wrap:wrap;
+  font-size:15px;color:var(--ink-soft);
+}
+.rating-line b{font-family:var(--serif);font-size:2.1rem;color:var(--ink);line-height:1}
+
+/* community bulletin board (unique) */
+.board{background:var(--cream-2);border:1px solid var(--line);border-radius:var(--r);padding:30px}
+.board-head{display:flex;justify-content:space-between;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:22px}
+.board-head h3{font-size:1.35rem;margin:0}
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.note{
+  background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:20px 20px 18px;
+  position:relative;box-shadow:0 4px 10px -6px rgba(35,31,26,.3);
+}
+.note:nth-child(1){transform:rotate(-.5deg)}
+.note:nth-child(3){transform:rotate(.6deg)}
+.note::before{
+  content:"";position:absolute;top:-7px;left:50%;transform:translateX(-50%);
+  width:13px;height:13px;border-radius:50%;background:var(--brick);
+  box-shadow:0 2px 4px rgba(0,0,0,.25);
+}
+.note .when{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--brick);display:block;margin-bottom:8px}
+.note h4{font-size:1.08rem;margin-bottom:.35em}
+.note p{font-size:.94rem;color:var(--ink-soft);margin:0}
+
+/* insurance */
+.plan-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
+.plan{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:15px 16px;font-weight:700;font-size:15px}
+.plan small{display:block;font-size:12px;color:var(--ink-soft);font-weight:600;margin-top:2px}
+
+/* locations */
+.locs{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.loc{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.loc .ph{height:172px}
+.loc .bd{padding:26px}
+.loc h3{font-size:1.35rem;margin-bottom:.1em}
+.loc .hood{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--brick);margin-bottom:1.1em}
+.loc address{font-style:normal;font-size:1.02rem;margin-bottom:14px}
+.loc table{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:18px}
+.loc td{padding:8px 0;border-bottom:1px solid var(--line);color:var(--ink-soft)}
+.loc td+td{text-align:right;color:var(--ink);font-weight:700}
+.loc .acts{display:flex;gap:10px;flex-wrap:wrap}
+
+.privacy{
+  background:var(--pine-lt);border:1px solid #c3d6cd;border-left:6px solid var(--pine);
+  border-radius:var(--r);padding:22px 26px;font-size:14.5px;color:#3c5b50;line-height:1.7;margin-top:26px;
+}
+.privacy strong{color:var(--pine)}
+
+/* footer */
+footer{background:var(--pine);color:#c5d7cf;padding:62px 0 30px;font-size:15px}
+footer .c4{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:40px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.16)}
+footer h4{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sun);margin-bottom:1.4em}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin-bottom:10px}
+footer a{color:#e6f0ec}
+footer a:hover{color:#fff;text-decoration:underline}
+footer .fb{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+footer .fb .mk{width:46px;height:46px;border-radius:50%;background:var(--cream);color:var(--pine);display:grid;place-items:center;font-family:var(--serif);font-size:22px;font-weight:700}
+footer .fb b{color:#fff;font-family:var(--serif);font-size:19px}
+footer .fine{padding-top:22px;font-size:13px;color:#8fada2}
+
+/* mobile sticky bar — CALL is primary here, on purpose */
+.callbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:10px;
+  background:var(--cream);border-top:1px solid var(--line);
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -6px 20px rgba(35,31,26,.12);
+}
+.callbar .btn{flex:1;padding:14px 10px;font-size:15px}
+.callbar .btn-out{flex:0 0 42%}
+
+/* ============================================================
+   RESPONSIVE — mosaic → one lead photo; neighbor rows restack;
+   bulletin board scrolls sideways.
+   ============================================================ */
+
+@media (max-width:1040px){
+  .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:170px 170px}
+  .m1{grid-row:span 2}
+  .m4{display:none}
+  .svc-wrap{grid-template-columns:1fr;gap:34px}
+  .svc-photo .ph{aspect-ratio:16/9}
+  .nrow{grid-template-columns:132px 1fr;gap:22px}
+  .nrow .side{grid-column:1/-1;border-left:0;border-top:1px solid var(--line);padding:18px 0 0;display:flex;gap:30px;flex-wrap:wrap;align-items:center}
+  .nrow .side dl{display:flex;gap:26px;margin:0}
+  .nrow .side dd{margin:0}
+  .revs{grid-template-columns:1fr}
+  .notes{grid-template-columns:1fr 1fr}
+  .plan-grid{grid-template-columns:repeat(2,1fr)}
+  .locs{grid-template-columns:1fr}
+  .dnav{display:none}
+  .tl-row{grid-template-columns:repeat(3,1fr);gap:26px 0}
+  .tl-row::before{display:none}
+  footer .c4{grid-template-columns:1fr 1fr}
+}
+
+@media (max-width:760px){
+  body{font-size:16.5px}
+  .wrap{padding:0 18px}
+  .drawer-btn{display:block}
+  .hdr-phone{display:none}
+  .hdr-in{min-height:68px}
+  .brand .mk{width:42px;height:42px;font-size:20px}
+  .brand small{display:none}
+  .sec{padding:52px 0}
+
+  /* mosaic collapses to a single lead photo with the card below it */
+  .hero{padding:0 0 48px}
+  .mosaic{display:block;margin:0 -18px 18px}
+  .mosaic .ph{display:none}
+  .mosaic .m1{display:block;height:250px;border-radius:0}
+  .hero-card{padding:26px 20px 24px;border-radius:var(--r);box-shadow:none;max-width:none}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .hero-cta .btn{width:100%}
+  .hero-cta .or{display:none}
+
+  .tl{padding:36px 0}
+  .tl-row{grid-template-columns:1fr;gap:20px}
+  .tl-item{padding-right:0;display:grid;grid-template-columns:26px 1fr;gap:14px;align-items:start}
+  .tl-item .pip{margin:2px 0 0}
+
+  .svc-list{grid-template-columns:1fr;gap:0}
+  .nrow{grid-template-columns:1fr;gap:16px;padding:20px}
+  .nrow .ph{aspect-ratio:3/2;max-width:none}
+  .nrow .side{flex-direction:column;align-items:flex-start;gap:14px}
+  .nrow .side dl{flex-direction:column;gap:10px}
+
+  /* bulletin board becomes a swipe rail */
+  .board{padding:22px 18px}
+  .notes{display:flex;overflow-x:auto;gap:14px;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:none}
+  .notes::-webkit-scrollbar{display:none}
+  .note{flex:0 0 78%;scroll-snap-align:center;transform:none!important}
+
+  .plan-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .callbar{display:flex}
+  footer{padding-bottom:100px}
+  footer .c4{grid-template-columns:1fr;gap:26px}
+}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href="#top">
+      <span class="mk" aria-hidden="true">H</span>
+      <span><b>Harbor Family Medical</b><small>Bayview &amp; Northgate · Since 2004</small></span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="dnav">
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#services">Care</a></li>
+        <li><a href="#doctors">Meet Our Doctors</a></li>
+        <li><a href="#reviews">Neighbors</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+    <a class="hdr-phone" href="tel:+15552140880">
+      <span class="ic" aria-hidden="true">☎</span>
+      <span><b>(555) 214-0880</b><small>Front desk, no phone tree</small></span>
+    </a>
+    <button class="drawer-btn" id="drawerBtn" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="scrim" id="scrim" data-open="false"></div>
+<aside class="drawer" id="drawer" data-open="false" aria-label="Menu">
+  <div class="drawer-top">
+    <b style="font-family:var(--serif);font-size:20px">Harbor</b>
+    <button class="drawer-btn" id="drawerClose" style="display:block" aria-label="Close menu">
+      <span style="transform:rotate(45deg);margin:-2px auto"></span>
+      <span style="transform:rotate(-45deg)"></span>
+    </button>
+  </div>
+  <nav aria-label="Mobile">
+    <ul>
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#services">Care</a></li>
+      <li><a href="#doctors">Meet Our Doctors</a></li>
+      <li><a href="#reviews">Neighbors</a></li>
+      <li><a href="#board">What's On</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+  </nav>
+  <a class="d-call" href="tel:+15552140880"><b>(555) 214-0880</b><small>Bayview front desk</small></a>
+  <a class="d-call" href="tel:+15552140895"><b>(555) 214-0895</b><small>Northgate office</small></a>
+  <a class="btn btn-brick" href="#book" style="width:100%">Book Appointment</a>
+</aside>
+
+<main id="main">
+
+  <!-- HERO: photo mosaic + overlapping cream card -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="mosaic">
+        <div class="ph ph-a m1" role="img" aria-label="Dr. Reyes greeting a longtime patient in the Harbor waiting room"><span class="cap">Photography · Waiting room welcome</span></div>
+        <div class="ph ph-c m2" role="img" aria-label="The Harbor Street storefront on a spring morning"><span class="cap">Harbor Street exterior</span></div>
+        <div class="ph ph-b m3" role="img" aria-label="Front desk staff on the phone with a patient"><span class="cap">Front desk</span></div>
+        <div class="ph ph-e m4" role="img" aria-label="Grandmother and grandchild in the exam room together"><span class="cap">Three generations</span></div>
+      </div>
+      <div class="hero-card">
+        <span class="kicker">Your neighbors' family doctor since 2004</span>
+        <h1>We have been on Harbor Street for twenty-one years.</h1>
+        <p class="lede">Four board-certified physicians who live in the neighborhood they
+        practice in — caring for the same families through babies, braces, first jobs,
+        and retirement.</p>
+        <div class="hero-cta">
+          <a class="btn btn-brick" href="tel:+15552140880">Call (555) 214-0880</a>
+          <span class="or">or</span>
+          <a class="btn btn-out" href="#book">Book Appointment</a>
+        </div>
+        <p class="hero-note"><span class="sd" aria-hidden="true"></span>
+        Same-week appointments · Most insurance accepted · Se habla español</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="tl" id="story">
+    <div class="wrap">
+      <h2>A practice grows the slow way</h2>
+      <div class="tl-row">
+        <div class="tl-item">
+          <div class="pip" aria-hidden="true"></div>
+          <b>2004</b>
+          <span>Dr. Naomi Reyes opens a one-room office on Harbor Street with a shared fax machine.</span>
+        </div>
+        <div class="tl-item">
+          <div class="pip" aria-hidden="true"></div>
+          <b>2011</b>
+          <span>Dr. Samuel Adeyemi joins and starts the senior care panel that still bears his name.</span>
+        </div>
+        <div class="tl-item">
+          <div class="pip" aria-hidden="true"></div>
+          <b>2016</b>
+          <span>Saturday morning clinic opens after too many parents ask for it.</span>
+        </div>
+        <div class="tl-item">
+          <div class="pip" aria-hidden="true"></div>
+          <b>2019</b>
+          <span>The Northgate satellite office opens above the hardware store.</span>
+        </div>
+        <div class="tl-item">
+          <div class="pip" aria-hidden="true"></div>
+          <b>Today</b>
+          <span>Four providers, two offices, 6,400 neighbors on our panel — and still capped.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES: checklist + photo -->
+  <section class="sec" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">What we look after</span>
+        <h2>Ordinary care, done properly, for as long as you need it</h2>
+        <p>No specialty gimmicks. Just the full range of primary care from people who
+        will still be here in ten years.</p>
+      </div>
+      <div class="svc-wrap">
+        <div class="svc-list">
+          <div class="svc-item">
+            <h3>Annual physicals</h3>
+            <p>A full hour, labs on site, and a plan explained out loud before you leave.</p>
+          </div>
+          <div class="svc-item">
+            <h3>Same-day sick visits</h3>
+            <p>Morning slots held for our own patients. Call before 10 and we will fit you in.</p>
+          </div>
+          <div class="svc-item">
+            <h3>Chronic care management</h3>
+            <p>Diabetes, blood pressure, thyroid, cholesterol — one doctor, the whole arc.</p>
+          </div>
+          <div class="svc-item">
+            <h3>Vaccines &amp; immunizations</h3>
+            <p>Childhood schedule, flu, shingles, pneumonia, and travel advice.</p>
+          </div>
+          <div class="svc-item">
+            <h3>Telehealth visits</h3>
+            <p>Video follow-ups when driving across town is the only hard part.</p>
+          </div>
+          <div class="svc-item">
+            <h3>Lab &amp; imaging follow-up</h3>
+            <p>Every result gets a phone call from a person who knows your history.</p>
+          </div>
+          <div class="svc-item">
+            <h3>Medicare wellness visits</h3>
+            <p>Annual visits, medication reviews, and honest conversations about what to stop.</p>
+          </div>
+          <div class="svc-item">
+            <h3>School &amp; sports physicals</h3>
+            <p>Forms signed at the visit. August walk-in hours before the season starts.</p>
+          </div>
+        </div>
+        <figure class="svc-photo" style="margin:0">
+          <div class="ph ph-b" role="img" aria-label="Dr. Adeyemi listening to an older patient's chest in a sunlit exam room"><span class="cap">Photography · Exam room, natural light</span></div>
+          <figcaption>"The best thing about a neighborhood practice is that nobody has to
+          start their story over." — Dr. Samuel Adeyemi</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTORS -->
+  <section class="sec sec-paper" id="doctors">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Meet our doctors</span>
+        <h2>The people you will actually see</h2>
+        <p>Not a rotating roster of locums. These four, most weeks, for years.</p>
+      </div>
+      <div class="neigh">
+        <div class="nrow">
+          <div class="ph ph-a" role="img" aria-label="Portrait of Dr. Naomi Reyes"></div>
+          <div>
+            <h3>Dr. Naomi Reyes, MD</h3>
+            <p class="cred">Family Medicine · Board certified · Founder</p>
+            <p>Opened Harbor in 2004 and has delivered care to three generations of some
+            Bayview families. Focus on diabetes and women's health.</p>
+            <p class="personal">"I do the grocery shopping here too. It keeps you honest."</p>
+          </div>
+          <div class="side">
+            <dl>
+              <div><dt>In the neighborhood</dt><dd>21 years</dd></div>
+              <div><dt>Languages</dt><dd>English, Español</dd></div>
+              <div><dt>Office</dt><dd>Bayview</dd></div>
+            </dl>
+            <a class="btn btn-sm btn-out" href="#book">Book with Dr. Reyes</a>
+          </div>
+        </div>
+        <div class="nrow">
+          <div class="ph ph-b" role="img" aria-label="Portrait of Dr. Samuel Adeyemi"></div>
+          <div>
+            <h3>Dr. Samuel Adeyemi, MD</h3>
+            <p class="cred">Family Medicine · Board certified · Geriatrics focus</p>
+            <p>Joined in 2011 and carries most of our senior panel. Known for reducing
+            medication lists rather than lengthening them.</p>
+            <p class="personal">"Half my job is undoing what a hospital added last winter."</p>
+          </div>
+          <div class="side">
+            <dl>
+              <div><dt>In the neighborhood</dt><dd>14 years</dd></div>
+              <div><dt>Languages</dt><dd>English, Yoruba</dd></div>
+              <div><dt>Office</dt><dd>Both</dd></div>
+            </dl>
+            <a class="btn btn-sm btn-out" href="#book">Book with Dr. Adeyemi</a>
+          </div>
+        </div>
+        <div class="nrow">
+          <div class="ph ph-c" role="img" aria-label="Portrait of Dr. Hana Kwon"></div>
+          <div>
+            <h3>Dr. Hana Kwon, DO</h3>
+            <p class="cred">Family Medicine · Board certified · Osteopathic</p>
+            <p>Came from a hospital system in 2018 and runs our Northgate office. Treats
+            back, neck, and joint pain — often without a prescription.</p>
+            <p class="personal">"Northgate got a doctor upstairs from the hardware store. That felt right."</p>
+          </div>
+          <div class="side">
+            <dl>
+              <div><dt>In the neighborhood</dt><dd>7 years</dd></div>
+              <div><dt>Languages</dt><dd>English, 한국어</dd></div>
+              <div><dt>Office</dt><dd>Northgate</dd></div>
+            </dl>
+            <a class="btn btn-sm btn-out" href="#book">Book with Dr. Kwon</a>
+          </div>
+        </div>
+        <div class="nrow">
+          <div class="ph ph-d" role="img" aria-label="Portrait of Marcus Lyle, PA-C"></div>
+          <div>
+            <h3>Marcus Lyle, PA-C</h3>
+            <p class="cred">Physician Assistant · Certified · Same-day clinic</p>
+            <p>Runs the same-day and Saturday clinic. Sports physicals, stitches, ear
+            infections, and the calm version of bad news.</p>
+            <p class="personal">"I coached half these kids in Little League. They still let me look in their ears."</p>
+          </div>
+          <div class="side">
+            <dl>
+              <div><dt>In the neighborhood</dt><dd>9 years</dd></div>
+              <div><dt>Languages</dt><dd>English, Español</dd></div>
+              <div><dt>Office</dt><dd>Bayview</dd></div>
+            </dl>
+            <a class="btn btn-sm btn-out" href="#book">Book with Marcus</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="sec" id="reviews">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">From the neighborhood</span>
+        <h2>What our patients say</h2>
+      </div>
+      <p class="rating-line">
+        <b>4.9</b> <span style="color:var(--sun);letter-spacing:.11em">★★★★★</span>
+        <span>Average of <strong>812</strong> verified reviews on Google, Healthgrades, and Vitals</span>
+      </p>
+      <div class="revs">
+        <article class="rev">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"I called at eight in the morning about my son's fever and we were seen
+          before lunch. Nobody made me feel like I was overreacting."</p>
+          <div class="who">
+            <span class="ph ph-c" role="img" aria-label="Photo of Marisol T."></span>
+            <span><b>Marisol T.</b><small>Bayview · Patient since 2016</small></span>
+          </div>
+        </article>
+        <article class="rev">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"Dr. Adeyemi caught a thyroid problem two other doctors had missed. He
+          actually reads the chart before he walks in."</p>
+          <div class="who">
+            <span class="ph ph-b" role="img" aria-label="Photo of Daniel W."></span>
+            <span><b>Daniel W.</b><small>Northgate · Patient since 2019</small></span>
+          </div>
+        </article>
+        <article class="rev">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"My mother is 84 and they never talk over her to me. That is rarer than it
+          ought to be."</p>
+          <div class="who">
+            <span class="ph ph-e" role="img" aria-label="Photo of Anne-Marie C."></span>
+            <span><b>Anne-Marie C.</b><small>Bayview · Patient since 2009</small></span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BULLETIN BOARD -->
+  <section class="sec sec-paper" id="board">
+    <div class="wrap">
+      <div class="board">
+        <div class="board-head">
+          <h3>On the board this month</h3>
+          <span style="font-size:14px;color:var(--ink-soft)">Updated the first Monday of each month</span>
+        </div>
+        <div class="notes">
+          <article class="note">
+            <span class="when">Every Saturday, October</span>
+            <h4>Walk-in flu clinic</h4>
+            <p>No appointment. 8am–12pm at Bayview. Bring your insurance card; we bill
+            directly. Kids' doses available.</p>
+          </article>
+          <article class="note">
+            <span class="when">August 4–22</span>
+            <h4>School &amp; sports physicals</h4>
+            <p>Extra afternoon slots at both offices so forms get signed before the season
+            starts. Book early — these fill.</p>
+          </article>
+          <article class="note">
+            <span class="when">Second Tuesday, monthly</span>
+            <h4>Senior walking group</h4>
+            <p>Dr. Adeyemi walks the harbor loop with anyone who wants to come. 9am at the
+            Harbor Street door. Free, no sign-up.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSURANCE -->
+  <section class="sec" id="insurance">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Coverage</span>
+        <h2>Insurance we take</h2>
+        <p>In network with most major plans, and we will tell you straight if we are not.</p>
+      </div>
+      <div class="plan-grid">
+        <div class="plan">Aetna</div>
+        <div class="plan">Blue Cross Blue Shield</div>
+        <div class="plan">Cigna</div>
+        <div class="plan">Humana</div>
+        <div class="plan">Medicare<small>Including Advantage plans</small></div>
+        <div class="plan">Medicaid<small>State plan</small></div>
+        <div class="plan">UnitedHealthcare</div>
+        <div class="plan">Tricare</div>
+      </div>
+      <p style="max-width:58ch;color:var(--ink-soft)">Networks change every year and the
+      plan directories are often wrong. Call the front desk with your member ID and we
+      will verify while you are on the phone. Self-pay prices are posted at the desk —
+      an office visit is $135 and we will say so before you book.</p>
+      <a class="tlink" href="tel:+15552140880">Call and check my plan</a>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="sec sec-paper" id="visit">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Come see us</span>
+        <h2>Two offices, ten minutes apart</h2>
+      </div>
+      <div class="locs">
+        <div class="loc">
+          <div class="ph ph-c" role="img" aria-label="The Harbor Street clinic entrance with planters by the door"><span class="cap">240 Harbor Street</span></div>
+          <div class="bd">
+            <h3>Bayview</h3>
+            <p class="hood">Main clinic · On the harbor end</p>
+            <address>240 Harbor Street, Suite 300<br>Bayview, ST 00000</address>
+            <table>
+              <tr><td>Mon – Thu</td><td>7:30 am – 6:00 pm</td></tr>
+              <tr><td>Friday</td><td>7:30 am – 4:00 pm</td></tr>
+              <tr><td>Saturday</td><td>8:00 am – 12:00 pm</td></tr>
+              <tr><td>Sunday</td><td>Closed</td></tr>
+            </table>
+            <p style="font-size:14.5px;color:var(--ink-soft)">Free lot behind the building,
+            accessible entrance on Harbor Street, elevator to the third floor. Bus 14 stops
+            at the corner.</p>
+            <div class="acts">
+              <a class="btn btn-brick btn-sm" href="tel:+15552140880">Call (555) 214-0880</a>
+              <a class="btn btn-out btn-sm" href="https://maps.google.com/?q=240+Harbor+Street">Directions</a>
+            </div>
+          </div>
+        </div>
+        <div class="loc">
+          <div class="ph ph-e" role="img" aria-label="The Northgate Plaza office above a hardware store"><span class="cap">1170 Northgate Plaza</span></div>
+          <div class="bd">
+            <h3>Northgate</h3>
+            <p class="hood">Satellite office · Above the hardware store</p>
+            <address>1170 Northgate Plaza, Unit B<br>Northgate, ST 00000</address>
+            <table>
+              <tr><td>Mon – Fri</td><td>8:00 am – 5:00 pm</td></tr>
+              <tr><td>Saturday</td><td>Closed</td></tr>
+              <tr><td>Sunday</td><td>Closed</td></tr>
+            </table>
+            <p style="font-size:14.5px;color:var(--ink-soft)">Street parking on Plaza Way,
+            ground-floor accessible entrance at the rear. Dr. Kwon is here most days.</p>
+            <div class="acts">
+              <a class="btn btn-brick btn-sm" href="tel:+15552140895">Call (555) 214-0895</a>
+              <a class="btn btn-out btn-sm" href="https://maps.google.com/?q=1170+Northgate+Plaza">Directions</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="book" style="margin-top:44px;max-width:640px">
+        <h2 style="font-size:clamp(1.6rem,3.2vw,2.2rem)">Becoming a patient</h2>
+        <p style="color:var(--ink-soft)">Call either office and someone will pick up — we
+        do not use a phone tree. If you would rather book online, our patient portal has
+        the same schedule the front desk sees.</p>
+        <div class="hero-cta">
+          <a class="btn btn-brick" href="tel:+15552140880">Call Now</a>
+          <a class="btn btn-out" href="#book">Book in the portal</a>
+        </div>
+        <div class="privacy">
+          <strong>About your privacy.</strong> Booking and messaging happen inside our
+          secure, HIPAA-compliant patient portal — not on this website. Please do not send
+          symptoms, diagnoses, or insurance ID numbers by email or web form. In a medical
+          emergency call <strong>911</strong> or go to the nearest emergency department;
+          website messages are not monitored outside office hours.
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="c4">
+      <div>
+        <div class="fb"><span class="mk" aria-hidden="true">H</span><b>Harbor Family Medical</b></div>
+        <p>Family medicine on Harbor Street since 2004. Four board-certified providers
+        caring for Bayview and Northgate, one family at a time.</p>
+      </div>
+      <div>
+        <h4>Care</h4>
+        <ul>
+          <li><a href="#services">Annual physicals</a></li>
+          <li><a href="#services">Same-day visits</a></li>
+          <li><a href="#services">Chronic care</a></li>
+          <li><a href="#services">Telehealth</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Practice</h4>
+        <ul>
+          <li><a href="#story">Our story</a></li>
+          <li><a href="#doctors">Meet our doctors</a></li>
+          <li><a href="#board">What's on</a></li>
+          <li><a href="#insurance">Insurance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Bayview <a href="tel:+15552140880">(555) 214-0880</a></li>
+          <li>Northgate <a href="tel:+15552140895">(555) 214-0895</a></li>
+          <li>Fax (555) 214-0881</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">Concept demo — fictional practice. Providers, reviews, events, and
+    contact details are placeholders. · Notice of Privacy Practices · Accessibility ·
+    Nondiscrimination</p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a class="btn btn-brick" href="tel:+15552140880">Call the office</a>
+  <a class="btn btn-out" href="#book">Book</a>
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('drawerBtn'),
+      close = document.getElementById('drawerClose'),
+      dr = document.getElementById('drawer'),
+      scrim = document.getElementById('scrim');
+
+  function set(open){
+    dr.dataset.open = open; scrim.dataset.open = open;
+    btn.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open === 'true' ? 'hidden' : '';
+    if (open === 'true') dr.querySelector('a').focus(); else btn.focus();
+  }
+  btn.addEventListener('click', function(){ set('true'); });
+  close.addEventListener('click', function(){ set('false'); });
+  scrim.addEventListener('click', function(){ set('false'); });
+  dr.addEventListener('click', function(e){ if (e.target.tagName === 'A' && e.target.getAttribute('href').charAt(0) === '#') set('false'); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && dr.dataset.open === 'true') set('false'); });
+})();
+</script>
+
+</body>
+</html>

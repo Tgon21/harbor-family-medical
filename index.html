@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbor Family Medical — 5 Homepage Concepts</title>
+<meta name="description" content="Five distinct homepage design directions for a fictional family medicine practice, built as responsive HTML/CSS/JS demos.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23111'/><text x='16' y='23' font-size='18' font-weight='bold' font-family='system-ui' fill='%23fff' text-anchor='middle'>5</text></svg>">
+<style>
+:root{
+  --bg:#fafaf9;--panel:#fff;--ink:#18181b;--ink-2:#3f3f46;--ink-3:#71717a;
+  --line:#e4e4e7;--acc:#18181b;--r:14px;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16.5px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+h1,h2,h3{line-height:1.15;letter-spacing:-.025em;margin:0 0 .5em;font-weight:650}
+p{margin:0 0 1em}
+a{color:var(--ink)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-9999px;background:var(--ink);color:#fff;padding:11px 16px;border-radius:8px;z-index:50}
+.skip:focus{left:12px;top:12px}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3)}
+
+header{background:var(--panel);border-bottom:1px solid var(--line);padding:64px 0 56px}
+header h1{font-size:clamp(2rem,4.4vw,3.1rem);max-width:26ch}
+header .lede{font-size:1.12rem;color:var(--ink-2);max-width:64ch}
+.facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:28px;font-size:14.5px;color:var(--ink-3)}
+.facts b{color:var(--ink);display:block;font-size:15.5px}
+
+.sec{padding:56px 0}
+.sec h2{font-size:clamp(1.4rem,2.6vw,1.9rem)}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
+table{border-collapse:collapse;width:100%;min-width:820px;font-size:14.5px}
+th,td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:#f4f4f5;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);font-weight:600;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td b{font-weight:650}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.swatch{height:104px;display:flex}
+.swatch i{flex:1}
+.card .bd{padding:22px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:1.18rem;margin-bottom:.2em}
+.card .who{font-size:13px;color:var(--ink-3);margin-bottom:14px}
+.card p{font-size:14.5px;color:var(--ink-2)}
+.card ul{margin:0 0 18px;padding-left:20px;font-size:14px;color:var(--ink-2)}
+.card ul li{margin-bottom:5px}
+.card .acts{margin-top:auto;display:flex;gap:10px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;font-size:14.5px;font-weight:600;
+  padding:11px 18px;min-height:44px;border-radius:9px;border:1px solid var(--ink);
+  background:var(--ink);color:#fff;text-decoration:none;
+}
+.btn:hover{background:#3f3f46;color:#fff}
+.btn-2{background:var(--panel);color:var(--ink);border-color:var(--line)}
+.btn-2:hover{background:#f4f4f5;color:var(--ink)}
+
+.picks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.pick{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--ink);border-radius:var(--r);padding:20px}
+.pick .mono{display:block;margin-bottom:8px}
+.pick b{display:block;font-size:1.05rem;margin-bottom:6px}
+.pick span{font-size:14px;color:var(--ink-2)}
+
+.note{background:#fffbeb;border:1px solid #fcd34d;border-radius:var(--r);padding:22px 24px;font-size:14.5px;color:#713f12}
+.note strong{color:#422006}
+.note ul{margin:10px 0 0;padding-left:20px}
+.note li{margin-bottom:6px}
+
+footer{border-top:1px solid var(--line);background:var(--panel);padding:36px 0;font-size:13.5px;color:var(--ink-3)}
+
+@media (max-width:700px){
+  header{padding:44px 0 38px}
+  .sec{padding:42px 0}
+  .card .acts{flex-direction:column}
+  .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#concepts">Skip to the concepts</a>
+
+<header>
+  <div class="wrap">
+    <span class="mono">Design study · Fictional brand</span>
+    <h1 style="margin-top:14px">Harbor Family Medical: five homepage directions</h1>
+    <p class="lede">One fictional family medicine practice, five genuinely different
+    design systems. Same brand, same services, same providers, same trust signals — so
+    the only variable is the design. Every concept is mobile-first with a distinct
+    phone layout, not a collapsed desktop grid.</p>
+    <div class="facts">
+      <span><b>Harbor Family Medical</b>Family medicine / primary care</span>
+      <span><b>Bayview + Northgate</b>Main clinic &amp; satellite office</span>
+      <span><b>4 providers</b>Board certified, bilingual</span>
+      <span><b>4.9 / 812 reviews</b>Shared trust baseline</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="sec">
+  <div class="wrap">
+    <h2>Comparison at a glance</h2>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Concept</th><th>Tone</th><th>Color direction</th><th>Ideal audience</th><th>Strongest conversion angle</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>1. Harbor &amp; Oak</b></td>
+            <td>Calm, premium, editorial</td>
+            <td>Warm neutrals — bone, ink, brass</td>
+            <td>Established adults, seniors, concierge-leaning private practice</td>
+            <td>Perceived quality; converts on trust rather than urgency</td>
+          </tr>
+          <tr>
+            <td><b>2. Harbor Bright</b></td>
+            <td>Warm, welcoming, playful</td>
+            <td>Sky blue, sunshine yellow, coral, mint</td>
+            <td>Parents of young children, growing families</td>
+            <td>Low anxiety + app-like bottom tab bar always showing "Book"</td>
+          </tr>
+          <tr>
+            <td><b>3. Harbor Connect</b></td>
+            <td>Crisp, competent, product-like</td>
+            <td>Near-white, slate ink, one signal green</td>
+            <td>Busy professionals, telehealth users, tech-comfortable patients</td>
+            <td>The hero <em>is</em> the scheduler — booking starts in the first screen</td>
+          </tr>
+          <tr>
+            <td><b>4. Harbor Commons</b></td>
+            <td>Human, local, reassuring</td>
+            <td>Cream, deep pine green, brick red</td>
+            <td>Multi-generational neighborhood families, long-term patients</td>
+            <td>Relationship + phone-first; "call and a person answers"</td>
+          </tr>
+          <tr>
+            <td><b>5. Harbor Now</b></td>
+            <td>Fast, direct, high-contrast</td>
+            <td>Near-black, white, signal orange</td>
+            <td>Same-day seekers, mobile searchers in the moment of need</td>
+            <td>Live status board + permanent dual-action bar — highest mobile conversion</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="concepts">
+  <div class="wrap">
+    <h2>The five demos</h2>
+    <div class="grid">
+
+      <article class="card">
+        <div class="swatch" aria-hidden="true">
+          <i style="background:#fbf8f3"></i><i style="background:#efe7d8"></i>
+          <i style="background:#8a7355"></i><i style="background:#6e5a3c"></i><i style="background:#23201c"></i>
+        </div>
+        <div class="bd">
+          <h3>1 · Harbor &amp; Oak</h3>
+          <p class="who">Calm &amp; premium · editorial serif</p>
+          <p>Hairline rules instead of cards. Numbered editorial service list, oversized
+          serif pull quotes, and a great deal of whitespace.</p>
+          <ul>
+            <li>Full-screen serif overlay menu on mobile</li>
+            <li>Sticky book bar appears only after scroll</li>
+            <li>Zero card grids anywhere</li>
+          </ul>
+          <div class="acts">
+            <a class="btn" href="1-harbor-oak.html">Open demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="swatch" aria-hidden="true">
+          <i style="background:#eaf6f8"></i><i style="background:#8fd8b8"></i>
+          <i style="background:#ffd166"></i><i style="background:#f2724f"></i><i style="background:#0a7d8c"></i>
+        </div>
+        <div class="bd">
+          <h3>2 · Harbor Bright</h3>
+          <p class="who">Bright &amp; family-friendly · rounded sans</p>
+          <p>Pillowy cards, curved section dividers, blob shapes, and an age-band strip
+          from babies to seniors.</p>
+          <ul>
+            <li>Bottom tab bar on mobile — app-like, Book always visible</li>
+            <li>Services &amp; doctors become horizontal snap carousels</li>
+            <li>Reviews drawn as speech bubbles</li>
+          </ul>
+          <div class="acts">
+            <a class="btn" href="2-harbor-bright.html">Open demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="swatch" aria-hidden="true">
+          <i style="background:#fcfcfd"></i><i style="background:#e7f7f1"></i>
+          <i style="background:#0e9f7a"></i><i style="background:#334155"></i><i style="background:#0f172a"></i>
+        </div>
+        <div class="bd">
+          <h3>3 · Harbor Connect</h3>
+          <p class="who">Modern tech-enabled · crisp grotesque + mono</p>
+          <p>Product-style UI where the hero is a working scheduler. Tabbed service
+          channels, provider roster with next-available chips.</p>
+          <ul>
+            <li>Functional slot picker (14 days, real state)</li>
+            <li>Live insurance search filter</li>
+            <li>Open/closed computed from posted hours</li>
+          </ul>
+          <div class="acts">
+            <a class="btn" href="3-harbor-connect.html">Open demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="swatch" aria-hidden="true">
+          <i style="background:#f6f1e7"></i><i style="background:#d99a2b"></i>
+          <i style="background:#a8452c"></i><i style="background:#2c5c49"></i><i style="background:#1f4436"></i>
+        </div>
+        <div class="bd">
+          <h3>4 · Harbor Commons</h3>
+          <p class="who">Community neighborhood · warm serif, photo-driven</p>
+          <p>Asymmetric photo mosaic hero, a "since 2004" timeline, and a community
+          bulletin board of pinned notes.</p>
+          <ul>
+            <li>Phone-first CTA hierarchy — Call is primary, Book secondary</li>
+            <li>Providers as neighbor rows with years-in-neighborhood</li>
+            <li>Mosaic collapses to one lead photo on mobile</li>
+          </ul>
+          <div class="acts">
+            <a class="btn" href="4-harbor-commons.html">Open demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="swatch" aria-hidden="true">
+          <i style="background:#fff"></i><i style="background:#f4f4f2"></i>
+          <i style="background:#e14b06"></i><i style="background:#1c1c21"></i><i style="background:#111114"></i>
+        </div>
+        <div class="bd">
+          <h3>5 · Harbor Now</h3>
+          <p class="who">Minimal same-day hybrid · heavy uppercase sans</p>
+          <p>The hero is a live status board: open/closed, slots left today, wait time,
+          next routine opening. Plus an honest "go to the ER instead" list.</p>
+          <ul>
+            <li>Status panel jumps <em>above</em> the headline on phones</li>
+            <li>Permanent dual-action bar — Call + Book, always</li>
+            <li>Slots expire against the real clock</li>
+          </ul>
+          <div class="acts">
+            <a class="btn" href="5-harbor-now.html">Open demo</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <h2>Strongest for…</h2>
+    <div class="picks">
+      <div class="pick">
+        <span class="mono">Highest trust</span>
+        <b>1 · Harbor &amp; Oak</b>
+        <span>Editorial restraint reads as competence. Long-form bios and pull quotes do
+        the persuading; nothing shouts.</span>
+      </div>
+      <div class="pick">
+        <span class="mono">Best mobile conversion</span>
+        <b>5 · Harbor Now</b>
+        <span>Live availability answers "can I be seen today" before any scrolling, and
+        the dual-action bar never leaves the screen.</span>
+      </div>
+      <div class="pick">
+        <span class="mono">Best for families</span>
+        <b>2 · Harbor Bright</b>
+        <span>Age bands, friendly tone, and swipe carousels built for one-handed browsing
+        while holding a child.</span>
+      </div>
+      <div class="pick">
+        <span class="mono">Best telehealth positioning</span>
+        <b>3 · Harbor Connect</b>
+        <span>Telehealth is a first-class tab and a toggle in the booking widget, not a
+        footnote in a services list.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="note">
+      <strong>Before any of this goes live for a real practice.</strong>
+      <ul>
+        <li>Every provider, review, phone number, address, price, and availability figure
+        is fictional placeholder content and must be replaced with verified information
+        from the practice.</li>
+        <li>Insurance lists create real billing complaints when wrong — they must come
+        from the practice's contracts, not from a template.</li>
+        <li>No concept collects clinical data on the page. Booking is described as
+        handing off to a HIPAA-compliant patient portal, and each demo carries a visible
+        privacy notice. Keep that architecture: a plain web form emailing symptoms is not
+        HIPAA-compliant.</li>
+        <li>The booking widget in Concept 3 and the status board in Concept 5 use
+        deterministic demo logic, not a real scheduling system. Wire them to the practice's
+        actual EHR/scheduler before launch.</li>
+        <li>Photography is represented by duotone placeholders. Real patient or staff
+        photos require signed releases.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Harbor Family Medical is a fictional brand created for this design study. Five
+    responsive HTML/CSS/JS homepage demos — no build step, no external dependencies.
+  </div>
+</footer>
+
+</body>
+</html>
