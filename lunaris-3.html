@@ -65,7 +65,7 @@ a{color:var(--grn-dk);text-decoration:none}
 .hdr{position:sticky;top:0;z-index:50;background:rgba(252,252,253,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .hdr-in{display:flex;align-items:center;gap:28px;min-height:64px}
 .brand{display:flex;align-items:center;gap:10px;margin-right:auto;color:var(--ink)}
-.brand .mk{width:32px;height:32px;border-radius:8px;background:var(--ink);color:var(--grn);display:grid;place-items:center;font-weight:700;font-size:16px;flex:none}
+.brand .mk{width:32px;height:32px;border-radius:8px;background:transparent;display:grid;place-items:center;font-weight:700;font-size:16px;flex:none}
 .brand b{font-size:15.5px;font-weight:650;letter-spacing:-.015em}
 .dnav{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:14.5px}
 .dnav a{color:var(--ink-2);font-weight:500}
@@ -276,7 +276,7 @@ footer li{margin-bottom:10px}
 footer a{color:#e9e2f2}
 footer a:hover{color:#fff;text-decoration:underline}
 footer .fb{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-footer .fb .mk{width:30px;height:30px;border-radius:8px;background:#2a2138;color:var(--grn);display:grid;place-items:center;font-weight:700;font-size:15px}
+footer .fb .mk{width:30px;height:30px;border-radius:8px;background:transparent;display:grid;place-items:center;font-weight:700;font-size:15px}
 footer .fb b{color:#fff}
 footer .fine{padding-top:22px;font-size:12.5px;color:#8a7d99;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
@@ -343,16 +343,18 @@ footer .fine{padding-top:22px;font-size:12.5px;color:#8a7d99;display:flex;justif
 /* language: hide only the inactive one */
 html[data-lang="es"] [lang="en"]{display:none!important}
 html[data-lang="en"] [lang="es"]{display:none!important}
+.brand-ribbon{height:5px;background:linear-gradient(90deg,#e7c4d8 0%,#dcbfe6 45%,#c6b2e0 100%)}
 </style>
 </head>
 <body>
+<div class="brand-ribbon" aria-hidden="true"></div>
 
 <a class="skip" href="#main"><span lang="es">Saltar al contenido</span><span lang="en">Skip to main content</span></a>
 
 <header class="hdr">
   <div class="wrap hdr-in">
     <a class="brand" href="#top">
-      <span class="mk" aria-hidden="true"><svg viewBox="0 0 44 46" width="25" height="26" aria-hidden="true"><defs><mask id="l3h"><rect width="44" height="46" fill="#fff"/><circle cx="27.5" cy="11.5" r="9.4" fill="#000"/></mask></defs><circle cx="21" cy="14" r="11" fill="#cda869" mask="url(#l3h)"/><path d="M32 4.5 l1.1 2.7 2.7 1.1 -2.7 1.1 -1.1 2.7 -1.1 -2.7 -2.7 -1.1 2.7 -1.1 Z" fill="#cda869"/><g fill="#d9c9ec" transform="translate(22 44)"><path d="M0 -18 C-4.2 -7.6 -2.4 -1 0 0 C2.4 -1 4.2 -7.6 0 -18 Z" transform="rotate(0)"/><path d="M0 -18 C-4.2 -7.6 -2.4 -1 0 0 C2.4 -1 4.2 -7.6 0 -18 Z" transform="rotate(25)"/><path d="M0 -18 C-4.2 -7.6 -2.4 -1 0 0 C2.4 -1 4.2 -7.6 0 -18 Z" transform="rotate(-25)"/><path d="M0 -15 C-4.2 -6.3 -2.4 -1 0 0 C2.4 -1 4.2 -6.3 0 -15 Z" transform="rotate(50)"/><path d="M0 -15 C-4.2 -6.3 -2.4 -1 0 0 C2.4 -1 4.2 -6.3 0 -15 Z" transform="rotate(-50)"/></g></svg></span>
+      <span class="mk" aria-hidden="true"><img src="brand/lunaris-logo.png" alt="" aria-hidden="true" style="height:30px;width:auto;display:block"></span>
       <b>Lunaris Medical Clinic</b>
     </a>
     <nav aria-label="Principal">
@@ -750,7 +752,7 @@ html[data-lang="en"] [lang="es"]{display:none!important}
   <div class="wrap">
     <div class="c4">
       <div>
-        <div class="fb"><span class="mk" aria-hidden="true"><svg viewBox="0 0 44 46" width="24" height="25" aria-hidden="true"><defs><mask id="l3f"><rect width="44" height="46" fill="#fff"/><circle cx="27.5" cy="11.5" r="9.4" fill="#000"/></mask></defs><circle cx="21" cy="14" r="11" fill="#cda869" mask="url(#l3f)"/><path d="M32 4.5 l1.1 2.7 2.7 1.1 -2.7 1.1 -1.1 2.7 -1.1 -2.7 -2.7 -1.1 2.7 -1.1 Z" fill="#cda869"/><g fill="#d9c9ec" transform="translate(22 44)"><path d="M0 -18 C-4.2 -7.6 -2.4 -1 0 0 C2.4 -1 4.2 -7.6 0 -18 Z" transform="rotate(0)"/><path d="M0 -18 C-4.2 -7.6 -2.4 -1 0 0 C2.4 -1 4.2 -7.6 0 -18 Z" transform="rotate(25)"/><path d="M0 -18 C-4.2 -7.6 -2.4 -1 0 0 C2.4 -1 4.2 -7.6 0 -18 Z" transform="rotate(-25)"/><path d="M0 -15 C-4.2 -6.3 -2.4 -1 0 0 C2.4 -1 4.2 -6.3 0 -15 Z" transform="rotate(50)"/><path d="M0 -15 C-4.2 -6.3 -2.4 -1 0 0 C2.4 -1 4.2 -6.3 0 -15 Z" transform="rotate(-50)"/></g></svg></span><b>Lunaris Medical Clinic</b></div>
+        <div class="fb"><span class="mk" aria-hidden="true"><img src="brand/lunaris-logo.png" alt="" aria-hidden="true" style="height:28px;width:auto;display:block"></span><b>Lunaris Medical Clinic</b></div>
         <p lang="es">Medicina familiar certificada en Caguas, Puerto Rico. Visitas
         presenciales y por telemedicina, disponibilidad la misma semana.</p>
         <p lang="en">Board-certified primary care and clinical counseling in Caguas —

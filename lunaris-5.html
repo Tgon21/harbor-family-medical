@@ -59,7 +59,7 @@ a{color:var(--blk);text-decoration:none}
 .hdr{background:var(--blk);color:var(--wht);position:sticky;top:0;z-index:50;border-bottom:3px solid var(--sig)}
 .hdr-in{display:flex;align-items:center;gap:24px;min-height:60px}
 .brand{display:flex;align-items:center;gap:11px;margin-right:auto;color:var(--wht)}
-.brand .mk{width:26px;height:26px;position:relative;flex:none}
+.brand .mk{display:inline-flex;align-items:center;flex:none}
 /* brand mark rendered as inline SVG */
 .brand b{font-family:var(--board);font-size:16px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
 .dnav{display:flex;gap:24px;list-style:none;margin:0;padding:0}
@@ -334,16 +334,18 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#7d7290}
 /* language: hide only the inactive one */
 html[data-lang="es"] [lang="en"]{display:none!important}
 html[data-lang="en"] [lang="es"]{display:none!important}
+.brand-ribbon{height:5px;background:linear-gradient(90deg,#e7c4d8 0%,#dcbfe6 45%,#c6b2e0 100%)}
 </style>
 </head>
 <body>
+<div class="brand-ribbon" aria-hidden="true"></div>
 
 <a class="skip" href="#main"><span lang="es">Saltar al contenido</span><span lang="en">Skip to main content</span></a>
 
 <header class="hdr">
   <div class="wrap hdr-in">
     <a class="brand" href="#top">
-      <span class="mk" aria-hidden="true" style="width:31px;height:32px"><svg viewBox="0 0 44 46" width="31" height="32" aria-hidden="true"><defs><mask id="l5h"><rect width="44" height="46" fill="#fff"/><circle cx="27.5" cy="11.5" r="9.4" fill="#000"/></mask></defs><circle cx="21" cy="14" r="11" fill="#cda869" mask="url(#l5h)"/><path d="M32 4.5 l1.1 2.7 2.7 1.1 -2.7 1.1 -1.1 2.7 -1.1 -2.7 -2.7 -1.1 2.7 -1.1 Z" fill="#cda869"/><g fill="#d9c9ec" transform="translate(22 44)"><path d="M0 -18 C-4.2 -7.6 -2.4 -1 0 0 C2.4 -1 4.2 -7.6 0 -18 Z" transform="rotate(0)"/><path d="M0 -18 C-4.2 -7.6 -2.4 -1 0 0 C2.4 -1 4.2 -7.6 0 -18 Z" transform="rotate(25)"/><path d="M0 -18 C-4.2 -7.6 -2.4 -1 0 0 C2.4 -1 4.2 -7.6 0 -18 Z" transform="rotate(-25)"/><path d="M0 -15 C-4.2 -6.3 -2.4 -1 0 0 C2.4 -1 4.2 -6.3 0 -15 Z" transform="rotate(50)"/><path d="M0 -15 C-4.2 -6.3 -2.4 -1 0 0 C2.4 -1 4.2 -6.3 0 -15 Z" transform="rotate(-50)"/></g></svg></span>
+      <span class="mk" aria-hidden="true"><img src="brand/lunaris-logo.png" alt="" aria-hidden="true" style="height:36px;width:auto;display:block"></span>
       <b>Lunaris Medical Clinic</b>
     </a>
     <nav aria-label="Principal">
@@ -753,7 +755,7 @@ html[data-lang="en"] [lang="es"]{display:none!important}
   <div class="wrap">
     <div class="c4">
       <div>
-        <div class="fb"><span class="brand"><span class="mk" aria-hidden="true" style="width:28px;height:29px"><svg viewBox="0 0 44 46" width="28" height="29" aria-hidden="true"><defs><mask id="l5f"><rect width="44" height="46" fill="#fff"/><circle cx="27.5" cy="11.5" r="9.4" fill="#000"/></mask></defs><circle cx="21" cy="14" r="11" fill="#cda869" mask="url(#l5f)"/><path d="M32 4.5 l1.1 2.7 2.7 1.1 -2.7 1.1 -1.1 2.7 -1.1 -2.7 -2.7 -1.1 2.7 -1.1 Z" fill="#cda869"/><g fill="#d9c9ec" transform="translate(22 44)"><path d="M0 -18 C-4.2 -7.6 -2.4 -1 0 0 C2.4 -1 4.2 -7.6 0 -18 Z" transform="rotate(0)"/><path d="M0 -18 C-4.2 -7.6 -2.4 -1 0 0 C2.4 -1 4.2 -7.6 0 -18 Z" transform="rotate(25)"/><path d="M0 -18 C-4.2 -7.6 -2.4 -1 0 0 C2.4 -1 4.2 -7.6 0 -18 Z" transform="rotate(-25)"/><path d="M0 -15 C-4.2 -6.3 -2.4 -1 0 0 C2.4 -1 4.2 -6.3 0 -15 Z" transform="rotate(50)"/><path d="M0 -15 C-4.2 -6.3 -2.4 -1 0 0 C2.4 -1 4.2 -6.3 0 -15 Z" transform="rotate(-50)"/></g></svg></span></span><b>Lunaris Medical Clinic</b></div>
+        <div class="fb"><span class="brand"><span class="mk" aria-hidden="true"><img src="brand/lunaris-logo.png" alt="" aria-hidden="true" style="height:32px;width:auto;display:block"></span></span><b>Lunaris Medical Clinic</b></div>
         <p lang="es">Medicina familiar del mismo día y de rutina. Clínica principal en Caguas,
         satélite en Metaporphosis. Médicos certificados, la mayoría de los seguros aceptados.</p>
         <p lang="en">Same-day and routine family medicine. Caguas main clinic, Metaporphosis satellite.
