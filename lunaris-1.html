@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>(function(){var l=null;try{l=localStorage.getItem('lunarisLang')}catch(e){}l=l==='en'?'en':'es';var d=document.documentElement;d.setAttribute('lang',l);d.setAttribute('data-lang',l);})();</script>
 <title>Lunaris Medical Clinic — Concepto 1: Sereno</title>
-<meta name="description" content="Lunaris Medical Clinic es una práctica de medicina familiar certificada en Caguas: exámenes físicos anuales, citas de enfermedad el mismo día, cuidado crónico y telemedicina.">
+<meta name="description" content="Lunaris Medical Clinic es una práctica de medicina familiar certificada en Caguas: exámenes físicos anuales, cuidado crónico y telemedicina.">
 <link rel="icon" type="image/png" href="brand/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -277,10 +277,16 @@ img{max-width:100%}
 .plans{font-size:1.24rem;line-height:2;max-width:60ch}
 .plans b{font-weight:400}
 .plans .sep{color:var(--oak);padding:0 8px}
+.ins-group{margin-bottom:34px}
+.ins-group:last-of-type{margin-bottom:0}
+.ins-label{display:block;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:14px}
+.ins-accepted .plans b{font-weight:650;color:var(--ink)}
+.plans-pending{font-size:1.06rem;line-height:1.95;color:var(--ink-soft)}
+.ins-note{font-family:var(--sans);font-size:.9rem;font-style:italic;color:var(--ink-soft);margin-top:10px}
 
 /* ---------- locations ---------- */
 
-.locs{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule)}
+.locs{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--rule)}
 .loc{padding:44px 48px 44px 0;border-right:1px solid var(--rule)}
 .locs .loc:last-child{padding:44px 0 44px 48px;border-right:0}
 .loc h3{font-size:1.5rem;margin-bottom:.2em}
@@ -432,7 +438,6 @@ html[data-lang="en"] [lang="es"]{display:none!important}
       <li><a href="#practice"><span lang="es">La Práctica</span><span lang="en">The Practice</span></a></li>
       <li><a href="#services"><span lang="es">Servicios</span><span lang="en">Services</span></a></li>
       <li><a href="#doctors"><span lang="es">Nuestros Médicos</span><span lang="en">Meet Our Doctors</span></a></li>
-      <li><a href="#reviews"><span lang="es">Voces de Pacientes</span><span lang="en">Patient Voices</span></a></li>
       <li><a href="#insurance"><span lang="es">Seguros</span><span lang="en">Insurance</span></a></li>
       <li><a href="#visit"><span lang="es">Visítenos</span><span lang="en">Visit Us</span></a></li>
     </ul>
@@ -449,15 +454,13 @@ html[data-lang="en"] [lang="es"]{display:none!important}
       <li><a href="#practice"><span lang="es">La Práctica</span><span lang="en">The Practice</span></a></li>
       <li><a href="#services"><span lang="es">Servicios</span><span lang="en">Services</span></a></li>
       <li><a href="#doctors"><span lang="es">Nuestros Médicos</span><span lang="en">Meet Our Doctors</span></a></li>
-      <li><a href="#reviews"><span lang="es">Voces de Pacientes</span><span lang="en">Patient Voices</span></a></li>
       <li><a href="#insurance"><span lang="es">Seguros</span><span lang="en">Insurance</span></a></li>
       <li><a href="#visit"><span lang="es">Visítenos</span><span lang="en">Visit Us</span></a></li>
     </ul>
   </nav>
   <div class="ov-foot">
     <p style="margin-bottom:14px"><button class="lang-toggle" type="button"><span lang="es">English</span><span lang="en">Español</span></button></p>
-    <p>Caguas <a href="tel:+17871234567"><strong>(787) 123-4567</strong></a><br>
-    Metaporphosis <a href="tel:+17872488417"><strong>(787) 248-8417</strong></a></p>
+    <p>Caguas <a href="tel:+17871234567"><strong>(787) 123-4567</strong></a></p>
     <a class="btn" href="#book" style="width:100%"><span lang="es">Reservar cita</span><span lang="en">Book Appointment</span></a>
   </div>
 </div>
@@ -517,12 +520,11 @@ html[data-lang="en"] [lang="es"]{display:none!important}
           medicina primaria y el bienestar emocional. Una médica de atención primaria y
           una trabajadora social clínica licenciada, bajo un mismo techo en Caguas, con
           paneles limitados para que las citas empiecen a tiempo.</p>
-          <p>Eso significa exámenes físicos anuales sin prisa, citas de enfermedad el
-          mismo día para nuestros propios pacientes, y cuidado crónico — diabetes,
+          <p>Eso significa exámenes físicos anuales sin prisa y cuidado crónico — diabetes,
           presión arterial, tiroides, colesterol — manejado por alguien que recuerda qué
           intentó usted el año pasado y por qué no funcionó.</p>
           <p>Y cuando lo que hace falta es apoyo emocional continuo, nuestra hermana
-          <strong>Metaporphosis Wellness &amp; Counseling</strong> ofrece psicoterapia
+          <strong>Metamorphosis Wellness &amp; Counseling</strong> ofrece psicoterapia
           individual, de pareja y familiar — presencial o virtual. Sanar, crecer,
           transformar.</p>
           <p><a class="link-more" href="#doctors">Conozca a nuestro equipo</a></p>
@@ -532,12 +534,11 @@ html[data-lang="en"] [lang="es"]{display:none!important}
           apart: primary care and emotional wellness. A primary care physician and a
           licensed clinical social worker, under one roof in Caguas, with capped panels
           so appointments run on time.</p>
-          <p>That means annual physicals that are not rushed, same-day sick visits for
-          our own patients, and chronic care — diabetes, blood pressure, thyroid,
+          <p>That means annual physicals that are not rushed and chronic care — diabetes, blood pressure, thyroid,
           cholesterol — managed by someone who remembers what you tried last year and
           why it did not work.</p>
           <p>And when what you need is ongoing emotional support, our sister practice
-          <strong>Metaporphosis Wellness &amp; Counseling</strong> offers individual,
+          <strong>Metamorphosis Wellness &amp; Counseling</strong> offers individual,
           couples, and family therapy — in person or virtual. Heal, grow, transform.</p>
           <p><a class="link-more" href="#doctors">Meet our team</a></p>
         </div>
@@ -591,8 +592,8 @@ html[data-lang="en"] [lang="es"]{display:none!important}
       </div>
 
       <div class="svc-sub">
-        <span class="label"><span lang="es">Metaporphosis Wellness &amp; Counseling</span><span lang="en">Metaporphosis Wellness &amp; Counseling</span></span>
-        <h2><span lang="es">Servicios de Metaporphosis</span><span lang="en">Metaporphosis Services</span></h2>
+        <span class="label"><span lang="es">Metamorphosis Wellness &amp; Counseling</span><span lang="en">Metamorphosis Wellness &amp; Counseling</span></span>
+        <h2><span lang="es">Servicios de Metamorphosis</span><span lang="en">Metamorphosis Services</span></h2>
         <p class="svc-sub-note"><span lang="es">Bienestar y consejería — nuestra práctica hermana.</span><span lang="en">Wellness &amp; counseling — our sister practice.</span></p>
       </div>
 
@@ -651,9 +652,9 @@ html[data-lang="en"] [lang="es"]{display:none!important}
     <div class="wrap">
       <span class="label"><span lang="es">03 — Nuestros Médicos</span><span lang="en">03 — Meet Our Doctors</span></span>
       <div class="prov">
-        <div class="portrait"><img src="photos/morayma.jpg" alt="Dra. Morayma Rivera Nieves"></div>
+        <div class="portrait"><img src="photos/morayma.jpg" alt="Dra. Morayma E. Rivera Nieves"></div>
         <div>
-          <h3>Dra. Morayma Rivera Nieves</h3>
+          <h3>Dra. Morayma E. Rivera Nieves</h3>
           <p class="cred"><span lang="es">Medicina primaria · Certificada</span><span lang="en">Primary Care Physician · Board Certified</span></p>
           <p lang="es">Médica de atención primaria dedicada al cuidado integral de adultos y familias — prevención, condiciones crónicas y la salud del día a día, con tiempo para escuchar.</p>
           <p lang="en">Primary care physician devoted to whole-person care for adults and families — prevention, chronic conditions, and everyday health, with time to listen.</p>
@@ -675,7 +676,7 @@ html[data-lang="en"] [lang="es"]{display:none!important}
           <dl>
             <div><dt><span lang="es">Enfoque</span><span lang="en">Focus</span></dt><dd><span lang="es">Salud mental y bienestar</span><span lang="en">Mental health &amp; wellness</span></dd></div>
             <div><dt><span lang="es">Idiomas</span><span lang="en">Languages</span></dt><dd>Español, English</dd></div>
-            <div><dt><span lang="es">Oficina</span><span lang="en">Location</span></dt><dd>Lunaris &amp; Metaporphosis</dd></div>
+            <div><dt><span lang="es">Oficina</span><span lang="en">Location</span></dt><dd>Lunaris &amp; Metamorphosis</dd></div>
           </dl>
           <a class="link-more" href="#book"><span lang="es">Reservar con la Lcda. Santiago</span><span lang="en">Book with Lcda. Santiago</span></a>
         </div>
@@ -683,54 +684,22 @@ html[data-lang="en"] [lang="es"]{display:none!important}
     </div>
   </section>
 
-  <!-- REVIEWS -->
-  <section class="section quotes" id="reviews">
-    <div class="wrap">
-      <div class="pull">
-        <div class="rating">
-          <span class="num">4.9</span>
-          <span class="stars" aria-hidden="true">★★★★★</span>
-          <span class="cnt"><span lang="es">Promedio de 812 reseñas verificadas de pacientes</span><span lang="en">Average of 812 verified patient reviews</span></span>
-        </div>
-        <blockquote lang="es">"Llamé a las ocho de la mañana por la fiebre de mi hijo y nos
-        atendieron antes del mediodía. Nadie me hizo sentir que estaba exagerando."</blockquote>
-        <blockquote lang="en">"I called at eight in the morning about my son's fever and we were
-        seen before lunch. Nobody made me feel like I was overreacting."</blockquote>
-        <cite><span lang="es">Marisol T. · Paciente desde 2016</span><span lang="en">Marisol T. · Patient since 2016</span></cite>
-      </div>
-      <div class="mini-quotes">
-        <div>
-          <p lang="es">"Aquí encontraron un problema de tiroides que otros dos
-          médicos habían pasado por alto. Sí leen el expediente antes de entrar."</p>
-          <p lang="en">"They caught a thyroid problem two other doctors had missed. They actually read the chart before walking in."</p>
-          <span class="who"><span lang="es">Daniel W. · Desde 2019</span><span lang="en">Daniel W. · Since 2019</span></span>
-        </div>
-        <div>
-          <p lang="es">"Un seguimiento por telemedicina me tomó once minutos en mi hora de
-          almuerzo en vez de medio día libre del trabajo."</p>
-          <p lang="en">"A telehealth follow-up took eleven minutes on my lunch break instead of
-          half a day off work."</p>
-          <span class="who"><span lang="es">Priya R. · Desde 2021</span><span lang="en">Priya R. · Since 2021</span></span>
-        </div>
-        <div>
-          <p lang="es">"Mi madre tiene 84 años y nunca hablan por encima de ella conmigo.
-          Eso es más raro de lo que debería ser."</p>
-          <p lang="en">"My mother is 84 and they never talk over her to me. That is rarer than
-          it should be."</p>
-          <span class="who"><span lang="es">Anne-Marie C. · Desde 2009</span><span lang="en">Anne-Marie C. · Since 2009</span></span>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- reviews section removed: no reviews yet -->
 
   <!-- INSURANCE -->
   <section class="section tight" id="insurance">
     <div class="wrap cols">
       <div class="sticky"><span class="label"><span lang="es">04 — Seguros</span><span lang="en">04 — Insurance</span></span></div>
       <div>
-        <p class="plans">
-          <b>Aetna</b> <span class="sep">·</span> <b>Blue Cross Blue Shield</b> <span class="sep">·</span> <b>Cigna</b> <span class="sep">·</span> <b>Humana</b> <span class="sep">·</span> <b>Medicare</b> <span class="sep">·</span> <b>Medicaid</b> <span class="sep">·</span> <b>UnitedHealthcare</b> <span class="sep">·</span> <b>Tricare</b>
-        </p>
+        <div class="ins-group ins-accepted">
+          <span class="ins-label"><span lang="es">Aceptados ahora</span><span lang="en">Accepted now</span></span>
+          <p class="plans"><b>MMM</b> <span class="sep">·</span> <b>MCS Advantage</b> <span class="sep">·</span> <b>MCS Comercial</b></p>
+        </div>
+        <div class="ins-group">
+          <span class="ins-label"><span lang="es">En proceso de contratación</span><span lang="en">Contracting in progress</span></span>
+          <p class="plans plans-pending">Vital TS <span class="sep">·</span> Triple S Advantage <span class="sep">·</span> Tricare <span class="sep">·</span> Mapfre <span class="sep">·</span> Asociación de Maestros <span class="sep">·</span> Vital MMM <span class="sep">·</span> Vital First Medical <span class="sep">·</span> Vital Menonita <span class="sep">·</span> Plan Médico Menonita <span class="sep">·</span> Buena Vista <span class="sep">·</span> Triple S Comercial</p>
+          <p class="ins-note"><span lang="es">Estos planes están pendientes de aprobación — llámenos para confirmar antes de su cita.</span><span lang="en">These plans are pending approval — call us to confirm before your visit.</span></p>
+        </div>
         <p style="color:var(--ink-soft);max-width:52ch;font-size:1rem" lang="es">Los planes y
         las redes cambian constantemente. Llame a recepción con su número de asegurado
         antes de su primera visita y verificaremos su cubierta mientras está en la línea.
@@ -757,36 +726,16 @@ html[data-lang="en"] [lang="es"]{display:none!important}
           <p class="kind"><span lang="es">Clínica principal</span><span lang="en">Main clinic</span></p>
           <address>Caguas, Puerto Rico</address>
           <table lang="es">
-            <tr><td>Lun – Jue</td><td>7:30 am – 6:00 pm</td></tr>
-            <tr><td>Viernes</td><td>7:30 am – 4:00 pm</td></tr>
-            <tr><td>Sábado</td><td>8:00 am – 12:00 pm</td></tr>
+            <tr><td>Lun – Vie</td><td>8:00 am – 5:00 pm</td></tr>
+            <tr><td>Sábado</td><td>Cerrado</td></tr>
             <tr><td>Domingo</td><td>Cerrado</td></tr>
           </table>
           <table lang="en">
-            <tr><td>Mon – Thu</td><td>7:30 am – 6:00 pm</td></tr>
-            <tr><td>Friday</td><td>7:30 am – 4:00 pm</td></tr>
-            <tr><td>Saturday</td><td>8:00 am – 12:00 pm</td></tr>
+            <tr><td>Mon – Fri</td><td>8:00 am – 5:00 pm</td></tr>
+            <tr><td>Saturday</td><td>Closed</td></tr>
             <tr><td>Sunday</td><td>Closed</td></tr>
           </table>
           <p><a class="link-more" href="tel:+17871234567">(787) 123-4567</a></p>
-        </div>
-        <div class="loc">
-          <h3 style="display:flex;align-items:center;gap:9px"><svg viewBox="0 0 48 44" width="28" height="26" aria-hidden="true"><g fill="#7c5f9e"><ellipse cx="15.5" cy="16" rx="9.5" ry="11.5" transform="rotate(-20 15.5 16)"/><ellipse cx="32.5" cy="16" rx="9.5" ry="11.5" transform="rotate(20 32.5 16)"/><ellipse cx="17.5" cy="31" rx="7" ry="8.5" transform="rotate(22 17.5 31)"/><ellipse cx="30.5" cy="31" rx="7" ry="8.5" transform="rotate(-22 30.5 31)"/></g><ellipse cx="24" cy="23" rx="2" ry="12" fill="#b98d4f"/><path d="M24 12 C22 7 19.5 5 16.5 4.2 M24 12 C26 7 28.5 5 31.5 4.2" fill="none" stroke="#b98d4f" stroke-width="1.5" stroke-linecap="round"/><circle cx="16.5" cy="4.2" r="1.3" fill="#b98d4f"/><circle cx="31.5" cy="4.2" r="1.3" fill="#b98d4f"/></svg><span>Metaporphosis</span></h3>
-          <p class="kind">Wellness &amp; Counseling · Sanar · Crecer · Transformar</p>
-          <address><span lang="es">Servicios presenciales y virtuales</span><span lang="en">In-person and virtual services</span></address>
-          <table lang="es">
-            <tr><td>Psicoterapia individual</td><td>Presencial / virtual</td></tr>
-            <tr><td>Terapia de pareja y familia</td><td>Presencial / virtual</td></tr>
-            <tr><td>Ansiedad y estrés</td><td>Presencial / virtual</td></tr>
-            <tr><td>Duelo y crecimiento personal</td><td>Presencial / virtual</td></tr>
-          </table>
-          <table lang="en">
-            <tr><td>Individual psychotherapy</td><td>In person / virtual</td></tr>
-            <tr><td>Couples &amp; family therapy</td><td>In person / virtual</td></tr>
-            <tr><td>Anxiety &amp; stress</td><td>In person / virtual</td></tr>
-            <tr><td>Grief &amp; personal growth</td><td>In person / virtual</td></tr>
-          </table>
-          <p><a class="link-more" href="tel:+17872488417">(787) 248-8417</a> · <a class="link-more" href="mailto:metaporphosis.wellness@gmail.com">metaporphosis.wellness@gmail.com</a></p>
         </div>
       </div>
 
@@ -794,10 +743,10 @@ html[data-lang="en"] [lang="es"]{display:none!important}
         <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);max-width:24ch"><span lang="es">Reserve una cita</span><span lang="en">Book an appointment</span></h2>
         <p style="color:var(--ink-soft);max-width:52ch" lang="es">Pacientes nuevos y
         establecidos pueden reservar en línea a través de nuestro portal de pacientes, o
-        llamar a Lunaris o a Metaporphosis y hablar con una persona — no usamos
+        llamar a Lunaris y hablar con una persona — no usamos
         contestadora automática.</p>
         <p style="color:var(--ink-soft);max-width:52ch" lang="en">New and established patients can
-        book online through our patient portal, or call Lunaris or Metaporphosis and speak to a
+        book online through our patient portal, or call Lunaris and speak to a
         person — we do not use a phone tree.</p>
         <div class="hero-cta">
           <a class="btn" href="#book"><span lang="es">Reservar en el portal de pacientes</span><span lang="en">Book in the patient portal</span></a>
@@ -838,7 +787,7 @@ html[data-lang="en"] [lang="es"]{display:none!important}
         <h4><span lang="es">Cuidado</span><span lang="en">Care</span></h4>
         <ul>
           <li><a href="#services"><span lang="es">Exámenes físicos anuales</span><span lang="en">Annual physicals</span></a></li>
-          <li><a href="#services"><span lang="es">Citas el mismo día</span><span lang="en">Same-day sick visits</span></a></li>
+          <li><a href="#services"><span lang="es">Evaluaciones preventivas</span><span lang="en">Preventive screenings</span></a></li>
           <li><a href="#services"><span lang="es">Cuidado crónico</span><span lang="en">Chronic care</span></a></li>
           <li><a href="#services"><span lang="es">Telemedicina</span><span lang="en">Telehealth</span></a></li>
         </ul>
@@ -848,7 +797,6 @@ html[data-lang="en"] [lang="es"]{display:none!important}
         <ul>
           <li><a href="#doctors"><span lang="es">Nuestros médicos</span><span lang="en">Meet our doctors</span></a></li>
           <li><a href="#insurance"><span lang="es">Seguros</span><span lang="en">Insurance</span></a></li>
-          <li><a href="#reviews"><span lang="es">Reseñas de pacientes</span><span lang="en">Patient reviews</span></a></li>
           <li><a href="#book"><span lang="es">Portal de pacientes</span><span lang="en">Patient portal</span></a></li>
         </ul>
       </div>
@@ -856,14 +804,12 @@ html[data-lang="en"] [lang="es"]{display:none!important}
         <h4><span lang="es">Contacto</span><span lang="en">Contact</span></h4>
         <ul>
           <li>Caguas <a href="tel:+17871234567">(787) 123-4567</a></li>
-          <li>Metaporphosis <a href="tel:+17872488417">(787) 248-8417</a></li>
-          <li>Fax (787) 123-4568</li>
         </ul>
       </div>
     </div>
     <div class="fine">
-      <span lang="es">Borrador de diseño para Lunaris Medical Clinic. Nombres, médicos, reseñas y datos de contacto son ejemplos.</span>
-      <span lang="en">Design draft for Lunaris Medical Clinic. Names, providers, reviews, and contact details are placeholders.</span>
+      <span lang="es">Borrador de diseño para Lunaris Medical Clinic. Nombres, médicos y datos de contacto son ejemplos.</span>
+      <span lang="en">Design draft for Lunaris Medical Clinic. Names, providers, and contact details are placeholders.</span>
       <span><span lang="es">Prácticas de Privacidad · Accesibilidad · No Discriminación</span><span lang="en">Privacy Practices · Accessibility · Nondiscrimination</span></span>
     </div>
   </div>
