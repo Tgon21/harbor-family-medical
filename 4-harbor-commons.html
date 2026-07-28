@@ -81,9 +81,9 @@ a{color:var(--pine);text-decoration:none}
   display:grid;place-items:center;font-family:var(--serif);font-size:23px;font-weight:700;
 }
 .brand b{display:block;font-family:var(--serif);font-size:20px;font-weight:700;line-height:1.2}
-.brand small{font-size:12px;font-weight:600;color:var(--ink-soft);letter-spacing:.03em}
+.brand small{font-size:12px;font-weight:600;color:var(--ink-soft);letter-spacing:.03em;white-space:nowrap}
 .dnav{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:15.5px;font-weight:600}
-.dnav a{color:var(--ink-soft);padding:6px 0;border-bottom:2px solid transparent}
+.dnav a{color:var(--ink-soft);padding:6px 0;border-bottom:2px solid transparent;white-space:nowrap}
 .dnav a:hover{color:var(--pine);border-bottom-color:var(--sun)}
 .hdr-phone{
   display:flex;align-items:center;gap:11px;background:var(--paper);border:1px solid var(--line);
@@ -106,7 +106,7 @@ a{color:var(--pine);text-decoration:none}
 .drawer-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
 .drawer nav ul{list-style:none;margin:0 0 26px;padding:0}
 .drawer nav a{display:block;font-family:var(--serif);font-size:21px;font-weight:700;padding:14px 0;border-bottom:1px solid var(--line)}
-.drawer .d-call{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:12px}
+.drawer .d-call{display:block;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:12px}
 .drawer .d-call b{display:block;font-size:17px}
 .drawer .d-call small{color:var(--ink-soft);font-size:12.5px;font-weight:600}
 
@@ -135,6 +135,7 @@ a{color:var(--pine);text-decoration:none}
 }
 .mosaic .ph{border-radius:var(--r)}
 .m1{grid-row:span 2;border-radius:var(--r)}
+.m4{grid-column:2/4} /* fill the second row completely — no empty cell */
 .hero-card{
   position:relative;z-index:2;background:var(--paper);border:1px solid var(--line);
   border-radius:var(--r);padding:40px 44px 36px;max-width:700px;

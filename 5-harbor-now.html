@@ -277,6 +277,9 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
   .wrap{padding:0 18px}
   .menu-t{display:block}
   .hdr .live{display:none}
+  .hdr .btn{display:none} /* the fixed dual bar carries Book on phones */
+  .brand b{font-size:13px;white-space:nowrap}
+  .hdr-in{min-height:56px;gap:14px}
   .sec{padding:48px 0}
 
   /* ACTION-FIRST: the live panel jumps above the headline on phones */
@@ -768,21 +771,27 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
   (function(){
     var SLOTS = [8*60+20, 9*60+40, 11*60, 13*60+40, 15*60+20, 16*60+40];
     var now = new Date(), mins = now.getHours()*60 + now.getMinutes();
+    var win = BAY[now.getDay()];
+    var preOpen = !!win && mins < win[0];            // clinic opens later today
+    var doneForDay = !preOpen && !state(BAY, now).open; // after close, or closed all day
     var strip = document.getElementById('slotStrip'), left = 0;
     SLOTS.forEach(function(s){
       var el = document.createElement('span');
       el.textContent = fmt(s);
-      if (s <= mins + 30){ el.className = 'gone'; el.title = 'No longer bookable today'; }
+      var gone = doneForDay || (!preOpen && s <= mins + 30);
+      if (gone){ el.className = 'gone'; el.title = 'No longer bookable today'; }
       else { left++; }
       strip.appendChild(el);
     });
-    var open = state(BAY, now).open;
-    document.getElementById('slotsLeft').textContent = open ? left : 0;
-    if (!open || left === 0){
-      document.getElementById('slotsLeft').textContent = '0';
+    if (doneForDay) left = 0;
+    document.getElementById('slotsLeft').textContent = left;
+    var noteText = preOpen ? 'Slots release at 7:00 am — first come, first served.'
+                 : left === 0 ? 'Today is closed out. Next same-day slots release at 7:00 am.'
+                 : '';
+    if (noteText){
       var note = document.createElement('p');
       note.className = 'note';
-      note.textContent = 'Today is closed out. Next same-day slots release at 7:00 am.';
+      note.textContent = noteText;
       strip.parentNode.appendChild(note);
     }
   })();
