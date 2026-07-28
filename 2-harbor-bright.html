@@ -6,6 +6,9 @@
 <title>Harbor Family Medical — Concept 2: Harbor Bright</title>
 <meta name="description" content="Harbor Family Medical cares for every age in Bayview — physicals, same-day sick visits, vaccines, chronic care, and telehealth. Book online in under a minute.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%230a7d8c'/><text x='16' y='23' font-size='18' font-weight='bold' font-family='system-ui' fill='%23ffd166' text-anchor='middle'>H</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap">
 <style>
 /* ============================================================
    CONCEPT 2 — "HARBOR BRIGHT"
@@ -33,13 +36,15 @@
   --r-lg:32px;
   --wrap:1180px;
   --sans:"Nunito","Avenir Next",ui-rounded,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --display:"Baloo 2","Nunito",ui-rounded,system-ui,sans-serif;
   --sh:0 10px 28px -14px rgba(22,48,58,.28);
 }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--white);color:var(--ink);font:400 17px/1.68 var(--sans);-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{font-weight:800;line-height:1.16;letter-spacing:-.02em;margin:0 0 .5em}
+h1,h2,h3,h4{font-family:var(--display);font-weight:700;line-height:1.16;letter-spacing:-.01em;margin:0 0 .5em}
+h1{font-weight:800}
 p{margin:0 0 1em}
 a{color:var(--teal-dk);text-decoration:none}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
@@ -104,6 +109,11 @@ a{color:var(--teal-dk);text-decoration:none}
 .hero h1 em::after{
   content:"";position:absolute;left:0;right:0;bottom:4px;height:9px;
   background:var(--sun);border-radius:6px;z-index:-1;
+}
+/* the marker draws itself under "don't mind" once the page settles */
+@media (prefers-reduced-motion:no-preference){
+  .hero h1 em::after{transform:scaleX(0);transform-origin:left;animation:markline .55s .45s cubic-bezier(.2,.7,.2,1) forwards}
+  @keyframes markline{to{transform:scaleX(1)}}
 }
 .hero .lede{font-size:1.16rem;color:var(--ink-soft);max-width:44ch;font-weight:500}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 22px}
@@ -353,7 +363,7 @@ footer .fine{padding-top:22px;font-size:12.5px;color:#8fc0c7}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  *{transition:none!important}
+  *{transition:none!important;animation:none!important}
 }
 </style>
 </head>

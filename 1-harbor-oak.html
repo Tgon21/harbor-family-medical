@@ -6,6 +6,9 @@
 <title>Harbor Family Medical — Concept 1: Harbor &amp; Oak</title>
 <meta name="description" content="Harbor Family Medical is a board-certified family medicine practice in Bayview offering annual physicals, same-day sick visits, chronic care, and telehealth.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2323201c'/><text x='16' y='23' font-size='19' font-family='Georgia,serif' fill='%23fbf8f3' text-anchor='middle'>H</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&display=swap">
 <style>
 /* ============================================================
    CONCEPT 1 — "HARBOR & OAK"
@@ -24,6 +27,7 @@
   --oak:#8a7355;
   --wrap:1180px;
   --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --display:"Fraunces","Iowan Old Style",Palatino,Georgia,serif;
   --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
 }
@@ -35,7 +39,8 @@ body{
   font:400 18px/1.7 var(--serif);
   -webkit-font-smoothing:antialiased;
 }
-h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.14;letter-spacing:-.012em;margin:0 0 .55em}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;line-height:1.14;letter-spacing:-.012em;margin:0 0 .55em}
+h1{font-weight:560;font-variation-settings:"opsz" 100}
 p{margin:0 0 1.15em}
 a{color:var(--ink);text-decoration:none}
 img{max-width:100%}
@@ -47,6 +52,14 @@ img{max-width:100%}
   font-family:var(--sans);font-size:11px;font-weight:600;
   text-transform:uppercase;letter-spacing:.19em;color:var(--brass);
   margin:0 0 1.6em;display:block;
+}
+/* chart-sounding ticks — the recurring identity mark, like a depth scale on a harbor chart */
+.label::after{
+  content:"";display:block;margin-top:11px;width:64px;height:8px;
+  background:
+    repeating-linear-gradient(90deg,var(--oak) 0 1px,transparent 1px 8px) 0 0/64px 5px no-repeat,
+    repeating-linear-gradient(90deg,var(--oak) 0 1px,transparent 1px 16px) 0 0/64px 8px no-repeat;
+  opacity:.75;
 }
 
 .skip{position:absolute;left:-9999px;background:var(--ink);color:var(--bone);padding:12px 18px;z-index:80;font-family:var(--sans)}
@@ -204,7 +217,7 @@ img{max-width:100%}
 .quotes{background:var(--bone-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .pull{max-width:900px;margin:0 auto;text-align:center}
 .pull blockquote{
-  font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,3.4vw,2.5rem);
+  font-family:var(--display);font-style:italic;font-size:clamp(1.6rem,3.4vw,2.5rem);
   line-height:1.35;margin:0 0 30px;
 }
 .pull cite{font-family:var(--sans);font-style:normal;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
@@ -322,9 +335,15 @@ footer .fine{padding-top:26px;color:#8f8578;font-size:12.5px;display:flex;justif
   footer{padding-bottom:96px}
 }
 
+/* one orchestrated moment: the hero card settles into place */
+@media (prefers-reduced-motion:no-preference){
+  .hero-card{animation:rise .7s .08s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}}
+}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  *{transition:none!important}
+  *{transition:none!important;animation:none!important}
   .sticky-book{transform:none}
 }
 </style>

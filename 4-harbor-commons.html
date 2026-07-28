@@ -6,6 +6,9 @@
 <title>Harbor Family Medical — Concept 4: Harbor Commons</title>
 <meta name="description" content="Your neighbors' family doctor since 2004. Harbor Family Medical serves Bayview and Northgate with primary care for every generation.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231f4436'/><text x='16' y='23' font-size='18' font-family='Georgia,serif' fill='%23f6f1e7' text-anchor='middle'>H</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,600;0,700;1,500&family=Caveat:wght@600&display=swap">
 <style>
 /* ============================================================
    CONCEPT 4 — "HARBOR COMMONS"
@@ -30,7 +33,8 @@
   --line:#ded2bd;
   --r:14px;
   --wrap:1160px;
-  --serif:"Charter","Bitstream Charter","Georgia",Cambria,"Times New Roman",serif;
+  --serif:"Bitter","Charter","Bitstream Charter","Georgia",Cambria,"Times New Roman",serif;
+  --hand:"Caveat","Segoe Script",cursive;
   --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 
@@ -225,7 +229,7 @@ a{color:var(--pine);text-decoration:none}
   width:13px;height:13px;border-radius:50%;background:var(--brick);
   box-shadow:0 2px 4px rgba(0,0,0,.25);
 }
-.note .when{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--brick);display:block;margin-bottom:8px}
+.note .when{font-family:var(--hand);font-size:19px;font-weight:600;letter-spacing:.01em;color:var(--brick);display:block;margin-bottom:6px;line-height:1.2}
 .note h4{font-size:1.08rem;margin-bottom:.35em}
 .note p{font-size:.94rem;color:var(--ink-soft);margin:0}
 
@@ -343,7 +347,17 @@ footer .fine{padding-top:22px;font-size:13px;color:#8fada2}
   footer .c4{grid-template-columns:1fr;gap:26px}
 }
 
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+/* milestones surface as the timeline scrolls into view; reduced-motion users see them immediately */
+@media (prefers-reduced-motion:no-preference){
+  .tl-item{opacity:0;transform:translateY(12px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1)}
+  .tl-item.in{opacity:1;transform:none}
+  .tl-item:nth-child(2){transition-delay:.08s}
+  .tl-item:nth-child(3){transition-delay:.16s}
+  .tl-item:nth-child(4){transition-delay:.24s}
+  .tl-item:nth-child(5){transition-delay:.32s}
+}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
@@ -836,6 +850,16 @@ footer .fine{padding-top:22px;font-size:13px;color:#8fada2}
   scrim.addEventListener('click', function(){ set('false'); });
   dr.addEventListener('click', function(e){ if (e.target.tagName === 'A' && e.target.getAttribute('href').charAt(0) === '#') set('false'); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && dr.dataset.open === 'true') set('false'); });
+
+  var items = document.querySelectorAll('.tl-item');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {threshold:.25});
+    items.forEach(function(el){ io.observe(el); });
+  } else {
+    items.forEach(function(el){ el.classList.add('in'); });
+  }
 })();
 </script>
 

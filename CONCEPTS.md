@@ -532,8 +532,10 @@ on transparency of price and availability.
 
 ## Shared implementation notes
 
-All five are single self-contained HTML files. No build step, no external requests, no
-fonts or scripts fetched from a CDN — they work offline and on any static host.
+All five are single self-contained HTML files with no build step. Each loads one
+Google Fonts pairing chosen for its concept (Fraunces / Baloo 2 + Nunito / Inter +
+JetBrains Mono / Bitter + Caveat / Oswald) with full system-font fallbacks — no other
+external requests, so they degrade gracefully offline and on any static host.
 
 Common to every concept:
 

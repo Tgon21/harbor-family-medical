@@ -6,6 +6,9 @@
 <title>Harbor Family Medical — Concept 5: Harbor Now</title>
 <meta name="description" content="Same-day appointments in Bayview. See a board-certified family doctor today — book in three taps or call (555) 214-0880.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23111111'/><rect x='6' y='14' width='20' height='4' fill='%23f2560a'/><rect x='14' y='6' width='4' height='20' fill='%23f2560a'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&display=swap">
 <style>
 /* ============================================================
    CONCEPT 5 — "HARBOR NOW"
@@ -28,14 +31,16 @@
   --ink-3:#6e6e73;
   --wrap:1200px;
   --sans:"Helvetica Neue",Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --board:"Oswald","Helvetica Neue",Arial Narrow,sans-serif;
   --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
 }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--wht);color:var(--blk);font:400 17px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-weight:700;line-height:1.03;letter-spacing:-.035em;margin:0 0 .4em;text-transform:uppercase}
-h3{letter-spacing:-.02em}
+/* departure-board type: condensed, upright, slightly tracked-out like harbor signage */
+h1,h2,h3{font-family:var(--board);font-weight:600;line-height:1.02;letter-spacing:.005em;margin:0 0 .4em;text-transform:uppercase}
+h3{letter-spacing:.01em}
 p{margin:0 0 .9em}
 a{color:var(--blk);text-decoration:none}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
@@ -56,7 +61,7 @@ a{color:var(--blk);text-decoration:none}
 .brand .mk::before,.brand .mk::after{content:"";position:absolute;background:var(--sig)}
 .brand .mk::before{left:0;right:0;top:11px;height:4px}
 .brand .mk::after{top:0;bottom:0;left:11px;width:4px}
-.brand b{font-size:15px;font-weight:700;letter-spacing:-.01em;text-transform:uppercase}
+.brand b{font-family:var(--board);font-size:16px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
 .dnav{display:flex;gap:24px;list-style:none;margin:0;padding:0}
 .dnav a{color:#b9b9bf;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.13em;text-transform:uppercase}
 .dnav a:hover{color:var(--wht)}
@@ -76,7 +81,7 @@ a{color:var(--blk);text-decoration:none}
 
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  font-family:inherit;font-size:17px;font-weight:700;letter-spacing:.01em;text-transform:uppercase;
+  font-family:var(--board);font-size:17px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
   padding:19px 30px;min-height:60px;border:3px solid var(--sig);background:var(--sig);color:var(--wht);
   cursor:pointer;border-radius:2px;transition:background .14s;
 }
@@ -104,7 +109,7 @@ a{color:var(--blk);text-decoration:none}
 .stat{padding:18px 0;border-bottom:1px solid var(--line-2)}
 .stat:last-child{border-bottom:0}
 .stat .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8a8a92;display:block;margin-bottom:7px}
-.stat .v{font-size:2.15rem;font-weight:700;letter-spacing:-.035em;line-height:1}
+.stat .v{font-family:var(--board);font-size:2.3rem;font-weight:600;letter-spacing:.01em;line-height:1;text-transform:uppercase}
 .stat .v small{font-size:.95rem;font-weight:400;letter-spacing:0;color:#c4c4ca;text-transform:none}
 .stat .v.open{color:#2ecc71}
 .stat .v.shut{color:var(--sig)}
@@ -121,7 +126,7 @@ a{color:var(--blk);text-decoration:none}
 .steps{background:var(--off);border-bottom:1px solid var(--line)}
 .steps-in{display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:0;align-items:stretch}
 .steps .lbl{padding:26px 28px 26px 0;display:flex;align-items:center}
-.steps .lbl b{font-size:1.4rem;font-weight:700;letter-spacing:-.03em;text-transform:uppercase;line-height:1.05}
+.steps .lbl b{font-family:var(--board);font-size:1.5rem;font-weight:600;letter-spacing:.01em;text-transform:uppercase;line-height:1.05}
 .step{padding:26px 26px;border-left:1px solid var(--line);display:flex;gap:14px;align-items:flex-start}
 .step .n{
   font-family:var(--mono);font-size:12px;font-weight:600;width:26px;height:26px;flex:none;
@@ -183,7 +188,7 @@ a{color:var(--blk);text-decoration:none}
 
 /* rating: one enormous number */
 .score{display:grid;grid-template-columns:auto 1fr;gap:44px;align-items:center}
-.score .big{font-size:clamp(5rem,13vw,9.5rem);font-weight:700;letter-spacing:-.055em;line-height:.85}
+.score .big{font-family:var(--board);font-size:clamp(5rem,13vw,9.5rem);font-weight:600;letter-spacing:-.01em;line-height:.85}
 .score .st{color:var(--sig);font-size:1.35rem;letter-spacing:.12em;margin-top:6px}
 .score .qs{display:grid;gap:14px}
 .score blockquote{margin:0;padding-left:20px;border-left:3px solid var(--blk);font-size:1.06rem}
@@ -302,6 +307,16 @@ footer .fine{padding-top:20px;font-size:12.5px;color:#6a6a72}
   .dual{display:flex}
   footer{padding-bottom:100px}
   footer .c4{grid-template-columns:1fr;gap:24px}
+}
+
+/* the board populates row by row on load, like a station display updating */
+@media (prefers-reduced-motion:no-preference){
+  .board-r .stat{opacity:0;transform:translateY(10px);animation:statin .5s cubic-bezier(.2,.7,.2,1) forwards}
+  .board-r .stat:nth-child(1){animation-delay:.05s}
+  .board-r .stat:nth-child(2){animation-delay:.15s}
+  .board-r .stat:nth-child(3){animation-delay:.25s}
+  .board-r .stat:nth-child(4){animation-delay:.35s}
+  @keyframes statin{to{opacity:1;transform:none}}
 }
 
 @media (prefers-reduced-motion:reduce){

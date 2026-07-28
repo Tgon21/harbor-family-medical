@@ -21,8 +21,10 @@ CONCEPTS.md             full written design spec
 .nojekyll               serve files as-is on GitHub Pages
 ```
 
-Each concept is one self-contained file — CSS and JS inline, no external requests, no build
-step, no dependencies. They work offline and on any static host.
+Each concept is one self-contained file — CSS and JS inline, no build step. The only
+external dependency is Google Fonts (Fraunces, Baloo 2 + Nunito, Inter + JetBrains Mono,
+Bitter + Caveat, Oswald — one pairing per concept); every page keeps full system-font
+fallbacks, so they still render fine offline.
 
 ## Preview locally
 
