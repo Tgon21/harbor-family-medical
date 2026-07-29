@@ -1,0 +1,46 @@
+name: Deploy
+
+# Push to dev  -> deploys BETA (beta.lunarisclinic.com)
+# Push to main -> deploys PROD (lunarisclinic.com)
+#
+# SSHes into the gen-purpose server and runs the in-repo static deploy script,
+# which hard-resets the env's directory to its branch. Caddy serves it live.
+#
+# Required repo secrets (Settings -> Secrets and variables -> Actions):
+#   VPS_HOST  server IP/hostname   VPS_USER  ssh user (root)
+#   VPS_SSH_KEY  private deploy key VPS_PORT  (optional) ssh port, default 22
+
+on:
+  push:
+    branches: [main, dev]
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Select environment
+        id: env
+        run: |
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            echo "name=prod" >> "$GITHUB_OUTPUT"
+          else
+            echo "name=beta" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Deploy over SSH
+        uses: appleboy/ssh-action@v1.2.5
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT || 22 }}
+          script: |
+            set -e
+            cd /srv/lunaris/${{ steps.env.outputs.name }}
+            git fetch --prune origin
+            git reset --hard origin/${{ github.ref_name }}
+            bash deploy/deploy.sh ${{ steps.env.outputs.name }}
