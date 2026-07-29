@@ -235,7 +235,7 @@ img{max-width:100%}
 
 /* ---------- providers: alternating portrait + long bio ---------- */
 
-.prov{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:58px 0;border-bottom:1px solid var(--rule)}
+.prov{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;padding:58px 0;border-bottom:1px solid var(--rule)}
 .prov:nth-child(even) .portrait{order:2}
 .portrait{
   aspect-ratio:4/5;position:relative;overflow:hidden;
@@ -252,6 +252,10 @@ img{max-width:100%}
 .prov dl div{display:flex;gap:16px;padding:9px 0;border-bottom:1px solid var(--rule)}
 .prov dt{width:132px;flex:none;color:var(--ink-soft)}
 .prov dd{margin:0;font-weight:600}
+.prov-quote{font-family:var(--display);font-style:italic;font-size:1.18rem;line-height:1.5;color:var(--ink);max-width:44ch;margin:.2em 0 1.15em}
+.areas-label{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin:1.2em 0 .7em}
+.areas{list-style:none;margin:0 0 1.7em;padding:0;display:flex;flex-wrap:wrap;gap:7px 8px}
+.areas li{font-family:var(--sans);font-size:12.5px;color:var(--ink-soft);border:1px solid var(--rule);border-radius:2px;padding:5px 11px}
 
 /* ---------- reviews: oversized pull quote ---------- */
 
@@ -591,51 +595,30 @@ html[data-lang="en"] [lang="es"]{display:none!important}
       <div class="svc-sub">
         <span class="label"><span lang="es">Metamorphosis Wellness &amp; Counseling</span><span lang="en">Metamorphosis Wellness &amp; Counseling</span></span>
         <h2><span lang="es">Servicios de Metamorphosis</span><span lang="en">Metamorphosis Services</span></h2>
-        <p class="svc-sub-note"><span lang="es">Bienestar y consejería — nuestra práctica hermana.</span><span lang="en">Wellness &amp; counseling — our sister practice.</span></p>
+        <p class="svc-sub-note"><span lang="es">Bienestar y consejería con la Lcda. Daisy Santiago — presencial y virtual.</span><span lang="en">Wellness &amp; counseling with Lcda. Daisy Santiago — in person and virtual.</span></p>
       </div>
 
       <div class="svc">
         <div class="svc-row">
           <span class="svc-num"><svg class="svc-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.2" fill="none"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0" fill="none"/></svg></span>
           <h3><span lang="es">Psicoterapia Individual</span><span lang="en">Individual Psychotherapy</span></h3>
-          <p lang="es">Espacio confidencial uno a uno para trabajar lo que le pesa, a su ritmo.</p>
-          <p lang="en">A confidential one-on-one space to work through what weighs on you, at your pace.</p>
-          <span class="tag"><span lang="es">Individual</span><span lang="en">Individual</span></span>
+          <p lang="es">Atención personalizada para adolescentes y adultos desde un enfoque basado en evidencia, orientado al bienestar emocional y el crecimiento personal.</p>
+          <p lang="en">Personalized care for adolescents and adults from an evidence-based approach, focused on emotional well-being and personal growth.</p>
+          <span class="tag"><span lang="es">Presencial / Virtual</span><span lang="en">In person / Virtual</span></span>
         </div>
         <div class="svc-row">
-          <span class="svc-num"><svg class="svc-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7.5" cy="9" r="2.5" fill="none"/><path d="M3.3 20a4.2 4.2 0 0 1 8.4 0" fill="none"/> <circle cx="16.5" cy="9" r="2.5" fill="none"/><path d="M12.3 20a4.2 4.2 0 0 1 8.4 0" fill="none"/> <path d="M12 4c.9-1.2 3-.5 3 .9 0 1.1-1.7 2.1-3 2.9-1.3-.8-3-1.8-3-2.9 0-1.4 2.1-2.1 3-.9z" stroke="none" fill="currentColor"/></svg></span>
-          <h3><span lang="es">Terapia de Pareja</span><span lang="en">Couples Therapy</span></h3>
-          <p lang="es">Herramientas para comunicarse mejor, reconectar y sanar la relación juntos.</p>
-          <p lang="en">Tools to communicate better, reconnect, and heal the relationship together.</p>
-          <span class="tag"><span lang="es">En pareja</span><span lang="en">Couples</span></span>
+          <span class="svc-num"><svg class="svc-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12.5" rx="1.8" fill="none"/><path d="M8.5 20.5h7M12 17v3.5" fill="none"/></svg></span>
+          <h3><span lang="es">Psicoterapia Virtual</span><span lang="en">Virtual Psychotherapy</span></h3>
+          <p lang="es">Sesiones confidenciales mediante una plataforma segura, para recibir apoyo profesional desde la comodidad de tu hogar.</p>
+          <p lang="en">Confidential sessions over a secure platform, so you can get professional support from the comfort of home.</p>
+          <span class="tag"><span lang="es">En línea</span><span lang="en">Online</span></span>
         </div>
         <div class="svc-row">
           <span class="svc-num"><svg class="svc-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6.5" cy="8.5" r="2.2" fill="none"/><path d="M2.8 18a3.7 3.7 0 0 1 7.4 0" fill="none"/> <circle cx="17.5" cy="8.5" r="2.2" fill="none"/><path d="M13.8 18a3.7 3.7 0 0 1 7.4 0" fill="none"/> <circle cx="12" cy="12" r="2" fill="none"/><path d="M8.7 21a3.3 3.3 0 0 1 6.6 0" fill="none"/></svg></span>
-          <h3><span lang="es">Terapia Familiar</span><span lang="en">Family Therapy</span></h3>
-          <p lang="es">Apoyo para toda la familia: entender roles, resolver conflictos y fortalecer vínculos.</p>
-          <p lang="en">Support for the whole family: understanding roles, easing conflict, and strengthening bonds.</p>
-          <span class="tag"><span lang="es">Familiar</span><span lang="en">Family</span></span>
-        </div>
-        <div class="svc-row">
-          <span class="svc-num"><svg class="svc-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.2c1.8 2.4 1.8 5.7 0 8.1-1.8-2.4-1.8-5.7 0-8.1z" fill="none"/> <path d="M12 12.3C9.5 12.1 6.2 9.9 5.4 7.3 8 6.9 10.9 8.7 12 12.3z" fill="none"/> <path d="M12 12.3C14.5 12.1 17.8 9.9 18.6 7.3 16 6.9 13.1 8.7 12 12.3z" fill="none"/> <path d="M4.4 12.4c2 2.7 5 3.7 7.6 3.7s5.6-1 7.6-3.7" fill="none"/></svg></span>
-          <h3><span lang="es">Manejo de Ansiedad y Estrés</span><span lang="en">Anxiety &amp; Stress Management</span></h3>
-          <p lang="es">Estrategias prácticas para calmar la ansiedad y recuperar el equilibrio.</p>
-          <p lang="en">Practical strategies to ease anxiety and regain your balance.</p>
-          <span class="tag"><span lang="es">Equilibrio</span><span lang="en">Balance</span></span>
-        </div>
-        <div class="svc-row">
-          <span class="svc-num"><svg class="svc-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5S3.3 14.8 3.3 8.9A4.4 4.4 0 0 1 12 6.1a4.4 4.4 0 0 1 8.7 2.8C20.7 14.8 12 20.5 12 20.5z" fill="none"/></svg></span>
-          <h3><span lang="es">Duelo y Pérdidas</span><span lang="en">Grief &amp; Loss</span></h3>
-          <p lang="es">Acompañamiento compasivo para atravesar la pérdida sin sentirse solo.</p>
-          <p lang="en">Compassionate support to move through loss without feeling alone.</p>
-          <span class="tag"><span lang="es">Acompañamiento</span><span lang="en">Support</span></span>
-        </div>
-        <div class="svc-row">
-          <span class="svc-num"><svg class="svc-ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V6.5" fill="none"/> <path d="M12 12.5c0-3.1 2.1-5.3 5.3-5.3 0 3.1-2.1 5.3-5.3 5.3z" fill="none"/> <path d="M12 16c0-2.7 1.9-4.6 4.6-4.6 0 2.7-1.8 4.6-4.6 4.6z" fill="none"/> <path d="M12 14.2c0-3.1-2.1-5.3-5.3-5.3 0 3.1 2.1 5.3 5.3 5.3z" fill="none"/></svg></span>
-          <h3><span lang="es">Crecimiento Personal y Espiritual</span><span lang="en">Personal &amp; Spiritual Growth</span></h3>
-          <p lang="es">Un camino para conocerse, sanar y crecer hacia quien quiere ser.</p>
-          <p lang="en">A path to know yourself, heal, and grow into who you want to be.</p>
-          <span class="tag"><span lang="es">Crecimiento</span><span lang="en">Growth</span></span>
+          <h3><span lang="es">Grupos Psicoeducativos y de Apoyo</span><span lang="en">Psychoeducational &amp; Support Groups</span></h3>
+          <p lang="es">Espacios para fomentar el aprendizaje, el apoyo mutuo y herramientas para afrontar distintas etapas y experiencias de vida. Grupos disponibles: duelo y pérdidas; mujeres en perimenopausia y menopausia; manejo de ansiedad y regulación emocional; y otros grupos temáticos según las necesidades de la comunidad.</p>
+          <p lang="en">Spaces that foster learning, mutual support, and tools for navigating different life stages and experiences. Current groups: grief &amp; loss; women in perimenopause &amp; menopause; anxiety management &amp; emotional regulation; and other themed groups based on community needs.</p>
+          <span class="tag"><span lang="es">En grupo</span><span lang="en">Group</span></span>
         </div>
       </div>
       </div>
@@ -666,15 +649,32 @@ html[data-lang="en"] [lang="es"]{display:none!important}
       <div class="prov">
         <div class="portrait"><img src="photos/daisy.jpg" alt="Lcda. Daisy Santiago"></div>
         <div>
-          <h3>Lcda. Daisy Santiago</h3>
-          <p class="cred"><span lang="es">Trabajadora social clínica · Licenciada</span><span lang="en">Clinical Social Worker · Licensed</span></p>
-          <p lang="es">Trabajadora social clínica licenciada. Acompaña a pacientes y familias en salud mental y bienestar emocional, con un enfoque compasivo y sin juicios.</p>
-          <p lang="en">Licensed clinical social worker. Supports patients and families with mental health and emotional wellness, with a compassionate, judgment-free approach.</p>
+          <h3>Lcda. Daisy Santiago, MSW</h3>
+          <p class="cred"><span lang="es">Trabajadora Social Clínica · Tanatóloga · Capellán · Candidata Doctoral en Consejería Teológica Integral</span><span lang="en">Clinical Social Worker · Thanatologist · Chaplain · Doctoral Candidate in Integrative Theological Counseling</span></p>
+          <p class="prov-quote" lang="es">«Acompañándote a descubrir la fortaleza que existe en ti para sanar, crecer y transformar tu vida.»</p>
+          <p class="prov-quote" lang="en">"Walking with you to discover the strength within you to heal, grow, and transform your life."</p>
+          <p lang="es">Creo firmemente que toda persona posee la capacidad de sanar, crecer y transformar su vida cuando cuenta con un espacio seguro, respetuoso y libre de juicios. Mi compromiso es acompañar a cada persona desde un enfoque humano, basado en la evidencia científica y adaptado a sus necesidades individuales.</p>
+          <p lang="en">I firmly believe that every person has the capacity to heal, grow, and transform their life when they have a safe, respectful, judgment-free space. My commitment is to walk with each person from a human-centered approach, grounded in scientific evidence and adapted to their individual needs.</p>
+          <p lang="es">Como Trabajadora Social Clínica (MSW), tengo experiencia en la evaluación e intervención de condiciones de salud mental en adolescentes y adultos — ansiedad, depresión, duelo, estrés, dificultades en las relaciones, crisis de vida y otros retos emocionales. Como Tanatóloga y Capellán, comprendo también la dimensión existencial y espiritual del ser humano e integro la espiritualidad como recurso terapéutico cuando el paciente así lo desea, siempre respetando sus creencias y valores.</p>
+          <p lang="en">As a Clinical Social Worker (MSW), I have experience assessing and treating mental-health conditions in adolescents and adults — anxiety, depression, grief, stress, relationship difficulties, life crises, and other emotional challenges. As a thanatologist and chaplain, I also understand the existential and spiritual dimension of each person, integrating spirituality as a therapeutic resource when the patient wishes, always respecting their beliefs and values.</p>
           <dl>
-            <div><dt><span lang="es">Enfoque</span><span lang="en">Focus</span></dt><dd><span lang="es">Salud mental y bienestar</span><span lang="en">Mental health &amp; wellness</span></dd></div>
+            <div><dt><span lang="es">Enfoque</span><span lang="en">Focus</span></dt><dd><span lang="es">Salud mental, duelo y bienestar emocional</span><span lang="en">Mental health, grief &amp; emotional wellness</span></dd></div>
+            <div><dt><span lang="es">Práctica</span><span lang="en">Practice</span></dt><dd>Metamorphosis Wellness &amp; Counseling</dd></div>
             <div><dt><span lang="es">Idiomas</span><span lang="en">Languages</span></dt><dd>Español, English</dd></div>
-            <div><dt><span lang="es">Oficina</span><span lang="en">Location</span></dt><dd>Lunaris &amp; Metamorphosis</dd></div>
+            <div><dt><span lang="es">Modalidad</span><span lang="en">Format</span></dt><dd><span lang="es">Presencial y virtual</span><span lang="en">In person &amp; virtual</span></dd></div>
           </dl>
+          <p class="areas-label"><span lang="es">Áreas de especialidad</span><span lang="en">Areas of focus</span></p>
+          <ul class="areas">
+            <li><span lang="es">Ansiedad y manejo del estrés</span><span lang="en">Anxiety &amp; stress management</span></li>
+            <li><span lang="es">Depresión</span><span lang="en">Depression</span></li>
+            <li><span lang="es">Duelo y pérdidas</span><span lang="en">Grief &amp; loss</span></li>
+            <li><span lang="es">Transiciones y cambios de vida</span><span lang="en">Life transitions &amp; change</span></li>
+            <li><span lang="es">Regulación emocional</span><span lang="en">Emotional regulation</span></li>
+            <li><span lang="es">Fortalecimiento de la autoestima</span><span lang="en">Building self-esteem</span></li>
+            <li><span lang="es">Habilidades de afrontamiento</span><span lang="en">Coping skills</span></li>
+            <li><span lang="es">Crecimiento personal y bienestar</span><span lang="en">Personal growth &amp; well-being</span></li>
+            <li><span lang="es">Integración de la espiritualidad (a solicitud)</span><span lang="en">Spirituality in therapy (on request)</span></li>
+          </ul>
           <a class="link-more" href="#book"><span lang="es">Reservar con la Lcda. Santiago</span><span lang="en">Book with Lcda. Santiago</span></a>
         </div>
       </div>
